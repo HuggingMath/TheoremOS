@@ -59,11 +59,12 @@ TheoremOS 将数学 AI Agent、Lean 4 与 Mathlib 整合到浏览器工作台中
 
 当前为**白名单 Beta**。内测期间平台免费，模型调用由你的 API 账户付费；在线使用无需在本机安装 Lean 或 Docker。
 
-1. [申请内测](https://github.com/LikC1606/theorem-os-site/issues/new?template=early-access.yml)，介绍研究用途和想做的题目。也可发邮件至 [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn) 私下申请。
-2. 登录 [app.theoremos.top](https://app.theoremos.top/)，连接 OpenAI 或兼容 Responses API 的服务，填写自己的 API Key，并设置形式化与证明预算。
-3. 提交自然语言、TeX 或 Lean 原题，核对形式化，查看证明过程，下载源码、验收报告和本地复核包。
+1. [申请内测](https://github.com/LikC1606/theorem-os-site/issues/new?template=early-access.yml)，说明研究用途即可，可选附公开题目或 Lean 声明链接。也可发邮件至 [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn) 私下申请。
+2. 审核后，按我们在原 Issue 中的回复，通过邮件私下确认登录邮箱。获准加入白名单后，用邮箱验证码登录 [app.theoremos.top](https://app.theoremos.top/)。
+3. 连接 OpenAI 或兼容 Responses API 的服务，填写自己的 API Key，并设置形式化与证明预算。
+4. 提交自然语言、TeX 或 Lean 原题，核对形式化，查看证明过程，下载源码、验收报告和本地复核包。
 
-我们会在申请 Issue 中回复，并私下确认登录邮箱。Issue 公开显示，请勿填写 API Key 或个人联系方式。
+Issue 公开显示，请勿填写 API Key 或个人联系方式。
 
 Lean 验收针对固定的形式化陈述，需要将该陈述与原题核对。也可以先浏览[公开档案](https://theoremos.top/archive.html)或查看[预设验证回放](https://theoremos.top/#demo)，无需 API Key。
 

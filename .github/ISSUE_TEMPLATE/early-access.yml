@@ -6,8 +6,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        在线工作台开放时，我们会在这条 Issue 里回复你。
-        We will reply in this issue when the online workbench opens.
+        在线工作台已开放白名单 Beta。说明研究用途即可，可选附公开题目或 Lean 声明链接。
+        The workbench is open as an allowlist beta. Describe your research use; public problem or Lean statement links are optional.
+
+        审核后，我们会在本 Issue 回复。请按回复指引通过邮件私下确认登录邮箱。获准加入白名单后，用邮箱验证码登录，再连接模型并设置预算。
+        After review, we will reply in this issue. Follow the reply to confirm your sign-in address privately by email. Once approved and added to the allowlist, sign in with an emailed code, then connect your model and set your budgets.
 
         **这条 Issue 会公开显示。请勿填写 API Key、访问令牌、邮箱、电话等个人信息。**
         **This issue is public. Do not include API keys, access tokens, email addresses, phone numbers or other personal information.**
@@ -19,9 +22,9 @@ body:
     attributes:
       label: 身份 / Role
       options:
-        - 数学 Agent 研究者 / Math agent researcher
-        - Lean / Mathlib 开发者 / Lean or Mathlib developer
         - 数学研究者或学生 / Mathematician or student
+        - Lean / Mathlib 开发者 / Lean or Mathlib developer
+        - 数学 Agent 研究者 / Math agent researcher
         - 其他 / Other
     validations:
       required: true
@@ -36,7 +39,7 @@ body:
     id: problems
     attributes:
       label: 想做的题目 / Problems
-      description: 题目名称、来源或 Lean 声明链接（选填）/ Problem names, sources or links to Lean statements (optional)
+      description: 公开题目名称、来源或 Lean 声明链接（选填）/ Public problem names, sources or Lean statement links (optional)
   - type: dropdown
     id: model
     attributes:
