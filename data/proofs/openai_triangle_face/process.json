@@ -1,0 +1,822 @@
+{
+  "runs": [
+    {
+      "runId": "2c9a8bea-28c9-41e7-9c46-5024c96c9c72",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 0,
+      "workers": 4,
+      "tasks": [],
+      "events": []
+    },
+    {
+      "runId": "46411529-fe40-4bb8-8fbb-071b6ecee757",
+      "startedAt": "2026-11-05T13:33:28.972Z",
+      "finishedAt": "2026-11-05T14:16:26.540Z",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 100,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "collapse_reattach_goal",
+          "theorem": "OAI.MatchingEntropyBounds.Refined.collapse_reattach",
+          "objective": "Recheck the original frozen theorem collapse_reattach; its proof is already present in Submission.lean, so the consumer is the original acceptance declaration and the task only needs source preservation and a clean host check.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [],
+          "proofCommit": "10e514e3c5d257350a450de990c682add9ce8972",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-9fb388c773eb9c42356aad54"
+          ]
+        },
+        {
+          "id": "local_labels_exists",
+          "theorem": "OAI.TriangleFace198.existsLocalLabels",
+          "objective": "Construct the labeling required by the main existential: from Fintype.card {e : E // G.Incident v e} = 3, choose an equivalence of the incident-edge subtype with Fin 3, define c on incident edges through it and arbitrarily elsewhere, and prove OAI.TriangleFace198.LocalLabels G v c. Intended consumer: triangle_face_goal, where this supplies c and hc.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [],
+          "proofCommit": "3443d121b4928275faa7e672c0d59f68692ad903",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-5a1951cc8b6ba79906342a9b"
+          ]
+        },
+        {
+          "id": "cutMass_triangleVertices",
+          "theorem": "OAI.TriangleFace198.cutMass_triangleVertices",
+          "objective": "Prove the exact cut-mass decomposition for the triangle expansion: for every expanded weight vector y, the cut mass of y across the three tip vertices equals the sum of y on the old edges incident with v. This supplies the central quantitative bridge used by triangle_face_goal to show expanded perfect matchings have cut mass 1 or 3 and that Q is the cut hyperplane.",
+          "status": "integrated",
+          "attempts": 10,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "proofCommit": "cd6eafdc13b32a4cbc7b6be77b6541641400ea10",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-29a19373836269b50d5f8ec5"
+          ]
+        },
+        {
+          "id": "triangle_face_goal",
+          "theorem": "OAI.TriangleFace198.triangle_expansion_face",
+          "objective": "Close the exact original target triangle_expansion_face with a proof that survives the host's single-target source projection. NEW EVIDENCE: our own saved draft at commit 1d410f2 (generated/problem/Submission.lean, 58593 bytes, sha256 5ffce0dda4eb84bfeec7ff97488bc1c877dd72ecf64d0eb087358c98044289dd) is a complete sorry-free proof of the target; a verbatim copy checked this turn with the pinned check-lean returned exitCode 0, firstBlocking null, sourceDigest 509a4820a78869b9b21d8ccd6a74061ecdab4c7cba3017891b91baaf44342 (.scratch[local file]). It contains cutLinear, convexHull_section_eq, mass_one_generators_eq, oldPart_perfect, indicator_eq_localExtension_of_mass_one, image_polytope_subset_cut_one, one_le_cutMass_indicator, cut_one_image_eq, convex_polytope_cut_eq_one, isExtreme_polytope_cut_eq_one, minFace_linear_image and minFace_transport_consumer. STEP 1: restore that complete declaration block into canonical generated/problem/Submission.lean, preserving every frozen declaration, header, import, namespace and the frozen collapse_reattach proof body verbatim, and deleting the literal sorry in the target by supplying the draft's proof body. STEP 2: make the target border-projection robust: place every helper that the target's proof references inside triangle_expansion_face's own proof body as local `have`/`let` declarations (inlining cut_one_image_eq, convex_polytope_cut_eq_one, isExtreme_polytope_cut_eq_one, minFace_linear_image, minFace_transport_consumer and their supporting lemmas), so no pruned top-level helper is needed; keep at most helpers retained through the integrated dependencies local_labels_exists and cutMass_triangleVertices. STEP 3: run the pinned full-file check-lean; if the host still reports an unknown identifier in the projected source, inline exactly that declaration next. Report the saved file sha256, the check result and any remaining host error. Consumer: the publisher acceptance declaration OAI.TriangleFace198.triangle_expansion_face. Do not depend on minface_transport (paused) and do not introduce new axioms, sorry, admit, native_decide or unsafe.",
+          "status": "integrated",
+          "attempts": 14,
+          "dependencies": [
+            "local_labels_exists",
+            "cutMass_triangleVertices"
+          ],
+          "proofCommit": "1132c70d20514a0003435bad5d0b32ff040e8c18",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-041d559b186474f63a9b91b3"
+          ]
+        },
+        {
+          "id": "expanded_matching_cut_route",
+          "objective": "Using the saved full-file-checked proof of OAI.TriangleFace198.cutMass_triangleVertices at commit b3c490e (helpers triangleTip_mem_triangleVertices, sum_inl_mem_triangleVertices, reattach_mem_triangleVertices, crosses_inl_iff, not_crosses_inr), produce and SAVE in Submission.lean a compiled draft of the tight-cut dichotomy: (i) the exact preflighted type of an `expanded_matching_cutMass_eq_one_or_three` stating that for every perfect matching M of H = triangleExpansion G c v, cutMass H (indicator H M) (triangleVertices v) = 1 or 3; (ii) the mass-1 characterization: an expanded perfect matching has cut mass 1 iff it equals f (old matching indicator) for a unique perfect matching of G. Proof input: with k = number of selected reattached (old incident) edges and t = number of selected triangle edges, each of the three tips is covered exactly once so k + 2t = 3; distinct triangle edges share a tip so t ≤ 1; the |V|-1-k remaining non-tip vertices must be matched among themselves, so k is odd; hence (k,t) = (1,1) or (3,0). Discriminating check: instantiate the K4 expansion (V = Fin 4, G complete, v = 0) and confirm both strata are nonempty, that the mass-1 stratum bijects with the 3 perfect matchings of K4, and that the mass-3 stratum contains the matching using all three reattached edges; if the count is wrong this instance exposes it. Report the exact declarations, the checked file hash and the remaining gap to f '' G.polytope = Q.",
+          "status": "pending",
+          "attempts": 7,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_correspondence_route",
+          "objective": "Derive and SAVE in Submission.lean a compiled generic minimal-face transport proof. Setting: A, B real vector spaces, P : Set A convex, R : Set B convex, f : A →ₗ[ℝ] B and Q := f '' P, with Q extreme in R, f injective, and a linear left inverse g with g (f x) = x for x ∈ P and f (g y) = y for y ∈ Q. Target shape: for x ∈ P, CanonicalFace198.minFace R (f x) = f '' CanonicalFace198.minFace P x. Prescribed argument to formalize, using CanonicalFace198.facesThrough/minFace as intersections: (a) Q is a face of R containing f x, hence minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q, using IsExtreme.trans and monotonicity plus restriction of an openSegment inside Q; (c) under the affine isomorphism P ≅ Q given by f and g, faces of Q correspond to faces of P through x, so the two intersections are images of each other. Deliverable: the exact preflighted type of the generic lemma (report it verbatim; do not adopt an unpinned statement), a saved compiled proof or the earliest exact blocking goal, and the concrete instantiation to triangle_face_goal (P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1}, f = localExtension G c v hc, g = oldRestriction) with its remaining hypotheses listed explicitly.",
+          "status": "pending",
+          "attempts": 7,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_transport",
+          "theorem": "OAI.TriangleFace198.minFace_linear_image",
+          "objective": "Prove the generic minimal-face transport that the main theorem's last conjunct instantiates. Intended consumer: triangle_face_goal, where P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1} = f '' P, f = localExtension G c v hc and g = oldRestriction. Proof route: (a) Q extreme in R contains f x, so minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q (IsExtreme.trans and IsExtreme.mono, plus open-segment restriction); (c) if F = minFace R (f x), then g '' F is a face of P through x: given g z = (1-t) a + t b with a, b ∈ P and 0 < t < 1, apply f to get f (g z) ∈ openSegment (f a) (f b) inside Q, use extremeness of F in R to get f a, f b ∈ F, then a = g (f a), b = g (f b) ∈ g '' F; hence minFace P x ⊆ g '' F and f '' minFace P x ⊆ F; (d) conversely f '' minFace P x is a face of R through f x, so minFace R (f x) ⊆ f '' minFace P x. Deliverable: the checked lemma in Submission.lean with a clean isolated host check, or the earliest exact blocking goal with its hypotheses.",
+          "status": "blocked",
+          "attempts": 3,
+          "dependencies": [],
+          "proofCommit": "bd8cb735dc8eb5f3f8b8374c2fbc6a0ff0882a05",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-615c33596082e4cdcf6d41c0"
+          ]
+        },
+        {
+          "id": "selfcontained_draft_scaffold",
+          "objective": "Independently build the projection-robust variant of the complete proof at commit 1d410f2, in SCRATCH ONLY. Copy git show 1d410f2:generated/problem/Submission.lean to generated/problem/.scratch[local file] (do not edit canonical Submission.lean, do not delete or alter any frozen declaration). Inside the proof body of triangle_expansion_face, inline every new top-level helper that the proof references (cutLinear/cutLinear_apply/cutLinear_eq_sum, convexHull_section_eq, one_le_of_mem_convexHull, one_le_cutMass_indicator, one_le_cutMass_of_mem_polytope, convex_polytope_cut_eq_one, isExtreme_polytope_cut_eq_one, mass_one_generators_eq, cut_one_image_eq, oldPart/mem_oldPart/oldPart_perfect, indicator_eq_localExtension_of_mass_one, cutLinear_indicator_expandSet, localExtension_indicator_eq, image_polytope_subset_cut_one, coverEdge*, expandSet*, mem_openSegment_linear_image_iff, minFace_linear_image, minFace_transport_consumer) as local `have`s with the same statements, adjusting only scoping; leave the frozen declarations and any helper retained by the integrated dependencies local_labels_exists and cutMass_triangleVertices top-level. Compile the scratch file with the pinned check-lean (--file '.scratch[local file]') and iterate until firstBlocking is null and exitCode is 0. Deliverable: the scratch path, exact check-lean JSON summary (exitCode, firstBlocking, sourceDigest), the declaration-level diff versus the current canonical file, and the exact list of helpers that had to be inlined. Consumer: triangle_face_goal, whose engineer applies this scaffold to the canonical file. No benchmark or external answer sources; use only our own commits and Mathlib.",
+          "status": "blocked",
+          "attempts": 3,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "draft_independent_audit",
+          "objective": "Independently audit our saved draft at commit 1d410f2 (generated/problem/Submission.lean, 58593 bytes) WITHOUT editing canonical sources. Checks: (1) run the pinned check-lean on a scratch copy and confirm exitCode 0, no `sorry`/`admit`, and no `native_decide`/`unsafe`; (2) diff every frozen original declaration (all 24 in the frozen order, especially the LooplessGraph structure, Incident, IsPerfectMatching, Matching, indicator, polytope, Crosses, cut, degree, cutMass, triangleTip, triangleCollapse, reattach, collapse_reattach, triangleExpansion, triangleVertices, facesThrough, minFace, LocalLabels, localEdge, localExtension, oldRestriction) against base commit 35d6ee0046d9523149a6be5dc818285338e8b8f4 and report any change; (3) confirm triangle_expansion_face's proof does not reference the target itself or any declaration that transitively assumes it (no circularity); (4) discriminating mathematical check: on the K4 expansion (V = Fin 4, complete graph, v = 0, three incident edges) verify that (a) every expanded perfect matching has cut mass 1 or 3, (b) the mass-1 stratum has exactly 3 matchings, each the image of a K4 perfect matching, (c) the mass-3 stratum has exactly 1 matching (the three reattached edges); re-run and record the existing .scratch[local file] evidence or replace it with a corrected finite computation and state the exact counts. Report any defect with file:line and the exact wrong statement; otherwise report PASS with the evidence JSON paths and hashes. Consumer: triangle_face_goal (audit before host acceptance). Advisory only.",
+          "status": "pending",
+          "attempts": 3,
+          "dependencies": [],
+          "receiptIds": []
+        }
+      ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
+      "review": {
+        "status": "pending",
+        "summary": ""
+      },
+      "events": [
+        {
+          "at": "2026-11-02T09:12:31.799Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T09:22:03.290Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T09:29:16.813Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T09:29:29.386Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T09:39:24.731Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T09:39:48.950Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T09:57:31.068Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T10:18:52.911Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T10:21:17.811Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T11:10:04.918Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-02T11:31:12.622Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T03:44:49.755Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T04:04:49.226Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T04:44:01.659Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T04:44:27.958Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T07:49:17.046Z",
+          "kind": "lean-check",
+          "taskId": "minface_transport",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T07:49:17.617Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T09:08:19.111Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T11:27:24.766Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T11:38:04.414Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T11:39:30.164Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T13:09:38.731Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T13:33:51.919Z",
+          "kind": "lean-check",
+          "taskId": "collapse_reattach_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T13:33:51.919Z",
+          "kind": "lean-check",
+          "taskId": "cutMass_triangleVertices",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T13:34:05.027Z",
+          "kind": "lean-check",
+          "taskId": "local_labels_exists",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T13:42:28.963Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T13:42:55.807Z",
+          "kind": "lean-check",
+          "taskId": "triangle_face_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T13:52:40.111Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    },
+    {
+      "runId": "b889c85d-f260-4f3c-8279-cf1a1b1f40fa",
+      "startedAt": "2026-11-05T14:29:16.876Z",
+      "finishedAt": "2026-11-05T16:41:36.035Z",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 21,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "collapse_reattach_goal",
+          "theorem": "OAI.MatchingEntropyBounds.Refined.collapse_reattach",
+          "objective": "Recheck the original frozen theorem collapse_reattach; its proof is already present in Submission.lean, so the consumer is the original acceptance declaration and the task only needs source preservation and a clean host check.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-0a47ea8cc12bd9eb3051b146"
+          ]
+        },
+        {
+          "id": "local_labels_exists",
+          "theorem": "OAI.TriangleFace198.existsLocalLabels",
+          "objective": "Construct the labeling required by the main existential: from Fintype.card {e : E // G.Incident v e} = 3, choose an equivalence of the incident-edge subtype with Fin 3, define c on incident edges through it and arbitrarily elsewhere, and prove OAI.TriangleFace198.LocalLabels G v c. Intended consumer: triangle_face_goal, where this supplies c and hc.",
+          "status": "blocked",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "failed",
+          "receiptIds": [
+            "lean-28f12f4a009ae146b872b556"
+          ]
+        },
+        {
+          "id": "cutMass_triangleVertices",
+          "theorem": "OAI.TriangleFace198.cutMass_triangleVertices",
+          "objective": "Prove the exact cut-mass decomposition for the triangle expansion: for every expanded weight vector y, the cut mass of y across the three tip vertices equals the sum of y on the old edges incident with v. This supplies the central quantitative bridge used by triangle_face_goal to show expanded perfect matchings have cut mass 1 or 3 and that Q is the cut hyperplane.",
+          "status": "blocked",
+          "attempts": 0,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "checkStatus": "failed",
+          "receiptIds": [
+            "lean-dcc4184e4d77dd0943d3818c"
+          ]
+        },
+        {
+          "id": "triangle_face_goal",
+          "theorem": "OAI.TriangleFace198.triangle_expansion_face",
+          "objective": "PUBLISHER TARGET verification/repair (mathematical route already complete in the owned file; frozen goal type unchanged). Canonical generated/problem/Submission.lean is 58554 bytes, sha256 1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450, identical to commit db4604e; grep finds no sorry/admit/native_decide/unsafe/axiom and every frozen declaration, header, import, namespace and definition body (including the frozen collapse_reattach proof) is byte-preserved. Do NOT restore older drafts (the 1d410f2 draft is superseded) and do not delete, reorder or rewrite helper declarations. The dependency route is now dependsOn [collapse_reattach_goal] only: existsLocalLabels, cutMass_triangleVertices, minFace_linear_image/minFace_transport_consumer and their lemmas are declarations of the same owned file and are verified by the same kernel check, while the integrated original target collapse_reattach must stay in the host single-target projection or the frozen def triangleExpansion (whose loopless proof calls collapse_reattach) is pruned. STEP 1: run math.ts check-lean --workspace <problem dir> --file Submission.lean --timeout-seconds 0; record exitCode, firstBlocking and its position, timedOut, hasSorry, omittedMessages, sourceDigest and the file sha256. STEP 2: run the same check on the single-target projection for OAI.TriangleFace198.triangle_expansion_face with retainedGoals containing OAI.MatchingEntropyBounds.Refined.collapse_reattach (a .scratch/tmp projector reproducer is acceptable). STEP 3: if the projection reports an unknown identifier or 'Function expected at triangleExpansion', add the fully qualified _root_.OAI.MatchingEntropyBounds.Refined.triangleExpansion pin in the offending proof body, or inline exactly the pruned declaration as a local have inside triangle_expansion_face's own proof body; iterate until clean while keeping every frozen line byte-identical. STEP 4: if a fresh check exposes a genuine proof error, repair the earliest error only and re-run both checks. STEP 5: save and deliver the check JSON(s) plus the saved file sha256 and state any residue. Forbidden: sorry, admit, native_decide, unsafe, new axioms, edits to Submission/Library, and any external benchmark-answer source.",
+          "status": "integrated",
+          "attempts": 3,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "proofCommit": "07a9a744eb31a8b343f53c3c693f99fb1d5b3486",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-da47a8243e3c40429183dd77"
+          ]
+        },
+        {
+          "id": "expanded_matching_cut_route",
+          "objective": "Using the saved full-file-checked proof of OAI.TriangleFace198.cutMass_triangleVertices at commit b3c490e (helpers triangleTip_mem_triangleVertices, sum_inl_mem_triangleVertices, reattach_mem_triangleVertices, crosses_inl_iff, not_crosses_inr), produce and SAVE in Submission.lean a compiled draft of the tight-cut dichotomy: (i) the exact preflighted type of an `expanded_matching_cutMass_eq_one_or_three` stating that for every perfect matching M of H = triangleExpansion G c v, cutMass H (indicator H M) (triangleVertices v) = 1 or 3; (ii) the mass-1 characterization: an expanded perfect matching has cut mass 1 iff it equals f (old matching indicator) for a unique perfect matching of G. Proof input: with k = number of selected reattached (old incident) edges and t = number of selected triangle edges, each of the three tips is covered exactly once so k + 2t = 3; distinct triangle edges share a tip so t ≤ 1; the |V|-1-k remaining non-tip vertices must be matched among themselves, so k is odd; hence (k,t) = (1,1) or (3,0). Discriminating check: instantiate the K4 expansion (V = Fin 4, G complete, v = 0) and confirm both strata are nonempty, that the mass-1 stratum bijects with the 3 perfect matchings of K4, and that the mass-3 stratum contains the matching using all three reattached edges; if the count is wrong this instance exposes it. Report the exact declarations, the checked file hash and the remaining gap to f '' G.polytope = Q.",
+          "status": "pending",
+          "attempts": 3,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_correspondence_route",
+          "objective": "Derive and SAVE in Submission.lean a compiled generic minimal-face transport proof. Setting: A, B real vector spaces, P : Set A convex, R : Set B convex, f : A →ₗ[ℝ] B and Q := f '' P, with Q extreme in R, f injective, and a linear left inverse g with g (f x) = x for x ∈ P and f (g y) = y for y ∈ Q. Target shape: for x ∈ P, CanonicalFace198.minFace R (f x) = f '' CanonicalFace198.minFace P x. Prescribed argument to formalize, using CanonicalFace198.facesThrough/minFace as intersections: (a) Q is a face of R containing f x, hence minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q, using IsExtreme.trans and monotonicity plus restriction of an openSegment inside Q; (c) under the affine isomorphism P ≅ Q given by f and g, faces of Q correspond to faces of P through x, so the two intersections are images of each other. Deliverable: the exact preflighted type of the generic lemma (report it verbatim; do not adopt an unpinned statement), a saved compiled proof or the earliest exact blocking goal, and the concrete instantiation to triangle_face_goal (P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1}, f = localExtension G c v hc, g = oldRestriction) with its remaining hypotheses listed explicitly.",
+          "status": "blocked",
+          "attempts": 3,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_transport",
+          "theorem": "OAI.TriangleFace198.minFace_linear_image",
+          "objective": "Prove the generic minimal-face transport that the main theorem's last conjunct instantiates. Intended consumer: triangle_face_goal, where P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1} = f '' P, f = localExtension G c v hc and g = oldRestriction. Proof route: (a) Q extreme in R contains f x, so minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q (IsExtreme.trans and IsExtreme.mono, plus open-segment restriction); (c) if F = minFace R (f x), then g '' F is a face of P through x: given g z = (1-t) a + t b with a, b ∈ P and 0 < t < 1, apply f to get f (g z) ∈ openSegment (f a) (f b) inside Q, use extremeness of F in R to get f a, f b ∈ F, then a = g (f a), b = g (f b) ∈ g '' F; hence minFace P x ⊆ g '' F and f '' minFace P x ⊆ F; (d) conversely f '' minFace P x is a face of R through f x, so minFace R (f x) ⊆ f '' minFace P x. Deliverable: the checked lemma in Submission.lean with a clean isolated host check, or the earliest exact blocking goal with its hypotheses.",
+          "status": "blocked",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "failed",
+          "receiptIds": [
+            "lean-be1b6d6a2b07bf68685e8a9b"
+          ]
+        },
+        {
+          "id": "selfcontained_draft_scaffold",
+          "objective": "Independently build the projection-robust variant of the complete proof at commit 1d410f2, in SCRATCH ONLY. Copy git show 1d410f2:generated/problem/Submission.lean to generated/problem/.scratch[local file] (do not edit canonical Submission.lean, do not delete or alter any frozen declaration). Inside the proof body of triangle_expansion_face, inline every new top-level helper that the proof references (cutLinear/cutLinear_apply/cutLinear_eq_sum, convexHull_section_eq, one_le_of_mem_convexHull, one_le_cutMass_indicator, one_le_cutMass_of_mem_polytope, convex_polytope_cut_eq_one, isExtreme_polytope_cut_eq_one, mass_one_generators_eq, cut_one_image_eq, oldPart/mem_oldPart/oldPart_perfect, indicator_eq_localExtension_of_mass_one, cutLinear_indicator_expandSet, localExtension_indicator_eq, image_polytope_subset_cut_one, coverEdge*, expandSet*, mem_openSegment_linear_image_iff, minFace_linear_image, minFace_transport_consumer) as local `have`s with the same statements, adjusting only scoping; leave the frozen declarations and any helper retained by the integrated dependencies local_labels_exists and cutMass_triangleVertices top-level. Compile the scratch file with the pinned check-lean (--file '.scratch[local file]') and iterate until firstBlocking is null and exitCode is 0. Deliverable: the scratch path, exact check-lean JSON summary (exitCode, firstBlocking, sourceDigest), the declaration-level diff versus the current canonical file, and the exact list of helpers that had to be inlined. Consumer: triangle_face_goal, whose engineer applies this scaffold to the canonical file. No benchmark or external answer sources; use only our own commits and Mathlib.",
+          "status": "blocked",
+          "attempts": 3,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "draft_independent_audit",
+          "objective": "Independently audit our saved draft at commit 1d410f2 (generated/problem/Submission.lean, 58593 bytes) WITHOUT editing canonical sources. Checks: (1) run the pinned check-lean on a scratch copy and confirm exitCode 0, no `sorry`/`admit`, and no `native_decide`/`unsafe`; (2) diff every frozen original declaration (all 24 in the frozen order, especially the LooplessGraph structure, Incident, IsPerfectMatching, Matching, indicator, polytope, Crosses, cut, degree, cutMass, triangleTip, triangleCollapse, reattach, collapse_reattach, triangleExpansion, triangleVertices, facesThrough, minFace, LocalLabels, localEdge, localExtension, oldRestriction) against base commit 35d6ee0046d9523149a6be5dc818285338e8b8f4 and report any change; (3) confirm triangle_expansion_face's proof does not reference the target itself or any declaration that transitively assumes it (no circularity); (4) discriminating mathematical check: on the K4 expansion (V = Fin 4, complete graph, v = 0, three incident edges) verify that (a) every expanded perfect matching has cut mass 1 or 3, (b) the mass-1 stratum has exactly 3 matchings, each the image of a K4 perfect matching, (c) the mass-3 stratum has exactly 1 matching (the three reattached edges); re-run and record the existing .scratch[local file] evidence or replace it with a corrected finite computation and state the exact counts. Report any defect with file:line and the exact wrong statement; otherwise report PASS with the evidence JSON paths and hashes. Consumer: triangle_face_goal (audit before host acceptance). Advisory only.",
+          "status": "blocked",
+          "attempts": 3,
+          "dependencies": [],
+          "receiptIds": []
+        }
+      ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
+      "review": {
+        "status": "pending",
+        "summary": ""
+      },
+      "events": [
+        {
+          "at": "2026-11-05T14:28:10.509Z",
+          "kind": "lean-check",
+          "taskId": "local_labels_exists",
+          "status": "failed"
+        },
+        {
+          "at": "2026-11-05T14:28:10.509Z",
+          "kind": "lean-check",
+          "taskId": "cutMass_triangleVertices",
+          "status": "failed"
+        },
+        {
+          "at": "2026-11-05T14:28:10.509Z",
+          "kind": "lean-check",
+          "taskId": "minface_transport",
+          "status": "failed"
+        },
+        {
+          "at": "2026-11-05T14:29:16.943Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T14:29:34.123Z",
+          "kind": "lean-check",
+          "taskId": "collapse_reattach_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T14:35:59.831Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T14:40:57.629Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T14:49:04.543Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T14:50:32.691Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T15:08:32.640Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T15:41:11.435Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T15:41:26.579Z",
+          "kind": "lean-check",
+          "taskId": "triangle_face_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T15:52:11.492Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    },
+    {
+      "runId": "24d7257a-f537-449a-95dd-484c844470ed",
+      "startedAt": "2026-11-05T17:19:30.156Z",
+      "finishedAt": "2026-11-05T17:23:20.696Z",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 3,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "collapse_reattach_goal",
+          "theorem": "OAI.MatchingEntropyBounds.Refined.collapse_reattach",
+          "objective": "Recheck the original frozen theorem collapse_reattach; its proof is already present in Submission.lean, so the consumer is the original acceptance declaration and the task only needs source preservation and a clean host check.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-db8e47541767f28a8e880ccd"
+          ]
+        },
+        {
+          "id": "local_labels_exists",
+          "theorem": "OAI.TriangleFace198.existsLocalLabels",
+          "objective": "Construct the labeling required by the main existential: from Fintype.card {e : E // G.Incident v e} = 3, choose an equivalence of the incident-edge subtype with Fin 3, define c on incident edges through it and arbitrarily elsewhere, and prove OAI.TriangleFace198.LocalLabels G v c. Intended consumer: triangle_face_goal, where this supplies c and hc.",
+          "status": "blocked",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "failed",
+          "receiptIds": [
+            "lean-241e4bb2d5ed431d821b0c9d"
+          ]
+        },
+        {
+          "id": "cutMass_triangleVertices",
+          "theorem": "OAI.TriangleFace198.cutMass_triangleVertices",
+          "objective": "Prove the exact cut-mass decomposition for the triangle expansion: for every expanded weight vector y, the cut mass of y across the three tip vertices equals the sum of y on the old edges incident with v. This supplies the central quantitative bridge used by triangle_face_goal to show expanded perfect matchings have cut mass 1 or 3 and that Q is the cut hyperplane.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-02443136959243d4f8ae650d"
+          ]
+        },
+        {
+          "id": "triangle_face_goal",
+          "theorem": "OAI.TriangleFace198.triangle_expansion_face",
+          "objective": "PUBLISHER TARGET verification/repair (mathematical route already complete in the owned file; frozen goal type unchanged). Canonical generated/problem/Submission.lean is 58554 bytes, sha256 1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450, identical to commit db4604e; grep finds no sorry/admit/native_decide/unsafe/axiom and every frozen declaration, header, import, namespace and definition body (including the frozen collapse_reattach proof) is byte-preserved. Do NOT restore older drafts (the 1d410f2 draft is superseded) and do not delete, reorder or rewrite helper declarations. The dependency route is now dependsOn [collapse_reattach_goal] only: existsLocalLabels, cutMass_triangleVertices, minFace_linear_image/minFace_transport_consumer and their lemmas are declarations of the same owned file and are verified by the same kernel check, while the integrated original target collapse_reattach must stay in the host single-target projection or the frozen def triangleExpansion (whose loopless proof calls collapse_reattach) is pruned. STEP 1: run math.ts check-lean --workspace <problem dir> --file Submission.lean --timeout-seconds 0; record exitCode, firstBlocking and its position, timedOut, hasSorry, omittedMessages, sourceDigest and the file sha256. STEP 2: run the same check on the single-target projection for OAI.TriangleFace198.triangle_expansion_face with retainedGoals containing OAI.MatchingEntropyBounds.Refined.collapse_reattach (a .scratch/tmp projector reproducer is acceptable). STEP 3: if the projection reports an unknown identifier or 'Function expected at triangleExpansion', add the fully qualified _root_.OAI.MatchingEntropyBounds.Refined.triangleExpansion pin in the offending proof body, or inline exactly the pruned declaration as a local have inside triangle_expansion_face's own proof body; iterate until clean while keeping every frozen line byte-identical. STEP 4: if a fresh check exposes a genuine proof error, repair the earliest error only and re-run both checks. STEP 5: save and deliver the check JSON(s) plus the saved file sha256 and state any residue. Forbidden: sorry, admit, native_decide, unsafe, new axioms, edits to Submission/Library, and any external benchmark-answer source.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-994d84e5fad4ef06cccf88a3"
+          ]
+        },
+        {
+          "id": "expanded_matching_cut_route",
+          "objective": "Using the saved full-file-checked proof of OAI.TriangleFace198.cutMass_triangleVertices at commit b3c490e (helpers triangleTip_mem_triangleVertices, sum_inl_mem_triangleVertices, reattach_mem_triangleVertices, crosses_inl_iff, not_crosses_inr), produce and SAVE in Submission.lean a compiled draft of the tight-cut dichotomy: (i) the exact preflighted type of an `expanded_matching_cutMass_eq_one_or_three` stating that for every perfect matching M of H = triangleExpansion G c v, cutMass H (indicator H M) (triangleVertices v) = 1 or 3; (ii) the mass-1 characterization: an expanded perfect matching has cut mass 1 iff it equals f (old matching indicator) for a unique perfect matching of G. Proof input: with k = number of selected reattached (old incident) edges and t = number of selected triangle edges, each of the three tips is covered exactly once so k + 2t = 3; distinct triangle edges share a tip so t ≤ 1; the |V|-1-k remaining non-tip vertices must be matched among themselves, so k is odd; hence (k,t) = (1,1) or (3,0). Discriminating check: instantiate the K4 expansion (V = Fin 4, G complete, v = 0) and confirm both strata are nonempty, that the mass-1 stratum bijects with the 3 perfect matchings of K4, and that the mass-3 stratum contains the matching using all three reattached edges; if the count is wrong this instance exposes it. Report the exact declarations, the checked file hash and the remaining gap to f '' G.polytope = Q.",
+          "status": "pending",
+          "attempts": 1,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_correspondence_route",
+          "objective": "Derive and SAVE in Submission.lean a compiled generic minimal-face transport proof. Setting: A, B real vector spaces, P : Set A convex, R : Set B convex, f : A →ₗ[ℝ] B and Q := f '' P, with Q extreme in R, f injective, and a linear left inverse g with g (f x) = x for x ∈ P and f (g y) = y for y ∈ Q. Target shape: for x ∈ P, CanonicalFace198.minFace R (f x) = f '' CanonicalFace198.minFace P x. Prescribed argument to formalize, using CanonicalFace198.facesThrough/minFace as intersections: (a) Q is a face of R containing f x, hence minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q, using IsExtreme.trans and monotonicity plus restriction of an openSegment inside Q; (c) under the affine isomorphism P ≅ Q given by f and g, faces of Q correspond to faces of P through x, so the two intersections are images of each other. Deliverable: the exact preflighted type of the generic lemma (report it verbatim; do not adopt an unpinned statement), a saved compiled proof or the earliest exact blocking goal, and the concrete instantiation to triangle_face_goal (P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1}, f = localExtension G c v hc, g = oldRestriction) with its remaining hypotheses listed explicitly.",
+          "status": "pending",
+          "attempts": 1,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_transport",
+          "theorem": "OAI.TriangleFace198.minFace_linear_image",
+          "objective": "Prove the generic minimal-face transport that the main theorem's last conjunct instantiates. Intended consumer: triangle_face_goal, where P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1} = f '' P, f = localExtension G c v hc and g = oldRestriction. Proof route: (a) Q extreme in R contains f x, so minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q (IsExtreme.trans and IsExtreme.mono, plus open-segment restriction); (c) if F = minFace R (f x), then g '' F is a face of P through x: given g z = (1-t) a + t b with a, b ∈ P and 0 < t < 1, apply f to get f (g z) ∈ openSegment (f a) (f b) inside Q, use extremeness of F in R to get f a, f b ∈ F, then a = g (f a), b = g (f b) ∈ g '' F; hence minFace P x ⊆ g '' F and f '' minFace P x ⊆ F; (d) conversely f '' minFace P x is a face of R through f x, so minFace R (f x) ⊆ f '' minFace P x. Deliverable: the checked lemma in Submission.lean with a clean isolated host check, or the earliest exact blocking goal with its hypotheses.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-52eb210dfdd51fcf0b0ff553"
+          ]
+        },
+        {
+          "id": "selfcontained_draft_scaffold",
+          "objective": "Independently build the projection-robust variant of the complete proof at commit 1d410f2, in SCRATCH ONLY. Copy git show 1d410f2:generated/problem/Submission.lean to generated/problem/.scratch[local file] (do not edit canonical Submission.lean, do not delete or alter any frozen declaration). Inside the proof body of triangle_expansion_face, inline every new top-level helper that the proof references (cutLinear/cutLinear_apply/cutLinear_eq_sum, convexHull_section_eq, one_le_of_mem_convexHull, one_le_cutMass_indicator, one_le_cutMass_of_mem_polytope, convex_polytope_cut_eq_one, isExtreme_polytope_cut_eq_one, mass_one_generators_eq, cut_one_image_eq, oldPart/mem_oldPart/oldPart_perfect, indicator_eq_localExtension_of_mass_one, cutLinear_indicator_expandSet, localExtension_indicator_eq, image_polytope_subset_cut_one, coverEdge*, expandSet*, mem_openSegment_linear_image_iff, minFace_linear_image, minFace_transport_consumer) as local `have`s with the same statements, adjusting only scoping; leave the frozen declarations and any helper retained by the integrated dependencies local_labels_exists and cutMass_triangleVertices top-level. Compile the scratch file with the pinned check-lean (--file '.scratch[local file]') and iterate until firstBlocking is null and exitCode is 0. Deliverable: the scratch path, exact check-lean JSON summary (exitCode, firstBlocking, sourceDigest), the declaration-level diff versus the current canonical file, and the exact list of helpers that had to be inlined. Consumer: triangle_face_goal, whose engineer applies this scaffold to the canonical file. No benchmark or external answer sources; use only our own commits and Mathlib.",
+          "status": "pending",
+          "attempts": 1,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "draft_independent_audit",
+          "objective": "Independently audit our saved draft at commit 1d410f2 (generated/problem/Submission.lean, 58593 bytes) WITHOUT editing canonical sources. Checks: (1) run the pinned check-lean on a scratch copy and confirm exitCode 0, no `sorry`/`admit`, and no `native_decide`/`unsafe`; (2) diff every frozen original declaration (all 24 in the frozen order, especially the LooplessGraph structure, Incident, IsPerfectMatching, Matching, indicator, polytope, Crosses, cut, degree, cutMass, triangleTip, triangleCollapse, reattach, collapse_reattach, triangleExpansion, triangleVertices, facesThrough, minFace, LocalLabels, localEdge, localExtension, oldRestriction) against base commit 35d6ee0046d9523149a6be5dc818285338e8b8f4 and report any change; (3) confirm triangle_expansion_face's proof does not reference the target itself or any declaration that transitively assumes it (no circularity); (4) discriminating mathematical check: on the K4 expansion (V = Fin 4, complete graph, v = 0, three incident edges) verify that (a) every expanded perfect matching has cut mass 1 or 3, (b) the mass-1 stratum has exactly 3 matchings, each the image of a K4 perfect matching, (c) the mass-3 stratum has exactly 1 matching (the three reattached edges); re-run and record the existing .scratch[local file] evidence or replace it with a corrected finite computation and state the exact counts. Report any defect with file:line and the exact wrong statement; otherwise report PASS with the evidence JSON paths and hashes. Consumer: triangle_face_goal (audit before host acceptance). Advisory only.",
+          "status": "pending",
+          "attempts": 0,
+          "dependencies": [],
+          "receiptIds": []
+        }
+      ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
+      "review": {
+        "status": "pending",
+        "summary": ""
+      },
+      "events": [
+        {
+          "at": "2026-11-05T17:19:29.680Z",
+          "kind": "lean-check",
+          "taskId": "minface_transport",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T17:19:30.219Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T17:19:45.071Z",
+          "kind": "lean-check",
+          "taskId": "collapse_reattach_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T17:20:27.444Z",
+          "kind": "lean-check",
+          "taskId": "local_labels_exists",
+          "status": "failed"
+        },
+        {
+          "at": "2026-11-05T17:20:41.878Z",
+          "kind": "lean-check",
+          "taskId": "cutMass_triangleVertices",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T17:20:55.466Z",
+          "kind": "lean-check",
+          "taskId": "triangle_face_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T17:20:55.938Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    },
+    {
+      "runId": "d77dc453-baf2-4ffd-9afa-ae2af96decba",
+      "startedAt": "2026-11-05T18:12:47.952Z",
+      "finishedAt": "2026-11-05T19:00:11.664Z",
+      "phase": "finished",
+      "resultStatus": "evaluated_passed",
+      "turns": 18,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "collapse_reattach_goal",
+          "theorem": "OAI.MatchingEntropyBounds.Refined.collapse_reattach",
+          "objective": "Recheck the original frozen theorem collapse_reattach; its proof is already present in Submission.lean, so the consumer is the original acceptance declaration and the task only needs source preservation and a clean host check.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-f2bccded19cfaf639db7087f"
+          ]
+        },
+        {
+          "id": "local_labels_exists",
+          "theorem": "OAI.TriangleFace198.existsLocalLabels",
+          "objective": "Construct the labeling required by the main existential: from Fintype.card {e : E // G.Incident v e} = 3, choose an equivalence of the incident-edge subtype with Fin 3, define c on incident edges through it and arbitrarily elsewhere, and prove OAI.TriangleFace198.LocalLabels G v c. Intended consumer: triangle_face_goal, where this supplies c and hc.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-cbf78e5e33f10ef20c7c5fc8"
+          ]
+        },
+        {
+          "id": "cutMass_triangleVertices",
+          "theorem": "OAI.TriangleFace198.cutMass_triangleVertices",
+          "objective": "Prove the exact cut-mass decomposition for the triangle expansion: for every expanded weight vector y, the cut mass of y across the three tip vertices equals the sum of y on the old edges incident with v. This supplies the central quantitative bridge used by triangle_face_goal to show expanded perfect matchings have cut mass 1 or 3 and that Q is the cut hyperplane.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-0bc04e95aef9899cba3f1272"
+          ]
+        },
+        {
+          "id": "triangle_face_goal",
+          "theorem": "OAI.TriangleFace198.triangle_expansion_face",
+          "objective": "PUBLISHER TARGET verification/repair (mathematical route already complete in the owned file; frozen goal type unchanged). Canonical generated/problem/Submission.lean is 58554 bytes, sha256 1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450, identical to commit db4604e; grep finds no sorry/admit/native_decide/unsafe/axiom and every frozen declaration, header, import, namespace and definition body (including the frozen collapse_reattach proof) is byte-preserved. Do NOT restore older drafts (the 1d410f2 draft is superseded) and do not delete, reorder or rewrite helper declarations. The dependency route is now dependsOn [collapse_reattach_goal] only: existsLocalLabels, cutMass_triangleVertices, minFace_linear_image/minFace_transport_consumer and their lemmas are declarations of the same owned file and are verified by the same kernel check, while the integrated original target collapse_reattach must stay in the host single-target projection or the frozen def triangleExpansion (whose loopless proof calls collapse_reattach) is pruned. STEP 1: run math.ts check-lean --workspace <problem dir> --file Submission.lean --timeout-seconds 0; record exitCode, firstBlocking and its position, timedOut, hasSorry, omittedMessages, sourceDigest and the file sha256. STEP 2: run the same check on the single-target projection for OAI.TriangleFace198.triangle_expansion_face with retainedGoals containing OAI.MatchingEntropyBounds.Refined.collapse_reattach (a .scratch/tmp projector reproducer is acceptable). STEP 3: if the projection reports an unknown identifier or 'Function expected at triangleExpansion', add the fully qualified _root_.OAI.MatchingEntropyBounds.Refined.triangleExpansion pin in the offending proof body, or inline exactly the pruned declaration as a local have inside triangle_expansion_face's own proof body; iterate until clean while keeping every frozen line byte-identical. STEP 4: if a fresh check exposes a genuine proof error, repair the earliest error only and re-run both checks. STEP 5: save and deliver the check JSON(s) plus the saved file sha256 and state any residue. Forbidden: sorry, admit, native_decide, unsafe, new axioms, edits to Submission/Library, and any external benchmark-answer source.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "collapse_reattach_goal"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-7cc5e60d9ecf1e6109368a20"
+          ]
+        },
+        {
+          "id": "expanded_matching_cut_route",
+          "objective": "Using the saved full-file-checked proof of OAI.TriangleFace198.cutMass_triangleVertices at commit b3c490e (helpers triangleTip_mem_triangleVertices, sum_inl_mem_triangleVertices, reattach_mem_triangleVertices, crosses_inl_iff, not_crosses_inr), produce and SAVE in Submission.lean a compiled draft of the tight-cut dichotomy: (i) the exact preflighted type of an `expanded_matching_cutMass_eq_one_or_three` stating that for every perfect matching M of H = triangleExpansion G c v, cutMass H (indicator H M) (triangleVertices v) = 1 or 3; (ii) the mass-1 characterization: an expanded perfect matching has cut mass 1 iff it equals f (old matching indicator) for a unique perfect matching of G. Proof input: with k = number of selected reattached (old incident) edges and t = number of selected triangle edges, each of the three tips is covered exactly once so k + 2t = 3; distinct triangle edges share a tip so t ≤ 1; the |V|-1-k remaining non-tip vertices must be matched among themselves, so k is odd; hence (k,t) = (1,1) or (3,0). Discriminating check: instantiate the K4 expansion (V = Fin 4, G complete, v = 0) and confirm both strata are nonempty, that the mass-1 stratum bijects with the 3 perfect matchings of K4, and that the mass-3 stratum contains the matching using all three reattached edges; if the count is wrong this instance exposes it. Report the exact declarations, the checked file hash and the remaining gap to f '' G.polytope = Q.",
+          "status": "pending",
+          "attempts": 2,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_correspondence_route",
+          "objective": "Derive and SAVE in Submission.lean a compiled generic minimal-face transport proof. Setting: A, B real vector spaces, P : Set A convex, R : Set B convex, f : A →ₗ[ℝ] B and Q := f '' P, with Q extreme in R, f injective, and a linear left inverse g with g (f x) = x for x ∈ P and f (g y) = y for y ∈ Q. Target shape: for x ∈ P, CanonicalFace198.minFace R (f x) = f '' CanonicalFace198.minFace P x. Prescribed argument to formalize, using CanonicalFace198.facesThrough/minFace as intersections: (a) Q is a face of R containing f x, hence minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q, using IsExtreme.trans and monotonicity plus restriction of an openSegment inside Q; (c) under the affine isomorphism P ≅ Q given by f and g, faces of Q correspond to faces of P through x, so the two intersections are images of each other. Deliverable: the exact preflighted type of the generic lemma (report it verbatim; do not adopt an unpinned statement), a saved compiled proof or the earliest exact blocking goal, and the concrete instantiation to triangle_face_goal (P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1}, f = localExtension G c v hc, g = oldRestriction) with its remaining hypotheses listed explicitly.",
+          "status": "blocked",
+          "attempts": 4,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "minface_transport",
+          "theorem": "OAI.TriangleFace198.minFace_linear_image",
+          "objective": "Prove the generic minimal-face transport that the main theorem's last conjunct instantiates. Intended consumer: triangle_face_goal, where P = G.polytope, R = H.polytope, Q = {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1} = f '' P, f = localExtension G c v hc and g = oldRestriction. Proof route: (a) Q extreme in R contains f x, so minFace R (f x) ⊆ Q; (b) for F ⊆ Q, F is a face of R iff F is a face of Q (IsExtreme.trans and IsExtreme.mono, plus open-segment restriction); (c) if F = minFace R (f x), then g '' F is a face of P through x: given g z = (1-t) a + t b with a, b ∈ P and 0 < t < 1, apply f to get f (g z) ∈ openSegment (f a) (f b) inside Q, use extremeness of F in R to get f a, f b ∈ F, then a = g (f a), b = g (f b) ∈ g '' F; hence minFace P x ⊆ g '' F and f '' minFace P x ⊆ F; (d) conversely f '' minFace P x is a face of R through f x, so minFace R (f x) ⊆ f '' minFace P x. Deliverable: the checked lemma in Submission.lean with a clean isolated host check, or the earliest exact blocking goal with its hypotheses.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-cb3d5e2cba07d878edfccb74"
+          ]
+        },
+        {
+          "id": "selfcontained_draft_scaffold",
+          "objective": "Independently build the projection-robust variant of the complete proof at commit 1d410f2, in SCRATCH ONLY. Copy git show 1d410f2:generated/problem/Submission.lean to generated/problem/.scratch[local file] (do not edit canonical Submission.lean, do not delete or alter any frozen declaration). Inside the proof body of triangle_expansion_face, inline every new top-level helper that the proof references (cutLinear/cutLinear_apply/cutLinear_eq_sum, convexHull_section_eq, one_le_of_mem_convexHull, one_le_cutMass_indicator, one_le_cutMass_of_mem_polytope, convex_polytope_cut_eq_one, isExtreme_polytope_cut_eq_one, mass_one_generators_eq, cut_one_image_eq, oldPart/mem_oldPart/oldPart_perfect, indicator_eq_localExtension_of_mass_one, cutLinear_indicator_expandSet, localExtension_indicator_eq, image_polytope_subset_cut_one, coverEdge*, expandSet*, mem_openSegment_linear_image_iff, minFace_linear_image, minFace_transport_consumer) as local `have`s with the same statements, adjusting only scoping; leave the frozen declarations and any helper retained by the integrated dependencies local_labels_exists and cutMass_triangleVertices top-level. Compile the scratch file with the pinned check-lean (--file '.scratch[local file]') and iterate until firstBlocking is null and exitCode is 0. Deliverable: the scratch path, exact check-lean JSON summary (exitCode, firstBlocking, sourceDigest), the declaration-level diff versus the current canonical file, and the exact list of helpers that had to be inlined. Consumer: triangle_face_goal, whose engineer applies this scaffold to the canonical file. No benchmark or external answer sources; use only our own commits and Mathlib.",
+          "status": "blocked",
+          "attempts": 4,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "draft_independent_audit",
+          "objective": "Independently audit our saved draft at commit 1d410f2 (generated/problem/Submission.lean, 58593 bytes) WITHOUT editing canonical sources. Checks: (1) run the pinned check-lean on a scratch copy and confirm exitCode 0, no `sorry`/`admit`, and no `native_decide`/`unsafe`; (2) diff every frozen original declaration (all 24 in the frozen order, especially the LooplessGraph structure, Incident, IsPerfectMatching, Matching, indicator, polytope, Crosses, cut, degree, cutMass, triangleTip, triangleCollapse, reattach, collapse_reattach, triangleExpansion, triangleVertices, facesThrough, minFace, LocalLabels, localEdge, localExtension, oldRestriction) against base commit 35d6ee0046d9523149a6be5dc818285338e8b8f4 and report any change; (3) confirm triangle_expansion_face's proof does not reference the target itself or any declaration that transitively assumes it (no circularity); (4) discriminating mathematical check: on the K4 expansion (V = Fin 4, complete graph, v = 0, three incident edges) verify that (a) every expanded perfect matching has cut mass 1 or 3, (b) the mass-1 stratum has exactly 3 matchings, each the image of a K4 perfect matching, (c) the mass-3 stratum has exactly 1 matching (the three reattached edges); re-run and record the existing .scratch[local file] evidence or replace it with a corrected finite computation and state the exact counts. Report any defect with file:line and the exact wrong statement; otherwise report PASS with the evidence JSON paths and hashes. Consumer: triangle_face_goal (audit before host acceptance). Advisory only.",
+          "status": "blocked",
+          "attempts": 6,
+          "dependencies": [],
+          "receiptIds": []
+        }
+      ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
+      "review": {
+        "status": "accepted",
+        "summary": "The canonical Submission.lean preserves the frozen import, namespaces, declarations, and target statement; the tracked source changes are an inserted helper block plus replacement of the original target `sorry` by a kernel-checked proof. An independent stock `lake env lean` run on an exact copy exits 0 with no errors or sorry, and the host check returns exitCode 0 with captureComplete true. `#print axioms OAI.TriangleFace198.triangle_expansion_face` reports only [propext, Classical.choice, Quot.sound], with no sorryAx. The proof constructs c from hdeg using existsLocalLabels, proves the mass-one cut slice equals the linear image of G.polytope, establishes Convex and IsExtreme via the supporting cut functional, and discharges the minFace identity using minFace_linear_image. No frozen-constraint violation was found."
+      },
+      "events": [
+        {
+          "at": "2026-11-05T18:03:19.271Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T18:13:12.654Z",
+          "kind": "lean-check",
+          "taskId": "collapse_reattach_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T18:14:40.207Z",
+          "kind": "lean-check",
+          "taskId": "cutMass_triangleVertices",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T18:14:55.489Z",
+          "kind": "lean-check",
+          "taskId": "triangle_face_goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T18:15:52.011Z",
+          "kind": "lean-check",
+          "taskId": "local_labels_exists",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T18:16:06.117Z",
+          "kind": "lean-check",
+          "taskId": "minface_transport",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-11-05T18:19:49.260Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T18:25:47.740Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-11-05T18:36:06.087Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    }
+  ]
+}
