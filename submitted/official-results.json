@@ -1,0 +1,31 @@
+{
+  "schema": "theoremos.lean-eval-official-results.v1",
+  "submission_manifest_sha256": "86a2793979edca9d9577c149d8f4ff1157b6279cbcce7eb62aa78fffac181c8b",
+  "submission_url": "https://github.com/leanprover/lean-eval-submissions/issues/2144",
+  "result_url": "https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100",
+  "result_reported_at": "2026-10-16T19:07:41Z",
+  "result_author": "github-actions[bot]",
+  "result_body": "## Submission result\n\n✅ Newly-solved problems: annals_algebraic_integers, annals_improved_bounds_sunflower_lemma, annals_lorentzian_polynomials, annals_optimal_moebius\n\nAttempted 4 / 4; succeeded on 4.\n\n### Per-problem\n- `annals_algebraic_integers`: pass\n- `annals_improved_bounds_sunflower_lemma`: pass\n- `annals_lorentzian_polynomials`: pass\n- `annals_optimal_moebius`: pass",
+  "problems": [
+    {
+      "problem_id": "annals_improved_bounds_sunflower_lemma",
+      "statement_revision": 1,
+      "status": "official_accepted"
+    },
+    {
+      "problem_id": "annals_lorentzian_polynomials",
+      "statement_revision": 1,
+      "status": "official_accepted"
+    },
+    {
+      "problem_id": "annals_optimal_moebius",
+      "statement_revision": 1,
+      "status": "official_accepted"
+    },
+    {
+      "problem_id": "annals_algebraic_integers",
+      "statement_revision": 1,
+      "status": "official_accepted"
+    }
+  ]
+}

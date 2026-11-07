@@ -159,14 +159,13 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.6; }
 
 /* Who the product is for and what a run costs, before any demo. */
 .audience-section { padding-block: 88px; }
-.audience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.audience-card { display: flex; flex-direction: column; padding: 32px; background: var(--surface); border-radius: 14px; }
-.audience-card > svg { width: 24px; height: 24px; color: var(--blue); }
-.audience-card h3 { margin-top: 24px; font-size: var(--step-lead); }
+.audience-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px 8%; align-items: start; }
+.audience-card { min-width: 0; }
+.audience-card h3 { font-size: var(--step-lead); }
 .audience-card p { margin-top: 12px; font-size: 16px; }
 .audience-card code { font-size: .9em; }
-.audience-card .text-link { margin-top: auto; padding-top: 16px; }
-.audience-cost { background: var(--field-cyan); }
+.audience-card .text-link { margin-top: 12px; }
+.audience-cost { grid-column: 2; grid-row: 1 / span 2; padding: 28px 32px; background: var(--field-cyan); }
 /* A working replay owns its own instrument conventions. */
 .replay-section { padding-block: 48px 80px; background: var(--field-cyan); }
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 48px; margin-bottom: 48px; }
@@ -367,6 +366,7 @@ tr.proof-row { border-top: 1px solid var(--surface); }
 .footer-top a, .footer-bottom a { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; }
 .footer-top svg, .footer-bottom svg { width: 16px; height: 16px; }
 .footer-wordmark { padding-block: 32px; font-size: 192px; line-height: 1.1; font-weight: 500; }
+.faq-list details:not([open]) > :not(summary) { display: none; }
 .footer-bottom { flex-wrap: wrap; font-size: var(--step-small); }
 
 /* Dialogs float; page sections do not. */
@@ -407,7 +407,8 @@ tr.proof-row { border-top: 1px solid var(--surface); }
   .footer-wordmark { font-size: 144px; }
 }
 @media (max-width: 900px) {
-  .audience-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .audience-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .audience-cost { grid-column: auto; grid-row: auto; }
   :root { --margin: 24px; --step-display: 96px; --step-head: 40px; }
   .header-inner { height: 68px; gap: 20px; }
   .desktop-nav { display: none; }
@@ -464,9 +465,8 @@ tr.proof-row { border-top: 1px solid var(--surface); }
   .footer-wordmark { font-size: 104px; }
 }
 @media (max-width: 600px) {
-  .audience-section { padding-block: 56px; }
-  .audience-card { padding: 24px; }
-  .audience-card h3 { margin-top: 16px; }
+  .audience-section { padding-block: 80px 56px; }
+  .audience-cost { padding: 24px; }
   :root { --margin: 20px; --step-display: 56px; --step-head: 36px; --step-body: 16px; }
   .header-inner { height: 64px; gap: 12px; }
   .brand { font-size: 20px; }
@@ -616,10 +616,10 @@ tr.proof-row { border-top: 1px solid var(--surface); }
   .faq-list details[open] { padding: 16px; margin-inline: -16px; }
   .nav-start { display: none; }
 }
-/* App framing: the real workbench screenshot sits in a rounded window with a soft lift; buttons are rounded. */
-.workbench-image-link { border: 1px solid #e3e0d5; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 4px rgb(41 40 36 / 4%), 0 24px 48px -24px rgb(41 40 36 / 22%); transition: box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out); }
-.workbench-image-link:hover { box-shadow: 0 2px 4px rgb(41 40 36 / 5%), 0 30px 60px -26px rgb(41 40 36 / 28%); transform: translateY(-2px); }
-.preview-expand { border-radius: 12px; box-shadow: 0 1px 2px rgb(41 40 36 / 8%); }
+/* Preserve the product window shape; the screenshot supplies its own depth. */
+.workbench-image-link { border: 1px solid #e3e0d5; border-radius: 16px; overflow: hidden; transition: transform 220ms var(--ease-out); }
+.workbench-image-link:hover { transform: translateY(-2px); }
+.preview-expand { border-radius: 12px; }
 .workbench-preview figcaption { padding-top: 14px; }
 .button { border-radius: 12px; }
 .nav-start { border-radius: 10px; }
