@@ -1,0 +1,21 @@
+{
+  "target": "PlaneColoring",
+  "runId": "58e5a793-5940-4b38-aa6a-2a71ae0cac3f",
+  "targets": [
+    "OAI.Problem160.properColoring_seven"
+  ],
+  "proofCommit": "0571db4c10de8a17ba937c853f480284cbbb9642",
+  "proofSha256": "3e842122e50547b602873e71db599cc6782414fec9c60a08c664d43586341d12",
+  "kernelReceiptIds": [
+    "lean-a9016accc1b094f81c9dc7bd"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；当前接受运行未见外部数学编辑记录，保留已记录的历史续跑。",
+  "attributionEn": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+  "evidenceUrl": "data/proofs/openai_plane_coloring/verification.json",
+  "recordedAttribution": "",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "✔ [8924/8927] Built Submission (12s)\n⚠ [8926/8927] Built Challenge (3.1s)\nwarning: Challenge.lean:15:8: declaration uses `sorry`\nBuild completed successfully (8927 jobs).\nBuilding Challenge\n⚠ [8924/8925] Replayed Challenge\nwarning: Challenge.lean:15:8: declaration uses `sorry`\nBuild completed successfully (8925 jobs).\nExporting #[OAI.Problem160.properColoring_seven, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\nBuild completed successfully (8925 jobs).\nExporting #[OAI.Problem160.properColoring_seven, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

@@ -30,10 +30,10 @@
     <aside class="legal-toc" aria-label="On this page"><a href="#privacy">Privacy</a><a href="#workbench-data">Online workbench</a><a href="#retention">Retention and deletion</a><a href="#terms">Terms of use</a><a href="#contact">Contact</a></aside>
     <article class="legal-content">
       <h1>Privacy and terms</h1>
-      <p class="legal-updated">Updated 27 October 2026 · Applies to the research preview</p>
+      <p class="legal-updated">Updated 7 November 2026 · Applies to the allowlist beta</p>
       <ul class="legal-summary" aria-label="Summary">
-        <li>Your API key is never written to logs or run records. If you choose "Save to my account", it is stored encrypted on the server and only your account can use it; otherwise it exists only in memory while a run executes.</li>
-        <li>You sign in to the workbench (<a href="https://app.theoremos.top/">app.theoremos.top</a>) with a code sent to your email. During the preview only allowlisted addresses can sign in. Statements, sources and run records belong to your account and are all deleted when you delete it. Admins cannot see your statements, proofs or run records.</li>
+        <li>Keys never enter logs, drafts or run records. The natural-language entry keeps a key in page memory only. In advanced mode, “Save to my account” stores it encrypted on the server, where you can remove it at any time.</li>
+        <li>You sign in to the workbench (<a href="https://app.theoremos.top/">app.theoremos.top</a>) using an approved email address, with a code or a password you have set. Problems, conversations and runs are isolated by account. The admin panel provides no route to another account’s content; operators retain server maintenance access.</li>
         <li>The platform is free during the research preview. Model calls are billed by the provider you choose, to your API key.</li>
         <li>This site uses no cookies and no advertising trackers. GitHub access requests and feedback are public.</li>
       </ul>
@@ -49,18 +49,18 @@
 
       <section id="workbench-data" aria-labelledby="workbench-title">
         <h2 id="workbench-title">Online workbench</h2>
-        <p>The online workbench is at <a href="https://app.theoremos.top/">app.theoremos.top</a>. This section describes how it handles your data.</p>
+        <p>The online workbench is at <a href="https://app.theoremos.top/">app.theoremos.top</a>. This section summarizes its data handling. The workbench’s <a href="https://app.theoremos.top/privacy.html">privacy notice</a> and <a href="https://app.theoremos.top/terms.html">terms</a> carry the current version.</p>
         <h3>Account and sign-in</h3>
         <ul>
-          <li>You sign in with a one-time code sent to your email. There is no password. During the preview only approved addresses on the allowlist receive a code.</li>
-          <li>The server stores your email address, an account ID and the creation time (your first sign-in). We use the address only for sign-in codes and the research-end emails described below, send it no other mail and share it with no one. Mail is delivered by Alibaba Cloud DirectMail from login@mail.theoremos.top.</li>
+          <li>The allowlist beta currently admits approved email addresses only. Sign in with an email code or a password set after signing in, and accept the current terms before using the service.</li>
+          <li>The server stores email, account ID, creation time, terms consent version and time, and a password hash if you enable a password. Email is used for login, research notifications and terms notices, not marketing. Alibaba Cloud DirectMail processes recipient addresses and message content.</li>
           <li>Your account also records two times: when you first submitted a run and when a run first passed acceptance. During the preview we use these times to see whether onboarding works, mostly as totals and conversion rates. We do not record your clicks or page views. Both go when you delete your account.</li>
           <li>Before a code is sent you type a picture captcha. The workbench server draws it; no third-party bot check is used.</li>
           <li>After you sign in, the server sets a session cookie that is sent only over HTTPS and cannot be read by scripts. It keeps you signed in, belongs to the workbench only and is not used for tracking.</li>
         </ul>
         <h3>What admins can see</h3>
         <ul>
-          <li>The workbench admin page lists only: the addresses on the allowlist and where each came from, each account's email address with the times of its first sign-in, first submitted run and first accepted run, and totals built from these times.</li>
+          <li>The admin page shows allowlist sources, account details, status, first-use times and current allowance usage to manage access and capacity.</li>
           <li>The admin page neither shows nor offers any way to read an account's statements, sources, proofs, run records or API keys. When maintainers look at run records on the server is described under <a href="#retention">Retention and deletion</a>.</li>
         </ul>
         <h3>Research-end emails</h3>
@@ -73,15 +73,16 @@
         <h3>API keys</h3>
         <ul>
           <li>Your API key is submitted over HTTPS and passed to the isolated container for that run through a private input channel. It does not appear in container arguments or service logs.</li>
-          <li>Commands run by the agent do not receive the key in their environment. When a run finishes or is cancelled, the service clears the key from memory and deletes the container.</li>
+          <li>Agent commands do not receive keys in their environment. Task completion cleans up the isolated container and execution credentials. The current page may retain the key you entered in memory for the same conversation; refreshing clears it.</li>
           <li>If the key appears in model output or an error message, it is replaced with <code>[REDACTED]</code> before anything is saved.</li>
-          <li>The key is used only to call the model provider you select in the workbench. "Save to my account" under Model connection is ticked by default: the key is encrypted with AES-256-GCM and stored on the server, with the encryption key kept apart from the data. The ciphertext is bound to your account and the chosen provider address, so no other account can read or use it. The browser receives only the last four characters and keeps no key in browser storage.</li>
-          <li>Untick the box before submitting and the key is not saved. You can delete a saved key under Model connection at any time, and it is deleted with your account.</li>
+          <li>Keys access only your selected model provider, including model-list checks you request. The natural-language entry does not save keys automatically. Advanced mode offers “Save to my account” under Model connection, storing an AES-256-GCM encrypted key bound to your account and provider. Only the last four characters are shown; the server decrypts the key to make calls.</li>
+          <li>Without opting to save, no key enters persistent data. Remove saved keys under Model connection; deleting an account removes its live key records. Maintenance backup retention is described below.</li>
         </ul>
         <h3>Research records</h3>
         <p>The server stores the statement, task description and model settings you submit, along with the candidate sources, Lean checks, events and usage produced during the run. These records let you review runs and download archives in the workbench.</p>
+        <h3>Sharing</h3><p>A share link lets anyone holding it read the problem, proof, acceptance result, model, environment, duration and usage. It excludes keys, email, provider addresses, logs and Agent conversations. Revoking the link disables it.</p>
         <h3>Model providers</h3>
-        <p>During a run, the statement, sources and Lean feedback are sent as prompts to the model provider you choose. How the provider handles them is governed by its own privacy policy.</p>
+        <p>Runs and follow-up questions send relevant problems, source, conversations and Lean feedback to your selected model provider. Processing and retention follow that provider’s privacy policy. Select the provider and its key before sending.</p>
         <h3>Browser storage</h3>
         <p>Task drafts, a recovery copy of a replaced draft and panel widths are kept in session storage for the current tab and are cleared when you close it. Local storage holds only your interface language, your appearance choice (light or dark), the desktop notification setting, the run you last viewed (so the workbench reopens where you left off) and module plans you save to the local plan library. None of it contains your API key, and you can clear it in your browser settings.</p>
         <h3>Feedback from the workbench</h3>
@@ -93,8 +94,8 @@
         <ul>
           <li>Each account keeps up to 20 run records. You can delete finished runs in the workbench at any time.</li>
           <li>A sign-in expires after 30 days without use. You then sign in again, and your records are kept.</li>
-          <li>You can delete your account from the account menu in the workbench. Its email address, run records, archives, knowledge catalogs, server-side module plans and saved API keys are deleted at once, and running tasks are cancelled.</li>
-          <li>The maintainers look at run records only to investigate faults or abuse. Your statements and proofs are not used for any other purpose, sold or published.</li>
+          <li>Deleting an account immediately removes its live email, password, keys, runs, shares, archives, knowledge and module plans, and cancels its running tasks. To prevent allowance resets through account recreation, only a usage identifier, current-window counts and expiry remain, without email, account ID or content. They expire at the original window end, within 24 hours by default.</li>
+          <li>Operators may access server records for maintenance, backups, troubleshooting or abuse handling, without selling or publishing your content. Private maintenance backups are kept for at most 7 days and removed by operators, for recovery only. Live deletion does not rewrite them immediately. Recovery first uses an isolated directory; completed deletion requests must be checked again before reopening service.</li>
           <li>Upgrades during the research preview may require clearing data. We will announce this on this site in advance. Download the sources and archives you want to keep.</li>
         </ul>
       </section>
@@ -104,13 +105,13 @@
         <h3>Research preview</h3>
         <p>TheoremOS is a research preview provided as is. The service may be interrupted, rate limited or changed. There is no uptime guarantee and no guarantee that a proof will be found.</p>
         <h3>Costs</h3>
-        <p>The platform is free during the research preview. Model calls are billed to your API key, so set a spending limit with your provider. Usage from runs that fail, are cancelled or time out is billed by the provider as well.</p>
+        <p>The beta platform is free; your provider bills your API account for model calls. Defaults are 10 minutes / 400,000 tokens for formalization, then 5 minutes / 200,000 tokens for proof, adjustable before sending. Work stops on reported usage and requests in progress may exceed the cap; token budgets are not monetary caps. Calls already made are billed even if a task fails, is cancelled or times out.</p>
         <h3>Your content</h3>
         <p>The statements and sources you submit, and the proofs produced in your runs, remain yours. They appear in the public archive only if you choose to publish them. Submit only content you have the right to use, and do not submit secrets, personal data or confidential material.</p>
         <h3>Acceptable use</h3>
         <p>Do not try to break run isolation, attack the service or other users, or upload malicious code, and do not use the run environment for computation unrelated to mathematical research. Sessions that break these rules may be terminated.</p>
         <h3>Verification results</h3>
-        <p>Verdicts come from an independent Lean check. Review the sources and check records yourself before relying on a result in a paper, competition or other formal setting.</p>
+        <p>Independent Lean acceptance verifies the frozen Lean statement’s proof. Correspondence with the natural-language meaning is reviewed by models or confirmed by you and shown separately; Lean does not verify translation fidelity. Check the original meaning, source and receipts before relying on a result in a paper or competition.</p>
         <h3>Changes</h3>
         <p>This page may be updated as the service opens. Significant changes will be dated here and noted on the home page.</p>
       </section>

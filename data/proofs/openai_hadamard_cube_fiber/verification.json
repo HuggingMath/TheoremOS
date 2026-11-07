@@ -1,0 +1,21 @@
+{
+  "target": "HadamardCubeFiber",
+  "runId": "3f2c13eb-fbf3-47d4-bff5-aed2489d23aa",
+  "targets": [
+    "OAI.HadamardSix.rowRatio_cubeFiber_sum_zero"
+  ],
+  "proofCommit": "be3ac1e85859e7f88229dd3eab02a492b9ca2d5a",
+  "proofSha256": "d818e4c8217e53057b254f92285bb22930f2b47504ed68d7e8def9d2547fa3a1",
+  "kernelReceiptIds": [
+    "lean-56712d405ce90b7537a528c4"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；记录包含外部代理提供的独立数学辅助、已保存候选的交接或续跑。",
+  "attributionEn": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+  "evidenceUrl": "data/proofs/openai_hadamard_cube_fiber/verification.json",
+  "recordedAttribution": "",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "✔ [8924/8927] Built Submission (3.3s)\n⚠ [8926/8927] Built Challenge (2.9s)\nwarning: Challenge.lean:28:6: declaration uses `sorry`\nBuild completed successfully (8927 jobs).\nBuilding Challenge\n⚠ [8924/8925] Replayed Challenge\nwarning: Challenge.lean:28:6: declaration uses `sorry`\nBuild completed successfully (8925 jobs).\nExporting #[OAI.HadamardSix.rowRatio_cubeFiber_sum_zero, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\nBuild completed successfully (8925 jobs).\nExporting #[OAI.HadamardSix.rowRatio_cubeFiber_sum_zero, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

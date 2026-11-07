@@ -1,0 +1,21 @@
+{
+  "target": "TotientCompanionZero",
+  "runId": "41f80030-d1b0-4b66-acb6-3f0ddc1f26de",
+  "targets": [
+    "OAI.TotientAsymptotic.companion_zero_case"
+  ],
+  "proofCommit": "aa806af94c74165066e97791ffc34e05eaa416a3",
+  "proofSha256": "7d3509714928edd3f6b6a634c42d9dbeefd01c17a65d0e152fc09d97e6568a20",
+  "kernelReceiptIds": [
+    "lean-8ecef6aef371642566c229e1"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；记录包含外部代理提供的独立数学辅助、已保存候选的交接或续跑。",
+  "attributionEn": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+  "evidenceUrl": "data/proofs/openai_totient_companion_zero/verification.json",
+  "recordedAttribution": "Reuse of independently proved source, delivered and checked by the native runtime; no publisher solution access",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "✔ [8924/8927] Built Submission (3.1s)\n⚠ [8926/8927] Built Challenge (2.8s)\nwarning: Challenge.lean:95:8: declaration uses `sorry`\nBuild completed successfully (8927 jobs).\nBuilding Challenge\n⚠ [8924/8925] Replayed Challenge\nwarning: Challenge.lean:95:8: declaration uses `sorry`\nBuild completed successfully (8925 jobs).\nExporting #[OAI.TotientAsymptotic.companion_zero_case, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\nBuild completed successfully (8925 jobs).\nExporting #[OAI.TotientAsymptotic.companion_zero_case, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

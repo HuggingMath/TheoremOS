@@ -1,0 +1,70 @@
+{
+  "runs": [
+    {
+      "runId": "3f2c13eb-fbf3-47d4-bff5-aed2489d23aa",
+      "startedAt": "2026-10-22T19:21:36.545Z",
+      "finishedAt": "2026-10-22T19:37:43.061Z",
+      "phase": "finished",
+      "resultStatus": "evaluated_passed",
+      "turns": 4,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "initial_goal_1",
+          "theorem": "OAI.HadamardSix.rowRatio_cubeFiber_sum_zero",
+          "objective": "Deliver the full frozen original theorem using this independently kernel-, source-guard-, and sealed-publisher-comparator-checked reference. Preserve exact original imports, definitions, namespaces and target header. Copy mathematical proof into owned Submission.lean, run check-lean, publish ordinary proof delivery, then require native fixed review and all-target final evaluation. Do not count the external receipt as host acceptance. Reference source follows:\nimport Mathlib",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [],
+          "proofCommit": "84d892b38fd60e300a5c426d977042984aeebd81",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-23956e90813a4393b99198f9"
+          ]
+        }
+      ],
+      "review": {
+        "status": "accepted",
+        "summary": "The fixed candidate proves OAI.HadamardSix.rowRatio_cubeFiber_sum_zero with the frozen declaration type and imports. The proof derives the first and second moments from row orthogonality, uses unimodularity to get v * star v = 1, and applies the cubic-fibre indicator identity; it compiles with no sorry or admitted subgoal and depends only on propext, Classical.choice, and Quot.sound."
+      },
+      "events": [
+        {
+          "at": "2026-10-22T19:21:36.573Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T19:22:51.820Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_goal_1"
+        },
+        {
+          "at": "2026-10-22T19:22:51.821Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T19:30:11.276Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T19:30:32.404Z",
+          "kind": "lean-check",
+          "taskId": "initial_goal_1",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-22T19:30:32.463Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    }
+  ]
+}

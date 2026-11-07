@@ -1,0 +1,656 @@
+{
+  "runs": [
+    {
+      "runId": "458f1c41-ca2a-4b27-a49c-2830a9eb42e2",
+      "phase": "prepared",
+      "resultStatus": "runtime_error",
+      "turns": 0,
+      "workers": 4,
+      "tasks": [],
+      "events": []
+    },
+    {
+      "runId": "a5b5ce2c-97b9-49bd-ac15-1132ac22a460",
+      "startedAt": "2026-10-28T09:14:49.329Z",
+      "finishedAt": "2026-10-28T10:54:08.178Z",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 11,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "triPoint_def",
+          "theorem": "OAI.Problem160.triPoint",
+          "objective": "Define an explicit triangular-lattice point function triPoint a b, with u=(3/4,0) and v=(3/8,3*sqrt(3)/8), so that later geometry and covering lemmas share one lattice. The intended consumer is lattice_norm, covering and triColor_def.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [],
+          "proofCommit": "a1cb5d95597e86e83b25a6eba80b051d22bf0800",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-c5d9e721fd513394d8d11e57"
+          ]
+        },
+        {
+          "id": "triPoint_sanity",
+          "theorem": "OAI.Problem160.triPoint_sanity",
+          "objective": "Pin the declared lattice scale and metric: the squared distance from triPoint a b to triPoint 0 0 is (3/4)^2*(a^2+a*b+b^2). This catches a wrong scale or wrong lattice angle before covering and norm consumers use triPoint.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "triPoint_def"
+          ],
+          "proofCommit": "0fecf1ba90abadc3babd6fee88331afdf58cd0e2",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-143865d929022dd102df004d"
+          ]
+        },
+        {
+          "id": "colorOf_def",
+          "theorem": "OAI.Problem160.colorOf",
+          "objective": "Define the seven-valued lattice-coordinate color a-2b modulo 7 as a function ℤ → ℤ → Fin 7. The intended consumer is triColor_def and the congruence-kernel lemma colorOf_sanity.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [],
+          "proofCommit": "19c74ba92e89bd447722f5ca921960a92e32ae8d",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-b25928970481e2e2f3649391"
+          ]
+        },
+        {
+          "id": "colorOf_sanity",
+          "theorem": "OAI.Problem160.colorOf_sanity",
+          "objective": "Pin the modular meaning of colorOf: equality of colors is equivalent to 7 dividing (a-2b)-(c-2d). This is the exact interface used by sameColor_norm.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "colorOf_def"
+          ],
+          "proofCommit": "da3950b7baf29e7d5405fad2feaf764cb65422a8",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-c678a4711fc348cdd3d358d8"
+          ]
+        },
+        {
+          "id": "lattice_norm",
+          "theorem": "OAI.Problem160.lattice_norm",
+          "objective": "Prove the squared-distance formula for differences of triPoint values. This supplies the Eisenstein norm used by sameColor_dist_large and must use the chosen lattice basis orientation.",
+          "status": "pending",
+          "attempts": 2,
+          "dependencies": [
+            "triPoint_def",
+            "triPoint_sanity"
+          ],
+          "receiptIds": []
+        },
+        {
+          "id": "covering",
+          "theorem": "OAI.Problem160.covering",
+          "objective": "Prove the quantitative triangular-lattice covering lemma: every plane point is within 3/(4*sqrt 3) of triPoint a b for some integer coordinates. The first construction will reduce to a fundamental side-3/4 equilateral triangle and use the circumradius bound; the consumer is triColor_def and triColor_sanity.",
+          "status": "pending",
+          "attempts": 1,
+          "dependencies": [
+            "triPoint_def",
+            "triPoint_sanity"
+          ],
+          "receiptIds": []
+        },
+        {
+          "id": "triColor_def",
+          "theorem": "OAI.Problem160.triColor",
+          "objective": "Define the plane coloring by selecting, for each point, a covering lattice point via Classical.choose from covering and applying colorOf to its lattice coordinates. The intended consumer is triColor_sanity and proper_coloring.",
+          "status": "pending",
+          "attempts": 0,
+          "dependencies": [
+            "covering",
+            "colorOf_def"
+          ],
+          "receiptIds": []
+        },
+        {
+          "id": "triColor_sanity",
+          "theorem": "OAI.Problem160.triColor_sanity",
+          "objective": "Prove the defining property of triColor: it has a nearby lattice representative whose colorOf value is exactly the color. This connects covering and the selected coordinates for the final contradiction.",
+          "status": "pending",
+          "attempts": 0,
+          "dependencies": [
+            "triColor_def",
+            "covering",
+            "colorOf_sanity"
+          ],
+          "receiptIds": []
+        },
+        {
+          "id": "sameColor_norm",
+          "theorem": "OAI.Problem160.sameColor_norm",
+          "objective": "Show that two distinct lattice-coordinate pairs with the same color have Eisenstein norm-square at least 7. Substitute a-c=7k+2(b-d) and use positivity of the resulting integer factor; this is the arithmetic heart of the index-seven coloring.",
+          "status": "integrated",
+          "attempts": 2,
+          "dependencies": [
+            "colorOf_sanity"
+          ],
+          "proofCommit": "721ee2be07438c113d1281e1e31ac34105bf964c",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-93c68bfda531869bb366d5d4"
+          ]
+        },
+        {
+          "id": "sameColor_dist_large",
+          "theorem": "OAI.Problem160.sameColor_dist_large",
+          "objective": "Combine lattice_norm with sameColor_norm to prove the strict separation used by the final contradiction: distinct same-color lattice representatives are farther than 1 plus twice the covering radius. This is the direct input to proper_coloring.",
+          "status": "conditional",
+          "attempts": 2,
+          "dependencies": [
+            "lattice_norm",
+            "sameColor_norm"
+          ],
+          "proofCommit": "7a7a9bd60c5cd75d118c97742456e31766d1da03",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-f2e930299460d76e4c0a791a"
+          ]
+        },
+        {
+          "id": "proper_coloring",
+          "theorem": "OAI.Problem160.proper_coloring",
+          "objective": "Prove that triColor is a proper unit-distance coloring: take the nearby representatives from triColor_sanity; equal colors either force the same representative and distance below 1, or distinct representatives and distance above 1, contradicting distance one.",
+          "status": "pending",
+          "attempts": 0,
+          "dependencies": [
+            "triColor_sanity",
+            "sameColor_dist_large"
+          ],
+          "receiptIds": []
+        },
+        {
+          "id": "goal",
+          "theorem": "OAI.Problem160.properColoring_seven",
+          "objective": "Close the frozen target by supplying triColor and proper_coloring as the required witness and proof for ProperColoring 7.",
+          "status": "pending",
+          "attempts": 0,
+          "dependencies": [
+            "proper_coloring"
+          ],
+          "receiptIds": []
+        }
+      ],
+      "events": [
+        {
+          "at": "2026-10-28T09:14:49.355Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:24:56.198Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:28:24.447Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:28:46.104Z",
+          "kind": "lean-check",
+          "taskId": "triPoint_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T09:28:46.166Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:35:25.695Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:35:49.827Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:35:54.296Z",
+          "kind": "lean-check",
+          "taskId": "colorOf_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T09:35:54.355Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:36:19.045Z",
+          "kind": "lean-check",
+          "taskId": "triPoint_sanity",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T09:36:19.106Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:37:11.687Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:37:24.157Z",
+          "kind": "lean-check",
+          "taskId": "colorOf_sanity",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T09:37:24.216Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:48:52.040Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T09:49:19.782Z",
+          "kind": "lean-check",
+          "taskId": "sameColor_norm",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T09:49:19.846Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T10:40:37.329Z",
+          "kind": "lean-check",
+          "taskId": "sameColor_dist_large",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T10:40:37.391Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    },
+    {
+      "runId": "58e5a793-5940-4b38-aa6a-2a71ae0cac3f",
+      "startedAt": "2026-10-28T11:10:12.218Z",
+      "finishedAt": "2026-10-28T13:26:18.865Z",
+      "phase": "finished",
+      "resultStatus": "evaluated_passed",
+      "turns": 13,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "triPoint_def",
+          "theorem": "OAI.Problem160.triPoint",
+          "objective": "Define an explicit triangular-lattice point function triPoint a b, with u=(3/4,0) and v=(3/8,3*sqrt(3)/8), so that later geometry and covering lemmas share one lattice. The intended consumer is lattice_norm, covering and triColor_def.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-9d5747c0d599fe06d370428d"
+          ]
+        },
+        {
+          "id": "triPoint_sanity",
+          "theorem": "OAI.Problem160.triPoint_sanity",
+          "objective": "Pin the declared lattice scale and metric: the squared distance from triPoint a b to triPoint 0 0 is (3/4)^2*(a^2+a*b+b^2). This catches a wrong scale or wrong lattice angle before covering and norm consumers use triPoint.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "triPoint_def"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-2bcbbbe19cecfe98f3e39c4f"
+          ]
+        },
+        {
+          "id": "colorOf_def",
+          "theorem": "OAI.Problem160.colorOf",
+          "objective": "Define the seven-valued lattice-coordinate color a-2b modulo 7 as a function ℤ → ℤ → Fin 7. The intended consumer is triColor_def and the congruence-kernel lemma colorOf_sanity.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-9349de32615666ac0c4c551e"
+          ]
+        },
+        {
+          "id": "colorOf_sanity",
+          "theorem": "OAI.Problem160.colorOf_sanity",
+          "objective": "Pin the modular meaning of colorOf: equality of colors is equivalent to 7 dividing (a-2b)-(c-2d). This is the exact interface used by sameColor_norm.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "colorOf_def"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-a8c489899d8c8e908d392a24"
+          ]
+        },
+        {
+          "id": "lattice_norm",
+          "theorem": "OAI.Problem160.lattice_norm",
+          "objective": "Prove the squared-distance formula for differences of triPoint values. This supplies the Eisenstein norm used by sameColor_dist_large and must use the chosen lattice basis orientation.",
+          "status": "integrated",
+          "attempts": 2,
+          "dependencies": [
+            "triPoint_def",
+            "triPoint_sanity"
+          ],
+          "proofCommit": "e3d18eadb95bb7c2d7b4f73e6336ad96cc077a2a",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-d97e0df511ab0d8ff32937d1"
+          ]
+        },
+        {
+          "id": "covering",
+          "theorem": "OAI.Problem160.covering",
+          "objective": "Prove the quantitative triangular-lattice covering lemma: every plane point is within 3/(4*sqrt 3) of triPoint a b for some integer coordinates. The first construction will reduce to a fundamental side-3/4 equilateral triangle and use the circumradius bound; the consumer is triColor_def and triColor_sanity.",
+          "status": "integrated",
+          "attempts": 4,
+          "dependencies": [
+            "triPoint_def",
+            "triPoint_sanity"
+          ],
+          "proofCommit": "845a39e20a154df18037dd36b7f4465773c3df97",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-75066afcdec3e9429acfecc6"
+          ]
+        },
+        {
+          "id": "triColor_def",
+          "theorem": "OAI.Problem160.triColor",
+          "objective": "Define the plane coloring by selecting, for each point, a covering lattice point via Classical.choose from covering and applying colorOf to its lattice coordinates. The intended consumer is triColor_sanity and proper_coloring.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "covering",
+            "colorOf_def"
+          ],
+          "proofCommit": "c516fbc0bc7767f8abc989dc37baf04d3e904646",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-fe05622af6651609586858fc"
+          ]
+        },
+        {
+          "id": "triColor_sanity",
+          "theorem": "OAI.Problem160.triColor_sanity",
+          "objective": "Prove the defining property of triColor: it has a nearby lattice representative whose colorOf value is exactly the color. This connects covering and the selected coordinates for the final contradiction.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "triColor_def",
+            "covering",
+            "colorOf_sanity"
+          ],
+          "proofCommit": "f86164954cce3f610d5ec8fb5b7628f700f075e6",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-722d92a0bc6ae068f2ed4478"
+          ]
+        },
+        {
+          "id": "sameColor_norm",
+          "theorem": "OAI.Problem160.sameColor_norm",
+          "objective": "Show that two distinct lattice-coordinate pairs with the same color have Eisenstein norm-square at least 7. Substitute a-c=7k+2(b-d) and use positivity of the resulting integer factor; this is the arithmetic heart of the index-seven coloring.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "colorOf_sanity"
+          ],
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-58f7bae2fac598809fd4c932"
+          ]
+        },
+        {
+          "id": "sameColor_dist_large",
+          "theorem": "OAI.Problem160.sameColor_dist_large",
+          "objective": "Combine lattice_norm with sameColor_norm to prove the strict separation used by the final contradiction: distinct same-color lattice representatives are farther than 1 plus twice the covering radius. This is the direct input to proper_coloring.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "lattice_norm",
+            "sameColor_norm"
+          ],
+          "proofCommit": "5e69281cc91ef9c038be7daecdc869c118566f82",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-af2ccf20252200c7dbef828c"
+          ]
+        },
+        {
+          "id": "proper_coloring",
+          "theorem": "OAI.Problem160.proper_coloring",
+          "objective": "Prove that triColor is a proper unit-distance coloring: take the nearby representatives from triColor_sanity; equal colors either force the same representative and distance below 1, or distinct representatives and distance above 1, contradicting distance one.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "triColor_sanity",
+            "sameColor_dist_large"
+          ],
+          "proofCommit": "16935f99a310d596edba8e9289c30d52874b3d01",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-0e3aa38033ba4b216fb02f00"
+          ]
+        },
+        {
+          "id": "goal",
+          "theorem": "OAI.Problem160.properColoring_seven",
+          "objective": "Close the frozen target by supplying triColor and proper_coloring as the required witness and proof for ProperColoring 7.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "proper_coloring"
+          ],
+          "proofCommit": "8cfd1c904059e2522b3285191a40edb3109eec2a",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-56a4548aa34099f5b470b29f"
+          ]
+        }
+      ],
+      "review": {
+        "status": "accepted",
+        "summary": "Independent review of the frozen source and compiled proof: generated/problem/Submission.lean preserves the original import, namespace, declaration headers, Plane definition, ProperColoring definition, and final target header. The only original proof hole, OAI.Problem160.properColoring_seven, is closed by the term <triColor, proper_coloring>. check-lean on Submission.lean exited 0 with no messages (sourceDigest 7e5ba6c637ae02397d7321ac1d5a8e169d8e226513a3cb3389a8e0c217ed6e73, environmentDigest d0f454a68f7cca9567c3a99deb9a987184a5bb39b553fc96228ef3ac3d490be3, captureComplete true). An independent axiom probe importing Submission reports for properColoring_seven exactly [propext, Classical.choice, Quot.sound]; no sorry, admit, native_decide, unsafe, or new axiom is present. The proof is the triangular-lattice seven-coloring: every point lies within r = 3/(4*sqrt 3) of a lattice point, r < 1/2, and distinct same-colored lattice points have squared distance at least (3/4)^2*7 > (1+2r)^2, so the triangle inequality rules out equal colors at unit distance. This establishes the frozen conclusion ProperColoring 7 without extra assumptions."
+      },
+      "events": [
+        {
+          "at": "2026-10-28T11:07:23.496Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T11:07:36.621Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T11:10:34.668Z",
+          "kind": "lean-check",
+          "taskId": "triPoint_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:10:34.668Z",
+          "kind": "lean-check",
+          "taskId": "triPoint_sanity",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:10:34.668Z",
+          "kind": "lean-check",
+          "taskId": "colorOf_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:10:34.668Z",
+          "kind": "lean-check",
+          "taskId": "colorOf_sanity",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:10:34.668Z",
+          "kind": "lean-check",
+          "taskId": "sameColor_norm",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:22:02.503Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T11:22:13.964Z",
+          "kind": "lean-check",
+          "taskId": "lattice_norm",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:22:14.026Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T11:22:39.567Z",
+          "kind": "lean-check",
+          "taskId": "sameColor_dist_large",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T11:22:39.626Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:27:33.695Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:27:45.949Z",
+          "kind": "lean-check",
+          "taskId": "covering",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T12:27:46.022Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:51:52.605Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:52:21.656Z",
+          "kind": "lean-check",
+          "taskId": "triColor_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T12:52:21.736Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:53:21.843Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:53:34.686Z",
+          "kind": "lean-check",
+          "taskId": "triColor_sanity",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T12:53:34.766Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T12:57:11.499Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T13:11:08.625Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T13:11:21.351Z",
+          "kind": "lean-check",
+          "taskId": "proper_coloring",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T13:11:21.426Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T13:11:53.935Z",
+          "kind": "lean-check",
+          "taskId": "goal",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T13:11:54.030Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    }
+  ]
+}

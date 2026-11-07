@@ -1,0 +1,21 @@
+{
+  "target": "CartierChartCompactnessSupport",
+  "runId": "25c5cc6c-ec05-439c-bb42-7dd1ebeea45f",
+  "targets": [
+    "OAI.CartierSections.isCompact_closedChartFieldRetraction_cone"
+  ],
+  "proofCommit": "5e16b35636c3fbb0aa5cdf79434569e21d87253a",
+  "proofSha256": "3f4987016064040ed126b75de0aea0dfa6b2bf74b7dd22dfa1722b7fcc525963",
+  "kernelReceiptIds": [
+    "lean-3b7553e3de12231da641a1e5"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；记录包含外部代理提供的独立数学辅助、已保存候选的交接或续跑。",
+  "attributionEn": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+  "evidenceUrl": "data/proofs/openai_cartier_chart_compactness_support/verification.json",
+  "recordedAttribution": "Reuse of independently proved source, delivered and checked by the native runtime; no publisher solution access",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "✔ [1584/1617] Built OAI.AlgebraicGeometry.CartierSections.PolynomialValuation (1.3s)\n✔ [1614/1932] Built OAI.AlgebraicGeometry.CartierSections.FormalValuation (1.5s)\n✔ [3113/3119] Built OAI.AlgebraicGeometry.CartierSections.FractionValuation (1.1s)\n✔ [3115/3119] Built OAI.AlgebraicGeometry.CartierSections.Weights (1.7s)\n✔ [3116/3119] Built OAI.AlgebraicGeometry.CartierSections.ExpansionValuation (1.5s)\n✔ [3117/3119] Built OAI.AlgebraicGeometry.CartierSections.ConeTopology (1.6s)\n✔ [3118/3159] Built OAI.AlgebraicGeometry.CartierSections.FieldTopology (1.5s)\n✔ [3155/3241] Built OAI.AlgebraicGeometry.CartierSections.InfinitesimalCharts (1.6s)\n✔ [3241/3290] Built OAI.AlgebraicGeometry.CartierSections.ChartCompletion (2.2s)\n✔ [3284/3290] Built OAI.AlgebraicGeometry.CartierSections.ClosedCharts (1.7s)\n✔ [3285/3290] Built OAI.AlgebraicGeometry.CartierSections.ChartRetraction (1.0s)\n✔ [3286/3290] Built OAI.AlgebraicGeometry.CartierSections.FieldRetraction (1.7s)\n✔ [3287/3290] Built Submission (1.7s)\n⚠ [3289/3290] Built Challenge (1.5s)\nwarning: Challenge.lean:25:6: declaration uses `sorry`\nBuild completed successfully (3290 jobs).\nBuilding Challenge\n⚠ [3287/3288] Replayed Challenge\nwarning: Challenge.lean:25:6: declaration uses `sorry`\nBuild completed successfully (3288 jobs).\nExporting #[OAI.CartierSections.isCompact_closedChartFieldRetraction_cone, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\nBuild completed successfully (3288 jobs).\nExporting #[OAI.CartierSections.isCompact_closedChartFieldRetraction_cone, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

@@ -1,0 +1,21 @@
+{
+  "target": "FiniteCongruenceGraph",
+  "runId": "24910705-72c7-4d57-9d54-d8c3d6cb4e2e",
+  "targets": [
+    "OAI.FiniteCongruence.graph_criterion"
+  ],
+  "proofCommit": "01ed741391d019c9dc0029aecb7caa618152a0e8",
+  "proofSha256": "6b32441db35b95aed73a9f7acdb44c57bc0f5c3e1556113478e96f921b022a3f",
+  "kernelReceiptIds": [
+    "lean-62d0a01bd5f9297b85941d84"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；当前接受运行未见外部数学编辑记录，保留已记录的历史续跑。",
+  "attributionEn": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+  "evidenceUrl": "data/proofs/openai_finite_congruence_graph/verification.json",
+  "recordedAttribution": "",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "⚠ [672/742] Built Challenge (1.6s)\nwarning: Challenge.lean:57:8: declaration uses `sorry`\n⚠ [741/742] Built Submission (1.4s)\nwarning: Submission.lean:212:10: `if_neg` has been deprecated: Use `ite_eq_right` instead\nBuild completed successfully (742 jobs).\nBuilding Challenge\n⚠ [672/673] Replayed Challenge\nwarning: Challenge.lean:57:8: declaration uses `sorry`\nBuild completed successfully (673 jobs).\nExporting #[OAI.FiniteCongruence.graph_criterion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\n⚠ [739/740] Replayed Submission\nwarning: Submission.lean:212:10: `if_neg` has been deprecated: Use `ite_eq_right` instead\nBuild completed successfully (740 jobs).\nExporting #[OAI.FiniteCongruence.graph_criterion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

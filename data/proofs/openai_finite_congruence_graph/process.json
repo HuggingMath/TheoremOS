@@ -1,0 +1,457 @@
+{
+  "runs": [
+    {
+      "runId": "329ca17e-3281-448f-96b1-ca7a57605685",
+      "phase": "prepared",
+      "resultStatus": "runtime_error",
+      "turns": 0,
+      "workers": 4,
+      "tasks": [],
+      "events": []
+    },
+    {
+      "runId": "8d6b294c-e651-4a67-bde7-45c7c66c3e93",
+      "startedAt": "2026-10-28T11:06:54.067Z",
+      "finishedAt": "2026-10-28T11:09:02.373Z",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 1,
+      "workers": 4,
+      "tasks": [],
+      "events": [
+        {
+          "at": "2026-10-28T11:06:54.101Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    },
+    {
+      "runId": "24910705-72c7-4d57-9d54-d8c3d6cb4e2e",
+      "startedAt": "2026-10-28T15:23:41.533Z",
+      "finishedAt": "2026-10-28T15:52:23.095Z",
+      "phase": "finished",
+      "resultStatus": "evaluated_passed",
+      "turns": 26,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "graph_criterion",
+          "theorem": "OAI.FiniteCongruence.graph_criterion",
+          "objective": "Prove the frozen acceptance theorem OAI.FiniteCongruence.graph_criterion: for every finite lattice with bottom, Representable Lat iff HasGraphWitness Lat. It is the sole original target and the consumer of the two checked direction lemmas through graph_criterion_from_directions; do not replace it by a renamed statement.",
+          "status": "integrated",
+          "attempts": 2,
+          "dependencies": [],
+          "proofCommit": "274e2700624663151d574461f48a217027853a2a",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-ea8c49a04288e260c1578429"
+          ]
+        },
+        {
+          "id": "polyCompatible_def",
+          "theorem": "OAI.FiniteCongruence.PolyCompatible",
+          "objective": "Define OAI.FiniteCongruence.PolyCompatible alg f as the property that every congruence θ preserves the unary map f: ∀ θ u v, θ.1 u v → θ.1 (f u) (f v). This is the key closure notion for unary polynomial translations in the representable→witness direction. Intended consumers: polyCompatible_sanity, poly_generated_eqvGen, principal_isGraphWitness. The body must be a definition, not an axiom or an assumption.",
+          "status": "integrated",
+          "attempts": 2,
+          "dependencies": [],
+          "proofCommit": "85d5c93550ff39db32a97b466bd469b9bf49b454",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-0642fae79b17b0a3ba4ea1a4"
+          ]
+        },
+        {
+          "id": "polyCompatible_sanity",
+          "theorem": "OAI.FiniteCongruence.polyCompatible_sanity",
+          "objective": "Pin the new PolyCompatible definition by proving that the identity unary map is compatible with every congruence and that the composition of two compatible unary maps is compatible. This supplies the closure operations used by poly_generated_eqvGen; it is intentionally a small sanity lemma for the definition task.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "polyCompatible_def"
+          ],
+          "proofCommit": "76065babad33702f20f96959d86bbc34b7f52533",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-6d1374a843b6c9d76a29e8ee"
+          ]
+        },
+        {
+          "id": "principal_def",
+          "theorem": "OAI.FiniteCongruence.Principal",
+          "objective": "Define OAI.FiniteCongruence.Principal alg x y as the least congruence containing the pair (x,y), implemented as the intersection over all congruences θ with θ.1 x y: relation a b ↦ ∀ θ, θ.1 x y → θ.1 a b. Intended consumers: principal_rel_iff and principal_isGraphWitness. The body must construct an actual Setoid and Compatible proof; no minimization axiom may be assumed.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [],
+          "proofCommit": "2b2324aea7ca6510e077ead37d84897c10dbd6e7",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-86bbc596f57f13db7c1011e7"
+          ]
+        },
+        {
+          "id": "principal_rel_iff",
+          "theorem": "OAI.FiniteCongruence.principal_rel_iff",
+          "objective": "Characterize the definition task Principal: prove (Principal alg x y).1 a b iff every congruence θ containing (x,y) also contains (a,b). This is the sanity and elimination lemma that turns minimality of principal congruences into relation membership; intended consumer: principal_isGraphWitness. First check the reflexive/symmetric/transitive congruence proof and the x y witness at the empty/singleton cases.",
+          "status": "integrated",
+          "attempts": 0,
+          "dependencies": [
+            "principal_def"
+          ],
+          "proofCommit": "e7bcd63fd780bc5c429e1ce3b8917178ad39743f",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-9cecb6ecb05a45f743190edd"
+          ]
+        },
+        {
+          "id": "poly_generated_eqvGen",
+          "theorem": "OAI.FiniteCongruence.poly_generated_eqvGen",
+          "objective": "Prove the universal-algebra generation core for the reverse direction. Let S be a finite set of seed pairs and suppose (a,b) lies in every congruence containing all of S. Show (a,b) is in Relation.EqvGen of the pairs obtained by applying a PolyCompatible unary map to an edge of S. First construction: let R be that unary-translate relation and prove EqvGen R is itself a congruence by using coordinate unary maps f_i(x)=op(...,x,...) and the id/composition sanity lemma; then apply the hypothesis to EqvGen R. This is the exact bridge from principal-congruence joins to Marked chains; consumer: principal_isGraphWitness. Test first with S empty and S a singleton.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "polyCompatible_def",
+            "polyCompatible_sanity"
+          ],
+          "proofCommit": "d03ab9bf575c547ca6e99f90c2987dcd97332f48",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-690a8d7f8265dd9dff37753b"
+          ]
+        },
+        {
+          "id": "witness_representable",
+          "theorem": "OAI.FiniteCongruence.witness_representable",
+          "objective": "Prove the witness→representable direction directly from an IsGraphWitness color on Fin n, n>0. First construction: for a:Lat define the relation rho a x y := color x y ≤ a using the first three witness clauses for equivalence; build the algebra whose operations are all admissible unary self-maps of Fin n (classical finite subtype enumeration; use a Fintype.equivFin-style enumeration of the subtype). Prove rho a is compatible, every congruence θ equals rho of the finite supremum of color over θ-related pairs by the fifth witness clause, and a↦rho a is an order isomorphism by the separation clause. This is the exact direction lemma consumed by graph_criterion_from_directions; keep the construction data inside this task.",
+          "status": "integrated",
+          "attempts": 4,
+          "dependencies": [],
+          "proofCommit": "760c57c722077e3cc4733bdc2edd632dbf3f5282",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-52cf7c41bf54725dd0ceea4c"
+          ]
+        },
+        {
+          "id": "principal_isGraphWitness",
+          "theorem": "OAI.FiniteCongruence.principal_isGraphWitness",
+          "objective": "Prove that the principal-congruence coloring is a graph witness. Given n>0, an algebra on Fin n and an order isomorphism e : Lat ≃o Congruence alg, set color x y := e.symm (Principal alg x y). Establish symmetry and bottom separation, the latter from principal_bot_iff, the triangle inequality by mapping color x z ⊔ color z y forward and using that every congruence containing (x,z) and (z,y) contains (x,y), witness separation from two distinct congruences on a pair, and the fifth connectivity axiom by applying poly_generated_eqvGen to the seed set, identifying e(s) with the least congruence containing the seeds and using PolyCompatible maps as Marked placements. Consumer: representable_witness. The n>0 premise is essential: for Fin 0 the separation axiom is impossible for nontrivial Lat.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "principal_def",
+            "principal_rel_iff",
+            "principal_bot_iff",
+            "poly_generated_eqvGen"
+          ],
+          "proofCommit": "285a06e13d428cf2a3624891ee12d6d7d5c2da1f",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-8a148eaa4cca7e8498c8b577"
+          ]
+        },
+        {
+          "id": "representable_witness",
+          "theorem": "OAI.FiniteCongruence.representable_witness",
+          "objective": "Unpack Representable Lat as a positive size, a finite algebra on Fin size and an order isomorphism e, then apply principal_isGraphWitness with the positivity witness to obtain HasGraphWitness Lat with the same nonempty size. This is the exact reverse direction consumed by graph_criterion_from_directions; no new mathematical construction should be needed once its dependency is checked.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "principal_isGraphWitness"
+          ],
+          "proofCommit": "5f0364db5e9a5a23aa3d4772028a82955739cb13",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-4a781ede9c87bc19f00be0c0"
+          ]
+        },
+        {
+          "id": "graph_criterion_from_directions",
+          "theorem": "OAI.FiniteCongruence.graph_criterion_from_directions",
+          "objective": "Close the two-direction route: prove the frozen equivalence by combining witness_representable (HasGraphWitness→Representable) and representable_witness (Representable→HasGraphWitness). This closing lemma has exactly the original target type and is the lemma the original goal must reference; consumer: graph_criterion via the two_directions proof route.",
+          "status": "integrated",
+          "attempts": 2,
+          "dependencies": [
+            "witness_representable",
+            "representable_witness"
+          ],
+          "proofCommit": "fb94b438d322bd42081686986c215fefc73716ea",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-4fefd21fc0641b5937958427"
+          ]
+        },
+        {
+          "id": "principal_bot_iff",
+          "theorem": "OAI.FiniteCongruence.principal_bot_iff",
+          "objective": "Sharpen the principal-congruence construction: prove that the principal congruence generated by (x,y) is bottom exactly when x = y. Use principal_rel_iff and the fact that the bottom congruence is equality, while Principal alg x y contains (x,y). Intended consumer: principal_isGraphWitness, where this is exactly the bottom-separation field of IsGraphWitness; it also independently sanity-checks Principal before the long reverse-direction proof.",
+          "status": "integrated",
+          "attempts": 1,
+          "dependencies": [
+            "principal_def",
+            "principal_rel_iff"
+          ],
+          "proofCommit": "86d6ec52039e0ee13efe6169a6ff0ce7f48d5e05",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-c8a1154035cf57b2f5fcc0fb"
+          ]
+        }
+      ],
+      "review": {
+        "status": "accepted",
+        "summary": "The fixed Submission.lean proves the exact publisher target OAI.FiniteCongruence.graph_criterion (same binders and statement as the frozen source) via the previously checked direction lemmas and graph_criterion_from_directions. The saved source has no sorry, admit, native_decide, unsafe, or new axiom; it compiles successfully, and #print axioms for graph_criterion is [propext, Classical.choice, Quot.sound]. All frozen definitions, declaration kinds, headers, namespaces, and existing imports are preserved; only allowed Mathlib imports and helper declarations were added, and the original proof hole was replaced by an exact proof term. Checked at worktree HEAD 0336c9fbb3e415128a8365fe6045324a9cb11b83 with Submission.lean SHA-256 6b32441db35b95aed73a9f7acdb44c57bc0f5c3e1556113478e96f921b022a3f."
+      },
+      "events": [
+        {
+          "at": "2026-10-28T13:38:57.329Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T13:46:01.258Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T13:52:02.176Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T13:54:02.288Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:06:33.927Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:14:45.006Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:54:10.710Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:54:20.080Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:54:34.110Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:54:39.596Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:58:58.872Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T14:59:03.681Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:02:36.945Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:02:44.781Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:03:00.403Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:03:05.234Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:07:53.698Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:08:01.515Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:10:09.990Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:10:18.689Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:13:41.756Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:13:51.695Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:17:46.586Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:17:55.066Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:23:54.893Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:35:46.075Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:35:54.378Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:37:47.152Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:37:52.021Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-28T15:38:57.315Z",
+          "kind": "lean-check",
+          "taskId": "graph_criterion",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "polyCompatible_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "polyCompatible_sanity",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "principal_def",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "principal_rel_iff",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "poly_generated_eqvGen",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "witness_representable",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "principal_isGraphWitness",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "representable_witness",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "graph_criterion_from_directions",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:06.993Z",
+          "kind": "lean-check",
+          "taskId": "principal_bot_iff",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-28T15:39:07.379Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    }
+  ]
+}

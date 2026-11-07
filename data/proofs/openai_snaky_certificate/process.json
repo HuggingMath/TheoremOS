@@ -1,0 +1,124 @@
+{
+  "runs": [
+    {
+      "runId": "6d22ec7c-5c2b-41a4-911d-dcf3f0b7ddf0",
+      "startedAt": "2026-10-23T16:15:46.458Z",
+      "finishedAt": "2026-10-23T20:05:01.292Z",
+      "phase": "finished",
+      "resultStatus": "evaluated_passed",
+      "turns": 27,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "initial_goal_1",
+          "theorem": "OAI.SnakyCertificate.certificate_correct",
+          "objective": "External mathematical assistance: install and prove the sole unchanged original certificate using the exact complete V5 mathematical source below.\nExact source SHA256 66d0cf5eecbcffcf0de7933acaec1c16da6f5ba8592173e1e9228c350663fdd7, 898691 bytes. The official comparator and same-source standalone host check both passed; these are preparation evidence only.\nAll helper declarations, including the complete memo_allRows : AllRows proof, remain in the source and are checked through the original theorem. This direct goal has no assumed helper inputs.\nPreserve every original declaration, import, type, target, frozen runtime and evaluator, the original 32 GiB cap, and all unlimited budgets.\nDo not fetch publisher solutions, replace source with a weaker statement, treat an external receipt as native acceptance, or split memo_allRows into an assumed consumer input.\nExecute the exact source reconstruction command from the worktree root. It writes only the owned proof source.\n/usr/bin/python3 - <<'SNAKY_DIRECT_V5_PAYLOAD'\nfrom pathlib import Path\nimport base64,lzma,hashlib,json,subprocess\npeers = json.loads(Path('COOPERATION.json').read_text())['peers']\npeer = next(item for item in peers if item['id'] == \"initial_goal_1\")\nobjective = peer['objective']\nassert hashlib.sha256(objective.encode()).hexdigest() == peer['objectiveDigest']\nencoded = objective.split('\\nSNAKY_DIRECT_V5_PAYLOAD_BEGIN\\n', 1)[1].split('\\nSNAKY_DIRECT_V5_PAYLOAD_END\\n', 1)[0]\ncompressed = base64.b64decode(encoded, validate=True)\nassert hashlib.sha256(compressed).hexdigest() == \"7a43ef23f39907f806f304f3c0e0bd39a7cb29591e098636ba3b90e9d8fdb8c6\"\ndelta = lzma.decompress(compressed)\nbaseline = subprocess.check_output(['git', 'show', \"0ec3c1274dd50081ae069528a9e24fd8c82b1f77:generated/problem/Submission.lean\"])\nassert hashlib.sha256(baseline).hexdigest() == '591087a6b083d2b610bd863e0b5e7424f83d8ca8c3587cf77785570d06e8bedf'\nsource = baseline[:69980] + delta\nassert len(source) == 898691\nassert hashlib.sha256(source).hexdigest() == \"66d0cf5eecbcffcf0de7933acaec1c16da6f5ba8592173e1e9228c350663fdd7\"\noutput = Path('generated/problem/Submission.lean')\nassert output.is_file() and not output.is_symlink()\noutput.write_bytes(source)\nprint(hashlib.sha256(source).hexdigest(), len(source))\nSNAKY_DIRECT_V5_PAYLOAD\nRun ordinary check-lean and typed original-goal proof delivery. Fixed independent review, all-original-target host verification, and the original publisher comparator remain mandatory.\nKeep external assistance attribution in RESEARCH.md outside the hashed Lean source.",
+          "status": "integrated",
+          "attempts": 7,
+          "dependencies": [],
+          "proofCommit": "6df5a70573bbbbe434e95fb56746e250070462ba",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-7044996350d4ba1ca7800291"
+          ]
+        }
+      ],
+      "review": {
+        "status": "accepted",
+        "summary": "Independent review of the frozen SnakyCertificate proof. (1) Original-context preservation: seed commit 0ec3c12 vs HEAD 5336885 shows generated/problem/Submission.lean changed only inside the file (11,204 insertions / 2 deletions). The deleted bytes are exactly the original final `sorry` and one blank line. The first 69,980 bytes (import Mathlib, namespace OAI / SnakyCertificate, all fixed definitions through AllRows) are byte-identical to the seed; helpers are inserted strictly after AllRows and before the theorem. The `theorem certificate_correct` statement is byte-identical (323 bytes, identical conjunction including placementCount = 1837 and all six Output/AllRows conjuncts). Challenge.lean is unmodified (sha256 591087a6...bedf, identical to the seed Submission.lean). Only the owned files RESEARCH.md and Submission.lean appear in git diff 0ec3c12..HEAD; no protected or package file changed. (2) Proof content: the only proof hole (`sorry`) is replaced. No `sorry`, `admit`, `native_decide`, `sorryAx`, `axiom`, `unsafe`, `partial`, `opaque`, `implemented_by`, `extern`, `addDecl`, `mkFreshExprMVar`, `run_cmd`, `#eval`, or `unsafeCast` occurs anywhere in Submission.lean (verified by token grep). The metaprogramming present is only three thin heartbeat-raising wrappers (`qhb`, `qhbGeometry`, `qhbSem`) plus `spEntryLookup`; each is a pure `evalTactic` call forwarding to ordinary tactics and adds no axiom or declaration. Real checking is still done by the kernel: 1,294 occurrences of `decide +kernel` produce proof terms rechecked by the kernel, and the sole non-decide reasoning is named-lemma rewriting (`me_*`/`mv_*`/`mo_*`, `rowData_ext`, interval_cases over 616 rows). (3) Environment evidence: the host check-lean run on the final saved source (sourceFiles digest b7dc0b28...9751, matching the on-disk file) returned exitCode 0, aborted false, timedOut false, sourceCurrent true, captureComplete true with 1,365 captured messages and zero errors (only linter.defProp/unusedVariables/unusedSimpArgs warnings). (4) Independent kernel axiom audit via `#print axioms` on the built olean: certificate_correct depends only on [propext, Classical.choice, Quot.sound] — the three standard Mathlib axioms, with no sorryAx and no added axioms. (5) Type fidelity: a separate probe re-derived the exact published conjunction type by assigning certificate_correct directly to the restated goal, confirming the proved statement is precisely the publisher target. (6) Arithmetic corroboration from the original seed text only (independent of helper code): exactly 610 entry definitions with indices contiguous 6..615, 31 table chunks totalling 610 entries (size 20 each, last 10), and total term count 1,837 matching the stated placementCount. Verdict: accepted. This review is advisory; the native fixed review, all-original-target host kernel recheck, and the unchanged publisher comparator remain mandatory."
+      },
+      "events": [
+        {
+          "at": "2026-10-22T20:07:50.007Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T20:09:50.396Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T20:55:03.660Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T04:25:33.053Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T04:25:45.173Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T08:14:16.270Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_goal_1"
+        },
+        {
+          "at": "2026-10-23T08:14:16.273Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T08:39:38.644Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_goal_1, integrate_canonical_allrows"
+        },
+        {
+          "at": "2026-10-23T08:39:38.650Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T14:03:08.813Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "integrate_canonical_allrows, initial_goal_1"
+        },
+        {
+          "at": "2026-10-23T14:03:08.817Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T16:15:46.791Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "integrate_canonical_allrows, initial_goal_1"
+        },
+        {
+          "at": "2026-10-23T16:15:46.793Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T17:43:30.389Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-23T18:28:46.356Z",
+          "kind": "lean-check",
+          "taskId": "initial_goal_1",
+          "status": "kernel_verified"
+        }
+      ]
+    }
+  ]
+}

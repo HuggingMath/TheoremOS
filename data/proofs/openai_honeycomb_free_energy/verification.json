@@ -1,0 +1,21 @@
+{
+  "target": "HoneycombFreeEnergy",
+  "runId": "42061240-6393-47da-b4bf-a58bef9080ea",
+  "targets": [
+    "OAI.HoneycombForce.logPartition_tendsto"
+  ],
+  "proofCommit": "7d45dd3e782398f02a4f953671e055f2e7ff54db",
+  "proofSha256": "1472d78c68ac552b7ec3ff4c3d307035cb30aa08c734c95eae7f66e6b4b3601c",
+  "kernelReceiptIds": [
+    "lean-83aa30ee1bd32191189113c6"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；当前接受运行未见外部数学编辑记录，保留已记录的历史续跑。",
+  "attributionEn": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+  "evidenceUrl": "data/proofs/openai_honeycomb_free_energy/verification.json",
+  "recordedAttribution": "",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "⚠ [8924/8927] Built Submission (16s)\nwarning: Submission.lean:445:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: Submission.lean:493:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: Submission.lean:496:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: Submission.lean:554:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: Submission.lean:585:4: `if_neg` has been deprecated: Use `ite_eq_right` instead\nwarning: Submission.lean:591:53: `if_neg` has been deprecated: Use `ite_eq_right` instead\nwarning: Submission.lean:624:25: `if_neg` has been deprecated: Use `ite_eq_right` instead\n⚠ [8926/8927] Built Challenge (6.1s)\nwarning: Challenge.lean:64:8: declaration uses `sorry`\nBuild completed successfully (8927 jobs).\nBuilding Challenge\n⚠ [8924/8925] Replayed Challenge\nwarning: Challenge.lean:64:8: declaration uses `sorry`\nBuild completed successfully (8925 jobs).\nExporting #[OAI.HoneycombForce.logPartition_tendsto, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\n⚠ [8924/8925] Replayed Submission\nwarning: Submission.lean:445:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: Submission.lean:493:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: Submission.lean:496:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nwarning: Submission.lean:554:4: try 'simp' instead of 'simpa'\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\nwarning: Submission.lean:585:4: `if_neg` has been deprecated: Use `ite_eq_right` instead\nwarning: Submission.lean:591:53: `if_neg` has been deprecated: Use `ite_eq_right` instead\nwarning: Submission.lean:624:25: `if_neg` has been deprecated: Use `ite_eq_right` instead\nBuild completed successfully (8925 jobs).\nExporting #[OAI.HoneycombForce.logPartition_tendsto, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

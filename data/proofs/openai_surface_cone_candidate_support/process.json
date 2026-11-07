@@ -1,0 +1,180 @@
+{
+  "runs": [
+    {
+      "runId": "4e840397-550b-489c-9faa-31ebcf7dd86d",
+      "startedAt": "2026-10-22T16:56:43.250Z",
+      "finishedAt": "2026-10-22T17:02:25.893Z",
+      "phase": "finished",
+      "resultStatus": "limit_reached",
+      "turns": 10,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "initial_goal_1",
+          "theorem": "OAI.SmallCM.candidate_ring_properties",
+          "objective": "Prove the frozen original target OAI.SmallCM.candidate_ring_properties; use researcher findings as advisory guidance.",
+          "status": "blocked",
+          "attempts": 4,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "initial_research_1",
+          "objective": "Investigate proof routes and difficult library connections for OAI.SmallCM.candidate_ring_properties. Report concrete evidence and unresolved gaps; findings are advisory.",
+          "status": "pending",
+          "attempts": 0,
+          "dependencies": [],
+          "receiptIds": []
+        },
+        {
+          "id": "initial_research_2",
+          "objective": "Investigate proof routes and difficult library connections for the original targets. Report concrete evidence and unresolved gaps; findings are advisory.",
+          "status": "pending",
+          "attempts": 5,
+          "dependencies": [],
+          "receiptIds": []
+        }
+      ],
+      "events": [
+        {
+          "at": "2026-10-22T15:38:12.657Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T15:40:12.933Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    },
+    {
+      "runId": "cbfa1f3c-2760-4d7e-987a-97b48698fd49",
+      "startedAt": "2026-10-22T18:44:51.457Z",
+      "finishedAt": "2026-10-22T19:19:24.949Z",
+      "phase": "finished",
+      "resultStatus": "evaluated_passed",
+      "turns": 10,
+      "workers": 4,
+      "tasks": [
+        {
+          "id": "initial_goal_1",
+          "theorem": "OAI.SmallCM.candidate_ring_properties",
+          "objective": "Deliver the full frozen original theorem immediately using the following complete externally assisted candidate, already independently checked under the fixed Lean 4.34.1 and Mathlib (exit 0, final theorem axioms only propext/Classical.choice/Quot.sound) and the unchanged assertSolverProjectSources guard (passed). This is reference input, not host acceptance. Replace only your owned Submission.lean with these exact complete bytes or merge retaining all current valid helpers, then invoke check-lean with raw exit and publish a normal fixed proof delivery. The original theorem header, imports/namespaces and protected sources must remain unchanged. All mathematical subgoals are covered; do not restart broad library search or delete checked helper proof work. No external file imports, no added #print command in delivered source. External assistance is explicitly recorded. Full candidate follows:\nimport Mathlib",
+          "status": "integrated",
+          "attempts": 2,
+          "dependencies": [],
+          "proofCommit": "f22f19c314879c05fc88e6cbaff80ea5217db97a",
+          "checkStatus": "kernel_verified",
+          "receiptIds": [
+            "lean-a64dfc07566599fb4dc09b36"
+          ]
+        }
+      ],
+      "review": {
+        "status": "accepted",
+        "summary": "Reviewed the frozen target OAI.SmallCM.candidate_ring_properties at HEAD 210cac97c7c7bfec226ebafc32049f7b077eb0d6. The owned Submission.lean compiles under the pinned Lean/Mathlib environment via check-lean with exit code 0, no errors, and only style/deprecation warnings. The declaration name, kind, and exact frozen type are preserved, and the source contains no sorry, admit, native_decide, unsafe, axiom, or extra imports. A fresh audit importing Submission.lean re-elaborates the exact frozen existential type and reports the theorem's axioms as only propext, Classical.choice, and Quot.sound. The witness R = MvPowerSeries (Fin 3) ℂ establishes the required adic completeness, Krull dimension 3, residue-field bijectivity, domain, Noetherian, local, algebra, and integrally-closed properties. The protected seed files match their expected digests."
+      },
+      "events": [
+        {
+          "at": "2026-10-22T18:44:51.462Z",
+          "kind": "baseline",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T18:51:19.556Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_research_1, initial_research_2"
+        },
+        {
+          "at": "2026-10-22T18:51:19.556Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T18:53:52.932Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_research_1"
+        },
+        {
+          "at": "2026-10-22T18:53:52.932Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T18:54:34.793Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "surface_residue"
+        },
+        {
+          "at": "2026-10-22T18:54:34.794Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T18:55:46.623Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "surface_complete"
+        },
+        {
+          "at": "2026-10-22T18:55:46.624Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T18:57:24.856Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_research_2"
+        },
+        {
+          "at": "2026-10-22T18:57:24.856Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T18:59:57.346Z",
+          "kind": "plan-edit",
+          "status": "applied",
+          "message": "initial_goal_1, initial_research_1, initial_research_2, surface_residue, surface_complete"
+        },
+        {
+          "at": "2026-10-22T18:59:57.347Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T19:02:27.741Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        },
+        {
+          "at": "2026-10-22T19:02:51.136Z",
+          "kind": "lean-check",
+          "taskId": "initial_goal_1",
+          "status": "kernel_verified"
+        },
+        {
+          "at": "2026-10-22T19:02:51.206Z",
+          "kind": "transition",
+          "status": "not-assessed",
+          "message": ""
+        }
+      ]
+    }
+  ]
+}
