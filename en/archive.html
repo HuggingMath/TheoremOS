@@ -91,7 +91,7 @@
             <div id="empty-state" class="empty-state" hidden><i data-lucide="search-x"></i><h2>No matching problems</h2><button class="button" data-action="reset">Clear filters</button></div>
             <div class="catalog-footer"><span id="result-count" aria-live="polite">7 records</span><a href="../data/catalog.json" download="theoremos-archive.json" title="Download the full archive as JSON"><i data-lucide="download"></i>Archive JSON</a></div>
           </section>
-          <aside class="inspector" id="inspector" aria-label="Problem details"></aside>
+          <aside class="inspector" id="inspector" aria-label="Problem details" tabindex="-1"></aside>
         </div>
         <footer class="archive-footer"><span><i data-lucide="git-commit-horizontal"></i>Archive repository <a id="archive-revision" href="https://github.com/LikC1606/theorem-os-site" target="_blank" rel="noreferrer">theorem-os-site</a></span><span>Each record lists its original project and model attribution · <a href="privacy.html">Privacy</a></span></footer>
       </section>
@@ -104,7 +104,8 @@
           <div class="quickstart-commands">
             <div class="section-title"><h2>What the replay shows</h2><span class="small muted">Recorded example</span></div>
             <dl class="requirements"><div><dt>Problem</dt><dd>Natural-number addition · Lean standard library</dd></div><div><dt>Candidates</dt><dd>A failing candidate first, then the repaired proof</dd></div><div><dt>Model</dt><dd>No model calls and no API key</dd></div><div><dt>Verification</dt><dd>An independent Lean pipeline checks the full statement</dd></div></dl>
-            <p class="small muted">The replay shows how TheoremOS records candidates, checks and repairs, and how <code>evaluated_passed</code> on the full statement is the verification result. Once the online workbench opens, you can run your own problems in the browser.</p>
+            <p class="small muted">The replay shows how TheoremOS records candidates, checks and repairs, and how <code>evaluated_passed</code> on the full statement is the verification result.</p>
+            <p class="quickstart-access">The online workbench is in an allowlisted beta. <a class="inline-link" href="index.html#start">Request access</a>; once approved, sign in and connect your own model service to research your problem.</p>
           </div>
           <div class="replay-evidence">
             <div class="section-title"><h2>Replay verification record</h2><span class="status-badge accepted"><i data-lucide="circle-check"></i>Independent Lean check</span></div>

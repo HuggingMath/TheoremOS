@@ -91,7 +91,7 @@
             <div id="empty-state" class="empty-state" hidden><i data-lucide="search-x"></i><h2>没有匹配的题目</h2><button class="button" data-action="reset">清除筛选</button></div>
             <div class="catalog-footer"><span id="result-count" aria-live="polite">7 条记录</span><a href="data/catalog.json" download="theoremos-archive.json" title="下载完整档案 JSON"><i data-lucide="download"></i>档案 JSON</a></div>
           </section>
-          <aside class="inspector" id="inspector" aria-label="题目详情"></aside>
+          <aside class="inspector" id="inspector" aria-label="题目详情" tabindex="-1"></aside>
         </div>
         <footer class="archive-footer"><span><i data-lucide="git-commit-horizontal"></i>档案仓库 <a id="archive-revision" href="https://github.com/LikC1606/theorem-os-site" target="_blank" rel="noreferrer">theorem-os-site</a></span><span>原始项目与模型归属见各题记录 · <a href="privacy.html">隐私与条款</a></span></footer>
       </section>
@@ -104,7 +104,8 @@
           <div class="quickstart-commands">
             <div class="section-title"><h2>回放内容</h2><span class="small muted">预设示例</span></div>
             <dl class="requirements"><div><dt>题目</dt><dd>自然数加法小题 · Lean 标准库</dd></div><div><dt>候选</dt><dd>先提交一份失败候选，再提交修复后的证明</dd></div><div><dt>模型</dt><dd>不调用模型，不需要 API Key</dd></div><div><dt>验收</dt><dd>完整原题由独立 Lean 流程检查</dd></div></dl>
-            <p class="small muted">这份回放展示 TheoremOS 怎样记录候选、检查与修复，并以完整原题的 <code>evaluated_passed</code> 作为验收结论。在线工作台开放后，可以在浏览器中运行自己的题目。</p>
+            <p class="small muted">这份回放展示 TheoremOS 怎样记录候选、检查与修复，并以完整原题的 <code>evaluated_passed</code> 作为验收结论。</p>
+            <p class="quickstart-access">在线工作台现为白名单内测。<a class="inline-link" href="index.html#start">申请内测</a>，获准后可登录并连接自己的模型服务，研究自己的题目。</p>
           </div>
           <div class="replay-evidence">
             <div class="section-title"><h2>回放验收记录</h2><span class="status-badge accepted"><i data-lucide="circle-check"></i>独立 Lean 检查</span></div>
