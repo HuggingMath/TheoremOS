@@ -93,6 +93,44 @@
 .workflow-check-excerpt { margin: 10px 0 0; padding: 12px 15px; border-left: 2px solid #b7834e; background: #f5f1eb; font: 11px/1.8 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; max-width: 100%; }
 .workflow-check-result, .workflow-empty { font-size: 13px; color: var(--muted); line-height: 1.85; }
 .workflow-empty { margin-bottom: 22px !important; }
+.proof-walkthrough { max-width: 1000px; }
+.proof-walkthrough-intro > h6 { font: 500 25px/1.5 var(--serif); margin: 0 0 12px; }
+.proof-walkthrough-goal { font-size: 15px; line-height: 1.95; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-notation { font-size: 13px; line-height: 1.85; color: var(--muted); margin-top: 12px !important; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-route { margin: 25px 0 36px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.proof-walkthrough-route > ol { display: flex; gap: 26px; overflow-x: auto; list-style: none; margin: 0; padding: 15px 0; scrollbar-width: thin; }
+.proof-walkthrough-route li { position: relative; flex: 0 0 165px; }
+.proof-walkthrough-route li:not(:last-child)::after { content: '→'; position: absolute; right: -20px; top: 9px; color: var(--muted); }
+.proof-walkthrough-route button { width: 100%; display: flex; align-items: baseline; gap: 9px; text-align: left; background: transparent; padding: 4px 0; color: var(--ink); font-size: 13px; line-height: 1.8; }
+.proof-walkthrough-route button > span { font: 11px var(--mono); color: var(--green); }
+.proof-walkthrough-steps { margin: 0 0 48px; padding: 0 0 0 16px; list-style: none; }
+.proof-walkthrough-step { position: relative; padding: 0 0 42px 30px; border-left: 1px solid #c7cfb5; scroll-margin-top: 143px; }
+.proof-walkthrough-step > header { display: flex; align-items: flex-start; margin-bottom: 18px; }
+.proof-walkthrough-step > header > span { position: absolute; left: -17px; top: -1px; display: flex; width: 33px; height: 33px; align-items: center; justify-content: center; border: 1px solid #a5b18d; border-radius: 50%; background: var(--paper, #faf9f5); color: var(--green); font: 11px var(--mono); }
+.proof-walkthrough-step > header > h5 { font-family: var(--serif); font-size: 23px; line-height: 1.5; font-weight: 500; margin: 0; }
+.proof-walkthrough-given { color: #605e53; font-size: 14px; line-height: 1.95; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-given > span { margin-right: 13px; font-size: 12px; color: var(--muted); }
+.proof-walkthrough-claim { margin: 19px 0; padding: 16px 20px; border-left: 2px solid var(--green); background: #f0f3e7; }
+.proof-walkthrough-claim > span { display: block; font-size: 11px; color: var(--green); margin-bottom: 8px; }
+.proof-walkthrough-claim > p { font-size: 17px; line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-reason > h6 { color: var(--muted); font-size: 12px; font-weight: 400; margin: 0 0 8px; }
+.proof-walkthrough-reason > p { font-size: 15px; line-height: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-next { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; gap: 10px; margin-top: 20px; align-items: baseline; color: var(--green); }
+.proof-walkthrough-next > span { font-size: 20px; }
+.proof-walkthrough-next > p { font-size: 14px; line-height: 1.95; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-next > button { background: transparent; color: var(--green); font-size: 12px; padding: 4px 0; white-space: nowrap; }
+.proof-walkthrough-source { margin-top: 20px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.proof-walkthrough-source > summary { cursor: pointer; padding: 12px 0; }
+.proof-walkthrough-source > summary > span { display: inline-block; font: 10px/1.8 var(--mono); margin-left: 15px; }
+.proof-walkthrough-declarations { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-bottom: 12px; }
+.proof-walkthrough-declarations > code { font: 11px/1.8 var(--mono); overflow-wrap: anywhere; }
+.proof-walkthrough-source > ol { margin: 0 0 16px; padding: 12px 14px 12px 56px; list-style: decimal; overflow: auto; max-height: 430px; background: #f5f4ef; font: 11px/1.9 var(--mono); }
+.proof-walkthrough-source > ol > li { padding-left: 10px; white-space: pre; color: #777366; }
+.proof-walkthrough-source > ol code { color: var(--ink); }
+.proof-walkthrough-links { display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 8px; }
+.proof-walkthrough-links > button { background: transparent; color: var(--green); font-size: 11px; padding: 3px 0; text-align: left; }
+.workflow-journal-heading { display: flex; gap: 12px; align-items: baseline; margin: 0 0 25px; border-top: 1px solid var(--line); padding-top: 30px; font-size: 19px; font-weight: 500; }
+.workflow-journal-heading > span { font: 11px var(--mono); color: var(--muted); }
 .global-final-badge { padding: 22px 25px; background: #f0f3e7; border: 1px solid #c7cfb5; border-radius: 4px; }
 .global-final-badge .process-detail-icon { display: none; }
 .global-final-badge h3 { font-size: 24px; }
@@ -324,6 +362,22 @@
   .workflow-record-status { font-size: 10px; }
   .workflow-prose { font-size: 13px; }
   .workflow-check-excerpt { font-size: 10px; padding: 10px; }
+  .proof-walkthrough-intro > h6 { font-size: 22px; }
+  .proof-walkthrough-goal { font-size: 14px; }
+  .proof-walkthrough-notation { font-size: 12px; }
+  .proof-walkthrough-route { margin-top: 19px; }
+  .proof-walkthrough-route li { flex-basis: 150px; }
+  .proof-walkthrough-steps { padding-left: 12px; }
+  .proof-walkthrough-step { padding-left: 23px; scroll-margin-top: 105px; }
+  .proof-walkthrough-step > header > span { width: 25px; height: 25px; left: -13px; top: 3px; font-size: 9px; }
+  .proof-walkthrough-step > header > h5 { font-size: 21px; }
+  .proof-walkthrough-given, .proof-walkthrough-reason > p { font-size: 14px; }
+  .proof-walkthrough-claim { padding: 13px 14px; }
+  .proof-walkthrough-claim > p { font-size: 15px; }
+  .proof-walkthrough-next { grid-template-columns: 15px minmax(0, 1fr); gap: 8px; }
+  .proof-walkthrough-next > p { font-size: 13px; }
+  .proof-walkthrough-next > button { grid-column: 2; justify-self: start; }
+  .proof-walkthrough-source > summary > span { display: block; margin-left: 15px; }
   .global-final-badge { padding: 17px; }
   .process-view-toolbar { flex-wrap: wrap; }
   .process-view-toolbar > h4 { font-size: 22px; }
