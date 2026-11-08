@@ -4,32 +4,32 @@
 
 <h1>TheoremOS</h1>
 
-<p><strong>重塑前沿数学探索范式的 AI 协同研究系统 · 数学家的智能推演引擎与形式化副驾驶</strong></p>
-<p>全景协同检索已有结论 · 多路并发探索证明路线 · 强力攻坚补齐辅助引理 · Lean 引擎严密核查证明</p>
+<p><strong>面向前沿数学探索的 AI 协同研究系统 · 数学推演与形式化证明平台</strong></p>
+<p>检索已有结论 · 并行探索证明路线 · 推导辅助引理 · Lean 引擎严密核查</p>
 
 <p>
   <a href="https://theoremos.top/">🌐 产品官网</a> ·
-  <a href="https://theoremos.top/#start"><strong>🚀 立即申请研究内测</strong></a> ·
-  <a href="#与数学家怎样协作">核心引擎与范式</a> ·
-  <a href="#研究合作">深度研究合作</a> ·
-  <a href="https://theoremos.top/archive.html">📜 殿堂级证明档案</a> ·
+  <a href="https://theoremos.top/#start"><strong>🚀 申请研究内测</strong></a> ·
+  <a href="#与数学家怎样协作">核心机制</a> ·
+  <a href="#研究合作">研究合作</a> ·
+  <a href="https://theoremos.top/archive.html">📜 证明档案库</a> ·
   <a href="README.md">English</a>
 </p>
 
 </div>
 
-**TheoremOS 是一套旨在深度解放数学家创造力、专为攻克高难度数学问题而生的革命性 AI 协同研究系统。** 在这场改变游戏规则的“人机共创”中，人类数学家稳坐统帅之位——提出核心问题、注入关键直觉并领航宏观研究方向；TheoremOS 则化身为不知疲倦、按预算精准调度的“全能数字学术搭档”，强力接管繁琐的已有结论检索、多维证明路线探索与底层辅助引理攻坚，并依托 Lean 引擎对最终证明进行绝对严密的机器核查。
+**TheoremOS 是一套专为攻克高难度数学问题而设计的 AI 协同研究系统。** 在人机协作流程中，人类数学家负责提出核心问题、注入直觉并把控宏观研究方向；TheoremOS 则根据算力预算自动调度，承担繁琐的文献与结论检索、多路径证明探索以及底层辅助引理的推导，并依托 Lean 引擎对最终证明进行严格的机器核查。
 
-系统彻底击碎了形式化工具极高的工程壁垒：研究者只需直接带入自然语言、$\TeX$ 手稿，或已有的 Lean 题目与未完成的证明，即可享受**全流程云端丝滑运行，彻底告别本地繁琐的 Lean 环境配置与 Docker 部署，真正实现“开箱即用，专注思考”**。在硬核攻坚过程中，系统将化身全景记录仪，完整留存尝试过的每一条探索路线、每一处 Lean 编译报错以及未完成的步骤，支持保存进度并在稍后无缝恢复任务，让研究者能够随时俯瞰全局推演脉络、从容调优学术战略。
+系统大幅降低了形式化工具的工程门槛：研究者只需直接输入自然语言、$\TeX$ 手稿，或已有的 Lean 题目与未完成的证明，即可**在云端完成全流程运行，免去本地配置 Lean 环境与 Docker 部署的繁琐步骤，实现开箱即用**。在推演过程中，系统会完整记录尝试过的每一条探索路线、每一处 Lean 编译报错以及未完成的步骤，并支持保存进度与恢复任务，便于研究者清晰掌握全局推演脉络、及时调整证明策略。
 
-> 🧭 **迈向“Math 2.0”的协同研究新范式**：菲尔兹奖得主陶哲轩（Terence Tao）在其[《Math 2.0》博客](https://terrytao.wordpress.com/2026/10/10/math-2-0/)与 [Caltech 公开讲座讲稿](https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf)（2026 年 10 月）中深刻指出：
+> 🧭 **迈向“Math 2.0”的协同研究范式**：菲尔兹奖得主陶哲轩（Terence Tao）在其[《Math 2.0》博客](https://terrytao.wordpress.com/2026/10/10/math-2-0/)与 [Caltech 公开讲座讲稿](https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf)（2026 年 10 月）中指出：
 >
 > *“The more sustainable ‘Math 2.0’ use of AI would be to strengthen all the ways in which human understanding interacts with mathematics.”*（讲稿第 23 页）\
 > *（更具可持续性的 AI “Math 2.0” 用法，应当是全方位强化人类理解与数学产生交互的每一种方式。）*
 >
-> 他同时强调，数学探索应超越单一的解题指标（Beyond problem-solving，第 9、16 页）——探索过程中的收获（包括失败的尝试与阶段性进展）往往比最终解答更具价值；而建设如 Mathlib 般大型高质量的形式化数学库、将零散研究连接为持续更新的知识网络并为证明提供富有动机的清晰解释，正是“Math 2.0”的核心应用方向（第 25 页）。**TheoremOS 的设计理念与这一前沿愿景深度共鸣：我们不追求替代人类的“黑盒自动解题”，而是致力于将人机交互、全链路过程留存与形式化成果复用锻造为数学家手中最趁手的实战利器。**
+> 他同时强调，数学探索应超越单一的解题指标（Beyond problem-solving，第 9、16 页）——探索过程中的收获（包括失败的尝试与阶段性进展）往往比最终解答更具价值；而建设如 Mathlib 般大型高质量的形式化数学库、将零散研究连接为持续更新的知识网络并为证明提供富有动机的清晰解释，正是“Math 2.0”的核心应用方向（第 25 页）。**TheoremOS 的设计理念与这一愿景高度契合：我们不追求替代人类的“黑盒自动解题”，而是致力于通过深度的人机交互、全链路过程留存与形式化成果复用，为数学家提供高效、可靠的研究工具。**
 
-> 🏆 **硬核实战战绩**：TheoremOS 的强大攻坚实力已获实战检验！本仓库重磅公开了系统攻克的 **26 条高难度前沿数学证明记录**，横跨代数数论、黎曼几何、泛函分析与统计物理等硬核领域，直接斩获 **[10 份通过 Lean-Eval 官方权威评测的证明](#lean-eval10-份官方通过的证明)**，并强势拿下 **[16 条极具挑战的 OpenAI Math 证明记录](#openai-math16-条证明记录)**！
+> 🏆 **研究成果与评测表现**：本仓库公开了系统完成的 **26 条高难度前沿数学证明记录**，涵盖代数数论、黎曼几何、泛函分析与统计物理等领域，其中包括 **[10 份通过 Lean-Eval 官方评测的证明](#lean-eval10-份官方通过的证明)**，以及 **[16 条高难度的 OpenAI Math 证明记录](#openai-math16-条证明记录)**。
 
 <a href="https://theoremos.top/#start">
   <picture>
@@ -42,53 +42,53 @@
 
 ## 与数学家怎样协作
 
-围绕“强化人类理解与数学的深度交互”，TheoremOS 深度解构并升华了数学研究的真实工作流，打造出极致高效、全透明的人机协同闭环：
+围绕“强化人类理解与数学的交互”，TheoremOS 针对真实的数学研究工作流，构建了高效、透明的人机协同机制：
 
-* **🔄 跨模态双向互译与严谨题意核对**：当输入自然语言或 $\TeX$ 手稿时，系统会先将其转化为形式化的 Lean 定义和定理陈述；在底层编译检查通过后，再将 Lean 陈述**逆向译回直观的数学语言，供研究者精准核对原意**。系统将“题意核对”与后续的“证明检查”清晰分离展示，由人类专家与机器共同把关，消除形式化鸿沟，确保研究起点固若金汤。
-* **🧠 多角色协同矩阵与多路线并行探索**：在寻找证明时，系统绝非盲目试错——既支持单点强力突破，也能按**规划、检索、编写 Lean 证明和审阅**进行精细化分工协作，并行探索多条潜在证明路线。一旦遭遇证明缺口，系统会主动检索相关结果、先行尝试攻克辅助引理，或果断切换其他备选路线，展开全方位、立体式的推演攻坚。
-* **🔍 上帝视角的全透明掌控与过程留存**：拒绝唯结果论的“黑盒”盲猜！正如陶哲轩在《Math 2.0》中所强调的，探索过程中的失败尝试与部分进展往往比最终解答更有价值。TheoremOS 将整个研究过程对学者完全透明开放，完整保留每一条分支探索的轨迹。研究者可随时检视此前试过的方法、精准定位 Lean 的具体报错并监控模型算力用量，从受挫路线中提炼洞见，随时注入人类专家的灵光一闪以调整方向。完整题目的最终证明均由独立的 Lean 检查程序严格核对。
-* **🏛️ 高价值的形式化知识库沉淀与复用**：呼应“Math 2.0”构建高质量形式化数学库与互联知识网络的愿景，TheoremOS 中所有通过 Lean 检查的定理和辅助引理均可沉淀存入知识库，支持按类型、前提和来源进行高效的结构化查找；当把这些宝贵成果跨课题复用于其他问题时，系统还会在对应的 Lean 环境中重新进行严格检查，让每一次局部进展与学术突破都成为后续研究的坚实基石。
+* **🔄 双向互译与严谨的题意核对**：当输入自然语言或 $\TeX$ 手稿时，系统会先将其转化为形式化的 Lean 定义和定理陈述；在底层编译检查通过后，再将 Lean 陈述**逆向译回直观的数学语言，辅助研究者核对形式化陈述是否符合原意**。系统将“题意核对”与后续的“证明检查”清晰分离，通过人机协同及时发现并减少潜在的语义偏差，提高形式化起点的可靠性。
+* **🧠 多角色分工与多路线并行探索**：在寻找证明时，系统既支持单点深度推导，也能按**规划、检索、编写 Lean 证明和审阅**进行精细化分工协作，并行探索多条潜在证明路线。一旦遇到证明缺口，系统会主动检索相关结果、先行尝试推导辅助引理，或及时切换其他备选路线。
+* **🔍 全过程透明可控与轨迹留存**：不同于仅输出结果的“黑盒”模式，TheoremOS 将整个研究过程完全透明开放，完整保留每一条分支探索的轨迹。研究者可随时检视此前尝试过的方法、定位 Lean 的具体报错并监控模型算力消耗，从受阻路线中提炼思路，并随时介入、注入专家直觉以调整方向。所有完整题目的最终证明均由独立的 Lean 检查程序严格核验。
+* **🏛️ 形式化知识库的沉淀与复用**：呼应“Math 2.0”构建高质量形式化数学库与互联知识网络的愿景，TheoremOS 中所有通过 Lean 检查的定理和辅助引理均可沉淀至知识库，支持按类型、前提和来源进行结构化检索；当将这些成果跨课题复用于其他问题时，系统会在对应的 Lean 环境中重新进行严格核查，让每一次阶段性进展都能成为后续研究的基础。
 
 ## 代表案例
 
-从经典几何定理到前沿物理数学模型，TheoremOS 已在多个核心数学分支的极限挑战中，展现出令人惊叹的协同攻坚能力：
+从经典几何定理到前沿物理数学模型，TheoremOS 已在多个核心数学分支的高难度问题中展现出可靠的形式化推演能力：
 
-| 攻克案例 | 核心数学结论 | 源码、核查与全景推演记录 |
+| 证明案例 | 核心数学结论 | 源码、核查与完整推演记录 |
 | --- | --- | --- |
-| **[Hopf–Rinow 定理](accepted/hopf_rinow/)** | 在题目给定的流形条件下，严密证明测地完备与度量完备等价。 | [Lean 证明](accepted/hopf_rinow/Submission.lean) · [🏅 官方权威通过](https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969) |
+| **[Hopf–Rinow 定理](accepted/hopf_rinow/)** | 在题目给定的流形条件下，严格证明测地完备与度量完备等价。 | [Lean 证明](accepted/hopf_rinow/Submission.lean) · [🏅 官方评测通过](https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969) |
 | **平面 Anderson 算子谱** | 当 `h > 0`，随机势独立且均匀分布于 `[-h, h]` 时，证明几乎必然谱为 `[-4-h, 4+h]`。 | [题面](data/proofs/openai_planar_anderson_spectrum/Challenge.lean) · [证明](data/proofs/openai_planar_anderson_spectrum/Submission.lean) · [检查结果](data/proofs/openai_planar_anderson_spectrum/verification.json) · [研究过程](data/proofs/openai_planar_anderson_spectrum/process.json) |
 | **树上三状态模型的超临界重构** | 在题目给定的超临界条件下，证明正则树与泊松树的重构优势趋于正极限。 | [题面](data/proofs/openai_three_state_supercritical/Challenge.lean) · [证明](data/proofs/openai_three_state_supercritical/Submission.lean) · [检查结果](data/proofs/openai_three_state_supercritical/verification.json) · [研究过程](data/proofs/openai_three_state_supercritical/process.json) |
 | **Snaky 获胜策略** | 面对合法应手，严格证明在 35 次 Maker 落子内完成 Snaky，并保持局面合法。 | [题面](data/proofs/openai_snaky_conditional/Challenge.lean) · [证明](data/proofs/openai_snaky_conditional/Submission.lean) · [检查结果](data/proofs/openai_snaky_conditional/verification.json) · [研究过程](data/proofs/openai_snaky_conditional/process.json) |
 
-👉 **[震撼不止于此，立即检阅全部 26 条硬核证明记录](#证明与检查结果)**。
+👉 **[点击查看全部 26 条证明与检查记录](#证明与检查结果)**。
 
 ## 研究合作
 
-独行快，众行远。我们向全球数学界与 AI for Math 领域的学者发出诚挚邀请，携手探索人类理性与机器智能的边界：
+我们向数学界与 AI for Math 领域的学者发出诚挚邀请，欢迎开展以下方向的研究合作：
 
-* **🎓 面向数学研究者（带上您的难题来！）**：极其欢迎带着手头正在攻关的问题、初步思路或尚未完成的 Lean 证明前来深度交流！我们可以依托 TheoremOS 一起核对定义与假设、深入推演多条证明路线，精准排查还缺少哪些关键辅助引理，并评估已有结论能否高效复用，让 AI 成为您学术攻坚的强力助推器。
-* **🤖 面向数学 Agent 研究同行（共建底层算法生态！）**：欢迎共同探讨搜索策略、上下文选择与多智能体协作机制的极限。系统底层的**执行、结果检查、搜索调度、上下文管理和角色分工均为高度解耦的可替换模块化设计**，并支持通过 CLI 直接运行实验——让您能够在固定题目、模型、环境和预算的严苛条件下，极其便利、严谨地横向比较不同算法与方法。
+* **🎓 面向数学研究者**：欢迎带着手头正在攻关的问题、初步思路或尚未完成的 Lean 证明前来交流。我们可以依托 TheoremOS 共同核对定义与假设、推演多条证明路线、排查缺失的关键辅助引理，并评估已有结论能否高效复用，借助 AI 加速研究进程。
+* **🤖 面向数学 Agent 研究同行**：欢迎共同探讨搜索策略、上下文选择与多智能体协作机制。系统底层的**执行、结果检查、搜索调度、上下文管理和角色分工均为高度解耦的可替换模块化设计**，并支持通过 CLI 直接运行实验——便于在固定题目、模型、环境和预算的条件下，严谨地横向对比不同算法与方法。
 
-💌 **开启合作对话**：有意合作请直接发送邮件至 **[liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)**，非常欢迎附上题目来源或 Lean 陈述、已经试过的方法以及希望一起研究的问题。公开的学术讨论与功能建议，也欢迎随时 **[提交 GitHub Issue](https://github.com/LikC1606/theorem-os-site/issues/new)**。
+💌 **联系方式**：有意合作请发送邮件至 **[liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)**，欢迎附上题目来源或 Lean 陈述、已尝试的方法以及希望共同探讨的问题。公开的学术讨论与功能建议，欢迎随时 **[提交 GitHub Issue](https://github.com/LikC1606/theorem-os-site/issues/new)**。
 
 ## 内测与使用
 
-TheoremOS 目前通过邮箱白名单机制正式开放研究内测。**内测期间，TheoremOS 平台本身完全免费！** 用户仅需使用自己的 API Key 支付基础的大模型调用费用，即可畅享整套协同研究系统。
+TheoremOS 目前通过邮箱白名单机制开放研究内测。**内测期间，TheoremOS 平台本身完全免费**，用户仅需使用自己的 API Key 支付大模型调用费用，即可使用整套协同研究系统。
 
-> 💡 **零门槛、免 Key 沉浸式体验**：若想先直观领略系统攻克数学难题的运行与推演过程，无需配置任何 API Key，现在即可直接浏览 **[殿堂级证明档案](https://theoremos.top/archive.html)** 或观看 **[示例实机回放](https://theoremos.top/#demo)**！
+> 💡 **免 Key 在线浏览**：若想先了解系统处理数学难题的运行与推演过程，无需配置 API Key，可直接浏览 **[证明档案库](https://theoremos.top/archive.html)** 或观看 **[示例实机回放](https://theoremos.top/#demo)**。
 
-**仅需四步，即刻唤醒您的 AI 数学副驾驶：**
-1. **极速申请内测**：通过 **[GitHub Issue 申请通道](https://github.com/LikC1606/theorem-os-site/issues/new?template=early-access.yml)** 简要说明研究用途（可选附公开题目或 Lean 陈述链接）；也可直接发邮件至 **[liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)** 私下申请。*(安全提示：公开 Issue 中请勿填写 API Key 或个人联系方式)*
-2. **确认白名单权限**：审核通过后，按回复指引通过邮件确认登录邮箱；加入白名单后，使用邮箱验证码即可一键登录 **[app.theoremos.top](https://app.theoremos.top/)** 云端工作台。
-3. **自由接入顶尖模型**：无缝连接 OpenAI 或兼容 Responses API 的大模型服务，填写自己的 API Key，灵活选择推理模型并自主设置形式化与证明预算。
-4. **开启协同攻坚与核查**：直接提交自然语言、$\TeX$ 或已有的 Lean 题目与未完成证明，在线精准核对 Lean 陈述，实时洞察证明推演过程与模型用量，并随时一键打包下载源码、检查报告和复查所需的文件！
+**内测接入流程：**
+1. **申请内测**：通过 **[GitHub Issue 申请通道](https://github.com/LikC1606/theorem-os-site/issues/new?template=early-access.yml)** 简要说明研究用途（可选附公开题目或 Lean 陈述链接）；也可直接发邮件至 **[liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)** 申请。*(安全提示：公开 Issue 中请勿填写 API Key 或个人隐私信息)*
+2. **确认白名单权限**：审核通过后，按回复指引通过邮件确认登录邮箱；加入白名单后，使用邮箱验证码即可登录 **[app.theoremos.top](https://app.theoremos.top/)** 云端工作台。
+3. **接入模型服务**：连接 OpenAI 或兼容 Responses API 的大模型服务，填写自己的 API Key，选择推理模型并设置形式化与证明预算。
+4. **提交任务与核查**：直接提交自然语言、$\TeX$ 或已有的 Lean 题目与未完成证明，在线核对 Lean 陈述，实时查看证明推演过程与模型用量，并可随时一键下载源码、检查报告和复查文件。
 
 ## 证明与检查结果
 
 ### Lean-Eval：10 份官方通过的证明
 
 <details>
-<summary><b>📂 点击展开：检阅全部 10 份斩获官方权威评测通过的硬核证明</b></summary>
+<summary><b>📂 点击展开：查看全部 10 份通过官方评测的证明</b></summary>
 
 | 证明 | 领域 | 官方结果 |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ TheoremOS 目前通过邮箱白名单机制正式开放研究内测。**内测�
 
 ### OpenAI Math：16 条证明记录
 
-以下 16 条高难度挑战记录已由我们运行 Lean 和原题检查程序严格复核（完整公开全链路研究过程），OpenAI 官方评测结果尚未确认。
+以下 16 条证明记录已由我们运行 Lean 和原题检查程序严格复核（均公开完整研究过程），OpenAI 官方评测结果尚未确认。
 
 <details>
 <summary><b>📂 点击展开：查看全部 16 条记录的题目、证明源码、检查结果与完整研究过程</b></summary>
@@ -135,7 +135,7 @@ TheoremOS 目前通过邮箱白名单机制正式开放研究内测。**内测�
 
 </details>
 
-🔍 强烈推荐前往 **[可视化证明档案](https://theoremos.top/archive.html)**，身临其境地直观查看系统攻克每道难题的完整推演与研究过程！
+🔍 欢迎前往 **[可视化证明档案库](https://theoremos.top/archive.html)**，直观查看系统完成每道题目的完整推演与研究过程。
 
 ## 仓库内容
 
