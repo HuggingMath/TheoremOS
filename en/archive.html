@@ -55,7 +55,7 @@
           <div>
             <p class="breadcrumb">Workspace <i data-lucide="chevron-right"></i> Proof archive</p>
             <h1 id="page-title">TheoremOS <span>Proof archive</span></h1>
-            <p class="page-description">A research runtime for math agents <span>·</span> Lean proofs, verification records and research snapshots</p>
+            <p class="page-description">Lean proofs, verification records and research snapshots</p>
           </div>
           <div class="heading-actions">
             <button class="button button-primary" data-action="quickstart"><i data-lucide="shield-check"></i>Verification replay</button>
@@ -93,24 +93,23 @@
           </section>
           <aside class="inspector" id="inspector" aria-label="Problem details" tabindex="-1"></aside>
         </div>
-        <footer class="archive-footer"><span><i data-lucide="git-commit-horizontal"></i>Archive repository <a id="archive-revision" href="https://github.com/LikC1606/theorem-os-site" target="_blank" rel="noreferrer">theorem-os-site</a></span><span>Each record lists its original project and model attribution · <a href="privacy.html">Privacy</a></span></footer>
+        <footer class="archive-footer"><span><i data-lucide="git-commit-horizontal"></i>Archive repository <a id="archive-revision" href="https://github.com/LikC1606/theorem-os-site" target="_blank" rel="noreferrer">theorem-os-site</a></span><span><a href="privacy.html">Privacy</a></span></footer>
       </section>
 
       <section id="quickstart-view" aria-labelledby="quickstart-title" hidden>
         <div class="page-heading">
-          <div><p class="breadcrumb">Workspace <i data-lucide="chevron-right"></i> Verification replay</p><h1 id="quickstart-title">Verification replay</h1><p class="page-description">A small natural-number addition problem <span>·</span> recorded candidates <span>·</span> no model calls</p></div>
+          <div><p class="breadcrumb">Workspace <i data-lucide="chevron-right"></i> Verification replay</p><h1 id="quickstart-title">Verification replay</h1><p class="page-description">A replay of a natural-number addition proof</p></div>
         </div>
         <div class="quickstart-layout">
           <div class="quickstart-commands">
             <div class="section-title"><h2>What the replay shows</h2><span class="small muted">Recorded example</span></div>
             <dl class="requirements"><div><dt>Problem</dt><dd>Natural-number addition · Lean standard library</dd></div><div><dt>Candidates</dt><dd>A failing candidate first, then the repaired proof</dd></div><div><dt>Model</dt><dd>No model calls and no API key</dd></div><div><dt>Verification</dt><dd>An independent Lean pipeline checks the full statement</dd></div></dl>
-            <p class="small muted">The replay shows how TheoremOS records candidates, checks and repairs, and how <code>evaluated_passed</code> on the full statement is the verification result.</p>
-            <p class="quickstart-access">The online workbench is in an allowlisted beta. <a class="inline-link" href="index.html#start">Request access</a>; once approved, sign in and connect your own model service to research your problem.</p>
+            <p class="quickstart-access">To study your own problem, <a class="inline-link" href="index.html#start">request beta access</a> and connect your model service once approved.</p>
           </div>
           <div class="replay-evidence">
             <div class="section-title"><h2>Replay verification record</h2><span class="status-badge accepted"><i data-lucide="circle-check"></i>Independent Lean check</span></div>
-            <figure><img src="../assets/replay.png" alt="The structured result of the TheoremOS recorded replay: final status evaluated_passed, both statement targets kernel_verified, official false." width="1100" height="640" loading="lazy"><figcaption>Real replay record · recorded proof · not a measure of model ability <a href="../assets/replay.json" target="_blank">Raw record fields</a></figcaption></figure>
-            <div class="verification-rule"><i data-lucide="shield-check"></i><div><strong>evaluated_passed</strong><p>The full statement passed independent verification. Official Lean-Eval results are listed in the proof archive.</p></div></div>
+            <figure><img src="../assets/replay.png" alt="The structured result of the TheoremOS recorded replay: final status evaluated_passed, both statement targets kernel_verified, official false." width="1100" height="640" loading="lazy"><figcaption>Replay receipt <a href="../assets/replay.json" target="_blank">Raw record</a></figcaption></figure>
+            <div class="verification-rule"><i data-lucide="shield-check"></i><div><strong>evaluated_passed</strong><p>The full example statement passed independent Lean checks.</p></div></div>
           </div>
         </div>
       </section>

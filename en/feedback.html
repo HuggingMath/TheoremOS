@@ -29,14 +29,14 @@
     <section class="feedback-intro" aria-labelledby="feedback-title">
       <h1 id="feedback-title">Feedback</h1>
       <p class="feedback-lead">Tell us what went wrong,<br>or what you would like improved.</p>
-      <div class="feedback-destination"><i data-lucide="git-fork"></i><p>Feedback goes to the public <span>GitHub Issues</span> and needs a GitHub account.</p></div>
+      <div class="feedback-destination"><i data-lucide="git-fork"></i><p>Submit feedback through public <span>GitHub Issues</span>. A GitHub account is required.</p></div>
       <p class="feedback-privacy">Do not include API keys, access tokens or other sensitive personal information.</p>
       <div class="feedback-resources"><a class="text-link" href="https://github.com/LikC1606/theorem-os-site/issues" target="_blank" rel="noreferrer">See existing feedback<i data-lucide="arrow-up-right"></i></a><a class="text-link" href="https://github.com/LikC1606/theorem-os-site/issues/new" target="_blank" rel="noreferrer">Open an issue on GitHub<i data-lucide="arrow-up-right"></i></a></div>
-      <figure class="feedback-product"><a href="../assets/workbench-source-detail.png" target="_blank" rel="noreferrer" aria-label="View the full Lean workspace screenshot"><img src="../assets/workbench-source-detail.png" alt="The TheoremOS Lean workspace showing an unsubmitted Mathlib draft." width="953" height="444"></a><figcaption>TheoremOS · Lean workspace</figcaption></figure>
+      <figure class="feedback-product"><a href="../assets/workbench-source-detail.png" target="_blank" rel="noreferrer" aria-label="View the full Lean workspace screenshot"><img src="../assets/workbench-source-detail.png" alt="A Mathlib proof draft in the TheoremOS Lean workspace." width="953" height="444"></a><figcaption>TheoremOS · Lean workspace</figcaption></figure>
     </section>
 
     <section class="feedback-editor" aria-label="Write feedback">
-      <div id="feedback-fallback"><p>You can open an issue on GitHub and follow the replies in the same issue.</p><a class="button button-dark" href="https://github.com/LikC1606/theorem-os-site/issues/new" target="_blank" rel="noreferrer">Open an issue on GitHub<i data-lucide="arrow-up-right"></i></a></div>
+      <div id="feedback-fallback"><p>Open a GitHub issue to submit feedback and follow replies.</p><a class="button button-dark" href="https://github.com/LikC1606/theorem-os-site/issues/new" target="_blank" rel="noreferrer">Open an issue on GitHub<i data-lucide="arrow-up-right"></i></a></div>
       <form id="feedback-form" hidden>
         <fieldset class="feedback-kind"><legend>Type</legend><div class="feedback-kind-options">
           <label><input type="radio" name="feedback-kind" value="bug" checked><span><i data-lucide="bug"></i>Bug report</span></label>
@@ -46,9 +46,9 @@
 
         <div class="feedback-field"><label for="feedback-area">Area</label><select id="feedback-area" required><option value="" disabled selected>Choose one</option><option value="workbench">Web workbench</option><option value="website">Website and proof archive</option><option value="lean">Lean / Mathlib</option><option value="access">Early access and accounts</option><option value="other">Other</option></select></div>
         <div class="feedback-field"><label for="feedback-subject">Title</label><input id="feedback-subject" type="text" maxlength="100" required placeholder="Sum it up in one sentence" autocomplete="off"></div>
-        <div class="feedback-field"><label for="feedback-description">Description</label><textarea id="feedback-description" rows="7" maxlength="10000" required aria-describedby="feedback-description-hint feedback-count" placeholder="What happened? How can we reproduce it? What did you expect?"></textarea><div class="feedback-field-meta"><p id="feedback-description-hint">Include the steps to reproduce, any error message and what you expected.</p><span id="feedback-count">0 / 10000</span></div></div>
+        <div class="feedback-field"><label for="feedback-description">Description</label><textarea id="feedback-description" rows="7" maxlength="10000" required aria-describedby="feedback-description-hint feedback-count" placeholder="Describe the problem"></textarea><div class="feedback-field-meta"><p id="feedback-description-hint">Add steps to reproduce, error messages and the expected result.</p><span id="feedback-count">0 / 10000</span></div></div>
         <div class="feedback-field"><label for="feedback-environment">Environment <span>optional</span></label><input id="feedback-environment" type="text" maxlength="240" placeholder="For example: macOS · Chrome 130" autocomplete="off"></div>
-        <div class="feedback-submit-row"><p>Review the text first, then publish it on GitHub.<br>Add screenshots and attachments on GitHub.</p><button class="button button-dark" id="feedback-preview" type="submit">Preview<i data-lucide="arrow-right"></i></button></div>
+        <div class="feedback-submit-row"><p>Add screenshots and attachments on GitHub.</p><button class="button button-dark" id="feedback-preview" type="submit">Preview<i data-lucide="arrow-right"></i></button></div>
       </form>
     </section>
   </main>
