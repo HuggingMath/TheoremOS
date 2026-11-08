@@ -108,13 +108,22 @@
 .proof-walkthrough-step > header { display: flex; align-items: flex-start; margin-bottom: 18px; }
 .proof-walkthrough-step > header > span { position: absolute; left: -17px; top: -1px; display: flex; width: 33px; height: 33px; align-items: center; justify-content: center; border: 1px solid #a5b18d; border-radius: 50%; background: var(--paper, #faf9f5); color: var(--green); font: 11px var(--mono); }
 .proof-walkthrough-step > header > h5 { font-family: var(--serif); font-size: 23px; line-height: 1.5; font-weight: 500; margin: 0; }
+.proof-walkthrough-inputs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 15px; margin: -6px 0 16px; font-size: 12px; line-height: 1.8; }
+.proof-walkthrough-inputs > span { color: var(--muted); }
+.proof-walkthrough-inputs > button { display: inline-flex; align-items: baseline; gap: 7px; max-width: 100%; padding: 2px 0; background: transparent; color: var(--green); text-align: left; overflow-wrap: anywhere; }
+.proof-walkthrough-inputs > button > span { flex: 0 0 auto; font: 11px var(--mono); }
 .proof-walkthrough-given { color: #605e53; font-size: 14px; line-height: 1.95; white-space: pre-wrap; overflow-wrap: anywhere; }
 .proof-walkthrough-given > span { margin-right: 13px; font-size: 12px; color: var(--muted); }
 .proof-walkthrough-claim { margin: 19px 0; padding: 16px 20px; border-left: 2px solid var(--green); background: #f0f3e7; }
 .proof-walkthrough-claim > span { display: block; font-size: 11px; color: var(--green); margin-bottom: 8px; }
 .proof-walkthrough-claim > p { font-size: 17px; line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; }
 .proof-walkthrough-reason > h6 { color: var(--muted); font-size: 12px; font-weight: 400; margin: 0 0 8px; }
-.proof-walkthrough-reason > p { font-size: 15px; line-height: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-reason > p { margin-top: 16px !important; font-size: 15px; line-height: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-calculation { margin: 12px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.proof-walkthrough-calculation > li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 13px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.proof-walkthrough-calculation > li > span { padding-top: 5px; color: var(--muted); font: 11px/1.8 var(--mono); }
+.proof-walkthrough-statement { font: 500 17px/1.9 var(--serif); white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-walkthrough-justification { margin-top: 4px !important; color: #605e53; font-size: 14px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
 .proof-walkthrough-next { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; gap: 10px; margin-top: 20px; align-items: baseline; color: var(--green); }
 .proof-walkthrough-next > span { font-size: 20px; }
 .proof-walkthrough-next > p { font-size: 14px; line-height: 1.95; white-space: pre-wrap; overflow-wrap: anywhere; }
@@ -371,6 +380,10 @@
   .proof-walkthrough-step { padding-left: 23px; scroll-margin-top: 105px; }
   .proof-walkthrough-step > header > span { width: 25px; height: 25px; left: -13px; top: 3px; font-size: 9px; }
   .proof-walkthrough-step > header > h5 { font-size: 21px; }
+  .proof-walkthrough-inputs { gap: 5px 10px; margin-bottom: 13px; }
+  .proof-walkthrough-calculation > li { grid-template-columns: 25px minmax(0, 1fr); gap: 8px; padding: 13px 0; }
+  .proof-walkthrough-statement { font-size: 16px; }
+  .proof-walkthrough-justification { font-size: 13px; }
   .proof-walkthrough-given, .proof-walkthrough-reason > p { font-size: 14px; }
   .proof-walkthrough-claim { padding: 13px 14px; }
   .proof-walkthrough-claim > p { font-size: 15px; }
