@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="assets/mark.png" alt="" width="64" height="64">
-
-<h1>TheoremOS</h1>
+<a href="https://theoremos.top/"><img src="assets/TheoremOS-cover-v4.png" alt="TheoremOS：与数学家协作的 AI 数学研究系统" width="1280"></a>
 
 <p><strong>面向前沿数学研究的 AI 协同系统与形式化证明平台</strong></p>
 
@@ -24,6 +22,8 @@
 > **研究内测**：[云端工作台](https://app.theoremos.top/)采用邮箱白名单免费内测（需自备支持 Responses API 的模型密钥）。可通过 [GitHub Issue](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml) 申请开通，CLI 实验与合作方式详见[访问说明](docs/ACCESS.md)。
 
 > 🏆 **研究成果与评测表现**：本仓库公开了系统完成的 **26 条高难度前沿数学证明记录**，涵盖代数数论、黎曼几何、泛函分析与统计物理等领域，其中包括 **[10 份通过 Lean-Eval 官方评测的证明](#lean-eval10-份官方通过的证明)**，以及 **[16 条经本地 Lean 与原题检查程序复核的 OpenAI Math 证明记录](#openai-math16-条证明记录)**。
+
+**从这里开始：**[首次使用图文教程](docs/GETTING-STARTED.zh-CN.md) · [真实案例：平面 Anderson 算子谱](docs/CASE-STUDY.zh-CN.md)
 
 ## 证明检查演示
 
@@ -101,7 +101,7 @@
 | 证明案例 | 核心数学结论 | 源码、核查与完整推演记录 |
 | --- | --- | --- |
 | **[Hopf–Rinow 定理](accepted/hopf_rinow/)** | 在题目给定的流形条件下，严格证明测地完备与度量完备等价。 | [Lean 证明](accepted/hopf_rinow/Submission.lean) · [🏅 官方评测通过](https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969) |
-| **平面 Anderson 算子谱** | 当 `h > 0`，随机势独立且均匀分布于 `[-h, h]` 时，证明几乎必然谱为 `[-4-h, 4+h]`。 | [题面](data/proofs/openai_planar_anderson_spectrum/Challenge.lean) · [证明](data/proofs/openai_planar_anderson_spectrum/Submission.lean) · [检查结果](data/proofs/openai_planar_anderson_spectrum/verification.json) · [研究过程](data/proofs/openai_planar_anderson_spectrum/process.json) |
+| **[平面 Anderson 算子谱](docs/CASE-STUDY.zh-CN.md)** | 当 `h > 0`，随机势独立且均匀分布于 `[-h, h]` 时，证明几乎必然谱为 `[-4-h, 4+h]`。 | [题面](data/proofs/openai_planar_anderson_spectrum/Challenge.lean) · [证明](data/proofs/openai_planar_anderson_spectrum/Submission.lean) · [检查结果](data/proofs/openai_planar_anderson_spectrum/verification.json) · [研究过程](data/proofs/openai_planar_anderson_spectrum/process.json) |
 | **树上三状态模型的超临界重构** | 在题目给定的超临界条件下，证明正则树与泊松树的重构优势趋于正极限。 | [题面](data/proofs/openai_three_state_supercritical/Challenge.lean) · [证明](data/proofs/openai_three_state_supercritical/Submission.lean) · [检查结果](data/proofs/openai_three_state_supercritical/verification.json) · [研究过程](data/proofs/openai_three_state_supercritical/process.json) |
 | **Snaky 获胜策略** | 面对合法应手，严格证明在 35 次 Maker 落子内完成 Snaky，并保持局面合法。 | [题面](data/proofs/openai_snaky_conditional/Challenge.lean) · [证明](data/proofs/openai_snaky_conditional/Submission.lean) · [检查结果](data/proofs/openai_snaky_conditional/verification.json) · [研究过程](data/proofs/openai_snaky_conditional/process.json) |
 
@@ -137,6 +137,8 @@ TheoremOS 目前通过邮箱白名单机制开放研究内测。**内测期间�
 
 ## 文档、复核指引与反馈
 
+- **首次使用图文教程**：[开始第一项研究](docs/GETTING-STARTED.zh-CN.md) — 模型配置、预算、题面核对、结果查看与下载。
+- **真实研究案例**：[平面 Anderson 算子谱](docs/CASE-STUDY.zh-CN.md) — 数学证明路线、探索记录与核查依据。
 - **访问与内测说明**：[`docs/ACCESS.md`](docs/ACCESS.md) — 云端工作台白名单申请流程、自备 API Key 要求及 CLI 研究合作联系方式。
 - **证明复核指引**：[`docs/VERIFY.zh-CN.md`](docs/VERIFY.zh-CN.md) — 提供无需 Mathlib 的 Lean 入门检查示例与 Dimitrov 官方冻结工作区复核步骤，并说明全部 26 条公开证明记录的构成（含 10 份具有 Lean-Eval 官方通过记录的证明，以及 16 条经本项目运行 Lean 与原题比较器核验、OpenAI 官方结果尚未确认的记录）。
 - **许可与引用**：[`LICENSE`](LICENSE)、[`docs/PUBLIC-MATERIALS.md`](docs/PUBLIC-MATERIALS.md)（公开材料许可说明）与 [`CITATION.cff`](CITATION.cff)。

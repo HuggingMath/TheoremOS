@@ -2,6 +2,14 @@
 
 All notable changes to the public TheoremOS repository are documented in this file.
 
+## [Unreleased]
+
+### Added
+
+- Product cover at the top of both READMEs, with English workbench screenshots in the English version.
+- Bilingual [planar Anderson spectrum case study](docs/CASE-STUDY.md), linked to the archived proof, research process, and verification records.
+- Illustrated first-use tutorials in [English](docs/GETTING-STARTED.md) and [Chinese](docs/GETTING-STARTED.zh-CN.md), covering access, model settings, budgets, statement review, and downloads.
+
 ## [0.1.0-preview.1] - Research Preview
 
 ### Added
