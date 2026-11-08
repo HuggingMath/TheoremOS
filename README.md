@@ -53,13 +53,13 @@ We welcome joint studies with a concrete mathematical or methodological question
 - Bring an unfinished Lean proof. We can examine the missing lemmas and identify reusable results.
 - Bring a search, context selection, or collaboration strategy. We can design a comparison with the statement, model, environment, and budget held fixed.
 
-Email [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn) with a problem source or Lean statement, what you have tried, and the question you want to investigate. Public questions and product feedback can go in [Issues](https://github.com/LikC1606/theorem-os-site/issues/new).
+Email [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn) with a problem source or Lean statement, what you have tried, and the question you want to investigate. Public questions and product feedback can go in [Issues](https://github.com/LikC1606/TheoremOS/issues/new).
 
 ## Start a study
 
 The workbench is an **allowlist beta**. The platform is free during beta; your model provider bills API calls. Browser use requires no local Lean or Docker installation.
 
-1. [Request access](https://github.com/LikC1606/theorem-os-site/issues/new?template=early-access.yml) and describe your research use. Public problem or Lean statement links are optional. You can also apply privately by emailing [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn).
+1. [Request access](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml) and describe your research use. Public problem or Lean statement links are optional. You can also apply privately by emailing [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn).
 2. After review, follow our reply to confirm your sign-in address privately by email. Once approved and added to the allowlist, sign in at [app.theoremos.top](https://app.theoremos.top/) with an emailed code.
 3. Connect OpenAI or a service compatible with the Responses API using your own API key, and set the formalization and proof budgets.
 4. Submit natural language, TeX, or an existing Lean statement. Review the formalization, follow the proof attempts, and download the Lean source, verification report, and local verification kit.
