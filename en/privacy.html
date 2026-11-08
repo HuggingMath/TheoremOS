@@ -30,9 +30,9 @@
     <aside class="legal-toc" aria-label="On this page"><a href="#privacy">Privacy</a><a href="#workbench-data">Online workbench</a><a href="#retention">Retention and deletion</a><a href="#terms">Terms of use</a><a href="#contact">Contact</a></aside>
     <article class="legal-content">
       <h1>Privacy and terms</h1>
-      <p class="legal-updated">Updated 7 November 2026 · Applies to the allowlist beta</p>
+      <p class="legal-updated">Updated 8 November 2026 · Applies to the allowlist beta</p>
       <ul class="legal-summary" aria-label="Summary">
-        <li>Keys never enter logs, drafts or run records. The natural-language entry keeps a key in page memory only. In advanced mode, “Save to my account” stores it encrypted on the server, where you can remove it at any time.</li>
+        <li>Keys are temporary by default and never enter logs, drafts or run records. After signing in, use natural-language Settings or Lean Model connection to save an encrypted key to your account, replace it or delete it. Only the last four characters are shown.</li>
         <li>You sign in to the workbench (<a href="https://app.theoremos.top/">app.theoremos.top</a>) using an approved email address, with a code or a password you have set. Problems, conversations and runs are isolated by account. The admin panel provides no route to another account’s content; operators retain server maintenance access.</li>
         <li>The platform is free during the research preview. Model calls are billed by the provider you choose, to your API key.</li>
         <li>This site uses no cookies and no advertising trackers. GitHub access requests and feedback are public.</li>
@@ -75,12 +75,12 @@
           <li>Your API key is submitted over HTTPS and passed to the isolated container for that run through a private input channel. It does not appear in container arguments or service logs.</li>
           <li>Agent commands do not receive keys in their environment. Task completion cleans up the isolated container and execution credentials. The current page may retain the key you entered in memory for the same conversation; refreshing clears it.</li>
           <li>If the key appears in model output or an error message, it is replaced with <code>[REDACTED]</code> before anything is saved.</li>
-          <li>Keys access only your selected model provider, including model-list checks you request. The natural-language entry does not save keys automatically. Advanced mode offers “Save to my account” under Model connection, storing an AES-256-GCM encrypted key bound to your account and provider. Only the last four characters are shown; the server decrypts the key to make calls.</li>
-          <li>Without opting to save, no key enters persistent data. Remove saved keys under Model connection; deleting an account removes its live key records. Maintenance backup retention is described below.</li>
+          <li>Keys access only your selected model provider, including model-list checks you request. They are temporary by default. After signing in, natural-language Settings and Lean Model connection let you save or replace an AES-256-GCM encrypted key bound to your account and provider. Only the last four characters are shown; the server decrypts the key to make calls.</li>
+          <li>Without opting to save, no key enters persistent data. Remove saved keys in natural-language Settings or Lean Model connection; deleting an account removes its live key records. Maintenance backup retention is described below.</li>
         </ul>
         <h3>Research records</h3>
         <p>The server stores the statement, task description and model settings you submit, along with the candidate sources, Lean checks, events and usage produced during the run. These records let you review runs and download archives in the workbench.</p>
-        <h3>Sharing</h3><p>A share link lets anyone holding it read the problem, proof, acceptance result, model, environment, duration and usage. It excludes keys, email, provider addresses, logs and Agent conversations. Revoking the link disables it.</p>
+        <h3>Sharing</h3><p>A share link lets anyone holding it read the Lean problem, proof, acceptance result, model, environment, duration and usage, plus the natural-language problem, confirmation method, back-translation and formalization correspondences when available. It excludes keys, email, provider addresses, logs and Agent conversations. Revoking the link disables it.</p>
         <h3>Model providers</h3>
         <p>Runs and follow-up questions send relevant problems, source, conversations and Lean feedback to your selected model provider. Processing and retention follow that provider’s privacy policy. Select the provider and its key before sending.</p>
         <h3>Browser storage</h3>
