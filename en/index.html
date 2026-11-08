@@ -134,16 +134,47 @@
           <button class="component-tab" type="button" id="tab-m4" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m4"><span class="component-number">M4</span><strong>Context</strong><i data-lucide="arrow-up-right"></i></button>
           <button class="component-tab" type="button" id="tab-m5" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m5"><span class="component-number">M5</span><strong>Collaboration</strong><i data-lucide="arrow-up-right"></i></button>
         </div>
+
+      </div><div class="module-media"><figure class="module-showcase" aria-labelledby="module-preview-heading">
+        <div class="module-preview-toolbar"><h3 id="module-preview-heading" class="sr-only">Module map and strategy library</h3><div class="module-preview-tabs" role="tablist" aria-label="Module views" hidden><button type="button" id="module-preview-tab-modules" role="tab" aria-selected="true" aria-controls="module-preview-panel" data-module-preview="modules"><i data-lucide="network"></i>Module map</button><button type="button" id="module-preview-tab-library" role="tab" aria-selected="false" aria-controls="module-preview-panel" tabindex="-1" data-module-preview="library"><i data-lucide="folder-open"></i>Strategy library</button></div></div>
+        <div id="module-preview-panel" role="tabpanel" aria-labelledby="module-preview-tab-modules" tabindex="0">
+          <div class="module-graph" data-ui role="group" aria-label="Interactive module map" aria-describedby="module-graph-description">
+            <p class="sr-only" id="module-graph-description">M5 organizes collaboration. The research loop follows M3 search, M4 context, M1 construction and M2 feedback, returning to M3. S3 independently verifies the integrated proof against the complete original statement.</p>
+            <div class="module-graph-canvas">
+              <svg class="module-graph-edges" aria-hidden="true" focusable="false">
+                <defs><marker id="module-graph-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--muted)" stroke-width="1.4"></path></marker><marker id="module-graph-arrow-active" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--accent)" stroke-width="1.4"></path></marker></defs>
+              <path data-graph-from="m5" data-graph-to="m3" class="graph-coordination-edge" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m5" data-graph-to="m4" class="graph-coordination-edge" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m3" data-graph-to="m4" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m4" data-graph-to="m1" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m1" data-graph-to="m2" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m2" data-graph-to="m3" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m2" data-graph-to="s3" marker-end="url(#module-graph-arrow)"></path>
+              </svg>
+              <button type="button" class="graph-node graph-node-wide" data-graph-component="m5" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M5</span><strong>Collaboration</strong><i data-lucide="arrow-up-right"></i></button>
+              <div class="module-graph-loop">
+                <button type="button" class="graph-node" data-graph-component="m3" aria-pressed="true" aria-controls="component-panel" disabled><span class="graph-node-id">M3</span><strong>Search</strong><i data-lucide="arrow-up-right"></i></button>
+                <button type="button" class="graph-node" data-graph-component="m4" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M4</span><strong>Context</strong><i data-lucide="arrow-up-right"></i></button>
+                <button type="button" class="graph-node" data-graph-component="m1" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M1</span><strong>Build</strong><i data-lucide="arrow-up-right"></i></button>
+                <button type="button" class="graph-node" data-graph-component="m2" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M2</span><strong>Check</strong><i data-lucide="arrow-up-right"></i></button>
+              </div>
+              <details class="graph-verification">
+                <summary data-graph-terminal="s3"><span class="graph-node-id">S3</span><strong>Independent verification</strong><i data-lucide="chevron-down"></i></summary>
+                <p>The integrated proof must pass Lean against the complete original statement, in the fixed environment. Local checks and model messages do not count as acceptance.</p>
+              </details>
+            </div>
+            <p class="module-graph-route" id="module-graph-route" aria-live="polite" aria-atomic="true">M3 → M4 · Ready tasks guide the context selection.</p>
+          </div>
+          <div class="module-library" hidden><a class="module-preview-link" href="../assets/workbench-library-desktop-en.png" target="_blank" rel="noreferrer" aria-label="View the full-size strategy library screenshot" title="View full-size screenshot"><picture><source media="(max-width: 600px)" srcset="../assets/workbench-library-mobile-en.png" width="360" height="650"><img src="../assets/workbench-library-desktop-en.png" alt="Strategy library: a saved Mathlib algebra study with two custom strategies enabled." width="848" height="530" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></div>
+        </div>
+        <figcaption class="sr-only"><span id="module-preview-caption" aria-live="polite">Research modules and independent verification</span></figcaption>
+      </figure></div>
         <div class="component-panel" id="component-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-m3">
           <div class="module-details"><div><h3 id="module-title">Choose the next task</h3><p id="module-description">Select ready tasks and decide whether to continue, retry or stop within route constraints and a shared budget.</p></div><dl><div><dt>Input</dt><dd id="module-input">Research state · candidate operations · shared budget</dd></div><div><dt>Output</dt><dd id="module-output">Next operation · ordered ready tasks</dd></div></dl><p class="module-contract" id="module-kicker">M3 · Search</p></div>
           <div class="independent-check"><i data-lucide="shield-check"></i><span>S3 always verifies the complete original statement independently.</span></div>
         </div>
-      </div><div class="module-media"><figure class="module-showcase" aria-labelledby="module-preview-heading">
-        <div class="module-preview-toolbar"><h3 id="module-preview-heading" class="sr-only">Module map and strategy library</h3><div class="module-preview-tabs" role="tablist" aria-label="Workbench module views" hidden><button type="button" id="module-preview-tab-modules" role="tab" aria-selected="true" aria-controls="module-preview-panel" data-module-preview="modules"><i data-lucide="network"></i>Module map</button><button type="button" id="module-preview-tab-library" role="tab" aria-selected="false" aria-controls="module-preview-panel" tabindex="-1" data-module-preview="library"><i data-lucide="folder-open"></i>Strategy library</button></div></div>
-        <div id="module-preview-panel" role="tabpanel" aria-labelledby="module-preview-tab-modules" tabindex="0"><a class="module-preview-link" href="../assets/workbench-modules-desktop-en.png" target="_blank" rel="noreferrer" aria-label="View the full-size module map screenshot" title="View full-size screenshot"><picture><source media="(max-width: 600px)" srcset="../assets/workbench-modules-mobile-en.png" width="360" height="650"><img src="../assets/workbench-modules-desktop-en.png" alt="Module map: the M1–M5 research decisions connect to the fixed S3 independent verification." width="848" height="530" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></div>
-        <figcaption class="sr-only"><span id="module-preview-caption" aria-live="polite">Research modules and independent verification</span></figcaption>
-      </figure></div></div>
-      <noscript><p class="no-script-note">Enable JavaScript to switch component descriptions and screenshots.</p></noscript>
+      </div>
+      <noscript><p class="no-script-note">M5 organizes collaboration. The research loop follows M3 search, M4 context, M1 construction and M2 feedback, returning to M3. S3 independently verifies the integrated proof against the complete original statement.</p></noscript>
     </section></div>
 
     <section class="start-section" id="start" aria-labelledby="start-title"><div class="start-layout wrap">

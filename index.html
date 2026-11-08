@@ -134,16 +134,47 @@
           <button class="component-tab" type="button" id="tab-m4" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m4"><span class="component-number">M4</span><strong>上下文选择</strong><i data-lucide="arrow-up-right"></i></button>
           <button class="component-tab" type="button" id="tab-m5" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m5"><span class="component-number">M5</span><strong>协作复用</strong><i data-lucide="arrow-up-right"></i></button>
         </div>
+
+      </div><div class="module-media"><figure class="module-showcase" aria-labelledby="module-preview-heading">
+        <div class="module-preview-toolbar"><h3 id="module-preview-heading" class="sr-only">模块图谱与方案库</h3><div class="module-preview-tabs" role="tablist" aria-label="模块视图" hidden><button type="button" id="module-preview-tab-modules" role="tab" aria-selected="true" aria-controls="module-preview-panel" data-module-preview="modules"><i data-lucide="network"></i>模块图谱</button><button type="button" id="module-preview-tab-library" role="tab" aria-selected="false" aria-controls="module-preview-panel" tabindex="-1" data-module-preview="library"><i data-lucide="folder-open"></i>方案库</button></div></div>
+        <div id="module-preview-panel" role="tabpanel" aria-labelledby="module-preview-tab-modules" tabindex="0">
+          <div class="module-graph" data-ui role="group" aria-label="交互式模块图谱" aria-describedby="module-graph-description">
+            <p class="sr-only" id="module-graph-description">M5 组织协作；研究循环依次经过 M3 搜索、M4 上下文、M1 构造与 M2 检查，再将反馈交回 M3。集成后的证明交给 S3，对完整原题独立验收。</p>
+            <div class="module-graph-canvas">
+              <svg class="module-graph-edges" aria-hidden="true" focusable="false">
+                <defs><marker id="module-graph-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--muted)" stroke-width="1.4"></path></marker><marker id="module-graph-arrow-active" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--accent)" stroke-width="1.4"></path></marker></defs>
+              <path data-graph-from="m5" data-graph-to="m3" class="graph-coordination-edge" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m5" data-graph-to="m4" class="graph-coordination-edge" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m3" data-graph-to="m4" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m4" data-graph-to="m1" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m1" data-graph-to="m2" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m2" data-graph-to="m3" marker-end="url(#module-graph-arrow)"></path>
+              <path data-graph-from="m2" data-graph-to="s3" marker-end="url(#module-graph-arrow)"></path>
+              </svg>
+              <button type="button" class="graph-node graph-node-wide" data-graph-component="m5" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M5</span><strong>协作复用</strong><i data-lucide="arrow-up-right"></i></button>
+              <div class="module-graph-loop">
+                <button type="button" class="graph-node" data-graph-component="m3" aria-pressed="true" aria-controls="component-panel" disabled><span class="graph-node-id">M3</span><strong>选择任务</strong><i data-lucide="arrow-up-right"></i></button>
+                <button type="button" class="graph-node" data-graph-component="m4" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M4</span><strong>整理上下文</strong><i data-lucide="arrow-up-right"></i></button>
+                <button type="button" class="graph-node" data-graph-component="m1" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M1</span><strong>构造证明</strong><i data-lucide="arrow-up-right"></i></button>
+                <button type="button" class="graph-node" data-graph-component="m2" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M2</span><strong>检查候选</strong><i data-lucide="arrow-up-right"></i></button>
+              </div>
+              <details class="graph-verification">
+                <summary data-graph-terminal="s3"><span class="graph-node-id">S3</span><strong>独立验收</strong><i data-lucide="chevron-down"></i></summary>
+                <p>集成后的证明须在固定环境中通过 Lean 对完整原题的检查。局部检查与模型的完成消息均不构成最终验收。</p>
+              </details>
+            </div>
+            <p class="module-graph-route" id="module-graph-route" aria-live="polite" aria-atomic="true">M3 → M4 · 根据就绪任务，整理下一步所需的上下文。</p>
+          </div>
+          <div class="module-library" hidden><a class="module-preview-link" href="assets/workbench-library-desktop.png" target="_blank" rel="noreferrer" aria-label="查看方案库原始截图" title="查看原始截图"><picture><source media="(max-width: 600px)" srcset="assets/workbench-library-mobile.png" width="360" height="650"><img src="assets/workbench-library-desktop.png" alt="模块方案库：Mathlib 代数研究方案，启用两项自定义策略。" width="848" height="530" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></div>
+        </div>
+        <figcaption class="sr-only"><span id="module-preview-caption" aria-live="polite">研究模块与独立验收</span></figcaption>
+      </figure></div>
         <div class="component-panel" id="component-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-m3">
           <div class="module-details"><div><h3 id="module-title">选择下一步任务</h3><p id="module-description">选择就绪任务，决定继续、重试或停止，结合路线与共享预算安排尝试。</p></div><dl><div><dt>输入</dt><dd id="module-input">研究状态 · 候选操作 · 共享预算</dd></div><div><dt>输出</dt><dd id="module-output">下一步操作 · 有序就绪任务</dd></div></dl><p class="module-contract" id="module-kicker">M3 · 搜索接口</p></div>
           <div class="independent-check"><i data-lucide="shield-check"></i><span>S3 始终独立验收完整原题。</span></div>
         </div>
-      </div><div class="module-media"><figure class="module-showcase" aria-labelledby="module-preview-heading">
-        <div class="module-preview-toolbar"><h3 id="module-preview-heading" class="sr-only">模块图谱与方案库</h3><div class="module-preview-tabs" role="tablist" aria-label="模块工作台画面" hidden><button type="button" id="module-preview-tab-modules" role="tab" aria-selected="true" aria-controls="module-preview-panel" data-module-preview="modules"><i data-lucide="network"></i>模块图谱</button><button type="button" id="module-preview-tab-library" role="tab" aria-selected="false" aria-controls="module-preview-panel" tabindex="-1" data-module-preview="library"><i data-lucide="folder-open"></i>方案库</button></div></div>
-        <div id="module-preview-panel" role="tabpanel" aria-labelledby="module-preview-tab-modules" tabindex="0"><a class="module-preview-link" href="assets/workbench-modules-desktop.png" target="_blank" rel="noreferrer" aria-label="查看模块图谱原始截图" title="查看原始截图"><picture><source media="(max-width: 600px)" srcset="assets/workbench-modules-mobile.png" width="360" height="650"><img src="assets/workbench-modules-desktop.png" alt="模块图谱：M1–M5 研究决策连接到固定的 S3 独立验收。" width="848" height="530" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></div>
-        <figcaption class="sr-only"><span id="module-preview-caption" aria-live="polite">研究模块与独立验收</span></figcaption>
-      </figure></div></div>
-      <noscript><p class="no-script-note">启用 JavaScript 可切换研究组件与方案。</p></noscript>
+      </div>
+      <noscript><p class="no-script-note">M5 组织协作；研究循环依次经过 M3 搜索、M4 上下文、M1 构造与 M2 检查，再将反馈交回 M3。集成后的证明交给 S3，对完整原题独立验收。</p></noscript>
     </section></div>
 
     <section class="start-section" id="start" aria-labelledby="start-title"><div class="start-layout wrap">
