@@ -1,0 +1,47 @@
+{
+  "schema": "theoremos.proof-tool-installation.v1",
+  "checkedAt": "2026-11-08T06:59:57.735716+00:00",
+  "status": "passed",
+  "leanToolchain": "leanprover/lean4:v4.35.0-rc3",
+  "tools": [
+    {
+      "tool": "landrun",
+      "sourceCommit": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f",
+      "sha256": "c2e92ee9ec33e6eb3627fa071cc80e73c5ac0acefc9d39b7b5116b15512d3e1b"
+    },
+    {
+      "tool": "lean4export",
+      "sourceCommit": "076e8e57707e813375e8f9da8bf989799ace9680",
+      "sha256": "71043e7c3dce6a88b3472c0471dd5209af086919fcadc0478a0e134a1457bf0e"
+    },
+    {
+      "tool": "comparator",
+      "sourceCommit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+      "sha256": "9c52a28d59016a453d9d5da3c1fe09240f6fc4946863bc60849c9b361310c499"
+    },
+    {
+      "tool": "nanoda_bin",
+      "sourceCommit": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+      "sha256": "73c01a777d92b5fb59902eed3129c1e77dcbd66edf0e4504a609123c26476108"
+    }
+  ],
+  "sources": {
+    "lean4export": {
+      "commit": "076e8e57707e813375e8f9da8bf989799ace9680",
+      "buildToolchain": "leanprover/lean4:v4.35.0-rc3"
+    },
+    "comparator": {
+      "commit": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+      "buildToolchain": "leanprover/lean4:v4.35.0-rc3"
+    },
+    "nanoda": {
+      "commit": "68d5ca9db226849b41a6fff59d796ff19d0a8840"
+    }
+  },
+  "compilers": {
+    "Go": "go version go1.27.3 linux/amd64",
+    "Cargo": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+    "Rust": "rustc 1.95.0 (59807616e 2026-04-14)",
+    "C": "cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0"
+  }
+}

@@ -23,7 +23,7 @@
 
 > 🏆 **研究成果与评测表现**：本仓库公开了系统完成的 **26 条高难度前沿数学证明记录**，涵盖代数数论、黎曼几何、泛函分析与统计物理等领域，其中包括 **[10 份通过 Lean-Eval 官方评测的证明](#lean-eval10-份官方通过的证明)**，以及 **[16 条经本地 Lean 与原题检查程序复核的 OpenAI Math 证明记录](#openai-math16-条证明记录)**。
 
-**从这里开始：**[首次使用图文教程](docs/GETTING-STARTED.zh-CN.md) · [真实案例：平面 Anderson 算子谱](docs/CASE-STUDY.zh-CN.md)
+**从这里开始：**[首次使用图文教程](docs/GETTING-STARTED.zh-CN.md) · [真实研究案例](docs/CASE-STUDY.zh-CN.md) · [能力与开放范围](docs/CAPABILITIES.zh-CN.md) · [评测数据与口径](docs/EVALUATION.zh-CN.md) · [下载真实证明复核包](proof-kits/dimitrov/README.zh-CN.md)
 
 ## 证明检查演示
 
@@ -140,6 +140,9 @@ TheoremOS 目前通过邮箱白名单机制开放研究内测。**内测期间�
 - **首次使用图文教程**：[开始第一项研究](docs/GETTING-STARTED.zh-CN.md) — 模型配置、预算、题面核对、结果查看与下载。
 - **真实研究案例**：[平面 Anderson 算子谱](docs/CASE-STUDY.zh-CN.md) — 数学证明路线、探索记录与核查依据。
 - **访问与内测说明**：[`docs/ACCESS.md`](docs/ACCESS.md) — 云端工作台白名单申请流程、自备 API Key 要求及 CLI 研究合作联系方式。
+- **能力与开放范围**：[网页功能、CLI 研究访问与规划中的能力](docs/CAPABILITIES.zh-CN.md)。
+- **评测数据与口径**：[档案构成、逐次运行观测与 JSON/CSV 下载](docs/EVALUATION.zh-CN.md)。
+- **完整证明复核包**：[Dimitrov：固定题面、证明、环境、检查脚本与报告](proof-kits/dimitrov/README.zh-CN.md)。
 - **证明复核指引**：[`docs/VERIFY.zh-CN.md`](docs/VERIFY.zh-CN.md) — 提供无需 Mathlib 的 Lean 入门检查示例与 Dimitrov 官方冻结工作区复核步骤，并说明全部 26 条公开证明记录的构成（含 10 份具有 Lean-Eval 官方通过记录的证明，以及 16 条经本项目运行 Lean 与原题比较器核验、OpenAI 官方结果尚未确认的记录）。
 - **许可与引用**：[`LICENSE`](LICENSE)、[`docs/PUBLIC-MATERIALS.md`](docs/PUBLIC-MATERIALS.md)（公开材料许可说明）与 [`CITATION.cff`](CITATION.cff)。
 - **版本记录**：[`CHANGELOG.md`](CHANGELOG.md)。

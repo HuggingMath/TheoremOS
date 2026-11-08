@@ -1,0 +1,2350 @@
+{
+  "schema": "theoremos.evaluation-snapshot.v1",
+  "scope": "Published archive inventory and selected-run observations; not a fixed-cohort benchmark.",
+  "archiveSnapshotAt": "2026-11-07T16:32:08.577Z",
+  "archiveRevision": "99af0a7d2cdffdb8673cb3920b0b5f0616552f26",
+  "counts": {
+    "archiveRecords": 27,
+    "passingRecords": 26,
+    "officialLeanEvalPasses": 10,
+    "projectLeanComparatorPasses": 16,
+    "unfinishedResearchSnapshots": 1,
+    "openAiRecordTargetDeclarations": 23,
+    "publicProcessRuns": 45,
+    "publicRunsWithTimestampPairs": 38,
+    "publicRunStatusCounts": {
+      "evaluated_failed": 1,
+      "evaluated_passed": 19,
+      "incomplete": 1,
+      "limit_reached": 17,
+      "prepared": 4,
+      "runtime_error": 3
+    },
+    "selectedRunMeteringObservations": 16,
+    "selectedRunUsageMarkedComplete": 1,
+    "selectedRunUsageMarkedIncomplete": 15
+  },
+  "comparisonMetrics": {
+    "fixedCohortDenominator": null,
+    "successRate": null,
+    "fromScratchTime": null,
+    "fullTokenUsage": null,
+    "totalCostUsd": null
+  },
+  "definitions": {
+    "archiveRecord": "One catalog entry with its own statement and provenance. Entries may contain several targets or support/conditional results.",
+    "selection": "The 16 project-verified records were selected for publication after passing. Their 45 saved runs are histories of those selected problems, not an evaluation denominator.",
+    "projectVerification": "The recorded Lean kernel and original comparator passed; OpenAI-hosted evaluation remains unconfirmed.",
+    "modelLabel": "The original catalog label, not an independently reconstructed per-call model history.",
+    "selectedRunDurationSeconds": "finishedAt minus startedAt for verification.runId. This is a saved interval for that run, not from-scratch or total proof-production time.",
+    "reportedUsage": "The exact counters stored on the selected result, supplied by the source observations. These are not complete proof-production totals. usageComplete describes this run's recorded metering only.",
+    "recordedLaunchBudget": "The saved launch limits for the selected result. A value of zero means unlimited. These are not common limits across all attempts or continuations.",
+    "sourceHashes": "Public source-file hashes are recomputed here. Original result/launch hashes identify privately retained source artifacts inspected for the observations; this script does not independently reproduce their counters.",
+    "unfinishedSnapshot": "A historical saved research state. Its phase and turn count do not describe a currently live run.",
+    "null": "Not established for this scope. Null is not zero usage, zero cost, or an unlimited budget. CSV represents null with an empty cell."
+  },
+  "fieldProvenance": {
+    "identityStatusModel": "data/catalog.json#/records",
+    "officialPasses": "accepted/accepted.json plus submitted/official-results.json, bound to submitted/submitted.json by submission_manifest_sha256",
+    "projectVerification": "data/proofs/{id}/verification.json and the matching Submission.lean SHA-256",
+    "runs": "data/proofs/{id}/process.json; the selected run is matched by verification.runId",
+    "usageAndLaunchLimits": "data/evaluation/selected-run-observations.json"
+  },
+  "records": [
+    {
+      "id": "annals_algebraic_integers",
+      "title": "Algebraic integers",
+      "titleZh": "代数整数：λ_SSS 的上界",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/19/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "43cffcc2851efebefd9609abee0c537c64bd9dbf"
+    },
+    {
+      "id": "annals_equiangular_lines_fixed_angle",
+      "title": "Equiangular lines",
+      "titleZh": "固定夹角等角线",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/24/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2135#issuecomment-6186332699",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "1a46c11651e8346a13af410ae3e12292da694d81"
+    },
+    {
+      "id": "annals_fractional_expectation_thresholds",
+      "title": "Fractional expectation thresholds",
+      "titleZh": "分数期望阈值",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/23/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2141#issuecomment-6197783762",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "003d58b9a333858bf878e5984348ee21bb0aed72"
+    },
+    {
+      "id": "annals_improved_bounds_sunflower_lemma",
+      "title": "Sunflower lemma",
+      "titleZh": "向日葵引理的改进界",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/16/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "43cffcc2851efebefd9609abee0c537c64bd9dbf"
+    },
+    {
+      "id": "annals_lorentzian_polynomials",
+      "title": "Lorentzian polynomials",
+      "titleZh": "Lorentzian 多项式",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/17/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "43cffcc2851efebefd9609abee0c537c64bd9dbf"
+    },
+    {
+      "id": "annals_optimal_moebius",
+      "title": "Optimal paper Möbius band",
+      "titleZh": "纸带 Möbius 环的长宽比下界",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/18/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "43cffcc2851efebefd9609abee0c537c64bd9dbf"
+    },
+    {
+      "id": "annals_rademacher_enflo_type",
+      "title": "Rademacher & Enflo type",
+      "titleZh": "Rademacher 型与 Enflo 型的一致性",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/25/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2115#issuecomment-6161355838",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "0c40463f2714beea03c5e8416ba9e7c62aa6aa50"
+    },
+    {
+      "id": "annals_unit_conjecture",
+      "title": "Unit conjecture",
+      "titleZh": "群环单位猜想",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist + GPT-5.6",
+      "modelLabelSource": "data/catalog.json#/records/26/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/1246#issuecomment-5380977645",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "1062b1e6c3d5bda6ae4a218e41bd34dbf11a2c35"
+    },
+    {
+      "id": "dimitrov",
+      "title": "Dimitrov",
+      "titleZh": "代数整数的 house 下界",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/20/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "b6909c3211863eac52c040c8812da3df4ce3af4d"
+    },
+    {
+      "id": "hopf_rinow",
+      "title": "Hopf–Rinow",
+      "titleZh": "测地完备与度量完备",
+      "status": "official_accepted",
+      "modelLabel": "DeepScientist Math + GPT-6.1 (gpt-6.1-sol)",
+      "modelLabelSource": "data/catalog.json#/records/21/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969",
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "statementRevision": 1,
+      "originalSourceCommit": "b6909c3211863eac52c040c8812da3df4ce3af4d"
+    },
+    {
+      "id": "openai_brennan_sharp",
+      "title": "Sharp endpoint divergence for the Koebe map",
+      "titleZh": "Koebe 映射的锐端点发散",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/5/model",
+      "selectedRunId": "885e367e-04a9-49ca-b82f-d7367b12c10b",
+      "selectedRunDurationSeconds": 2278.193,
+      "selectedRunTurns": 48,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 73876775,
+        "outputTokens": 3124376,
+        "totalTokens": 77001151
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 3597,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 77001151,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 5,
+      "targetNames": [
+        "OAI.Brennan.Sharp.sharp_endpoints"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_brennan_sharp/verification.json",
+      "processSource": "data/proofs/openai_brennan_sharp/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/0",
+      "selectedRunStartedAt": "2026-11-04T19:05:06.486Z",
+      "selectedRunFinishedAt": "2026-11-04T19:43:04.679Z",
+      "reportedSolveWallMs": 2278193,
+      "rawResultSha256": "64b7be23097344ee7521b189fb676c788f91575d52d8f361a703d1587516bdd2",
+      "rawLaunchSha256": "40cdc6053cc86b6ecf3aefcc534ab8e81184aa35713c1b8c2b72e29c505faf00",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 2,
+        "limit_reached": 1,
+        "prepared": 2
+      },
+      "selectedRunSource": "data/proofs/openai_brennan_sharp/process.json#/runs/4",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "fbe330ab1781c05df68ccbb6e3914db1b584b913",
+        "proofSha256": "63bc780a8b0092517aba26c608eb9c58dc1033600a800a35fb1d5693b8c86e4d"
+      }
+    },
+    {
+      "id": "openai_cartier_chart_compactness_support",
+      "title": "Normalized Cartier chart retractions",
+      "titleZh": "归一化 Cartier 坐标回缩的紧致性",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/7/model",
+      "selectedRunId": "25c5cc6c-ec05-439c-bb42-7dd1ebeea45f",
+      "selectedRunDurationSeconds": 1144.551,
+      "selectedRunTurns": 6,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 1358267,
+        "outputTokens": 53475,
+        "totalTokens": 1411742
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 1411742,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 2,
+      "targetNames": [
+        "OAI.CartierSections.isCompact_closedChartFieldRetraction_cone"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_cartier_chart_compactness_support/verification.json",
+      "processSource": "data/proofs/openai_cartier_chart_compactness_support/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/1",
+      "selectedRunStartedAt": "2026-11-02T07:04:50.184Z",
+      "selectedRunFinishedAt": "2026-11-02T07:23:54.735Z",
+      "reportedSolveWallMs": 1144551,
+      "rawResultSha256": "605083e6b3bd0538814df769b37b94af777b9ecc713620879896c5153451b2b7",
+      "rawLaunchSha256": "a20a7e22195fa15cad9d54b82532efd67f0d88fc43eaea8f18e3f2f19189f0eb",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 2
+      },
+      "selectedRunSource": "data/proofs/openai_cartier_chart_compactness_support/process.json#/runs/1",
+      "attribution": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "5e16b35636c3fbb0aa5cdf79434569e21d87253a",
+        "proofSha256": "3f4987016064040ed126b75de0aea0dfa6b2bf74b7dd22dfa1722b7fcc525963"
+      }
+    },
+    {
+      "id": "openai_finite_congruence_graph",
+      "title": "A colored-graph criterion for congruence lattices",
+      "titleZh": "有限同余格的彩色图判据",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/8/model",
+      "selectedRunId": "24910705-72c7-4d57-9d54-d8c3d6cb4e2e",
+      "selectedRunDurationSeconds": 1721.562,
+      "selectedRunTurns": 26,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 32037290,
+        "outputTokens": 1202033,
+        "totalTokens": 33239323
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 33239323,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 3,
+      "targetNames": [
+        "OAI.FiniteCongruence.graph_criterion"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_finite_congruence_graph/verification.json",
+      "processSource": "data/proofs/openai_finite_congruence_graph/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/2",
+      "selectedRunStartedAt": "2026-10-28T15:23:41.533Z",
+      "selectedRunFinishedAt": "2026-10-28T15:52:23.095Z",
+      "reportedSolveWallMs": 1721562,
+      "rawResultSha256": "8456b966231d8ce9ac3a76588b408644a8c26c6b25b73936b218908834f3cba1",
+      "rawLaunchSha256": "c37f5d0175e5c76c7babab47155f4d029ad705d19a898ff4b23d0c159868119a",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 1,
+        "runtime_error": 1
+      },
+      "selectedRunSource": "data/proofs/openai_finite_congruence_graph/process.json#/runs/2",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "01ed741391d019c9dc0029aecb7caa618152a0e8",
+        "proofSha256": "6b32441db35b95aed73a9f7acdb44c57bc0f5c3e1556113478e96f921b022a3f"
+      }
+    },
+    {
+      "id": "openai_hadamard_cube_fiber",
+      "title": "Hadamard cube-fiber cancellation",
+      "titleZh": "六阶 Hadamard 行比值的立方纤维消去",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/13/model",
+      "selectedRunId": "3f2c13eb-fbf3-47d4-bff5-aed2489d23aa",
+      "selectedRunDurationSeconds": 966.516,
+      "selectedRunTurns": 4,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 1704708,
+        "outputTokens": 89908,
+        "totalTokens": 1794616
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 1794616,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 1,
+      "targetNames": [
+        "OAI.HadamardSix.rowRatio_cubeFiber_sum_zero"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_hadamard_cube_fiber/verification.json",
+      "processSource": "data/proofs/openai_hadamard_cube_fiber/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/3",
+      "selectedRunStartedAt": "2026-10-22T19:21:36.545Z",
+      "selectedRunFinishedAt": "2026-10-22T19:37:43.061Z",
+      "reportedSolveWallMs": 966516,
+      "rawResultSha256": "d1fa77b46bfb98cd1aa4ec7d34d436714e05e48cf92414fb5acf7d75429b3d88",
+      "rawLaunchSha256": "3122f1bfcf5aad9efe22fccd5c07483988028dde47d93f1b40cff16a7a83b471",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1
+      },
+      "selectedRunSource": "data/proofs/openai_hadamard_cube_fiber/process.json#/runs/0",
+      "attribution": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "be3ac1e85859e7f88229dd3eab02a492b9ca2d5a",
+        "proofSha256": "d818e4c8217e53057b254f92285bb22930f2b47504ed68d7e8def9d2547fa3a1"
+      }
+    },
+    {
+      "id": "openai_hilbert_crouzeix",
+      "title": "Numerical-range geometry and finite-compression support",
+      "titleZh": "数值域几何与有限压缩辅助结果",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/2/model",
+      "selectedRunId": "12ec8cde-d66b-40bb-84c7-a558d1af9cb6",
+      "selectedRunDurationSeconds": 15498.495,
+      "selectedRunTurns": 55,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 81047140,
+        "outputTokens": 3166088,
+        "totalTokens": 84213228
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 84213228,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 3,
+      "targetNames": [
+        "OAI.HilbertCrouzeix.numericalClosure_geometry",
+        "OAI.HilbertCrouzeix.exists_finite_compression",
+        "OAI.HilbertCrouzeix.rational_denominator_isUnit",
+        "OAI.HilbertCrouzeix.zeroConclusion"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_hilbert_crouzeix/verification.json",
+      "processSource": "data/proofs/openai_hilbert_crouzeix/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/4",
+      "selectedRunStartedAt": "2026-11-05T06:56:37.536Z",
+      "selectedRunFinishedAt": "2026-11-05T11:14:56.031Z",
+      "reportedSolveWallMs": 15498495,
+      "rawResultSha256": "fd65845ae77fda144606c495ca02a866a31d2d7a9c781813530af42fa3e31ef5",
+      "rawLaunchSha256": "1e3a310eaff6acc189f39367c4830cef7ed43a23940480be1e0ba5808a92c97c",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 2
+      },
+      "selectedRunSource": "data/proofs/openai_hilbert_crouzeix/process.json#/runs/2",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "2fb1e27563523481d03350b786b7e9562ad61005",
+        "proofSha256": "fc4c35ba96e2fef31d57635d0cd237498eaacf87bdeba7510a0daac5d6d663af"
+      }
+    },
+    {
+      "id": "openai_honeycomb_free_energy",
+      "title": "The honeycomb free-energy limit",
+      "titleZh": "蜂窝格自由能极限的存在性",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/9/model",
+      "selectedRunId": "42061240-6393-47da-b4bf-a58bef9080ea",
+      "selectedRunDurationSeconds": 3985.297,
+      "selectedRunTurns": 31,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 19521397,
+        "outputTokens": 626066,
+        "totalTokens": 20147463
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 20147463,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 5,
+      "targetNames": [
+        "OAI.HoneycombForce.logPartition_tendsto"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_honeycomb_free_energy/verification.json",
+      "processSource": "data/proofs/openai_honeycomb_free_energy/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/5",
+      "selectedRunStartedAt": "2026-10-28T13:39:23.262Z",
+      "selectedRunFinishedAt": "2026-10-28T14:45:48.559Z",
+      "reportedSolveWallMs": 3985297,
+      "rawResultSha256": "7e9ce76d3ece766f28c0c5415d6e9c8cb8aecd4a38fffca338caebe390394c7d",
+      "rawLaunchSha256": "d18f8ef3f87638fa2ca8d6560c3d03b2cd8191989992cfbf6bdacd45f29d4e10",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "incomplete": 1,
+        "limit_reached": 3
+      },
+      "selectedRunSource": "data/proofs/openai_honeycomb_free_energy/process.json#/runs/4",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "7d45dd3e782398f02a4f953671e055f2e7ff54db",
+        "proofSha256": "1472d78c68ac552b7ec3ff4c3d307035cb30aa08c734c95eae7f66e6b4b3601c"
+      }
+    },
+    {
+      "id": "openai_ising_finiteness",
+      "title": "Finiteness of the Ising-perceptron variational value",
+      "titleZh": "Ising 感知器变分值的有限性",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/4/model",
+      "selectedRunId": "f5737ab7-9d8d-4789-a18d-10cc5e6f7c6b",
+      "selectedRunDurationSeconds": 9367.002,
+      "selectedRunTurns": 54,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 37973642,
+        "outputTokens": 2165385,
+        "totalTokens": 40139027
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14399,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 40139027,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 4,
+      "targetNames": [
+        "OAI.IsingPerceptron.variationalValue_real_of_continuous"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_ising_finiteness/verification.json",
+      "processSource": "data/proofs/openai_ising_finiteness/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/6",
+      "selectedRunStartedAt": "2026-11-04T17:10:00.238Z",
+      "selectedRunFinishedAt": "2026-11-04T19:46:07.240Z",
+      "reportedSolveWallMs": 9367002,
+      "rawResultSha256": "c41248acbb012cded9fa2b53d2d885adb9e078c4d07bf6274572ee82b15468f0",
+      "rawLaunchSha256": "4499a7f7fbbe6e76119dc02229e092325971e20f61f66bcd337210d6e2f3ce3b",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 1,
+        "prepared": 1,
+        "runtime_error": 1
+      },
+      "selectedRunSource": "data/proofs/openai_ising_finiteness/process.json#/runs/3",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "833f10564c8bc1acd816da3226c6b207556bb4be",
+        "proofSha256": "9ae908672b96f937d19b4b2f6b74aa1952a57184e264e1a08c9a0bc847c2775a"
+      }
+    },
+    {
+      "id": "openai_planar_anderson_spectrum",
+      "title": "Almost-sure spectrum of the planar Anderson operator",
+      "titleZh": "平面 Anderson 算子的几乎必然谱",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/3/model",
+      "selectedRunId": "818b8243-22b1-4315-954c-d5610eff1e44",
+      "selectedRunDurationSeconds": 14032.263,
+      "selectedRunTurns": 107,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 183936328,
+        "outputTokens": 7824864,
+        "totalTokens": 191761192
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14398,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 191761192,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 1,
+      "targetNames": [
+        "OAI.PlanarAnderson.anderson_spectrum_ae"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_planar_anderson_spectrum/verification.json",
+      "processSource": "data/proofs/openai_planar_anderson_spectrum/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/7",
+      "selectedRunStartedAt": "2026-11-04T16:37:40.923Z",
+      "selectedRunFinishedAt": "2026-11-04T20:31:33.186Z",
+      "reportedSolveWallMs": 14032263,
+      "rawResultSha256": "eaea522529d6356ad65b9f361f13a579ad6e5fcfbc426178781e3a3219ab56b1",
+      "rawLaunchSha256": "c712d5cddf25b9dd1db547b414e380b1b7a9621c68d21b6dea424861f66b2002",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1
+      },
+      "selectedRunSource": "data/proofs/openai_planar_anderson_spectrum/process.json#/runs/0",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "9ffa70556f49392868ad54c5cb5982eabcf5bcf9",
+        "proofSha256": "2fd7e2d1c71eff673ce58cd82f694526f9d6ed0a4ace42f800b159b26482cfc7"
+      }
+    },
+    {
+      "id": "openai_plane_coloring",
+      "title": "A seven-coloring of the Euclidean plane",
+      "titleZh": "欧氏平面的七色着色",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/10/model",
+      "selectedRunId": "58e5a793-5940-4b38-aa6a-2a71ae0cac3f",
+      "selectedRunDurationSeconds": 8166.647,
+      "selectedRunTurns": 13,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 12979862,
+        "outputTokens": 459185,
+        "totalTokens": 13439047
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 13439047,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 3,
+      "targetNames": [
+        "OAI.Problem160.properColoring_seven"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_plane_coloring/verification.json",
+      "processSource": "data/proofs/openai_plane_coloring/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/8",
+      "selectedRunStartedAt": "2026-10-28T11:10:12.218Z",
+      "selectedRunFinishedAt": "2026-10-28T13:26:18.865Z",
+      "reportedSolveWallMs": 8166647,
+      "rawResultSha256": "eaf602341044faad1aefd61b81cdc974795acc6636baf7a458424b0f2b7d1c4b",
+      "rawLaunchSha256": "38fa7b919643274039fa98dd8f9696beab4663b570723b2ebf8a312e0d049c78",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 1,
+        "runtime_error": 1
+      },
+      "selectedRunSource": "data/proofs/openai_plane_coloring/process.json#/runs/2",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "0571db4c10de8a17ba937c853f480284cbbb9642",
+        "proofSha256": "3e842122e50547b602873e71db599cc6782414fec9c60a08c664d43586341d12"
+      }
+    },
+    {
+      "id": "openai_snaky_certificate",
+      "title": "The 35-move Snaky certificate",
+      "titleZh": "Snaky 的 35 步证书核验",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/12/model",
+      "selectedRunId": "6d22ec7c-5c2b-41a4-911d-dcf3f0b7ddf0",
+      "selectedRunDurationSeconds": 13754.834,
+      "selectedRunTurns": 27,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 104951968,
+        "outputTokens": 3514812,
+        "totalTokens": 108466780
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 108466780,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 1,
+      "targetNames": [
+        "OAI.SnakyCertificate.certificate_correct"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_snaky_certificate/verification.json",
+      "processSource": "data/proofs/openai_snaky_certificate/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/9",
+      "selectedRunStartedAt": "2026-10-23T16:15:46.458Z",
+      "selectedRunFinishedAt": "2026-10-23T20:05:01.292Z",
+      "reportedSolveWallMs": 13754834,
+      "rawResultSha256": "c2fdb0c304217b1aadf10d1655849a1c25fdd5c5965e01b1be1a42ae18ad6eff",
+      "rawLaunchSha256": "13330bca9185db6799656f4e0b75648a1b133abb87301f6116a125923b204890",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1
+      },
+      "selectedRunSource": "data/proofs/openai_snaky_certificate/process.json#/runs/0",
+      "attribution": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "ed230f9c5d4458f2e4fb5c4f27a04614d62fbb49",
+        "proofSha256": "b7dc0b2898b8d4ee8ed4a3b10394429f939ff9e4d73761dcd6968e46a4579751"
+      }
+    },
+    {
+      "id": "openai_snaky_conditional",
+      "title": "A 35-move winning strategy for Snaky",
+      "titleZh": "Snaky 的 35 步获胜策略",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/11/model",
+      "selectedRunId": "e2b78e94-e26d-4b02-a8e5-53375547ef4d",
+      "selectedRunDurationSeconds": 33443.284,
+      "selectedRunTurns": 7,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 8369984,
+        "outputTokens": 129494,
+        "totalTokens": 8499478
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 8499478,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 2,
+      "targetNames": [
+        "OAI.SnakyConditional.snaky_winning_strategy_with_legal_states"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_snaky_conditional/verification.json",
+      "processSource": "data/proofs/openai_snaky_conditional/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/10",
+      "selectedRunStartedAt": "2026-10-24T04:33:06.039Z",
+      "selectedRunFinishedAt": "2026-10-24T13:50:29.323Z",
+      "reportedSolveWallMs": 33443284,
+      "rawResultSha256": "7c7ac917b28831d350503d1bbe4650c11564509a551e1659235ed3e0bf3b89c8",
+      "rawLaunchSha256": "7ece53853e37a39f69a41a4814c60041c16c65c1c285495f7661592a4e6180c1",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 1
+      },
+      "selectedRunSource": "data/proofs/openai_snaky_conditional/process.json#/runs/1",
+      "attribution": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "14d49c0f2bb94a8973471120f675554798126117",
+        "proofSha256": "dc40df160330f9058ff0af4e85adac6ed1be8be0b2d54c7fba5f10f71450eaae"
+      }
+    },
+    {
+      "id": "openai_surface_cone_candidate_support",
+      "title": "A three-dimensional complete local candidate ring",
+      "titleZh": "三维完备局部候选环",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/14/model",
+      "selectedRunId": "cbfa1f3c-2760-4d7e-987a-97b48698fd49",
+      "selectedRunDurationSeconds": 2073.492,
+      "selectedRunTurns": 10,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 9083734,
+        "outputTokens": 338821,
+        "totalTokens": 9422555
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 9422555,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 2,
+      "targetNames": [
+        "OAI.SmallCM.candidate_ring_properties"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_surface_cone_candidate_support/verification.json",
+      "processSource": "data/proofs/openai_surface_cone_candidate_support/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/11",
+      "selectedRunStartedAt": "2026-10-22T18:44:51.457Z",
+      "selectedRunFinishedAt": "2026-10-22T19:19:24.949Z",
+      "reportedSolveWallMs": 2073492,
+      "rawResultSha256": "3466c7230d7880f744800f5fbbfb96d27dee3dc2e83c9cd180ba85d3c827ac17",
+      "rawLaunchSha256": "0721e1a60e755cf684f62412663ab743b9467e970c40509cebb746934983f023",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 1
+      },
+      "selectedRunSource": "data/proofs/openai_surface_cone_candidate_support/process.json#/runs/1",
+      "attribution": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "2ef811423f23eea4d7bea4bc2b74b49f436a706e",
+        "proofSha256": "bc4a1cec74196b46dd726a46dc467c40b8657527dbd235a49a3cf0b5e4355ac9"
+      }
+    },
+    {
+      "id": "openai_three_state_supercritical",
+      "title": "Supercritical reconstruction on regular and Poisson trees",
+      "titleZh": "正则树与泊松树上的超临界重构",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/0/model",
+      "selectedRunId": "76087917-e598-4ed8-be9e-06de27f4e5d0",
+      "selectedRunDurationSeconds": 13529.77,
+      "selectedRunTurns": 66,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 132487580,
+        "outputTokens": 5321780,
+        "totalTokens": 137809360
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 137809360,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 4,
+      "targetNames": [
+        "OAI.ThreeState.channel_nonneg",
+        "OAI.ThreeState.channel_sum",
+        "OAI.ThreeState.regular_supercritical",
+        "OAI.ThreeState.poisson_supercritical"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_three_state_supercritical/verification.json",
+      "processSource": "data/proofs/openai_three_state_supercritical/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/12",
+      "selectedRunStartedAt": "2026-11-05T18:12:47.983Z",
+      "selectedRunFinishedAt": "2026-11-05T21:58:17.753Z",
+      "reportedSolveWallMs": 13529770,
+      "rawResultSha256": "01cf9a4dcb679fd63b5969a9527e409edb954b87fee2fcf81074d6379cfa0570",
+      "rawLaunchSha256": "285d9afdb782e3791a45d0b3dcd730233132b6b12db1b112f7ef2830e56fc750",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 2,
+        "limit_reached": 1,
+        "prepared": 1
+      },
+      "selectedRunSource": "data/proofs/openai_three_state_supercritical/process.json#/runs/3",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "df13c8ec26003f2edca8d48c166ec67f13506609",
+        "proofSha256": "7ed9c39ce9036a21f69e05178619450e822ab5c5cee99524f08c202a78894d48"
+      }
+    },
+    {
+      "id": "openai_totient_companion_zero",
+      "title": "Totient companion: zero case",
+      "titleZh": "欧拉函数伴随定理的零值情形",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/6/model",
+      "selectedRunId": "41f80030-d1b0-4b66-acb6-3f0ddc1f26de",
+      "selectedRunDurationSeconds": 3277.751,
+      "selectedRunTurns": 11,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 4627667,
+        "outputTokens": 170832,
+        "totalTokens": 4798499
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 4798499,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 1,
+      "targetNames": [
+        "OAI.TotientAsymptotic.companion_zero_case"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_totient_companion_zero/verification.json",
+      "processSource": "data/proofs/openai_totient_companion_zero/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/13",
+      "selectedRunStartedAt": "2026-11-02T07:11:18.320Z",
+      "selectedRunFinishedAt": "2026-11-02T08:05:56.071Z",
+      "reportedSolveWallMs": 3277751,
+      "rawResultSha256": "7c150bb0a9dbf275e3ba881e7006a0fb8c2367ea8bc06e3578656396978523e1",
+      "rawLaunchSha256": "7dc0575d96e1b9ffa49e8acb05b530d53edf433423e94761d68d0b749c4e72d7",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1
+      },
+      "selectedRunSource": "data/proofs/openai_totient_companion_zero/process.json#/runs/0",
+      "attribution": "TheoremOS native run with recorded independent mathematical assistance from external agents, saved-candidate handoff or continuation.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "aa806af94c74165066e97791ffc34e05eaa416a3",
+        "proofSha256": "7d3509714928edd3f6b6a634c42d9dbeefd01c17a65d0e152fc09d97e6568a20"
+      }
+    },
+    {
+      "id": "openai_triangle_face",
+      "title": "Face correspondence under triangle expansion",
+      "titleZh": "三角展开下匹配多面体的面对应",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/1/model",
+      "selectedRunId": "d77dc453-baf2-4ffd-9afa-ae2af96decba",
+      "selectedRunDurationSeconds": 2843.712,
+      "selectedRunTurns": 18,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 14324003,
+        "outputTokens": 408272,
+        "totalTokens": 14732275
+      },
+      "usageComplete": false,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 14732275,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "costUsd": null,
+      "recordedRunCount": 5,
+      "targetNames": [
+        "OAI.MatchingEntropyBounds.Refined.collapse_reattach",
+        "OAI.TriangleFace198.triangle_expansion_face"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_triangle_face/verification.json",
+      "processSource": "data/proofs/openai_triangle_face/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/14",
+      "selectedRunStartedAt": "2026-11-05T18:12:47.952Z",
+      "selectedRunFinishedAt": "2026-11-05T19:00:11.664Z",
+      "reportedSolveWallMs": 2843712,
+      "rawResultSha256": "1bf94b080bb215773594f78d2aaa0a6693b0ba89000ed063bff0d468d5a74a43",
+      "rawLaunchSha256": "9bcca9cc0578ddec2d8c278ff8ca31a70341d64e97ea57571c452c8b152217bb",
+      "recordedRunStatusCounts": {
+        "evaluated_passed": 1,
+        "limit_reached": 4
+      },
+      "selectedRunSource": "data/proofs/openai_triangle_face/process.json#/runs/4",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "7792690dbf761951406a67695560452783c74317",
+        "proofSha256": "1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450"
+      }
+    },
+    {
+      "id": "openai_truffet_counterexample",
+      "title": "A finite counterexample to Truffet’s procedure",
+      "titleZh": "Truffet 优化程序的有限反例",
+      "status": "locally_verified",
+      "modelLabel": "TheoremOS · deepseek-flash",
+      "modelLabelSource": "data/catalog.json#/records/15/model",
+      "selectedRunId": "de7a57e9-becf-4f94-9276-2090ab3f2738",
+      "selectedRunDurationSeconds": 839.532,
+      "selectedRunTurns": 1,
+      "selectedRunWorkers": 4,
+      "reportedUsage": {
+        "inputTokens": 1831984,
+        "outputTokens": 94339,
+        "totalTokens": 1926323
+      },
+      "usageComplete": true,
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 1926323,
+        "status": "unlimited",
+        "usageComplete": true
+      },
+      "costUsd": null,
+      "recordedRunCount": 3,
+      "targetNames": [
+        "OAI.TruffetV4Counterexample.finite_execution_not_optimal"
+      ],
+      "officialResultUrl": null,
+      "verificationSource": "data/proofs/openai_truffet_counterexample/verification.json",
+      "processSource": "data/proofs/openai_truffet_counterexample/process.json",
+      "observationSource": "data/evaluation/selected-run-observations.json#/observations/15",
+      "selectedRunStartedAt": "2026-10-22T18:29:27.606Z",
+      "selectedRunFinishedAt": "2026-10-22T18:43:27.138Z",
+      "reportedSolveWallMs": 839532,
+      "rawResultSha256": "9f28e458dddbcfdbd9492acb945e0563e4af5f3915a6905d89dbe522ff225352",
+      "rawLaunchSha256": "e411441ad4dcc53174bd575c2a12f75c90831f2bb9777eba335497f1b08144ba",
+      "recordedRunStatusCounts": {
+        "evaluated_failed": 1,
+        "evaluated_passed": 1,
+        "limit_reached": 1
+      },
+      "selectedRunSource": "data/proofs/openai_truffet_counterexample/process.json#/runs/2",
+      "attribution": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+      "verification": {
+        "status": "evaluated_passed",
+        "kernelStatus": "kernel_verified",
+        "comparatorExitCode": 0,
+        "reviewStatus": "accepted",
+        "proofCommit": "df3f7cd329218f4eaca2d1b1020b2887a2e2018d",
+        "proofSha256": "442334bfd22cf81c9582b071cd6b370f2b6969d961418e6b084a25cc87ae4a91"
+      }
+    },
+    {
+      "id": "szemeredi",
+      "title": "Szemerédi",
+      "titleZh": "正上密度集合中的等差数列",
+      "status": "in_progress_not_officially_accepted",
+      "modelLabel": "gpt-6.1-sol",
+      "modelLabelSource": "data/catalog.json#/records/22/model",
+      "selectedRunId": null,
+      "selectedRunDurationSeconds": null,
+      "selectedRunTurns": null,
+      "selectedRunWorkers": null,
+      "reportedUsage": null,
+      "usageComplete": null,
+      "recordedLaunchBudget": null,
+      "tokenBudget": null,
+      "costUsd": null,
+      "recordedRunCount": null,
+      "targetNames": null,
+      "officialResultUrl": null,
+      "verificationSource": null,
+      "processSource": null,
+      "observationSource": null,
+      "snapshot": {
+        "runId": "29ee6fba-bc82-414b-9adf-63de9c0febd4",
+        "phase": "running",
+        "turns": 59,
+        "workers": 4,
+        "taskStatuses": {
+          "pending": 1,
+          "blocked": 4,
+          "completed": 9
+        }
+      }
+    }
+  ],
+  "runs": [
+    {
+      "recordId": "openai_brennan_sharp",
+      "runId": "2e194c28-4743-462a-a96c-898c59bdecd8",
+      "resultStatus": "prepared",
+      "phase": "prepared",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 1,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_brennan_sharp/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_brennan_sharp",
+      "runId": "3eabbdff-0c1d-434b-8a56-55ae9aa51fd0",
+      "resultStatus": "prepared",
+      "phase": "prepared",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 1,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_brennan_sharp/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_brennan_sharp",
+      "runId": "02635e0c-4a00-4760-b8a6-ed4a157bef62",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-11-02T08:39:30.251Z",
+      "finishedAt": "2026-11-02T09:39:30.344Z",
+      "recordedDurationSeconds": 3600.093,
+      "turns": 2,
+      "workers": 1,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_brennan_sharp/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_brennan_sharp",
+      "runId": "faf2ccf3-3cdb-4d7a-8dee-ba8a890b5f82",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-02T09:44:10.646Z",
+      "finishedAt": "2026-11-02T09:55:12.151Z",
+      "recordedDurationSeconds": 661.505,
+      "turns": 1,
+      "workers": 1,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_brennan_sharp/process.json#/runs/3"
+    },
+    {
+      "recordId": "openai_brennan_sharp",
+      "runId": "885e367e-04a9-49ca-b82f-d7367b12c10b",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-04T19:05:06.486Z",
+      "finishedAt": "2026-11-04T19:43:04.679Z",
+      "recordedDurationSeconds": 2278.193,
+      "turns": 48,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_brennan_sharp/process.json#/runs/4"
+    },
+    {
+      "recordId": "openai_cartier_chart_compactness_support",
+      "runId": "8e9999f3-c1a1-4bfd-b4ef-5cb62364d34f",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-22T19:30:03.762Z",
+      "finishedAt": "2026-10-22T19:43:19.674Z",
+      "recordedDurationSeconds": 795.912,
+      "turns": 5,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_cartier_chart_compactness_support/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_cartier_chart_compactness_support",
+      "runId": "25c5cc6c-ec05-439c-bb42-7dd1ebeea45f",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-02T07:04:50.184Z",
+      "finishedAt": "2026-11-02T07:23:54.735Z",
+      "recordedDurationSeconds": 1144.551,
+      "turns": 6,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_cartier_chart_compactness_support/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_finite_congruence_graph",
+      "runId": "329ca17e-3281-448f-96b1-ca7a57605685",
+      "resultStatus": "runtime_error",
+      "phase": "prepared",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_finite_congruence_graph/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_finite_congruence_graph",
+      "runId": "8d6b294c-e651-4a67-bde7-45c7c66c3e93",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T11:06:54.067Z",
+      "finishedAt": "2026-10-28T11:09:02.373Z",
+      "recordedDurationSeconds": 128.306,
+      "turns": 1,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_finite_congruence_graph/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_finite_congruence_graph",
+      "runId": "24910705-72c7-4d57-9d54-d8c3d6cb4e2e",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-28T15:23:41.533Z",
+      "finishedAt": "2026-10-28T15:52:23.095Z",
+      "recordedDurationSeconds": 1721.562,
+      "turns": 26,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_finite_congruence_graph/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_hadamard_cube_fiber",
+      "runId": "3f2c13eb-fbf3-47d4-bff5-aed2489d23aa",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-22T19:21:36.545Z",
+      "finishedAt": "2026-10-22T19:37:43.061Z",
+      "recordedDurationSeconds": 966.516,
+      "turns": 4,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_hadamard_cube_fiber/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_hilbert_crouzeix",
+      "runId": "ece0c406-f242-4daa-b9d8-a414f8cd7f78",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T19:54:50.246Z",
+      "finishedAt": "2026-10-28T20:57:38.343Z",
+      "recordedDurationSeconds": 3768.097,
+      "turns": 55,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_hilbert_crouzeix/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_hilbert_crouzeix",
+      "runId": "539e81e9-e059-4177-bba8-feb76366014b",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T20:59:48.184Z",
+      "finishedAt": "2026-10-28T21:43:31.605Z",
+      "recordedDurationSeconds": 2623.421,
+      "turns": 18,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_hilbert_crouzeix/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_hilbert_crouzeix",
+      "runId": "12ec8cde-d66b-40bb-84c7-a558d1af9cb6",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-05T06:56:37.536Z",
+      "finishedAt": "2026-11-05T11:14:56.031Z",
+      "recordedDurationSeconds": 15498.495,
+      "turns": 55,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_hilbert_crouzeix/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_honeycomb_free_energy",
+      "runId": "72bece57-55fa-4afd-b77d-08cd2048b7d6",
+      "resultStatus": "incomplete",
+      "phase": "finished",
+      "startedAt": "2026-10-27T09:32:04.153Z",
+      "finishedAt": "2026-10-27T13:48:02.727Z",
+      "recordedDurationSeconds": 15358.574,
+      "turns": 18,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_honeycomb_free_energy/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_honeycomb_free_energy",
+      "runId": "09f409d1-a9e2-4073-9e8f-2e296461006c",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T07:18:48.985Z",
+      "finishedAt": "2026-10-28T09:11:52.141Z",
+      "recordedDurationSeconds": 6783.156,
+      "turns": 30,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_honeycomb_free_energy/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_honeycomb_free_energy",
+      "runId": "1496d138-aa74-4ef6-af6d-6f79679274db",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T09:15:06.121Z",
+      "finishedAt": "2026-10-28T10:54:08.271Z",
+      "recordedDurationSeconds": 5942.15,
+      "turns": 28,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_honeycomb_free_energy/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_honeycomb_free_energy",
+      "runId": "0894218f-faa7-4e94-a16a-c3371265e143",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T11:10:35.991Z",
+      "finishedAt": "2026-10-28T13:27:54.888Z",
+      "recordedDurationSeconds": 8238.897,
+      "turns": 33,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_honeycomb_free_energy/process.json#/runs/3"
+    },
+    {
+      "recordId": "openai_honeycomb_free_energy",
+      "runId": "42061240-6393-47da-b4bf-a58bef9080ea",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-28T13:39:23.262Z",
+      "finishedAt": "2026-10-28T14:45:48.559Z",
+      "recordedDurationSeconds": 3985.297,
+      "turns": 31,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_honeycomb_free_energy/process.json#/runs/4"
+    },
+    {
+      "recordId": "openai_ising_finiteness",
+      "runId": "3d756a48-406d-4bb5-ae63-d1dc0d96141c",
+      "resultStatus": "prepared",
+      "phase": "prepared",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_ising_finiteness/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_ising_finiteness",
+      "runId": "dda473fa-7e7d-41e7-b8e9-903a12c94113",
+      "resultStatus": "runtime_error",
+      "phase": "finished",
+      "startedAt": "2026-10-27T13:48:19.748Z",
+      "finishedAt": "2026-10-27T16:28:51.109Z",
+      "recordedDurationSeconds": 9631.361,
+      "turns": 6,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_ising_finiteness/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_ising_finiteness",
+      "runId": "77fb44b8-8230-4a75-b882-04372b717f89",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T04:43:13.757Z",
+      "finishedAt": "2026-10-28T07:11:38.282Z",
+      "recordedDurationSeconds": 8904.525,
+      "turns": 9,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_ising_finiteness/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_ising_finiteness",
+      "runId": "f5737ab7-9d8d-4789-a18d-10cc5e6f7c6b",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-04T17:10:00.238Z",
+      "finishedAt": "2026-11-04T19:46:07.240Z",
+      "recordedDurationSeconds": 9367.002,
+      "turns": 54,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_ising_finiteness/process.json#/runs/3"
+    },
+    {
+      "recordId": "openai_planar_anderson_spectrum",
+      "runId": "818b8243-22b1-4315-954c-d5610eff1e44",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-04T16:37:40.923Z",
+      "finishedAt": "2026-11-04T20:31:33.186Z",
+      "recordedDurationSeconds": 14032.263,
+      "turns": 107,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_planar_anderson_spectrum/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_plane_coloring",
+      "runId": "458f1c41-ca2a-4b27-a49c-2830a9eb42e2",
+      "resultStatus": "runtime_error",
+      "phase": "prepared",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_plane_coloring/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_plane_coloring",
+      "runId": "a5b5ce2c-97b9-49bd-ac15-1132ac22a460",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-28T09:14:49.329Z",
+      "finishedAt": "2026-10-28T10:54:08.178Z",
+      "recordedDurationSeconds": 5958.849,
+      "turns": 11,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_plane_coloring/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_plane_coloring",
+      "runId": "58e5a793-5940-4b38-aa6a-2a71ae0cac3f",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-28T11:10:12.218Z",
+      "finishedAt": "2026-10-28T13:26:18.865Z",
+      "recordedDurationSeconds": 8166.647,
+      "turns": 13,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_plane_coloring/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_snaky_certificate",
+      "runId": "6d22ec7c-5c2b-41a4-911d-dcf3f0b7ddf0",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-23T16:15:46.458Z",
+      "finishedAt": "2026-10-23T20:05:01.292Z",
+      "recordedDurationSeconds": 13754.834,
+      "turns": 27,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_snaky_certificate/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_snaky_conditional",
+      "runId": "50babc1c-5a5c-449b-8f99-a61fa1da2376",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-24T04:19:59.149Z",
+      "finishedAt": "2026-10-24T04:30:34.474Z",
+      "recordedDurationSeconds": 635.325,
+      "turns": 7,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_snaky_conditional/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_snaky_conditional",
+      "runId": "e2b78e94-e26d-4b02-a8e5-53375547ef4d",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-24T04:33:06.039Z",
+      "finishedAt": "2026-10-24T13:50:29.323Z",
+      "recordedDurationSeconds": 33443.284,
+      "turns": 7,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_snaky_conditional/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_surface_cone_candidate_support",
+      "runId": "4e840397-550b-489c-9faa-31ebcf7dd86d",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-22T16:56:43.250Z",
+      "finishedAt": "2026-10-22T17:02:25.893Z",
+      "recordedDurationSeconds": 342.643,
+      "turns": 10,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_surface_cone_candidate_support/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_surface_cone_candidate_support",
+      "runId": "cbfa1f3c-2760-4d7e-987a-97b48698fd49",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-22T18:44:51.457Z",
+      "finishedAt": "2026-10-22T19:19:24.949Z",
+      "recordedDurationSeconds": 2073.492,
+      "turns": 10,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_surface_cone_candidate_support/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_three_state_supercritical",
+      "runId": "7c609e52-b1d2-4977-ad72-ddc0a2514c32",
+      "resultStatus": "prepared",
+      "phase": "prepared",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 1,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_three_state_supercritical/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_three_state_supercritical",
+      "runId": "bdcc7150-27fa-48e6-a771-418c112d7dbd",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-02T08:13:39.476Z",
+      "finishedAt": "2026-11-02T08:17:14.365Z",
+      "recordedDurationSeconds": 214.889,
+      "turns": 1,
+      "workers": 1,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_three_state_supercritical/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_three_state_supercritical",
+      "runId": "c6c8cc0f-c370-4196-af9c-907a9da73952",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-11-05T13:33:28.859Z",
+      "finishedAt": "2026-11-05T14:16:26.384Z",
+      "recordedDurationSeconds": 2577.525,
+      "turns": 90,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_three_state_supercritical/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_three_state_supercritical",
+      "runId": "76087917-e598-4ed8-be9e-06de27f4e5d0",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-05T18:12:47.983Z",
+      "finishedAt": "2026-11-05T21:58:17.753Z",
+      "recordedDurationSeconds": 13529.77,
+      "turns": 66,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_three_state_supercritical/process.json#/runs/3"
+    },
+    {
+      "recordId": "openai_totient_companion_zero",
+      "runId": "41f80030-d1b0-4b66-acb6-3f0ddc1f26de",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-02T07:11:18.320Z",
+      "finishedAt": "2026-11-02T08:05:56.071Z",
+      "recordedDurationSeconds": 3277.751,
+      "turns": 11,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_totient_companion_zero/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_triangle_face",
+      "runId": "2c9a8bea-28c9-41e7-9c46-5024c96c9c72",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": null,
+      "finishedAt": null,
+      "recordedDurationSeconds": null,
+      "turns": 0,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_triangle_face/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_triangle_face",
+      "runId": "46411529-fe40-4bb8-8fbb-071b6ecee757",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-11-05T13:33:28.972Z",
+      "finishedAt": "2026-11-05T14:16:26.540Z",
+      "recordedDurationSeconds": 2577.568,
+      "turns": 100,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_triangle_face/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_triangle_face",
+      "runId": "b889c85d-f260-4f3c-8279-cf1a1b1f40fa",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-11-05T14:29:16.876Z",
+      "finishedAt": "2026-11-05T16:41:36.035Z",
+      "recordedDurationSeconds": 7939.159,
+      "turns": 21,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_triangle_face/process.json#/runs/2"
+    },
+    {
+      "recordId": "openai_triangle_face",
+      "runId": "24d7257a-f537-449a-95dd-484c844470ed",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-11-05T17:19:30.156Z",
+      "finishedAt": "2026-11-05T17:23:20.696Z",
+      "recordedDurationSeconds": 230.54,
+      "turns": 3,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_triangle_face/process.json#/runs/3"
+    },
+    {
+      "recordId": "openai_triangle_face",
+      "runId": "d77dc453-baf2-4ffd-9afa-ae2af96decba",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-11-05T18:12:47.952Z",
+      "finishedAt": "2026-11-05T19:00:11.664Z",
+      "recordedDurationSeconds": 2843.712,
+      "turns": 18,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_triangle_face/process.json#/runs/4"
+    },
+    {
+      "recordId": "openai_truffet_counterexample",
+      "runId": "6ec0958d-a99f-43a4-94a9-590b28f637a3",
+      "resultStatus": "limit_reached",
+      "phase": "finished",
+      "startedAt": "2026-10-22T14:47:31.269Z",
+      "finishedAt": "2026-10-22T15:01:43.676Z",
+      "recordedDurationSeconds": 852.407,
+      "turns": 18,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_truffet_counterexample/process.json#/runs/0"
+    },
+    {
+      "recordId": "openai_truffet_counterexample",
+      "runId": "af4835ea-00e9-4705-a64d-9920adaa1b06",
+      "resultStatus": "evaluated_failed",
+      "phase": "finished",
+      "startedAt": "2026-10-22T17:02:57.476Z",
+      "finishedAt": "2026-10-22T18:15:59.208Z",
+      "recordedDurationSeconds": 4381.732,
+      "turns": 42,
+      "workers": 4,
+      "selectedForPublishedVerification": false,
+      "source": "data/proofs/openai_truffet_counterexample/process.json#/runs/1"
+    },
+    {
+      "recordId": "openai_truffet_counterexample",
+      "runId": "de7a57e9-becf-4f94-9276-2090ab3f2738",
+      "resultStatus": "evaluated_passed",
+      "phase": "finished",
+      "startedAt": "2026-10-22T18:29:27.606Z",
+      "finishedAt": "2026-10-22T18:43:27.138Z",
+      "recordedDurationSeconds": 839.532,
+      "turns": 1,
+      "workers": 4,
+      "selectedForPublishedVerification": true,
+      "source": "data/proofs/openai_truffet_counterexample/process.json#/runs/2"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "accepted/accepted.json",
+      "sha256": "99536b070dee5fadcd3d721b7276d801fca733c66303763f896faa83a61b5cbf"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/README.md",
+      "sha256": "01a11641e2a5f0f18f15bdd1e7fcb6501ead04b93a5cdcb02fe09a63d96cedc1"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/Submission.lean",
+      "sha256": "33bb5ef9ab4ba497af6218874580c54791358516812cd52b187e2091946903f1"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/Submission/Helpers.lean",
+      "sha256": "2b0ee3d08d6293710ee2348a00f8bd72e702332e7e05af0af61a434c6476e57f"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/compatibility-verification.json",
+      "sha256": "52bc09f6f7f67925d6c1daad37001d89cf3dc1a317da2bf33e64d47e8926f948"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/lakefile.toml",
+      "sha256": "830b8ff82d0016b22f868cc9a9b9b3301bb01d710212926188ee6558c2560468"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "accepted/annals_equiangular_lines_fixed_angle/verification.json",
+      "sha256": "b2c9c38d29712f16603aea5a2bee87be26fae1b6124fe5abf6ce98c138b0b04a"
+    },
+    {
+      "path": "accepted/annals_fractional_expectation_thresholds/README.md",
+      "sha256": "48b033edf91816eea3ae2f1c09d23e300393113c7390971a3879d4a8b1835d39"
+    },
+    {
+      "path": "accepted/annals_fractional_expectation_thresholds/Submission.lean",
+      "sha256": "028ce084c75d9015852e6912d05ebf50f40d05522b47267e52c3365c7f19d56e"
+    },
+    {
+      "path": "accepted/annals_fractional_expectation_thresholds/Submission/Helpers.lean",
+      "sha256": "e0ea3f43432ed60c497193a8bb900ca71bdbb4a16e0c256a6d1bac0b4f273fad"
+    },
+    {
+      "path": "accepted/annals_fractional_expectation_thresholds/lakefile.toml",
+      "sha256": "0331a667b991e555c474fbd05905e89f1402f826b70d851319e6ab60edea3c4a"
+    },
+    {
+      "path": "accepted/annals_fractional_expectation_thresholds/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "accepted/annals_fractional_expectation_thresholds/verification.json",
+      "sha256": "e313a7e004a8b48c41397c209e061481fa1d6468ef2da47532ec7787b66d2c90"
+    },
+    {
+      "path": "accepted/annals_rademacher_enflo_type/README.md",
+      "sha256": "7d742c9565136e3a1558aaba102f54c889aa6102d7c94d36b52535a02797dd3c"
+    },
+    {
+      "path": "accepted/annals_rademacher_enflo_type/Submission.lean",
+      "sha256": "ad93f9761455b4e52fba817c002cb8a662296d99444ff27ec05d632ba7872357"
+    },
+    {
+      "path": "accepted/annals_rademacher_enflo_type/Submission/Helpers.lean",
+      "sha256": "b5b5c31e59632f5c10241037df5e8d8d3f4ba346d99917caffd60932c7dae226"
+    },
+    {
+      "path": "accepted/annals_rademacher_enflo_type/lakefile.toml",
+      "sha256": "42cca2d8df61e708f738befd9546f5f9d1f7d20660aadbf88372bbaf38b1ac4e"
+    },
+    {
+      "path": "accepted/annals_rademacher_enflo_type/verification.json",
+      "sha256": "9c28ee8f06c5acda0e23131693ce25b865f0d9b11f1e437503c29b19a34296a0"
+    },
+    {
+      "path": "accepted/annals_unit_conjecture/Submission.lean",
+      "sha256": "5b0740de41cc47385273cb26195b3c7f08e50fa349edfa36489731b6ba10f062"
+    },
+    {
+      "path": "accepted/annals_unit_conjecture/lakefile.toml",
+      "sha256": "27369d856ec9815ed11b8aac39b1ae99b080c41da610edc559a6490c23c5f9b1"
+    },
+    {
+      "path": "accepted/dimitrov/Submission.lean",
+      "sha256": "f00a658ba195e41c8b9f340cb6c21cbbfeb9e4cb68c0c0e85c1d8b3bdb25fe5d"
+    },
+    {
+      "path": "accepted/dimitrov/Submission/Helpers.lean",
+      "sha256": "4958987925b01fbfba67842ea4aa79e1452f1614e1c4ed82cba7bbc933affefd"
+    },
+    {
+      "path": "accepted/dimitrov/lake-manifest.json",
+      "sha256": "9aecfc7243ab33486842d04b39d0233997e62a1600dc049fde1552427dd605d1"
+    },
+    {
+      "path": "accepted/dimitrov/lakefile.toml",
+      "sha256": "46811a9ccc8462fd95c6182cd1480dc22d7b3375d0b23745bb631ede855a0492"
+    },
+    {
+      "path": "accepted/dimitrov/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "accepted/dimitrov/verification.json",
+      "sha256": "a1474a7a082fb842d9651358ca49c68ff26e2e31f361d688ff7a6ec611e303a5"
+    },
+    {
+      "path": "accepted/hopf_rinow/Submission.lean",
+      "sha256": "168812f88c0fa82777a53cb700e391f6deab564ad2b210900c7573e72d0c365a"
+    },
+    {
+      "path": "accepted/hopf_rinow/Submission/Helpers.lean",
+      "sha256": "f62e16b14fff319f20788b03d94cf9de1262dcfa0cc6462b539faa5435573c40"
+    },
+    {
+      "path": "accepted/hopf_rinow/lake-manifest.json",
+      "sha256": "c2ffad9c26904466069938f1f6c908f6a3202256c234a0328436724b4666f262"
+    },
+    {
+      "path": "accepted/hopf_rinow/lakefile.toml",
+      "sha256": "f8d06e68d8482247f0d18cad71c175fdcb03ca1a68a30a055bca2bde8485bdb2"
+    },
+    {
+      "path": "accepted/hopf_rinow/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "accepted/hopf_rinow/verification.json",
+      "sha256": "643a4d170f18ff873081d03b9547471f33961e7caaa6423b614d30babea14649"
+    },
+    {
+      "path": "data/catalog.json",
+      "sha256": "d854e515c45b8d51d199a620e5702f40311570c44a7dbdb47dfe5a2a26a84276"
+    },
+    {
+      "path": "data/evaluation/selected-run-observations.json",
+      "sha256": "30aedc272046d5b02b735da4987d5f35353e845e55561383172fdaf381c670bf"
+    },
+    {
+      "path": "data/proofs/openai_brennan_sharp/Submission.lean",
+      "sha256": "63bc780a8b0092517aba26c608eb9c58dc1033600a800a35fb1d5693b8c86e4d"
+    },
+    {
+      "path": "data/proofs/openai_brennan_sharp/process.json",
+      "sha256": "03b11512d497c438d9f34b164acb41bd0ba6cf736d0fe0d01241528021eccf2b"
+    },
+    {
+      "path": "data/proofs/openai_brennan_sharp/verification.json",
+      "sha256": "e25e13f8f706505165fef8ca883e94938068f05fe2b74cff3133a09487f53ead"
+    },
+    {
+      "path": "data/proofs/openai_cartier_chart_compactness_support/Submission.lean",
+      "sha256": "3f4987016064040ed126b75de0aea0dfa6b2bf74b7dd22dfa1722b7fcc525963"
+    },
+    {
+      "path": "data/proofs/openai_cartier_chart_compactness_support/process.json",
+      "sha256": "5eeb250bc22ea56ef1a79cb4dd97a95dff389599462aa37747bc2f1e41e178b0"
+    },
+    {
+      "path": "data/proofs/openai_cartier_chart_compactness_support/verification.json",
+      "sha256": "28a08f113613aa55190a834dbbb68bda971ddbf2a651e401116a98ed499c0103"
+    },
+    {
+      "path": "data/proofs/openai_finite_congruence_graph/Submission.lean",
+      "sha256": "6b32441db35b95aed73a9f7acdb44c57bc0f5c3e1556113478e96f921b022a3f"
+    },
+    {
+      "path": "data/proofs/openai_finite_congruence_graph/process.json",
+      "sha256": "ee866551a43032c8068c349f586bc6e7c31e144bc51ee5f3fbe45b1b0c2a9a61"
+    },
+    {
+      "path": "data/proofs/openai_finite_congruence_graph/verification.json",
+      "sha256": "62c70ee83974aa282ca8be91418ee74e7584bc15776557d4212481671516472e"
+    },
+    {
+      "path": "data/proofs/openai_hadamard_cube_fiber/Submission.lean",
+      "sha256": "d818e4c8217e53057b254f92285bb22930f2b47504ed68d7e8def9d2547fa3a1"
+    },
+    {
+      "path": "data/proofs/openai_hadamard_cube_fiber/process.json",
+      "sha256": "1f26540248b672786ec58141254e5cca5c9e704139e2aa5bc3056fb3f855ea8e"
+    },
+    {
+      "path": "data/proofs/openai_hadamard_cube_fiber/verification.json",
+      "sha256": "50edea09a1ab435df33ef1d7acffbc18234c0bef38b22728bdba747018b9bc37"
+    },
+    {
+      "path": "data/proofs/openai_hilbert_crouzeix/Submission.lean",
+      "sha256": "fc4c35ba96e2fef31d57635d0cd237498eaacf87bdeba7510a0daac5d6d663af"
+    },
+    {
+      "path": "data/proofs/openai_hilbert_crouzeix/process.json",
+      "sha256": "4918ed7907f8ea66abb883427cd6aeb232aed41ade824e971c50a1d9c2f41d38"
+    },
+    {
+      "path": "data/proofs/openai_hilbert_crouzeix/verification.json",
+      "sha256": "2b01d8e286e5a0760b474a331d7882e003cb23029bb5366ad835e7ca33428fa6"
+    },
+    {
+      "path": "data/proofs/openai_honeycomb_free_energy/Submission.lean",
+      "sha256": "1472d78c68ac552b7ec3ff4c3d307035cb30aa08c734c95eae7f66e6b4b3601c"
+    },
+    {
+      "path": "data/proofs/openai_honeycomb_free_energy/process.json",
+      "sha256": "c388ce812b320b657cc1a1b72e9096a77711da46ce3314cce891b3dc3dc6eb02"
+    },
+    {
+      "path": "data/proofs/openai_honeycomb_free_energy/verification.json",
+      "sha256": "e36a23c663eb8f7d1fd73fce2416b6d7741cee201f40758c79ff2065e95e5786"
+    },
+    {
+      "path": "data/proofs/openai_ising_finiteness/Submission.lean",
+      "sha256": "9ae908672b96f937d19b4b2f6b74aa1952a57184e264e1a08c9a0bc847c2775a"
+    },
+    {
+      "path": "data/proofs/openai_ising_finiteness/process.json",
+      "sha256": "cc253270b388192ec10e270b5107db812023a39f86b2fa0bc894551965f96343"
+    },
+    {
+      "path": "data/proofs/openai_ising_finiteness/verification.json",
+      "sha256": "0cc2b33ee70f2548ae850cb13490af12d6322ab91474ed0f0d2fc692b0e4dee4"
+    },
+    {
+      "path": "data/proofs/openai_planar_anderson_spectrum/Submission.lean",
+      "sha256": "2fd7e2d1c71eff673ce58cd82f694526f9d6ed0a4ace42f800b159b26482cfc7"
+    },
+    {
+      "path": "data/proofs/openai_planar_anderson_spectrum/process.json",
+      "sha256": "732c58ccb03164cb95c9802ccb7da1ed26cf62301c72eb804e9e486240b090c9"
+    },
+    {
+      "path": "data/proofs/openai_planar_anderson_spectrum/verification.json",
+      "sha256": "58385dc86efc93b1a83ea0cb7b87edefd40b62850a6747e41c08cea5234a5976"
+    },
+    {
+      "path": "data/proofs/openai_plane_coloring/Submission.lean",
+      "sha256": "3e842122e50547b602873e71db599cc6782414fec9c60a08c664d43586341d12"
+    },
+    {
+      "path": "data/proofs/openai_plane_coloring/process.json",
+      "sha256": "8de3d30be744b7abc7f64d47285033ecf84d01eae54a4ba054a779a7ea538956"
+    },
+    {
+      "path": "data/proofs/openai_plane_coloring/verification.json",
+      "sha256": "07fc2e40e574af14e84bde2dc8c7c96b428e1970de32bec68e4a4866eee07570"
+    },
+    {
+      "path": "data/proofs/openai_snaky_certificate/Submission.lean",
+      "sha256": "b7dc0b2898b8d4ee8ed4a3b10394429f939ff9e4d73761dcd6968e46a4579751"
+    },
+    {
+      "path": "data/proofs/openai_snaky_certificate/process.json",
+      "sha256": "4cc57c5eb397f9ce19773661202fb0b5a61edd1ba250e78f36fadc71708f3972"
+    },
+    {
+      "path": "data/proofs/openai_snaky_certificate/verification.json",
+      "sha256": "a7630c50d866bd6f7c631c127bfc52fb6bccad34da3c00366cdcf9e3ba5d2f2f"
+    },
+    {
+      "path": "data/proofs/openai_snaky_conditional/Submission.lean",
+      "sha256": "dc40df160330f9058ff0af4e85adac6ed1be8be0b2d54c7fba5f10f71450eaae"
+    },
+    {
+      "path": "data/proofs/openai_snaky_conditional/process.json",
+      "sha256": "0bf6b134b337dcfa948a0e3348802659d481008bfa57c056c54eb5f5dac9d0c1"
+    },
+    {
+      "path": "data/proofs/openai_snaky_conditional/verification.json",
+      "sha256": "c070e5bc6b5e8a6b2f657792657e34ffa1f78514095468403604733a59058620"
+    },
+    {
+      "path": "data/proofs/openai_surface_cone_candidate_support/Submission.lean",
+      "sha256": "bc4a1cec74196b46dd726a46dc467c40b8657527dbd235a49a3cf0b5e4355ac9"
+    },
+    {
+      "path": "data/proofs/openai_surface_cone_candidate_support/process.json",
+      "sha256": "53b28833251bc5ae2f51f211e3d16fdcc70d9213bac7d8da0e11f7de6b34960d"
+    },
+    {
+      "path": "data/proofs/openai_surface_cone_candidate_support/verification.json",
+      "sha256": "4ae49258691771d60927a99c786e7d26b9fe5a69fef2009f89630509bf2f807b"
+    },
+    {
+      "path": "data/proofs/openai_three_state_supercritical/Submission.lean",
+      "sha256": "7ed9c39ce9036a21f69e05178619450e822ab5c5cee99524f08c202a78894d48"
+    },
+    {
+      "path": "data/proofs/openai_three_state_supercritical/process.json",
+      "sha256": "d7175643a01d81c87ac63d8f0b9a9ea90a6a058307fccd90ff4b0d50fdca38a1"
+    },
+    {
+      "path": "data/proofs/openai_three_state_supercritical/verification.json",
+      "sha256": "2bbc977ba96005655ac8a01f9f38c434b1992d37816ced6350039506b5faf05f"
+    },
+    {
+      "path": "data/proofs/openai_totient_companion_zero/Submission.lean",
+      "sha256": "7d3509714928edd3f6b6a634c42d9dbeefd01c17a65d0e152fc09d97e6568a20"
+    },
+    {
+      "path": "data/proofs/openai_totient_companion_zero/process.json",
+      "sha256": "0d29dc6de4755dbbfc314611579be5755a598ff94ddf7c3214bc7e546136d159"
+    },
+    {
+      "path": "data/proofs/openai_totient_companion_zero/verification.json",
+      "sha256": "71a4845c20f1ce0a8dc17f9ff58e968f11b9c0f1853a0b73b4aa8380a92974d3"
+    },
+    {
+      "path": "data/proofs/openai_triangle_face/Submission.lean",
+      "sha256": "1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450"
+    },
+    {
+      "path": "data/proofs/openai_triangle_face/process.json",
+      "sha256": "2be7f3388123358bcb3f9e6e863efb679f053a7dcaccb85a00be2df56a0be8aa"
+    },
+    {
+      "path": "data/proofs/openai_triangle_face/verification.json",
+      "sha256": "6c18f26ad2deaf95ddc6a61e9ab6233576ab2c622df80975ad1e641aa6e85c41"
+    },
+    {
+      "path": "data/proofs/openai_truffet_counterexample/Submission.lean",
+      "sha256": "442334bfd22cf81c9582b071cd6b370f2b6969d961418e6b084a25cc87ae4a91"
+    },
+    {
+      "path": "data/proofs/openai_truffet_counterexample/process.json",
+      "sha256": "a630c46098365acf0d542554ed6646aa0a176b981ddc52eb4de66ca360babeeb"
+    },
+    {
+      "path": "data/proofs/openai_truffet_counterexample/verification.json",
+      "sha256": "053c1d2513dd063d7e3717001755ad44db07c0ba9bdca205a21928940a93ac25"
+    },
+    {
+      "path": "submitted/annals_algebraic_integers/Submission.lean",
+      "sha256": "252c353bed16717cf3f61686a79d116af5453b050a6a43126cefc73d24644127"
+    },
+    {
+      "path": "submitted/annals_algebraic_integers/Submission/Helpers.lean",
+      "sha256": "ce61d989c70a72ddf22b65b8c795f21b65b65a939b883a6b11acb8d48404e5a7"
+    },
+    {
+      "path": "submitted/annals_algebraic_integers/lake-manifest.json",
+      "sha256": "bd437daa81debd08a537910b20cfd393a309529dd7e5a3d9f4bf28fcad0d6697"
+    },
+    {
+      "path": "submitted/annals_algebraic_integers/lakefile.toml",
+      "sha256": "fc118359bdb58b65c54e5d64d997bb11b06148359d22868a415510c87bfcd786"
+    },
+    {
+      "path": "submitted/annals_algebraic_integers/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "submitted/annals_algebraic_integers/verification.json",
+      "sha256": "d06ec9549b182198bf3d9a0e2c6de6c90a54775fac6d582abd70afb2217e388d"
+    },
+    {
+      "path": "submitted/annals_improved_bounds_sunflower_lemma/Submission.lean",
+      "sha256": "5452139451a7e52fdc601cc3908dad70bc30ee7980fc686c1adc44cb39679a87"
+    },
+    {
+      "path": "submitted/annals_improved_bounds_sunflower_lemma/Submission/Helpers.lean",
+      "sha256": "9059e07d4ef5973c4a44e2eb54a47baf9355d93c2004bce141516e655e805b42"
+    },
+    {
+      "path": "submitted/annals_improved_bounds_sunflower_lemma/lake-manifest.json",
+      "sha256": "513c4898907308fd863f9dc04df3c389f1bca00ad68387d9ea62b521e1b20122"
+    },
+    {
+      "path": "submitted/annals_improved_bounds_sunflower_lemma/lakefile.toml",
+      "sha256": "1fee9d4b6d9bd19ad63f7bc2f3fd2ccbeef4decde6fa7248e1263be82716282c"
+    },
+    {
+      "path": "submitted/annals_improved_bounds_sunflower_lemma/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "submitted/annals_improved_bounds_sunflower_lemma/verification.json",
+      "sha256": "3df01e2637480eca4befab5a16c125cb721abaa03aa9f174ec92d07921ba6dd4"
+    },
+    {
+      "path": "submitted/annals_lorentzian_polynomials/Submission.lean",
+      "sha256": "cf17603393c2c1ae5e480f51a81204a90e5f8d0d0ee56b6638684b8a844042c4"
+    },
+    {
+      "path": "submitted/annals_lorentzian_polynomials/Submission/Helpers.lean",
+      "sha256": "7c9eb18fb990b2a6c20fb05a040fe1a9ddf53426b534e881308110b79647210e"
+    },
+    {
+      "path": "submitted/annals_lorentzian_polynomials/lake-manifest.json",
+      "sha256": "137781601d4246b23b38ef4e77de1ff93f678bd4d3b4eef54fee002e269fabee"
+    },
+    {
+      "path": "submitted/annals_lorentzian_polynomials/lakefile.toml",
+      "sha256": "f2cdafc232195ab0b9a32b62a7dbc5b04075051915f97268e266f5816a640a53"
+    },
+    {
+      "path": "submitted/annals_lorentzian_polynomials/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "submitted/annals_lorentzian_polynomials/verification.json",
+      "sha256": "0650fe36365e48d9e7ad1d38edd261c05262c782f44b354b14ee9812e37678f6"
+    },
+    {
+      "path": "submitted/annals_optimal_moebius/Submission.lean",
+      "sha256": "30d6bf220146a5372fa539059d7539460a7e10a601d84f7e9c9bc4f61518ee08"
+    },
+    {
+      "path": "submitted/annals_optimal_moebius/Submission/Helpers.lean",
+      "sha256": "f8098c97268ab82c80c703882c3a20304eb1345f67f34a394ed6646b4f1c7d4b"
+    },
+    {
+      "path": "submitted/annals_optimal_moebius/lake-manifest.json",
+      "sha256": "f971d97fc46d3b4433c44addab2bee03abe8b5c40a809b9d1a799d2543deca3f"
+    },
+    {
+      "path": "submitted/annals_optimal_moebius/lakefile.toml",
+      "sha256": "77e265cac894be153ed904484a81e6ed120caeb1babcde8f8d73d4275f0fe5db"
+    },
+    {
+      "path": "submitted/annals_optimal_moebius/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "submitted/annals_optimal_moebius/verification.json",
+      "sha256": "6a6bf71b63a618508b4a1f1e34a309477cdc5ebb3a4fe9c384b6680bc54828bf"
+    },
+    {
+      "path": "submitted/official-results.json",
+      "sha256": "67244515877706fdee2074f993a7f107937873b03f58165c08f727eeef035561"
+    },
+    {
+      "path": "submitted/submitted.json",
+      "sha256": "86a2793979edca9d9577c149d8f4ff1157b6279cbcce7eb62aa78fffac181c8b"
+    }
+  ]
+}

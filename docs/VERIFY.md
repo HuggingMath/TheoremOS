@@ -28,6 +28,8 @@ This walkthrough uses [Dimitrov's lower bound](../accepted/dimitrov/), which has
 | Original Lean-Eval workspace | `38361be884302c7edce1908c4aef8296eb2cb27e` |
 | Submitted theorem | `Submission.dimitrov` |
 
+**Complete download:** The [Dimitrov proof kit](../proof-kits/dimitrov/README.md) includes the frozen benchmark workspace, archived proof, pinned dependencies, verification scripts, and reports. Follow its packaged instructions to check the proof without reconstructing the workspace manually.
+
 ### 1. Check the archived files
 
 From the public repository cloned above:
@@ -77,7 +79,6 @@ The first setup downloads the pinned Lean toolchain, Mathlib dependencies, and c
 ```bash
 cd verify-dimitrov
 elan toolchain install leanprover/lean4:v4.35.0-rc3
-lake update
 lake exe cache get
 
 lake env lean --version

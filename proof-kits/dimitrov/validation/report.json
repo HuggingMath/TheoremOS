@@ -1,0 +1,208 @@
+{
+  "schema": "theoremos.proof-kit-verification.v1",
+  "checkedAt": "2026-11-08T07:12:43.811497+00:00",
+  "problemId": "dimitrov",
+  "scope": "lean-and-original-comparator",
+  "status": "passed",
+  "commands": [
+    {
+      "command": [
+        "elan",
+        "toolchain",
+        "install",
+        "leanprover/lean4:v4.35.0-rc3"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.002,
+      "stdout": "toolchain-install.stdout.log",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "toolchain-install.stderr.log",
+      "stderrSha256": "c008ec9967b854711b63ad61f3ff87c477f5f1d1166cd904765913867ef8fa19"
+    },
+    {
+      "command": [
+        "lake",
+        "exe",
+        "cache",
+        "get"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 125.293,
+      "stdout": "mathlib-cache.stdout.log",
+      "stdoutSha256": "9216412bde06c8e54fee0bf210fbbd0bdb904f5d0e92f2b584445055533aa3c1",
+      "stderr": "mathlib-cache.stderr.log",
+      "stderrSha256": "501bf6635de625ddfaa3c2168c4747380b7f2f7ee22ed22b11ab64abf2fcdd54"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 1.162,
+      "stdout": "lean-version.stdout.log",
+      "stdoutSha256": "948624fc4eacf0eb148f98d864af4814b3e60174b0a53f6817afc937e41279d3",
+      "stderr": "lean-version.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        ".lake/packages/mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 0.001,
+      "stdout": "mathlib-revision.stdout.log",
+      "stdoutSha256": "56b8b653218b8f561be368a84908e8a664e12d3c7b559a458206c87885d894ad",
+      "stderr": "mathlib-revision.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "build",
+        "Submission",
+        "Solution"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 1.738,
+      "stdout": "lean-build.stdout.log",
+      "stdoutSha256": "c1468a2133f9fdf5c4448a7de404192a555c2b63b447223227eeacca7f1ce098",
+      "stderr": "lean-build.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Check.lean"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 2.882,
+      "stdout": "axioms.stdout.log",
+      "stdoutSha256": "e4632b3f10127604a3884a8f99a6a3a06b95a3ca037c54cbd39029c3da7c3599",
+      "stderr": "axioms.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "lake",
+        "test"
+      ],
+      "exitCode": 0,
+      "durationSeconds": 123.877,
+      "stdout": "comparator.stdout.log",
+      "stdoutSha256": "1bfe8d981411a08bde6a8b7cad5f5e56359605c02015dc90620c7750d680f74f",
+      "stderr": "comparator.stderr.log",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "checks": {
+    "files": true,
+    "leanBuild": true,
+    "axioms": true,
+    "originalComparatorWithNanoda": true
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "0386ec6b1aacf84c044544c3a2f6570ade328967d4f2d7959bff498c2fd7638b"
+    },
+    {
+      "path": "Challenge.lean",
+      "sha256": "64aa424b18a8145864b7960cba2bea31c4167005b444895712498986a64e185d"
+    },
+    {
+      "path": "Check.lean",
+      "sha256": "e641cc3faf709b9d7373b0406a69a3cf395f0fccf7f8a22177a02a4b595cfb50"
+    },
+    {
+      "path": "LICENSE.TheoremOS",
+      "sha256": "8b80fc18c185bc20beb6240b327d1effe3200c49a5608146416803b88a7c5fa7"
+    },
+    {
+      "path": "LICENSE.lean-eval",
+      "sha256": "f29dae1e11ec0f9c3c6c29a5358c1703c936f3f2a2a16367ea3259ba9d3f71a2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e82b29fb39f4d0fe37667b8b0d4eb03c78bf1a6f8995759570c2a342d6c7a184"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "f3328fa3990e64568a702f29311ccc6b977c87e4bb493c01222dacc33c1867a1"
+    },
+    {
+      "path": "Solution.lean",
+      "sha256": "28a3b6bd02b873a55d8fe86f6e52728cb5697fc86e966f5a7c4cb161bea37ec9"
+    },
+    {
+      "path": "Submission/Helpers.lean",
+      "sha256": "4958987925b01fbfba67842ea4aa79e1452f1614e1c4ed82cba7bbc933affefd"
+    },
+    {
+      "path": "Submission.lean",
+      "sha256": "f00a658ba195e41c8b9f340cb6c21cbbfeb9e4cb68c0c0e85c1d8b3bdb25fe5d"
+    },
+    {
+      "path": "UPSTREAM-README.md",
+      "sha256": "f5aa7787b9a21ecffcd0ce848d96f44c5cf424f2dc5f236f6d430b3cbfd7c5c6"
+    },
+    {
+      "path": "WorkspaceTest.lean",
+      "sha256": "17bd1978ec5ec46b151a616ae626d14cef01fcb6ce90a2d104dffae9a95e40df"
+    },
+    {
+      "path": "config.json",
+      "sha256": "a98bde2c8a96de13f7b4daab5a0795d95150c7a5dc1839d620f8870e779e434e"
+    },
+    {
+      "path": "holes.json",
+      "sha256": "70ddc2f87fab82760844cfaf364b4155399e147b4bab288ca2d0c6c225bbda92"
+    },
+    {
+      "path": "install-tools.sh",
+      "sha256": "d35b9eee57303307d2c667d5052efbd4c77ea1bc4edb9e18d168c9d7f7687203"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "9aecfc7243ab33486842d04b39d0233997e62a1600dc049fde1552427dd605d1"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "46811a9ccc8462fd95c6182cd1480dc22d7b3375d0b23745bb631ede855a0492"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "sources.json",
+      "sha256": "65bb4d6650be1a07b4020aad3f2eb8d1694d0a9a9451e352dd3f6349c0157641"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "a1474a7a082fb842d9651358ca49c68ff26e2e31f361d688ff7a6ec611e303a5"
+    },
+    {
+      "path": "verify.py",
+      "sha256": "150bd9dd6af168b11680087c593ef1f6992ba9d2c7bc23a96c6d1051d0749d97"
+    }
+  ],
+  "environment": {
+    "leanVersion": "Lean (version 4.35.0-rc3, x86_64-unknown-linux-gnu, commit 470d5ce1400764999581fd26d5d72b00d990b0f4, Release)",
+    "mathlibRevision": "5e0c4e5239cb0a2d86d68a884bf52cfd963fce22"
+  },
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "finishedAt": "2026-11-08T07:16:58.768527+00:00"
+}

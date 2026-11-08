@@ -6,6 +6,9 @@ All notable changes to the public TheoremOS repository are documented in this fi
 
 ### Added
 
+- Downloadable [Dimitrov proof kit](proof-kits/dimitrov/README.md) with the frozen benchmark workspace, archived proof, pinned environment, verification scripts, and reports.
+- Bilingual [capability and availability tables](docs/CAPABILITIES.md), distinguishing browser access, CLI research collaboration, and planned work.
+- Bilingual [evaluation methodology](docs/EVALUATION.md), reproducible archive statistics, and selected-run observations in JSON and CSV.
 - Product cover at the top of both READMEs, with English workbench screenshots in the English version.
 - Bilingual [planar Anderson spectrum case study](docs/CASE-STUDY.md), linked to the archived proof, research process, and verification records.
 - Illustrated first-use tutorials in [English](docs/GETTING-STARTED.md) and [Chinese](docs/GETTING-STARTED.zh-CN.md), covering access, model settings, budgets, statement review, and downloads.

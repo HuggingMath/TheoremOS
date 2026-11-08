@@ -1,0 +1,29 @@
+TheoremOS public materials
+Copyright 2026 Zhenhao Liu. All rights reserved.
+
+This notice applies to the project-authored website, documentation, and
+original TheoremOS branding in this repository, to the extent those
+materials are owned by the TheoremOS project. They are not released under
+a general open-source or open-content license. Rights not granted by
+applicable law or by separately applicable terms are reserved.
+
+Archived proof sources and research records retain their original authors,
+attribution, and applicable licenses. A license in a file header, an
+accompanying license, or the original source's terms continues to apply.
+This notice does not relicense those materials or grant permissions on
+behalf of their authors. Where no reuse license is identified, this
+repository does not supply an additional one.
+
+Third-party software, fonts, and icons remain under their respective
+licenses. In particular, lucide-LICENSE.txt applies to the Lucide/Feather
+icons, assets/fonts/Inter-LICENSE.txt applies to Inter, and
+assets/licenses/gsap-NOTICE.txt identifies GSAP's applicable terms.
+Those third-party licenses do not license the repository as a whole.
+
+The TheoremOS runtime remains proprietary; its source code is not
+distributed in this repository. Publication of the website and proof
+archive does not grant rights to redistribute the runtime.
+
+For permission to reuse project-owned materials, contact
+liuzhenhao@westlake.edu.cn. See docs/PUBLIC-MATERIALS.md for source and
+citation guidance.

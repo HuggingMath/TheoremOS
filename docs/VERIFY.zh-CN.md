@@ -28,6 +28,8 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 | 原 Lean-Eval 工作区 | `38361be884302c7edce1908c4aef8296eb2cb27e` |
 | 提交的定理 | `Submission.dimitrov` |
 
+**完整下载包：**[Dimitrov 证明复核包](../proof-kits/dimitrov/README.zh-CN.md)已包含固定的基准工作区、归档证明、依赖版本、检查脚本和报告，可按包内说明直接复核。
+
 ### 1. 核对归档文件
 
 在上一步克隆的公开仓库根目录执行：
@@ -77,7 +79,6 @@ cp TheoremOS/accepted/dimitrov/lake-manifest.json verify-dimitrov/lake-manifest.
 ```bash
 cd verify-dimitrov
 elan toolchain install leanprover/lean4:v4.35.0-rc3
-lake update
 lake exe cache get
 
 lake env lean --version

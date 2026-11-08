@@ -6,6 +6,7 @@ This repository publishes the TheoremOS website, documentation, proof sources, a
 | --- | --- |
 | Project-authored website, documentation, and original branding | Rights are reserved as described in [LICENSE](../LICENSE). For permission to reuse project-owned materials, email [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn). |
 | Archived proof sources and research records | Follow the file's own license, accompanying terms, and original source. This repository does not apply a new blanket license to these records. |
+| Frozen Lean-Eval files in the [Dimitrov proof kit](../proof-kits/dimitrov/README.md) | Original [Apache-2.0 license](../proof-kits/dimitrov/LICENSE.lean-eval), source revisions and file hashes in [sources.json](../proof-kits/dimitrov/sources.json). The archived proof and project-authored materials retain their own terms. |
 | Lucide and Feather icons | [Lucide/Feather license](../lucide-LICENSE.txt): ISC and, for the listed Feather-derived icons, MIT. |
 | Inter font | [Inter license](../assets/fonts/Inter-LICENSE.txt): SIL Open Font License 1.1. |
 | GSAP | [GSAP notice and license reference](../assets/licenses/gsap-NOTICE.txt). |
@@ -23,5 +24,6 @@ Use [CITATION.cff](../CITATION.cff) to cite TheoremOS as a research tool. When d
 - 项目自有的网站代码、文档和原创品牌素材保留权利。需要复用时，请联系 [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)。
 - 归档证明和研究记录沿用各自文件头、附带文件或原始来源中的许可。本仓库没有为这些记录统一重新授权。没有标明复用许可的材料，也不因公开下载而获得额外授权。
 - 例如，[分数期望阈值证明](../accepted/annals_fractional_expectation_thresholds/Submission.lean)保留了 David Ledvinka 的版权与 [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) 文件头。该文件头指向原始来源的许可，其条款继续适用于该文件。其他证明包需分别查看。
+- [Dimitrov 复核包](../proof-kits/dimitrov/README.zh-CN.md)中的固定 Lean-Eval 文件保留原 [Apache-2.0 许可](../proof-kits/dimitrov/LICENSE.lean-eval)，来源版本及文件哈希见 [sources.json](../proof-kits/dimitrov/sources.json)；归档证明与项目自有材料分别沿用原有条款。
 - 图标、字体和 GSAP 分别适用上表链接的第三方许可；图标许可不代表整个仓库的许可。
 - 引用 TheoremOS 可使用 [CITATION.cff](../CITATION.cff)；引用具体证明时，请同时引用归档记录中的原始数学与证明来源。复核步骤见 [中文版指引](VERIFY.zh-CN.md)。

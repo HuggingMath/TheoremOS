@@ -15,7 +15,7 @@
 - **Cost & API Keys**: Platform access is free during the preview. Users provide their own model API keys (BYOK) and pay model providers directly. The configured endpoint must support the **Responses API**.
 - **Supported Inputs**: Natural language problem statements, TeX/LaTeX, or existing Lean 4 files (including partial proofs with `sorry`).
 
-**Next**: Follow the [illustrated first-use tutorial](GETTING-STARTED.md), or read the [planar Anderson spectrum case study](CASE-STUDY.md).
+**Next**: Follow the [illustrated first-use tutorial](GETTING-STARTED.md), check [capabilities and availability](CAPABILITIES.md), or read the [planar Anderson spectrum case study](CASE-STUDY.md).
 
 ### 2. Core Runtime, CLI & Research Collaboration
 - **Scope of This Repository**: [`LikC1606/TheoremOS`](https://github.com/LikC1606/TheoremOS) hosts the public product documentation, website snapshot, and public proof archives (`v0.1.0-preview.1`).
@@ -35,7 +35,7 @@
 - **费用与模型密钥**：内测期间平台本身免费，采用用户自备 API Key（BYOK）模式，模型调用费用由用户向模型服务商支付。所接入的模型服务需支持 **Responses API**。
 - **支持输入**：自然语言数学问题、TeX/LaTeX 题目，或已有的 Lean 4 题目及未完成证明。
 
-**接下来**：查看[首次使用图文教程](GETTING-STARTED.zh-CN.md)，或阅读[平面 Anderson 算子谱研究案例](CASE-STUDY.zh-CN.md)。
+**接下来**：查看[首次使用图文教程](GETTING-STARTED.zh-CN.md)、[能力与开放范围](CAPABILITIES.zh-CN.md)，或阅读[平面 Anderson 算子谱研究案例](CASE-STUDY.zh-CN.md)。
 
 ### 2. 核心运行时、CLI 与研究合作
 - **本仓库公开范围**：[`LikC1606/TheoremOS`](https://github.com/LikC1606/TheoremOS) 托管公开产品文档、官网快照与公开证明档案（`v0.1.0-preview.1`）。

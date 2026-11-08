@@ -1,0 +1,686 @@
+{
+  "schema": "theoremos.selected-run-observations.v1",
+  "scope": "Reported usage and saved launch limits for the 16 runs selected by the public verification records.",
+  "bindingMethod": "The source audit matched original result runId and solution_commit to public verification.json, then hashed Submission.lean at that commit in the archived Git repository. The public generator checks observation runId, solutionCommit, proofSha256 and solveWallMs against the published files.",
+  "sourceHashes": "rawResultSha256 and configurationEvidence.launchSha256 identify the original bytes inspected during the source audit. Those original result and launch files remain private; these hashes do not independently reproduce their metering contents.",
+  "limitations": [
+    "Reported usage is the counter stored on the selected run, not the full cost or token usage of producing a proof.",
+    "usageComplete=false records incomplete metering. A true value concerns this run only and does not include all earlier attempts or external assistance.",
+    "Saved launch limits belong to the selected result and do not establish a uniform budget across continuations or other runs.",
+    "A configured limit of zero means unlimited, not zero usage or zero cost."
+  ],
+  "observations": [
+    {
+      "publicId": "openai_brennan_sharp",
+      "runId": "885e367e-04a9-49ca-b82f-d7367b12c10b",
+      "rawResultSha256": "64b7be23097344ee7521b189fb676c788f91575d52d8f361a703d1587516bdd2",
+      "proofSha256": "63bc780a8b0092517aba26c608eb9c58dc1033600a800a35fb1d5693b8c86e4d",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 73876775,
+        "outputTokens": 3124376,
+        "totalTokens": 77001151
+      },
+      "usageComplete": false,
+      "solveWallMs": 2278193,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 77001151,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 3597,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "40cdc6053cc86b6ecf3aefcc534ab8e81184aa35713c1b8c2b72e29c505faf00",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "fbe330ab1781c05df68ccbb6e3914db1b584b913"
+    },
+    {
+      "publicId": "openai_cartier_chart_compactness_support",
+      "runId": "25c5cc6c-ec05-439c-bb42-7dd1ebeea45f",
+      "rawResultSha256": "605083e6b3bd0538814df769b37b94af777b9ecc713620879896c5153451b2b7",
+      "proofSha256": "3f4987016064040ed126b75de0aea0dfa6b2bf74b7dd22dfa1722b7fcc525963",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 1358267,
+        "outputTokens": 53475,
+        "totalTokens": 1411742
+      },
+      "usageComplete": false,
+      "solveWallMs": 1144551,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 1411742,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "a20a7e22195fa15cad9d54b82532efd67f0d88fc43eaea8f18e3f2f19189f0eb",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "5e16b35636c3fbb0aa5cdf79434569e21d87253a"
+    },
+    {
+      "publicId": "openai_finite_congruence_graph",
+      "runId": "24910705-72c7-4d57-9d54-d8c3d6cb4e2e",
+      "rawResultSha256": "8456b966231d8ce9ac3a76588b408644a8c26c6b25b73936b218908834f3cba1",
+      "proofSha256": "6b32441db35b95aed73a9f7acdb44c57bc0f5c3e1556113478e96f921b022a3f",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 32037290,
+        "outputTokens": 1202033,
+        "totalTokens": 33239323
+      },
+      "usageComplete": false,
+      "solveWallMs": 1721562,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 33239323,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "c37f5d0175e5c76c7babab47155f4d029ad705d19a898ff4b23d0c159868119a",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "01ed741391d019c9dc0029aecb7caa618152a0e8"
+    },
+    {
+      "publicId": "openai_hadamard_cube_fiber",
+      "runId": "3f2c13eb-fbf3-47d4-bff5-aed2489d23aa",
+      "rawResultSha256": "d1fa77b46bfb98cd1aa4ec7d34d436714e05e48cf92414fb5acf7d75429b3d88",
+      "proofSha256": "d818e4c8217e53057b254f92285bb22930f2b47504ed68d7e8def9d2547fa3a1",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 1704708,
+        "outputTokens": 89908,
+        "totalTokens": 1794616
+      },
+      "usageComplete": false,
+      "solveWallMs": 966516,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 1794616,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "3122f1bfcf5aad9efe22fccd5c07483988028dde47d93f1b40cff16a7a83b471",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "be3ac1e85859e7f88229dd3eab02a492b9ca2d5a"
+    },
+    {
+      "publicId": "openai_hilbert_crouzeix",
+      "runId": "12ec8cde-d66b-40bb-84c7-a558d1af9cb6",
+      "rawResultSha256": "fd65845ae77fda144606c495ca02a866a31d2d7a9c781813530af42fa3e31ef5",
+      "proofSha256": "fc4c35ba96e2fef31d57635d0cd237498eaacf87bdeba7510a0daac5d6d663af",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 81047140,
+        "outputTokens": 3166088,
+        "totalTokens": 84213228
+      },
+      "usageComplete": false,
+      "solveWallMs": 15498495,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 84213228,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "1e3a310eaff6acc189f39367c4830cef7ed43a23940480be1e0ba5808a92c97c",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "2fb1e27563523481d03350b786b7e9562ad61005"
+    },
+    {
+      "publicId": "openai_honeycomb_free_energy",
+      "runId": "42061240-6393-47da-b4bf-a58bef9080ea",
+      "rawResultSha256": "7e9ce76d3ece766f28c0c5415d6e9c8cb8aecd4a38fffca338caebe390394c7d",
+      "proofSha256": "1472d78c68ac552b7ec3ff4c3d307035cb30aa08c734c95eae7f66e6b4b3601c",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 19521397,
+        "outputTokens": 626066,
+        "totalTokens": 20147463
+      },
+      "usageComplete": false,
+      "solveWallMs": 3985297,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 20147463,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "d18f8ef3f87638fa2ca8d6560c3d03b2cd8191989992cfbf6bdacd45f29d4e10",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "7d45dd3e782398f02a4f953671e055f2e7ff54db"
+    },
+    {
+      "publicId": "openai_ising_finiteness",
+      "runId": "f5737ab7-9d8d-4789-a18d-10cc5e6f7c6b",
+      "rawResultSha256": "c41248acbb012cded9fa2b53d2d885adb9e078c4d07bf6274572ee82b15468f0",
+      "proofSha256": "9ae908672b96f937d19b4b2f6b74aa1952a57184e264e1a08c9a0bc847c2775a",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 37973642,
+        "outputTokens": 2165385,
+        "totalTokens": 40139027
+      },
+      "usageComplete": false,
+      "solveWallMs": 9367002,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 40139027,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14399,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "4499a7f7fbbe6e76119dc02229e092325971e20f61f66bcd337210d6e2f3ce3b",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "833f10564c8bc1acd816da3226c6b207556bb4be"
+    },
+    {
+      "publicId": "openai_planar_anderson_spectrum",
+      "runId": "818b8243-22b1-4315-954c-d5610eff1e44",
+      "rawResultSha256": "eaea522529d6356ad65b9f361f13a579ad6e5fcfbc426178781e3a3219ab56b1",
+      "proofSha256": "2fd7e2d1c71eff673ce58cd82f694526f9d6ed0a4ace42f800b159b26482cfc7",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 183936328,
+        "outputTokens": 7824864,
+        "totalTokens": 191761192
+      },
+      "usageComplete": false,
+      "solveWallMs": 14032263,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 191761192,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14398,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "c712d5cddf25b9dd1db547b414e380b1b7a9621c68d21b6dea424861f66b2002",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "9ffa70556f49392868ad54c5cb5982eabcf5bcf9"
+    },
+    {
+      "publicId": "openai_plane_coloring",
+      "runId": "58e5a793-5940-4b38-aa6a-2a71ae0cac3f",
+      "rawResultSha256": "eaf602341044faad1aefd61b81cdc974795acc6636baf7a458424b0f2b7d1c4b",
+      "proofSha256": "3e842122e50547b602873e71db599cc6782414fec9c60a08c664d43586341d12",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 12979862,
+        "outputTokens": 459185,
+        "totalTokens": 13439047
+      },
+      "usageComplete": false,
+      "solveWallMs": 8166647,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 13439047,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "38fa7b919643274039fa98dd8f9696beab4663b570723b2ebf8a312e0d049c78",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "0571db4c10de8a17ba937c853f480284cbbb9642"
+    },
+    {
+      "publicId": "openai_snaky_certificate",
+      "runId": "6d22ec7c-5c2b-41a4-911d-dcf3f0b7ddf0",
+      "rawResultSha256": "c2fdb0c304217b1aadf10d1655849a1c25fdd5c5965e01b1be1a42ae18ad6eff",
+      "proofSha256": "b7dc0b2898b8d4ee8ed4a3b10394429f939ff9e4d73761dcd6968e46a4579751",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 104951968,
+        "outputTokens": 3514812,
+        "totalTokens": 108466780
+      },
+      "usageComplete": false,
+      "solveWallMs": 13754834,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 108466780,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "13330bca9185db6799656f4e0b75648a1b133abb87301f6116a125923b204890",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "ed230f9c5d4458f2e4fb5c4f27a04614d62fbb49"
+    },
+    {
+      "publicId": "openai_snaky_conditional",
+      "runId": "e2b78e94-e26d-4b02-a8e5-53375547ef4d",
+      "rawResultSha256": "7c7ac917b28831d350503d1bbe4650c11564509a551e1659235ed3e0bf3b89c8",
+      "proofSha256": "dc40df160330f9058ff0af4e85adac6ed1be8be0b2d54c7fba5f10f71450eaae",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 8369984,
+        "outputTokens": 129494,
+        "totalTokens": 8499478
+      },
+      "usageComplete": false,
+      "solveWallMs": 33443284,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 8499478,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "7ece53853e37a39f69a41a4814c60041c16c65c1c285495f7661592a4e6180c1",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "14d49c0f2bb94a8973471120f675554798126117"
+    },
+    {
+      "publicId": "openai_surface_cone_candidate_support",
+      "runId": "cbfa1f3c-2760-4d7e-987a-97b48698fd49",
+      "rawResultSha256": "3466c7230d7880f744800f5fbbfb96d27dee3dc2e83c9cd180ba85d3c827ac17",
+      "proofSha256": "bc4a1cec74196b46dd726a46dc467c40b8657527dbd235a49a3cf0b5e4355ac9",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 9083734,
+        "outputTokens": 338821,
+        "totalTokens": 9422555
+      },
+      "usageComplete": false,
+      "solveWallMs": 2073492,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 9422555,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "0721e1a60e755cf684f62412663ab743b9467e970c40509cebb746934983f023",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "2ef811423f23eea4d7bea4bc2b74b49f436a706e"
+    },
+    {
+      "publicId": "openai_three_state_supercritical",
+      "runId": "76087917-e598-4ed8-be9e-06de27f4e5d0",
+      "rawResultSha256": "01cf9a4dcb679fd63b5969a9527e409edb954b87fee2fcf81074d6379cfa0570",
+      "proofSha256": "7ed9c39ce9036a21f69e05178619450e822ab5c5cee99524f08c202a78894d48",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 132487580,
+        "outputTokens": 5321780,
+        "totalTokens": 137809360
+      },
+      "usageComplete": false,
+      "solveWallMs": 13529770,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 137809360,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "285d9afdb782e3791a45d0b3dcd730233132b6b12db1b112f7ef2830e56fc750",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "df13c8ec26003f2edca8d48c166ec67f13506609"
+    },
+    {
+      "publicId": "openai_totient_companion_zero",
+      "runId": "41f80030-d1b0-4b66-acb6-3f0ddc1f26de",
+      "rawResultSha256": "7c150bb0a9dbf275e3ba881e7006a0fb8c2367ea8bc06e3578656396978523e1",
+      "proofSha256": "7d3509714928edd3f6b6a634c42d9dbeefd01c17a65d0e152fc09d97e6568a20",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 4627667,
+        "outputTokens": 170832,
+        "totalTokens": 4798499
+      },
+      "usageComplete": false,
+      "solveWallMs": 3277751,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 4798499,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 14400,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "7dc0575d96e1b9ffa49e8acb05b530d53edf433423e94761d68d0b749c4e72d7",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "aa806af94c74165066e97791ffc34e05eaa416a3"
+    },
+    {
+      "publicId": "openai_triangle_face",
+      "runId": "d77dc453-baf2-4ffd-9afa-ae2af96decba",
+      "rawResultSha256": "1bf94b080bb215773594f78d2aaa0a6693b0ba89000ed063bff0d468d5a74a43",
+      "proofSha256": "1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 14324003,
+        "outputTokens": 408272,
+        "totalTokens": 14732275
+      },
+      "usageComplete": false,
+      "solveWallMs": 2843712,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 14732275,
+        "status": "unlimited",
+        "usageComplete": false
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "9bcca9cc0578ddec2d8c278ff8ca31a70341d64e97ea57571c452c8b152217bb",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "7792690dbf761951406a67695560452783c74317"
+    },
+    {
+      "publicId": "openai_truffet_counterexample",
+      "runId": "de7a57e9-becf-4f94-9276-2090ab3f2738",
+      "rawResultSha256": "9f28e458dddbcfdbd9492acb945e0563e4af5f3915a6905d89dbe522ff225352",
+      "proofSha256": "442334bfd22cf81c9582b071cd6b370f2b6969d961418e6b084a25cc87ae4a91",
+      "binding": {
+        "runIdMatches": true,
+        "solutionCommitMatches": true,
+        "archivedProofSha256Matches": true
+      },
+      "reportedUsage": {
+        "inputTokens": 1831984,
+        "outputTokens": 94339,
+        "totalTokens": 1926323
+      },
+      "usageComplete": true,
+      "solveWallMs": 839532,
+      "tokenBudget": {
+        "enforcement": "provider-observed-dispatch-limit",
+        "maxTotalTokens": 0,
+        "overrunTokens": 0,
+        "reportedTotalTokens": 1926323,
+        "status": "unlimited",
+        "usageComplete": true
+      },
+      "recordedLaunchBudget": {
+        "maxRunSeconds": 0,
+        "maxTurns": 0,
+        "maxTurnSeconds": 0,
+        "maxTotalTokens": 0,
+        "evaluatorTimeoutSeconds": 0
+      },
+      "configurationEvidence": {
+        "launchSha256": "e411441ad4dcc53174bd575c2a12f75c90831f2bb9777eba335497f1b08144ba",
+        "outputMatchesResult": true,
+        "targetMatches": true,
+        "sameRunConfigurationEstablished": true,
+        "scope": "The saved launch for the selected run, not the current campaign policy or a uniform budget for all continuations."
+      },
+      "note": "Provider-reported counters for this bound selected run. Incomplete usage is not a total. Inherited candidates, prior runs, and external assistance are outside this observation. A recorded budget of zero means unlimited, not zero usage or zero cost.",
+      "solutionCommit": "df3f7cd329218f4eaca2d1b1020b2887a2e2018d"
+    }
+  ]
+}

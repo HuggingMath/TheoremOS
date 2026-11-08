@@ -1,0 +1,118 @@
+{
+  "schema": "theoremos.proof-kit-sources.v1",
+  "problemId": "dimitrov",
+  "theorem": "Submission.dimitrov",
+  "archiveRepository": "https://github.com/LikC1606/TheoremOS",
+  "archiveRevision": "9a36023bc644f13800db9233b0e8a138a58bdcee",
+  "upstreamRepository": "https://github.com/leanprover/lean-eval",
+  "upstreamRevision": "38361be884302c7edce1908c4aef8296eb2cb27e",
+  "officialResultUrl": "https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969",
+  "environment": {
+    "lean": "leanprover/lean4:v4.35.0-rc3",
+    "mathlib": "5e0c4e5239cb0a2d86d68a884bf52cfd963fce22"
+  },
+  "tools": {
+    "landrun": {
+      "repository": "https://github.com/zouuup/landrun",
+      "revision": "5ed4a3db3a4ad930d577215c6b9abaa19df7f99f"
+    },
+    "lean4export": {
+      "repository": "https://github.com/leanprover/lean4export",
+      "revision": "076e8e57707e813375e8f9da8bf989799ace9680"
+    },
+    "comparator": {
+      "repository": "https://github.com/leanprover/comparator",
+      "revision": "d03acab154d269c06e60e4de7e4cc85deebff94b"
+    },
+    "nanoda": {
+      "repository": "https://github.com/robsimmons/nanoda_lib",
+      "revision": "68d5ca9db226849b41a6fff59d796ff19d0a8840"
+    }
+  },
+  "files": [
+    {
+      "path": "Challenge.lean",
+      "origin": "lean-eval",
+      "sourcePath": "generated/dimitrov/Challenge.lean",
+      "sha256": "64aa424b18a8145864b7960cba2bea31c4167005b444895712498986a64e185d"
+    },
+    {
+      "path": "Solution.lean",
+      "origin": "lean-eval",
+      "sourcePath": "generated/dimitrov/Solution.lean",
+      "sha256": "28a3b6bd02b873a55d8fe86f6e52728cb5697fc86e966f5a7c4cb161bea37ec9"
+    },
+    {
+      "path": "WorkspaceTest.lean",
+      "origin": "lean-eval",
+      "sourcePath": "generated/dimitrov/WorkspaceTest.lean",
+      "sha256": "17bd1978ec5ec46b151a616ae626d14cef01fcb6ce90a2d104dffae9a95e40df"
+    },
+    {
+      "path": "config.json",
+      "origin": "lean-eval",
+      "sourcePath": "generated/dimitrov/config.json",
+      "sha256": "a98bde2c8a96de13f7b4daab5a0795d95150c7a5dc1839d620f8870e779e434e"
+    },
+    {
+      "path": "holes.json",
+      "origin": "lean-eval",
+      "sourcePath": "generated/dimitrov/holes.json",
+      "sha256": "70ddc2f87fab82760844cfaf364b4155399e147b4bab288ca2d0c6c225bbda92"
+    },
+    {
+      "path": "UPSTREAM-README.md",
+      "origin": "lean-eval",
+      "sourcePath": "generated/dimitrov/README.md",
+      "sha256": "f5aa7787b9a21ecffcd0ce848d96f44c5cf424f2dc5f236f6d430b3cbfd7c5c6"
+    },
+    {
+      "path": "LICENSE.lean-eval",
+      "origin": "lean-eval",
+      "sourcePath": "LICENSE",
+      "sha256": "f29dae1e11ec0f9c3c6c29a5358c1703c936f3f2a2a16367ea3259ba9d3f71a2"
+    },
+    {
+      "path": "Submission.lean",
+      "origin": "archived-submission",
+      "sourcePath": "accepted/dimitrov/Submission.lean",
+      "sha256": "f00a658ba195e41c8b9f340cb6c21cbbfeb9e4cb68c0c0e85c1d8b3bdb25fe5d"
+    },
+    {
+      "path": "Submission/Helpers.lean",
+      "origin": "archived-submission",
+      "sourcePath": "accepted/dimitrov/Submission/Helpers.lean",
+      "sha256": "4958987925b01fbfba67842ea4aa79e1452f1614e1c4ed82cba7bbc933affefd"
+    },
+    {
+      "path": "lakefile.toml",
+      "origin": "archived-submission",
+      "sourcePath": "accepted/dimitrov/lakefile.toml",
+      "sha256": "46811a9ccc8462fd95c6182cd1480dc22d7b3375d0b23745bb631ede855a0492"
+    },
+    {
+      "path": "lean-toolchain",
+      "origin": "archived-submission",
+      "sourcePath": "accepted/dimitrov/lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "lake-manifest.json",
+      "origin": "archived-submission",
+      "sourcePath": "accepted/dimitrov/lake-manifest.json",
+      "sha256": "9aecfc7243ab33486842d04b39d0233997e62a1600dc049fde1552427dd605d1"
+    },
+    {
+      "path": "verification.json",
+      "origin": "archived-submission",
+      "sourcePath": "accepted/dimitrov/verification.json",
+      "sha256": "a1474a7a082fb842d9651358ca49c68ff26e2e31f361d688ff7a6ec611e303a5"
+    },
+    {
+      "path": "LICENSE.TheoremOS",
+      "origin": "archived-submission",
+      "sourcePath": "LICENSE",
+      "sha256": "8b80fc18c185bc20beb6240b327d1effe3200c49a5608146416803b88a7c5fa7"
+    }
+  ]
+}
