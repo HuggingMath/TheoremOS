@@ -225,6 +225,15 @@
 .proof-distance-axis { stroke: #c8cbbc; stroke-width: 1; }
 .proof-distance-gap { fill: #e9cdb9; fill-opacity: .8; }
 .proof-distance-lower { stroke: var(--green); stroke-width: 4; }
+.proof-fiber-box { fill: #f7f7ef; stroke: #d4d7c8; stroke-width: 1; }
+.proof-fiber-box[data-selected="true"] { fill: #eff2e7; stroke: #8f9e77; }
+.proof-fiber-connector { fill: none; stroke: #8f9e77; stroke-width: 1.2; }
+.proof-fiber-references { display: grid; gap: 3px; }
+.proof-fiber-references .proof-figure-reference { margin-top: 4px; }
+.proof-figure-controls[hidden] { display: none; }
+.proof-algebra-lines { list-style: none; padding: 0; margin: 12px 0; }
+.proof-algebra-lines > li { padding: 9px 0; border-top: 1px solid var(--line); font: 15px/1.9 var(--serif); color: var(--green); overflow-wrap: anywhere; }
+.proof-algebra-lines > li:last-child { border-bottom: 1px solid var(--line); }
 .proof-walkthrough-reason > h6 { color: var(--muted); font-size: 12px; font-weight: 400; margin: 0 0 8px; }
 .proof-walkthrough-explanation { margin-top: 14px; color: var(--muted); }
 .proof-walkthrough-explanation > summary { font-size: 12px; padding: 5px 0; cursor: pointer; }
@@ -598,4 +607,8 @@
 }
 @media (max-width: 360px) {
   .shared-classics .header-links a:last-child span { display: none; }
+}
+@media (max-width: 350px) {
+  [data-proof-figure="hadamard-fiber"] .proof-figure-node-label { font-size: 16px; }
+  [data-proof-figure="hadamard-fiber"] .proof-figure-svg-label { font-size: 15px; }
 }

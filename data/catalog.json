@@ -1,7 +1,7 @@
 {
   "schema": "theoremos.public-archive.v1",
   "repository": "https://github.com/LikC1606/TheoremOS",
-  "archiveRevision": "62723ffe02f136a8aa8731e0c473c32f390aa6ee",
+  "archiveRevision": "545f5ed1187e43be55e2cd4b3cf571bcc4c96dc3",
   "snapshotAt": "2026-11-07T16:32:08.577Z",
   "records": [
     {
@@ -3103,52 +3103,102 @@
               "derivation": [
                 {
                   "statement": {
-                    "zh": "E[B]=d、E[B(B−1)]=d²，因此同子树项系数为 d，不同子树项系数为 d²。",
-                    "en": "E[B]=d and E[B(B−1)]=d², so same-subtree terms have coefficient d and distinct-subtree terms coefficient d²."
+                    "zh": "E[B]=d，E[B(B−1)]=d²。",
+                    "en": "E[B]=d and E[B(B−1)]=d²."
                   },
                   "reason": {
-                    "zh": "先固定孩子数 B 展开各子树的和，再对 Poisson 孩子数求平均，二阶交叉项用到的是阶乘矩。",
-                    "en": "Expand the subtree sums for a fixed child count B, then average over B. Distinct-child products use the factorial moment rather than E[B²]."
+                    "zh": "固定孩子数 B 展开子树和的平方：有 B 个同子树项、B(B−1) 个有序的不同子树项。对 B 取期望，两个系数分别成为 d 和 d²；交叉项用的是阶乘矩，不是 E[B²]。",
+                    "en": "For fixed B, expand the square of the subtree sum. There are B same-subtree terms and B(B−1) ordered distinct-subtree terms. Averaging over B gives coefficients d and d²; the cross terms use the factorial moment, not E[B²]."
                   }
                 },
                 {
                   "statement": {
-                    "zh": "Sₙ²=(Nₙ−Tₙ/3)²=Nₙ²−(2/3)NₙTₙ+(1/9)Tₙ²。",
-                    "en": "Sₙ²=(Nₙ−Tₙ/3)²=Nₙ²−(2/3)NₙTₙ+(1/9)Tₙ²."
+                    "zh": "Sₙ² = (Nₙ−Tₙ/3)²\n= Nₙ²−(2/3)NₙTₙ+(1/9)Tₙ²。",
+                    "en": "Sₙ² = (Nₙ−Tₙ/3)²\n= Nₙ²−(2/3)NₙTₙ+(1/9)Tₙ²."
                   },
                   "reason": {
-                    "zh": "Tₙ 是同一观测中的随机总叶数，所以混合项 NₙTₙ 必须与另外两个二阶项一起保留。",
-                    "en": "Tₙ is the random total count in the same observation, so the mixed moment NₙTₙ must be retained alongside the other two moments."
+                    "zh": "Tₙ 是同一观测中的随机总叶数。按平方公式展开后，Nₙ²、NₙTₙ、Tₙ² 三个矩都要保留，随后按 1、−2/3、1/9 合并各自的递推。",
+                    "en": "Tₙ is the random total count in the same observation. The square expansion retains Nₙ², NₙTₙ and Tₙ²; their recurrences will be combined with coefficients 1, −2/3 and 1/9."
                   }
                 },
                 {
                   "statement": {
-                    "zh": "令 u=dⁿ(1/3+λⁿ⁺¹φ(i))、v=dⁿ，则 d²[u²−(2/3)uv+(1/9)v²]=d²(u−v/3)²=sⁿ⁺¹φ(i)²。",
-                    "en": "Set u=dⁿ(1/3+λⁿ⁺¹φ(i)) and v=dⁿ. Then d²[u²−(2/3)uv+(1/9)v²]=d²(u−v/3)²=sⁿ⁺¹φ(i)²."
+                    "zh": "记 u = dⁿ(1/3+λⁿ⁺¹φ(i))，\nv = dⁿ。",
+                    "en": "Put u = dⁿ(1/3+λⁿ⁺¹φ(i)),\nv = dⁿ."
                   },
                   "reason": {
-                    "zh": "u、v 是一个孩子子树的两种计数均值。合并交叉项后，u 中的均匀部分 v/3 正好消去，留下根状态信号的平方。",
-                    "en": "Here u and v are the two count means for one child subtree. Combining the cross terms cancels the uniform part v/3 of u and leaves the squared root-state signal."
+                    "zh": "u 是根状态 i 下一个孩子子树的状态一叶数均值，v 是其总叶数均值。孩子状态已通过 K 平均，所以状态信号比第 n 层多出一个 λ。",
+                    "en": "Here u is the state-one leaf-count mean in one child subtree, conditional on root state i; v is its total leaf-count mean. Averaging the child state through K introduces one extra factor λ into the depth-n signal."
                   }
                 },
                 {
                   "statement": {
-                    "zh": "Vₙ₊₁(i)=dΣⱼK(i,j)Vₙ(j)+sⁿ⁺¹φ(i)²≤[dC+(4/9)s]sⁿ。",
-                    "en": "Vₙ₊₁(i)=dΣⱼK(i,j)Vₙ(j)+sⁿ⁺¹φ(i)²≤[dC+(4/9)s]sⁿ."
+                    "zh": "u−v/3\n= dⁿ(1/3+λⁿ⁺¹φ(i))−dⁿ/3\n= dⁿλⁿ⁺¹φ(i)。",
+                    "en": "u−v/3\n= dⁿ(1/3+λⁿ⁺¹φ(i))−dⁿ/3\n= dⁿλⁿ⁺¹φ(i)."
                   },
                   "reason": {
-                    "zh": "同子树项按系数 1、−2/3、1/9 合并成 Vₙ；再代入归纳假设 Vₙ≤Csⁿ、K 的行和与 φ² 上界。源码先证明各矩有限，才交换这些求和。",
-                    "en": "The same-subtree moments combine into Vₙ. Apply the induction bound Vₙ≤Csⁿ, the row sum of K and the bound on φ². The source proves the moment sums finite before combining them."
+                    "zh": "把 u、v 的定义代入；两项中的 dⁿ/3 完全抵消，留下根状态的中心化信号。这里消掉的是均值里的均匀部分，并没有把随机 Tₙ 替换成期望。",
+                    "en": "Substitute the definitions of u and v. Their dⁿ/3 terms cancel exactly, leaving the centered root-state signal. This cancels a uniform part of the means; it does not replace the random Tₙ by its expectation."
                   }
                 },
                 {
                   "statement": {
-                    "zh": "r=dλ²>1、s=dr、C=4r/[9(r−1)]，所以 dC+(4/9)s=Cs，且 C≥4/9。",
-                    "en": "With r=dλ²>1, s=dr and C=4r/[9(r−1)], we have dC+(4/9)s=Cs and C≥4/9."
+                    "zh": "d²[u²−(2/3)uv+(1/9)v²]\n= d²(u−v/3)²。",
+                    "en": "d²[u²−(2/3)uv+(1/9)v²]\n= d²(u−v/3)²."
                   },
                   "reason": {
-                    "zh": "C 的取值解出了归纳系数方程；r>1 使分母为正，既覆盖初值 V₀=φ²，也保证每层 Vₙ≤Csⁿ。",
-                    "en": "This choice of C solves the induction-coefficient equation. The condition r>1 makes its denominator positive, covers the initial V₀=φ² and gives Vₙ≤Csⁿ at every level."
+                    "zh": "不同孩子子树独立，三个矩递推中的交叉项分别为 d²u²、d²uv、d²v²。按前面的系数组合，括号内恰好配成一个完全平方。",
+                    "en": "Distinct child subtrees are independent, giving cross terms d²u², d²uv and d²v² in the three moment recurrences. Combining them with the earlier coefficients completes the square."
+                  }
+                },
+                {
+                  "statement": {
+                    "zh": "d²(u−v/3)²\n= d²(dⁿλⁿ⁺¹φ(i))²\n= d²ⁿ⁺²λ²ⁿ⁺²φ(i)²\n= [(dλ)²]ⁿ⁺¹φ(i)²\n= sⁿ⁺¹φ(i)²。",
+                    "en": "d²(u−v/3)²\n= d²(dⁿλⁿ⁺¹φ(i))²\n= d²ⁿ⁺²λ²ⁿ⁺²φ(i)²\n= [(dλ)²]ⁿ⁺¹φ(i)²\n= sⁿ⁺¹φ(i)²."
+                  },
+                  "reason": {
+                    "zh": "先代入刚得到的 u−v/3，再把 d² 与平方中的 d²ⁿ 合并。d 与 λ 的指数同为 2n+2，因而可合并为 ((dλ)²)ⁿ⁺¹，最后换成 s=(dλ)²。偶数次幂也保留了 λ<0 时的等式。",
+                    "en": "Substitute the value of u−v/3 and combine d² with d²ⁿ from the square. Both d and λ have exponent 2n+2, giving ((dλ)²)ⁿ⁺¹. Finally use s=(dλ)². The even powers keep the equality valid when λ<0."
+                  }
+                },
+                {
+                  "statement": {
+                    "zh": "Vₙ₊₁(i)\n= dΣⱼK(i,j)Vₙ(j)+sⁿ⁺¹φ(i)²\n≤ dCsⁿ+(4/9)sⁿ⁺¹\n= [dC+(4/9)s]sⁿ。",
+                    "en": "Vₙ₊₁(i)\n= dΣⱼK(i,j)Vₙ(j)+sⁿ⁺¹φ(i)²\n≤ dCsⁿ+(4/9)sⁿ⁺¹\n= [dC+(4/9)s]sⁿ."
+                  },
+                  "reason": {
+                    "zh": "同子树的三个矩按同样系数合并为 Vₙ，交叉项使用上一行。若 Vₙ(j)≤Csⁿ，K 非负且行和为一就把加权和控制在 Csⁿ；再用 φ(i)²≤4/9。源码先证明各矩有限，才进行这些求和。",
+                    "en": "The same-subtree moments combine into Vₙ, and the preceding line supplies the cross term. Under Vₙ(j)≤Csⁿ, nonnegativity and unit row sums of K bound its weighted average by Csⁿ. Then use φ(i)²≤4/9. The source establishes finiteness before combining the sums."
+                  }
+                },
+                {
+                  "statement": {
+                    "zh": "r=dλ²>1，s=dr，\nC=4r/[9(r−1)]。\nC(s−d) = C·d(r−1)\n= (4/9)dr = (4/9)s。",
+                    "en": "Let r=dλ²>1 and s=dr,\nC=4r/[9(r−1)].\nC(s−d) = C·d(r−1)\n= (4/9)dr = (4/9)s."
+                  },
+                  "reason": {
+                    "zh": "s=(dλ)²=d(dλ²)=dr，所以 s−d=d(r−1)。代入 C 后，分母中的 r−1 与这个因子约去；r>1 保证约去的因子非零。",
+                    "en": "Since s=(dλ)²=d(dλ²)=dr, we have s−d=d(r−1). Substitute C and cancel r−1 from its denominator against this factor; r>1 makes the cancellation valid."
+                  }
+                },
+                {
+                  "statement": {
+                    "zh": "dC+(4/9)s\n= dC+C(s−d) = Cs。\n因此 Vₙ₊₁(i)≤Csⁿ⁺¹。",
+                    "en": "dC+(4/9)s\n= dC+C(s−d) = Cs.\nTherefore Vₙ₊₁(i)≤Csⁿ⁺¹."
+                  },
+                  "reason": {
+                    "zh": "将上一行的 (4/9)s 改写为 C(s−d)，dC 与 −Cd 抵消。于是递推上界中的系数恰好成为 Cs，完成从第 n 层到第 n+1 层的归纳。",
+                    "en": "Replace (4/9)s by C(s−d) from the preceding line; dC cancels −Cd. The recurrence coefficient becomes exactly Cs, closing the induction from depth n to n+1."
+                  }
+                },
+                {
+                  "statement": {
+                    "zh": "C−4/9 = 4/[9(r−1)] > 0。\nV₀(i)=φ(i)²≤4/9≤C，\n故对所有 n，Vₙ(i)≤Csⁿ。",
+                    "en": "C−4/9 = 4/[9(r−1)] > 0.\nV₀(i)=φ(i)²≤4/9≤C.\nHence Vₙ(i)≤Csⁿ for every n."
+                  },
+                  "reason": {
+                    "zh": "r>1 也保证初值所需的 C≥4/9。深度零的统计量就是 φ(i)，因此 V₀=φ(i)²；把这个初值与刚完成的归纳步骤接起来，得到下一阶段可直接使用的统一二阶矩界。",
+                    "en": "The condition r>1 also gives C≥4/9 for the base case. At depth zero the statistic is φ(i), so V₀=φ(i)². This base case and the preceding induction step give the uniform second-moment bound needed next."
                   }
                 }
               ],
@@ -27734,6 +27784,7 @@
             },
             {
               "id": "build-the-fiber-indicator",
+              "figure": "hadamard-fiber",
               "title": {
                 "zh": "构造逐点恒等式，筛出 a 纤维",
                 "en": "Construct a pointwise identity selecting the a-fiber"
@@ -27766,8 +27817,8 @@
                 },
                 {
                   "statement": {
-                    "zh": "a(vₖ−b·conj(vₖ)²)=avₖ−bvₖ=(a−b)vₖ。",
-                    "en": "a(vₖ−b·conj(vₖ)²)=avₖ−bvₖ=(a−b)vₖ."
+                    "zh": "a(vₖ−b·conj(vₖ)²)\n= avₖ−b(a·conj(vₖ)²)\n= avₖ−bvₖ = (a−b)vₖ。",
+                    "en": "a(vₖ−b·conj(vₖ)²)\n= avₖ−b(a·conj(vₖ)²)\n= avₖ−bvₖ = (a−b)vₖ."
                   },
                   "reason": {
                     "zh": "在 a 纤维上，用前一行把 ab·conj(vₖ)² 改写为 bvₖ；指示函数在此处取 1。",
@@ -27804,6 +27855,10 @@
                   "line": 88,
                   "endLine": 103
                 }
+              },
+              "figureHtml": {
+                "zh": "<figure class=\"proof-figure\" data-proof-figure=\"hadamard-fiber\" data-locale=\"zh\" data-fiber-current=\"unit\" data-fiber-case=\"a\">\n    <figcaption class=\"proof-figure-heading\">同一个表达式怎样留下 a 纤维</figcaption>\n    <p class=\"proof-figure-premise\">保留一般的 a≠b。每项 vₖ 的模长为一，立方只能取 a 或 b。</p>\n    <div class=\"proof-figure-controls\" role=\"group\" aria-label=\"选择推导阶段\"><button type=\"button\" data-fiber-stage=\"unit\" aria-pressed=\"true\">1 · 单位模长</button><button type=\"button\" data-fiber-stage=\"select\" aria-pressed=\"false\">2 · 代入两个分支</button><button type=\"button\" data-fiber-stage=\"sum\" aria-pressed=\"false\">3 · 求和并消去</button></div>\n    <div class=\"proof-figure-controls\" data-fiber-cases role=\"group\" aria-label=\"选择当前项的立方\"><button type=\"button\" data-fiber-branch=\"a\" aria-pressed=\"true\">v³ = a</button><button type=\"button\" data-fiber-branch=\"b\" aria-pressed=\"false\">v³ = b</button></div>\n    <div class=\"proof-figure-body\"><svg class=\"proof-figure-svg\" data-fiber-picture viewBox=\"0 0 320 250\" role=\"img\" aria-label=\"单位模长、两个立方分支与求和的推导关系\"><title>v³=a 时的逐点代入</title>\n    <text x=\"160\" y=\"23\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v·conj(v) = 1</text>\n    <path d=\"M160 32V49\" class=\"proof-fiber-connector\"/>\n    <text x=\"160\" y=\"69\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v³·conj(v)² = v</text>\n    <g class=\"proof-fiber-connector\"><path d=\"M160 80V94H82V109M160 94H238V109\"/><path d=\"M82 174V192M238 174V192\"/></g>\n    <g data-fiber-lane=\"a\" data-active=\"true\">\n        <rect class=\"proof-fiber-box\" x=\"16\" y=\"109\" width=\"132\" height=\"65\" rx=\"3\" data-selected=\"true\"/>\n        <text x=\"82\" y=\"133\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v³ = a</text>\n        <text x=\"82\" y=\"157\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">a·conj(v)² = v</text>\n        <rect class=\"proof-fiber-box\" x=\"16\" y=\"192\" width=\"132\" height=\"38\" rx=\"3\" data-selected=\"false\"/>\n        <text x=\"82\" y=\"216\" text-anchor=\"middle\" class=\"proof-figure-node-label\">代入筛选式 ↓</text>\n      </g><g data-fiber-lane=\"b\" data-active=\"false\">\n        <rect class=\"proof-fiber-box\" x=\"172\" y=\"109\" width=\"132\" height=\"65\" rx=\"3\" data-selected=\"false\"/>\n        <text x=\"238\" y=\"133\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v³ = b</text>\n        <text x=\"238\" y=\"157\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">b·conj(v)² = v</text>\n        <rect class=\"proof-fiber-box\" x=\"172\" y=\"192\" width=\"132\" height=\"38\" rx=\"3\" data-selected=\"false\"/>\n        <text x=\"238\" y=\"216\" text-anchor=\"middle\" class=\"proof-figure-node-label\">代入筛选式 ↓</text>\n      </g></svg><div class=\"proof-figure-readout\" data-fiber-readout aria-live=\"polite\" aria-atomic=\"true\"><p>先固定一个指标 k，暂写 v=vₖ。模长一的作用，是把共轭变成乘法中的逆元。</p>\n    <ol class=\"proof-algebra-lines\"><li>|v|=1 ⇒ v·conj(v)=1</li><li>v³·conj(v)²<br>= v(v·conj(v))²<br>= v</li><li data-fiber-local>v³=a ⇒ a·conj(v)² = v</li></ol>\n    <p>下一层只需把这个等式代入同一个表达式。</p></div></div>\n    <p class=\"proof-figure-caption\">图中是已验收证明里的恒等式：先逐项筛选，再用两个消失矩求和。a、b 始终保留为题设中的一般复数。</p>\n  </figure>",
+                "en": "<figure class=\"proof-figure\" data-proof-figure=\"hadamard-fiber\" data-locale=\"en\" data-fiber-current=\"unit\" data-fiber-case=\"a\">\n    <figcaption class=\"proof-figure-heading\">How one expression retains the a-fiber</figcaption>\n    <p class=\"proof-figure-premise\">Keep arbitrary distinct values a,b. Each vₖ has unit modulus and cube equal to a or b.</p>\n    <div class=\"proof-figure-controls\" role=\"group\" aria-label=\"Choose a derivation stage\"><button type=\"button\" data-fiber-stage=\"unit\" aria-pressed=\"true\">1 · Unit modulus</button><button type=\"button\" data-fiber-stage=\"select\" aria-pressed=\"false\">2 · Substitute each case</button><button type=\"button\" data-fiber-stage=\"sum\" aria-pressed=\"false\">3 · Sum and cancel</button></div>\n    <div class=\"proof-figure-controls\" data-fiber-cases role=\"group\" aria-label=\"Choose the current term’s cube\"><button type=\"button\" data-fiber-branch=\"a\" aria-pressed=\"true\">v³ = a</button><button type=\"button\" data-fiber-branch=\"b\" aria-pressed=\"false\">v³ = b</button></div>\n    <div class=\"proof-figure-body\"><svg class=\"proof-figure-svg\" data-fiber-picture viewBox=\"0 0 320 250\" role=\"img\" aria-label=\"Derivation from unit modulus through the two cube cases to summation\"><title>Pointwise substitution when v³=a</title>\n    <text x=\"160\" y=\"23\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v·conj(v) = 1</text>\n    <path d=\"M160 32V49\" class=\"proof-fiber-connector\"/>\n    <text x=\"160\" y=\"69\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v³·conj(v)² = v</text>\n    <g class=\"proof-fiber-connector\"><path d=\"M160 80V94H82V109M160 94H238V109\"/><path d=\"M82 174V192M238 174V192\"/></g>\n    <g data-fiber-lane=\"a\" data-active=\"true\">\n        <rect class=\"proof-fiber-box\" x=\"16\" y=\"109\" width=\"132\" height=\"65\" rx=\"3\" data-selected=\"true\"/>\n        <text x=\"82\" y=\"133\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v³ = a</text>\n        <text x=\"82\" y=\"157\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">a·conj(v)² = v</text>\n        <rect class=\"proof-fiber-box\" x=\"16\" y=\"192\" width=\"132\" height=\"38\" rx=\"3\" data-selected=\"false\"/>\n        <text x=\"82\" y=\"216\" text-anchor=\"middle\" class=\"proof-figure-node-label\">Substitute ↓</text>\n      </g><g data-fiber-lane=\"b\" data-active=\"false\">\n        <rect class=\"proof-fiber-box\" x=\"172\" y=\"109\" width=\"132\" height=\"65\" rx=\"3\" data-selected=\"false\"/>\n        <text x=\"238\" y=\"133\" text-anchor=\"middle\" class=\"proof-figure-node-label\">v³ = b</text>\n        <text x=\"238\" y=\"157\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">b·conj(v)² = v</text>\n        <rect class=\"proof-fiber-box\" x=\"172\" y=\"192\" width=\"132\" height=\"38\" rx=\"3\" data-selected=\"false\"/>\n        <text x=\"238\" y=\"216\" text-anchor=\"middle\" class=\"proof-figure-node-label\">Substitute ↓</text>\n      </g></svg><div class=\"proof-figure-readout\" data-fiber-readout aria-live=\"polite\" aria-atomic=\"true\"><p>Fix one index k and write v=vₖ. Unit modulus makes the conjugate a multiplicative inverse.</p>\n    <ol class=\"proof-algebra-lines\"><li>|v|=1 ⇒ v·conj(v)=1</li><li>v³·conj(v)²<br>= v(v·conj(v))²<br>= v</li><li data-fiber-local>v³=a ⇒ a·conj(v)² = v</li></ol>\n    <p>The next stage substitutes this identity into one common expression.</p></div></div>\n    <p class=\"proof-figure-caption\">These are the identities in the accepted proof: select term by term, then sum using the two vanishing moments. The values a,b remain the general complex parameters in the statement.</p>\n  </figure>"
               }
             },
             {
@@ -27842,8 +27897,8 @@
                 },
                 {
                   "statement": {
-                    "zh": "右边= a(Σₖvₖ−bΣₖconj(vₖ)²)=a(0−b·0)=0。",
-                    "en": "The right side is a(Σₖvₖ−bΣₖconj(vₖ)²)=a(0−b·0)=0."
+                    "zh": "Σₖa(vₖ−b·conj(vₖ)²)\n= aΣₖvₖ−abΣₖconj(vₖ)²\n= a·0−ab·0 = 0。",
+                    "en": "Σₖa(vₖ−b·conj(vₖ)²)\n= aΣₖvₖ−abΣₖconj(vₖ)²\n= a·0−ab·0 = 0."
                   },
                   "reason": {
                     "zh": "逐项使用前一阶段的恒等式，再分配有限和；两个独立得到的消失矩在这里汇合。",
@@ -29528,8 +29583,8 @@
                 "en": "The unique first elimination sets w₁ = w₂"
               },
               "given": {
-                "zh": "变量 1 同时有 lower 与 upper 行，是初始系统唯一的 dominating 变量。",
-                "en": "Variable 1 has both a lower row and an upper row and is the only dominating variable initially."
+                "zh": "待消元变量为 {0,1}；第三坐标 w₂ 是参考列。变量 1 同时有 lower 与 upper 行，是初始系统唯一的 dominating 变量。",
+                "en": "The eliminable variables are {0,1}; w₂ is the reference column. Variable 1 has both a lower row and an upper row and is the only dominating variable initially."
               },
               "claim": {
                 "zh": "eligible(initial,r,j) 当且仅当 (r,j)=(0,1)。其 lowerForm 求值为 w₂；代入后得到 middle：第一行被清理，第二行变成 1+w₂ ≤ w₀，目标仍为 w₀。",
@@ -29561,6 +29616,16 @@
                   "reason": {
                     "zh": "该 lowerForm 只有第三列的系数 0 有限；其余两列为 ⊥，求值只剩 0+w₂。",
                     "en": "Only the third-column coefficient zero is finite; the other two coefficients are ⊥, leaving 0+w₂."
+                  }
+                },
+                {
+                  "statement": {
+                    "zh": "“唯一”指算法只允许这次代换；原可行域仍允许 w₁≠w₂。",
+                    "en": "Uniqueness is about the eligible algorithmic step; the original feasible set still allows w₁≠w₂."
+                  },
+                  "reason": {
+                    "zh": "例如后面要核对的 (0,−1,0) 满足原约束，却不满足 w₁=w₂。不能把保存的代回等式当作原约束推出的等式。",
+                    "en": "The later point (0,−1,0) satisfies the original constraints but not w₁=w₂. The saved reconstruction equality is not an equality implied by the original constraints."
                   }
                 },
                 {
@@ -29599,6 +29664,7 @@
             },
             {
               "id": "force-the-second-elimination",
+              "figure": "truffet-elimination",
               "title": {
                 "zh": "第二步令 w₀ = 1+w₂ 并终止",
                 "en": "The second elimination sets w₀ = 1+w₂ and terminates"
@@ -29645,8 +29711,8 @@
                     "en": "1+w₂≤1+w₂, remaining=∅ and c_final(w)=1+w₂."
                   },
                   "reason": {
-                    "zh": "剩余约束变成恒等不等式而被清理；目标原为 w₀，随同一代换变为 1+w₂。没有剩余变量，stop 成立。",
-                    "en": "The remaining inequality is tautological and is removed. The original objective w₀ becomes 1+w₂ under the same substitution. With no variables left, stop holds."
+                    "zh": "剩余约束变成恒等不等式而被清理；目标原为 w₀，随同一代换变为 1+w₂。两个空行的参考列都满足 ⊥≤⊥，因此本例的 stop 成立；remaining=∅ 则另行核对。",
+                    "en": "The remaining inequality is tautological and removed. The original objective w₀ becomes 1+w₂. Both cleared rows satisfy ⊥≤⊥ in the reference column, establishing stop in this example; remaining=∅ is checked separately."
                   }
                 }
               ],
@@ -29671,6 +29737,10 @@
                   "line": 529,
                   "endLine": 550
                 }
+              },
+              "figureHtml": {
+                "zh": "<figure class=\"proof-figure\" data-proof-figure=\"truffet-elimination\" data-locale=\"zh\" data-truffet-current=\"initial\" data-truffet-state=\"initial\">\n    <figcaption class=\"proof-figure-heading\">跟随两次代换，再核对输出是否最优</figcaption>\n    <p class=\"proof-figure-premise\">固定 w₂=0；横轴是 w₁，纵轴是 w₀。原目标 c(w)=w₀，点越低，成本越小。</p>\n    <div class=\"proof-figure-controls\" role=\"group\" aria-label=\"消元执行与可行点对照\"><button type=\"button\" data-truffet-stage=\"initial\" aria-pressed=\"true\">1 · 原可行域</button><button type=\"button\" data-truffet-stage=\"first\" aria-pressed=\"false\">2 · 第一次：固定 w₁</button><button type=\"button\" data-truffet-stage=\"second\" aria-pressed=\"false\">3 · 第二次：固定 w₀</button><button type=\"button\" data-truffet-stage=\"compare\" aria-pressed=\"false\">4 · 比较两个可行点</button></div>\n    <div class=\"proof-figure-body\"><svg class=\"proof-figure-svg\" data-truffet-board viewBox=\"0 0 320 286\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"原可行域、固定 w₁=0 的直线及两个可行点\"><title>原可行域</title><desc>固定 w₂=0；横轴 w₁，纵轴 w₀。绿色区域为 w₀≥max(0,1+w₁)。</desc>\n    <text x=\"20\" y=\"20\" class=\"proof-figure-svg-label\">w₂ = 0 · 原可行域</text>\n    <g stroke=\"var(--line)\" stroke-width=\".8\"><line x1=\"52\" x2=\"52\" y1=\"54\" y2=\"246\"/><line x1=\"116\" x2=\"116\" y1=\"54\" y2=\"246\"/><line x1=\"180\" x2=\"180\" y1=\"54\" y2=\"246\"/><line x1=\"244\" x2=\"244\" y1=\"54\" y2=\"246\"/><line x1=\"52\" x2=\"276\" y1=\"214\" y2=\"214\"/><line x1=\"52\" x2=\"276\" y1=\"150\" y2=\"150\"/><line x1=\"52\" x2=\"276\" y1=\"86\" y2=\"86\"/></g>\n    <polygon points=\"52,214 116,214 276,54 52,54\" fill=\"#dce5cd\" fill-opacity=\".7\" data-truffet-region><title>w₀ ≥ max(0, 1+w₁)</title></polygon>\n    <polyline points=\"52,214 116,214 276,54\" fill=\"none\" stroke=\"var(--green)\" stroke-width=\"2\" data-truffet-boundary/>\n    <g stroke=\"var(--muted)\" stroke-width=\"1\"><path d=\"M44 214H288M180 246V37\"/><path d=\"M284 211L288 214 284 217M177 41L180 37 183 41\" fill=\"none\"/></g>\n    <text x=\"52\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">-2</text><text x=\"116\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">-1</text><text x=\"180\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">0</text><text x=\"244\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">1</text>\n    <text x=\"170\" y=\"218\" text-anchor=\"end\" class=\"proof-figure-svg-label\">0</text><text x=\"170\" y=\"154\" text-anchor=\"end\" class=\"proof-figure-svg-label\">1</text><text x=\"170\" y=\"90\" text-anchor=\"end\" class=\"proof-figure-svg-label\">2</text>\n    <text x=\"296\" y=\"218\" class=\"proof-figure-node-label\">w₁</text><text x=\"184\" y=\"38\" class=\"proof-figure-node-label\">w₀</text>\n    <text x=\"69\" y=\"79\" fill=\"var(--green)\" font-size=\"12\">w₀≥0</text><text x=\"69\" y=\"95\" fill=\"var(--green)\" font-size=\"12\">w₀≥1+w₁</text>\n    \n    \n    \n    <rect x=\"20\" y=\"262\" width=\"10\" height=\"10\" rx=\"2\" fill=\"#dce5cd\" stroke=\"var(--green)\"/><text x=\"36\" y=\"271\" class=\"proof-figure-svg-label\">原可行域</text>\n    </svg>\n    <div class=\"proof-figure-readout\" data-truffet-readout aria-live=\"polite\" aria-atomic=\"true\"><p class=\"proof-figure-equation\" data-truffet-row=\"0\">0 ≤ max(w₀,w₁)</p><p class=\"proof-figure-equation\" data-truffet-row=\"1\">max(1+w₁,−2) ≤ w₀</p><p>第二条给出 w₀≥1+w₁。若 w₀<0，第一条迫使 w₁≥0，与第二条冲突。因此两条约束等价于绿色区域 w₀≥max(0,1+w₁)，原目标为 w₀。</p><dl class=\"proof-figure-values\">\n    <div><dt>剩余变量</dt><dd data-truffet-remaining>{0, 1}</dd></div>\n    <div><dt>当前目标</dt><dd data-truffet-objective>c(w)=w₀</dd></div>\n    </dl>\n    <button type=\"button\" class=\"proof-figure-reference\" data-global-scroll=\"proof-derivation-write-the-concrete-system\">对照原约束的推导 ↑</button></div></div>\n    <p class=\"proof-figure-caption\">绿色区域始终是原系统的可行域。陶土色半直线把 middle 与保存的代回式 w₁=0 放回原坐标，第二次代换确定执行输出；最后单独比较另一个原可行点。</p>\n  </figure>",
+                "en": "<figure class=\"proof-figure\" data-proof-figure=\"truffet-elimination\" data-locale=\"en\" data-truffet-current=\"initial\" data-truffet-state=\"initial\">\n    <figcaption class=\"proof-figure-heading\">Follow two substitutions, then test the output</figcaption>\n    <p class=\"proof-figure-premise\">Fix w₂=0. The horizontal axis is w₁ and the vertical axis is w₀. A lower point has lower original cost c(w)=w₀.</p>\n    <div class=\"proof-figure-controls\" role=\"group\" aria-label=\"Elimination steps and feasible-point comparison\"><button type=\"button\" data-truffet-stage=\"initial\" aria-pressed=\"true\">1 · Original feasible region</button><button type=\"button\" data-truffet-stage=\"first\" aria-pressed=\"false\">2 · First: fix w₁</button><button type=\"button\" data-truffet-stage=\"second\" aria-pressed=\"false\">3 · Second: fix w₀</button><button type=\"button\" data-truffet-stage=\"compare\" aria-pressed=\"false\">4 · Compare feasible points</button></div>\n    <div class=\"proof-figure-body\"><svg class=\"proof-figure-svg\" data-truffet-board viewBox=\"0 0 320 286\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Original feasible region, the line w₁=0 and two feasible points\"><title>Original feasible region</title><desc>Fix w₂=0. Horizontal axis: w₁; vertical axis: w₀. The green region is w₀≥max(0,1+w₁). </desc>\n    <text x=\"20\" y=\"20\" class=\"proof-figure-svg-label\">w₂ = 0 · original feasible region</text>\n    <g stroke=\"var(--line)\" stroke-width=\".8\"><line x1=\"52\" x2=\"52\" y1=\"54\" y2=\"246\"/><line x1=\"116\" x2=\"116\" y1=\"54\" y2=\"246\"/><line x1=\"180\" x2=\"180\" y1=\"54\" y2=\"246\"/><line x1=\"244\" x2=\"244\" y1=\"54\" y2=\"246\"/><line x1=\"52\" x2=\"276\" y1=\"214\" y2=\"214\"/><line x1=\"52\" x2=\"276\" y1=\"150\" y2=\"150\"/><line x1=\"52\" x2=\"276\" y1=\"86\" y2=\"86\"/></g>\n    <polygon points=\"52,214 116,214 276,54 52,54\" fill=\"#dce5cd\" fill-opacity=\".7\" data-truffet-region><title>w₀ ≥ max(0, 1+w₁)</title></polygon>\n    <polyline points=\"52,214 116,214 276,54\" fill=\"none\" stroke=\"var(--green)\" stroke-width=\"2\" data-truffet-boundary/>\n    <g stroke=\"var(--muted)\" stroke-width=\"1\"><path d=\"M44 214H288M180 246V37\"/><path d=\"M284 211L288 214 284 217M177 41L180 37 183 41\" fill=\"none\"/></g>\n    <text x=\"52\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">-2</text><text x=\"116\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">-1</text><text x=\"180\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">0</text><text x=\"244\" y=\"233\" text-anchor=\"middle\" class=\"proof-figure-svg-label\">1</text>\n    <text x=\"170\" y=\"218\" text-anchor=\"end\" class=\"proof-figure-svg-label\">0</text><text x=\"170\" y=\"154\" text-anchor=\"end\" class=\"proof-figure-svg-label\">1</text><text x=\"170\" y=\"90\" text-anchor=\"end\" class=\"proof-figure-svg-label\">2</text>\n    <text x=\"296\" y=\"218\" class=\"proof-figure-node-label\">w₁</text><text x=\"184\" y=\"38\" class=\"proof-figure-node-label\">w₀</text>\n    <text x=\"69\" y=\"79\" fill=\"var(--green)\" font-size=\"12\">w₀≥0</text><text x=\"69\" y=\"95\" fill=\"var(--green)\" font-size=\"12\">w₀≥1+w₁</text>\n    \n    \n    \n    <rect x=\"20\" y=\"262\" width=\"10\" height=\"10\" rx=\"2\" fill=\"#dce5cd\" stroke=\"var(--green)\"/><text x=\"36\" y=\"271\" class=\"proof-figure-svg-label\">feasible</text>\n    </svg>\n    <div class=\"proof-figure-readout\" data-truffet-readout aria-live=\"polite\" aria-atomic=\"true\"><p class=\"proof-figure-equation\" data-truffet-row=\"0\">0 ≤ max(w₀,w₁)</p><p class=\"proof-figure-equation\" data-truffet-row=\"1\">max(1+w₁,−2) ≤ w₀</p><p>The second row gives w₀≥1+w₁. If w₀<0, the first row forces w₁≥0, contradicting the second. Thus the original constraints describe the green region w₀≥max(0,1+w₁), with objective w₀.</p><dl class=\"proof-figure-values\">\n    <div><dt>Remaining variables</dt><dd data-truffet-remaining>{0, 1}</dd></div>\n    <div><dt>Current objective</dt><dd data-truffet-objective>c(w)=w₀</dd></div>\n    </dl>\n    <button type=\"button\" class=\"proof-figure-reference\" data-global-scroll=\"proof-derivation-write-the-concrete-system\">Read the original constraints ↑</button></div></div>\n    <p class=\"proof-figure-caption\">The green region always represents the original system. The terracotta ray lifts middle with the saved reconstruction choice w₁=0; the second substitution fixes the execution output. The final view compares another originally feasible point.</p>\n  </figure>"
               }
             },
             {
@@ -29772,6 +29842,16 @@
                 "reconstruct-the-output"
               ],
               "derivation": [
+                {
+                  "statement": {
+                    "zh": "在 w₂=0 的截面，原约束等价于 w₀≥0、w₁≤w₀−1。",
+                    "en": "On the section w₂=0, the original constraints are equivalent to w₀≥0 and w₁≤w₀−1."
+                  },
+                  "reason": {
+                    "zh": "第二行给出 w₀≥1+w₁ 和 w₀≥−2。若 w₀<0，第一行 0≤max(w₀,w₁) 就要求 w₁≥0，进而 w₀≥1，矛盾。因此 w₀≥0；反向代入则两行都成立。",
+                    "en": "The second row gives w₀≥1+w₁ and w₀≥−2. If w₀<0, the first row requires w₁≥0, forcing w₀≥1, a contradiction. Thus w₀≥0. Conversely these two inequalities imply both original rows."
+                  }
+                },
                 {
                   "statement": {
                     "zh": "better=(0,−1,0)：0≤max(0,−1)=0。",
