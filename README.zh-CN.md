@@ -18,11 +18,11 @@
 
 </div>
 
-TheoremOS 是一套与数学家协作的 AI 数学研究系统，从 DeepScientist 的数学证明部分发展而来。数学家提出问题、提供思路并判断研究方向；系统协助检索已有结论、尝试不同证明路线、补齐辅助引理，并用 Lean 检查证明。
+TheoremOS 是一套与数学家协作的 AI 数学研究系统。数学家提出问题、提供思路并判断研究方向；系统协助检索已有结论、尝试不同证明路线、补齐辅助引理，并用 Lean 检查证明。
 
 研究者可以带入自然语言、TeX，或已有的 Lean 题目与未完成的证明，在线使用无需在本机安装 Lean 或 Docker。研究过程中，系统会记录尝试过的路线、Lean 的报错和未完成的步骤，支持保存进度并稍后恢复任务，方便研究者查看进展、调整思路。
 
-本仓库公开了 TheoremOS 及其前身 DeepScientist / DeepScientist Math 的 26 条证明记录，包括 [10 份通过 Lean-Eval 官方评测的证明](#lean-eval10-份官方通过的证明)和 [16 条 OpenAI Math 证明记录](#openai-math16-条证明记录)。
+本仓库公开了 TheoremOS 的 26 条证明记录，包括 [10 份通过 Lean-Eval 官方评测的证明](#lean-eval10-份官方通过的证明)和 [16 条 OpenAI Math 证明记录](#openai-math16-条证明记录)。
 
 <a href="https://theoremos.top/#start">
   <picture>
