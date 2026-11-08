@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 使用与 CLI 申请 / Access and CLI inquiries
+    url: https://github.com/LikC1606/TheoremOS/blob/main/docs/ACCESS.md
+    about: 在线内测、模型接入与 CLI 研究申请方式 / Hosted beta, model connection, and CLI research access
+  - name: 证明复核指引 / Verify a proof
+    url: https://github.com/LikC1606/TheoremOS/blob/main/docs/VERIFY.md
+    about: 查看固定环境与独立检查步骤 / Check a proof in its recorded environment

@@ -1,0 +1,24 @@
+name: 使用咨询 / Usage question
+description: 咨询工作台、CLI 申请或证明记录 / Ask about the workbench, CLI access, or proof records
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        先查看使用与 CLI 申请说明：https://github.com/LikC1606/TheoremOS/blob/main/docs/ACCESS.md
+        Start with the access and CLI guide: https://github.com/LikC1606/TheoremOS/blob/main/docs/ACCESS.md
+
+        请勿在公开 Issue 中填写 API Key 或未公开的研究材料。
+        Do not include API keys or private research material in a public issue.
+  - type: textarea
+    id: question
+    attributes:
+      label: 你想了解什么 / Your question
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: 已查阅的资料或尝试 / What you have read or tried
+      description: 选填，可附相关文档、公开题目或证明记录的链接。/ Optional; include relevant documentation, public problem, or proof-record links.

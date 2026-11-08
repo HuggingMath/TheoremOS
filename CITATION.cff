@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: >-
+  If you use TheoremOS in research, please cite this research preview.
+  For an individual proof, also cite its original sources and authors as
+  recorded in the archive.
+type: software
+title: TheoremOS
+authors:
+  - family-names: Liu
+    given-names: Zhenhao
+version: 0.1.0-preview.1
+date-released: "2026-11-08"
+url: https://theoremos.top/
+repository-artifact: https://github.com/LikC1606/TheoremOS

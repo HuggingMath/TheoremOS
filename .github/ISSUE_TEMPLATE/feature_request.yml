@@ -1,0 +1,29 @@
+name: 功能建议 / Feature request
+description: 提出具体的使用需求 / Suggest a concrete improvement
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请只填写愿意公开的信息；私下交流可发邮件至 liuzhenhao@westlake.edu.cn。
+        Only include information you are willing to publish. For a private discussion, email liuzhenhao@westlake.edu.cn.
+  - type: textarea
+    id: problem
+    attributes:
+      label: 使用场景与问题 / Use case and problem
+      description: 你在研究或使用过程中遇到了什么困难？/ What difficulty did you encounter in your research or use of the product?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 希望怎样改进 / Proposed improvement
+      description: 描述希望得到的行为，以及它如何帮助你。/ Describe the behavior you would like and how it would help.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 现有做法或参考 / Current workaround or reference
+      description: 选填，可附公开链接。/ Optional; public links are welcome.

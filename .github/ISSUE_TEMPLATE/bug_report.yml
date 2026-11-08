@@ -1,0 +1,41 @@
+name: 问题反馈 / Bug report
+description: 报告 TheoremOS 的使用问题 / Report a problem using TheoremOS
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请只填写愿意公开的信息，不要粘贴 API Key、访问令牌或未公开的研究材料。
+        Only include information you are willing to publish. Do not paste API keys, access tokens, or private research material.
+  - type: dropdown
+    id: area
+    attributes:
+      label: 出现问题的位置 / Where did it happen?
+      options:
+        - 在线工作台 / Online workbench
+        - 官网或证明档案 / Website or proof archive
+        - CLI 研究使用 / CLI research access
+        - 公开证明或文档 / Public proof or documentation
+        - 其他 / Other
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+      description: 从哪个页面或命令开始？做了哪些操作？/ Which page or command did you start with, and what did you do?
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 实际结果与预期结果 / Actual and expected behavior
+      description: 可以附公开截图或已去除敏感信息的报错。/ You may attach public screenshots or errors with sensitive information removed.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 使用环境 / Environment
+      description: 浏览器、操作系统、模型服务与模型名称（如适用）。/ Browser, operating system, provider, and model name, if relevant.
