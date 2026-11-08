@@ -1,7 +1,7 @@
 {
   "schema": "theoremos.public-archive.v1",
   "repository": "https://github.com/LikC1606/TheoremOS",
-  "archiveRevision": "545f5ed1187e43be55e2cd4b3cf571bcc4c96dc3",
+  "archiveRevision": "a4c1fbf1039485ab0de55accaabe0332ec8f8767",
   "snapshotAt": "2026-11-07T16:32:08.577Z",
   "records": [
     {
@@ -29989,6 +29989,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/submitted/annals_improved_bounds_sunflower_lemma/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30050,6 +30057,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/submitted/annals_lorentzian_polynomials/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30111,6 +30125,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/submitted/annals_optimal_moebius/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30172,6 +30193,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/submitted/annals_algebraic_integers/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30233,6 +30261,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/accepted/dimitrov/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30294,6 +30329,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/accepted/hopf_rinow/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30348,6 +30390,13 @@
           "blocked": 4,
           "completed": 9
         }
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30408,6 +30457,13 @@
         "sourceBinding": "matches",
         "axioms": [],
         "url": "https://github.com/LikC1606/TheoremOS/blob/main/accepted/annals_fractional_expectation_thresholds/verification.json"
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30479,6 +30535,13 @@
           "humanDirection": "Task selection and runtime/environment repairs requested by a human user. A coding assistant recovered the saved candidate, corrected public-statement parsing, removed unrelated unfinished helpers from the checked projection, and arranged independent review and final evaluation.",
           "freshFromZero": false
         }
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30546,6 +30609,13 @@
           "mode": "continuation from previously kernel-checked helper proofs",
           "humanDirection": "Task selection, runtime and environment fixes, library-access policy, and continuation setup directed by a human user through a coding assistant."
         }
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     },
     {
@@ -30585,6 +30655,13 @@
           "Submission.lean": "5b0740de41cc47385273cb26195b3c7f08e50fa349edfa36489731b6ba10f062",
           "lakefile.toml": "27369d856ec9815ed11b8aac39b1ae99b080c41da610edc559a6490c23c5f9b1"
         }
+      },
+      "process": {
+        "runs": []
+      },
+      "processSummary": {
+        "runs": 0,
+        "tasks": 0
       }
     }
   ]
