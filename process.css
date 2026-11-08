@@ -144,6 +144,7 @@
 .proof-route-node-copy { min-width: 0; }
 .proof-route-title { display: block; font-size: 12px; line-height: 1.65; font-weight: 500; overflow-wrap: anywhere; }
 .proof-route-dependencies { display: block; margin-top: 4px; font: 10px/1.7 var(--mono); color: var(--muted); }
+.proof-route-figure { display: inline-block; margin-left: 8px; color: var(--green); }
 .proof-route-finish { font-size: 11px; color: var(--green); }
 .proof-route-legend { font-size: 10px; color: var(--muted); padding: 13px 0 0 44px; }
 .proof-route-legend > span { color: var(--green); }
@@ -174,11 +175,13 @@
 .proof-figure-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 14px; font-size: 14px; font-weight: 500; line-height: 1.8; color: var(--ink); margin-bottom: 13px; }
 .proof-figure-heading > h6 { font: inherit; margin: 0; }
 .proof-figure-heading > span { color: var(--muted); font: 10px/1.8 var(--mono); }
+.proof-figure-premise { font-size: 13px; line-height: 1.9; color: #605e53; margin: -3px 0 14px !important; overflow-wrap: anywhere; }
+.proof-figure-reference { margin-top: 12px; padding: 4px 0; text-align: left; color: var(--green); background: transparent; font-size: 12px; line-height: 1.8; }
 .proof-figure-controls { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 18px; }
 .proof-figure-controls > button { min-height: 40px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: #605e53; font-size: 12px; line-height: 1.6; text-align: left; }
 .proof-figure-controls > button:hover { background: #f3f3ec; border-color: #a5b18d; }
 .proof-figure-controls > button[aria-pressed="true"] { color: var(--green); border-color: var(--green); background: #eff2e7; }
-.proof-figure-controls > button:focus-visible, .proof-cover-sliders input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+.proof-figure-controls > button:focus-visible, .proof-cover-sliders input:focus-visible, .proof-convex-sliders input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
 .proof-figure-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 20px; align-items: start; }
 .proof-figure-body > * { min-width: 0; }
 .proof-figure .proof-figure-svg { display: block; width: 100%; height: auto; max-width: 360px; margin: 0 auto; overflow: visible; }
@@ -212,10 +215,16 @@
 .proof-cover-corner[data-selected="true"] { fill: var(--green); stroke: var(--green); }
 .proof-cover-point { fill: #a36545; stroke: #fffefa; stroke-width: 1.5; }
 .proof-cover-svg { cursor: crosshair; touch-action: none; }
-.proof-cover-sliders { display: grid; gap: 2px; margin-top: 8px; }
-.proof-cover-sliders label { display: grid; grid-template-columns: 14px minmax(0, 1fr) 37px; align-items: center; gap: 10px; font: 12px var(--mono); color: var(--green); }
-.proof-cover-sliders input { width: 100%; min-width: 0; height: 36px; accent-color: var(--green); cursor: pointer; }
-.proof-cover-sliders output { text-align: right; }
+.proof-cover-sliders, .proof-convex-sliders { display: grid; gap: 2px; margin-top: 8px; }
+.proof-cover-sliders label, .proof-convex-sliders label { display: grid; grid-template-columns: 14px minmax(0, 1fr) 37px; align-items: center; gap: 10px; font: 12px var(--mono); color: var(--green); }
+.proof-cover-sliders input, .proof-convex-sliders input { width: 100%; min-width: 0; height: 36px; accent-color: var(--green); cursor: pointer; }
+.proof-cover-sliders output, .proof-convex-sliders output { text-align: right; }
+.proof-distance-segment { fill: #dce5cd; stroke: #8f9e77; stroke-width: 1; }
+.proof-distance-segment[data-segment="unit"] { fill: #f1e5d9; stroke: #a36545; }
+.proof-distance-guide { stroke: #a36545; stroke-dasharray: 3 3; stroke-width: 1; }
+.proof-distance-axis { stroke: #c8cbbc; stroke-width: 1; }
+.proof-distance-gap { fill: #e9cdb9; fill-opacity: .8; }
+.proof-distance-lower { stroke: var(--green); stroke-width: 4; }
 .proof-walkthrough-reason > h6 { color: var(--muted); font-size: 12px; font-weight: 400; margin: 0 0 8px; }
 .proof-walkthrough-explanation { margin-top: 14px; color: var(--muted); }
 .proof-walkthrough-explanation > summary { font-size: 12px; padding: 5px 0; cursor: pointer; }
