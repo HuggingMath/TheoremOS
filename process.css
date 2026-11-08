@@ -32,42 +32,72 @@
 .process-view-toolbar { scroll-margin-top: 82px; }
 .archive-process[data-process-layout="global"] .process-view-toolbar { border-top: 0; margin-top: 17px; }
 .process-global-trajectory { margin-top: 18px; }
-.global-trajectory-origin { display: flex; align-items: center; gap: 13px; border: 1px solid var(--line); border-left: 3px solid var(--green); padding: 16px 18px; background: #fffefa; border-radius: 4px; }
-.global-trajectory-origin > svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--green); }
-.global-trajectory-origin > div { min-width: 0; }
-.global-trajectory-origin strong { font-size: 13px; font-weight: 500; }
-.global-trajectory-origin p { font-size: 12px; color: var(--muted); margin-top: 4px; }
-.global-trajectory-origin > span { margin-left: auto; flex-shrink: 0; color: var(--muted); font-size: 10px; }
-.global-stage-headings, .global-run-lane { display: grid; grid-template-columns: 110px minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr); gap: 30px; }
-.global-stage-headings { padding: 19px 0 10px; color: var(--muted); font-size: 10px; }
-.global-run-lanes { margin: 0; padding: 0; list-style: none; }
-.global-run-lane { position: relative; padding-bottom: 18px; align-items: stretch; }
-.global-run-label { position: relative; padding: 14px 0 0 29px; min-width: 0; }
-.global-run-label > span { position: absolute; left: 0; top: 17px; font: 10px var(--mono); color: var(--green); }
-.global-run-label strong { display: block; font-size: 12px; font-weight: 500; }
-.global-run-label time { display: block; margin-top: 7px; font: 9px/1.8 var(--mono); color: var(--muted); }
-.global-run-label small { display: block; margin-top: 10px; font-size: 9px; line-height: 1.8; color: var(--green); }
-.global-run-lane:not(:last-child) .global-run-label::after { content: ''; position: absolute; left: 6px; top: 38px; bottom: -22px; border-left: 1px dashed #cfcebf; }
-.global-stage { position: relative; display: flex; flex-direction: column; min-width: 0; text-align: left; padding: 15px 16px; border: 1px solid #d7d5c9; border-radius: 4px; background: #fffefa; min-height: 144px; color: var(--ink); }
-.global-stage:hover { background: #f7f8ef; border-color: #a7af94; }
-.global-stage:not(:last-child)::after { content: '→'; position: absolute; left: 100%; top: calc(50% - 13px); width: 30px; text-align: center; color: #9ba58b; font-size: 19px; font-weight: 300; pointer-events: none; }
-.global-stage-kind { display: flex; align-items: center; gap: 6px; font-size: 10px; line-height: 1.5; color: var(--muted); }
-.global-stage-kind > svg { width: 13px; height: 13px; flex-shrink: 0; }
-.global-stage-kind b { margin-left: auto; font: 10px var(--mono); color: var(--green); }
-.global-stage > strong { font-size: 14px; font-weight: 500; line-height: 1.5; margin-top: 9px; }
-.global-branch-names { display: grid; gap: 3px; margin: 10px 0; }
-.global-branch-names > span { position: relative; padding-left: 10px; color: var(--muted); font-size: 10px; overflow-wrap: anywhere; }
-.global-branch-names > span::before { content: ''; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--process-state); }
-.global-stage-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 9px; font-size: 10px; color: var(--muted); }
-.global-research > .global-stage-meta { margin-top: auto; }
-.global-stage-meta > em { display: flex; align-items: center; gap: 3px; margin-left: auto; font-size: 10px; font-style: normal; color: var(--green); }
-.global-stage-meta > em > svg { width: 11px; height: 11px; }
-.global-stage-alert { color: #a36f37; font-size: 10px; margin-top: 8px; }
-.global-outcome { border-left: 2px solid var(--process-state); }
-.global-outcome > strong { color: var(--process-state); }
-.global-run-lane[data-final="true"] .global-outcome { background: #f0f3e7; border-color: #afba98; }
-.global-final-badge { display: flex; align-items: center; gap: 5px; color: var(--green); font-size: 10px; margin-top: auto; padding-top: 12px; }
-.global-final-badge svg { width: 13px; height: 13px; }
+.global-trajectory-origin { display: flex; align-items: flex-start; gap: 12px; padding: 5px 0 24px; color: var(--muted); }
+.global-trajectory-origin > svg { width: 19px; height: 19px; flex-shrink: 0; color: var(--green); margin-top: 3px; }
+.global-trajectory-origin > p { font-size: 14px; line-height: 1.85; }
+.global-history { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 17px 0 20px; }
+.global-history > p { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+.global-run-lanes { display: flex; gap: 9px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.global-run-lane { flex: 1; min-width: 130px; }
+.global-run-lane button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 13px; border: 1px solid var(--line); border-radius: 4px; background: transparent; text-align: left; }
+.global-run-lane button > span { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.global-run-lane button > strong { font-size: 12px; font-weight: 500; }
+.global-run-lane button > svg { width: 13px; height: 13px; margin-left: auto; color: var(--muted); flex-shrink: 0; }
+.global-run-lane button:hover { background: #f3f3ec; }
+.global-run-lane button[aria-pressed="true"] { background: #eff2e7; border-color: #a5b18d; color: var(--green); }
+.global-workflow-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 18px 0; }
+.global-workflow-heading h5 { font-family: var(--serif); font-size: 20px; font-weight: 500; margin: 0; }
+.global-workflow-heading p { font: 10px var(--mono); color: var(--muted); margin-top: 6px; }
+.global-workflow-heading > span { color: var(--process-state); font-size: 12px; white-space: nowrap; }
+.global-workflow-stages { position: sticky; top: 66px; z-index: 3; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: var(--paper, #faf9f5); border-radius: 4px; }
+.global-workflow-stages > button { display: flex; align-items: center; gap: 10px; padding: 13px 17px; background: transparent; text-align: left; font-size: 13px; color: var(--ink); border-right: 1px solid var(--line); }
+.global-workflow-stages > button:last-child { border-right: 0; }
+.global-workflow-stages > button:hover { background: #f0f2e9; }
+.global-workflow-stages > button > span { font: 11px var(--mono); color: var(--green); }
+.global-workflow-stages > button > svg { width: 13px; height: 13px; margin-left: auto; color: var(--muted); }
+.workflow-section { padding: 34px 0 12px; scroll-margin-top: 135px; }
+.workflow-section-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.workflow-section-heading > span { color: var(--green); font: 12px var(--mono); }
+.workflow-section-heading > h5 { font-size: 20px; font-family: var(--serif); font-weight: 500; margin: 0; }
+.workflow-section-heading > small { color: var(--muted); font: 11px var(--mono); }
+.workflow-section-actions { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 14px; }
+.workflow-section-actions > p { font-size: 12px; color: var(--muted); }
+.workflow-section-actions > button, .workflow-record-link, .global-outcome { display: inline-flex; align-items: center; gap: 5px; padding: 3px 0; font-size: 12px; color: var(--green); background: transparent; text-align: left; }
+.workflow-section-actions > button > svg, .workflow-record-link > svg, .global-outcome > svg { width: 13px; height: 13px; flex-shrink: 0; }
+.workflow-task-objectives, .workflow-full-text { font-size: 12px; color: var(--muted); }
+.workflow-task-objectives > summary { padding: 12px 0; cursor: pointer; }
+.workflow-task-objectives dl { margin: 0; }
+.workflow-task-objectives dl > div { padding: 17px 0; border-top: 1px solid var(--line); }
+.workflow-task-objectives dt { display: flex; gap: 15px; align-items: baseline; }
+.workflow-task-objectives dt > button { background: transparent; padding: 0; text-align: left; font-size: 14px; color: var(--green); }
+.workflow-task-objectives dt > span { margin-left: auto; white-space: nowrap; color: var(--process-state); }
+.workflow-task-objectives dd { margin: 7px 0 0; font-size: 13px; line-height: 1.85; overflow-wrap: anywhere; }
+.workflow-task-dependencies { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 8px; align-items: baseline; }
+.workflow-task-dependencies > button { padding: 2px 6px; background: #f0f1e9; color: var(--green); border-radius: 3px; text-align: left; }
+.workflow-records { list-style: none; margin: 0; padding: 0 0 0 25px; border-left: 1px solid var(--line); }
+.workflow-record { position: relative; padding: 0 0 28px; margin-bottom: 25px; border-bottom: 1px solid var(--line); }
+.workflow-record::before { content: ''; position: absolute; left: -30px; top: 5px; width: 9px; height: 9px; background: var(--process-state, var(--muted)); border: 2px solid var(--paper, #faf9f5); border-radius: 50%; }
+.workflow-record:last-child { margin-bottom: 0; }
+.workflow-record-meta { display: flex; gap: 13px; flex-wrap: wrap; color: var(--muted); font-size: 11px; margin-bottom: 7px; }
+.workflow-record-meta > time { font: 10px/1.8 var(--mono); }
+.workflow-record-meta .workflow-retained { color: var(--muted); font-size: 10px; }
+.workflow-record-heading { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; margin-bottom: 9px; }
+.workflow-record-kind { font-size: 11px; color: var(--muted); }
+.workflow-record-heading h6, .workflow-record > h6 { margin: 0; font-size: 16px; font-weight: 550; }
+.workflow-record-status { margin-left: auto; font-size: 11px; color: var(--process-state, var(--muted)); }
+.workflow-prose { max-width: 920px; font-size: 14px; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--ink); }
+.workflow-full-text { margin-top: 7px; }
+.workflow-full-text > summary { cursor: pointer; padding: 4px 0; }
+.workflow-full-text > p { margin-top: 10px; }
+.workflow-record-link { margin-top: 10px; }
+.workflow-check-excerpt { margin: 10px 0 0; padding: 12px 15px; border-left: 2px solid #b7834e; background: #f5f1eb; font: 11px/1.8 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; max-width: 100%; }
+.workflow-check-result, .workflow-empty { font-size: 13px; color: var(--muted); line-height: 1.85; }
+.workflow-empty { margin-bottom: 22px !important; }
+.global-final-badge { padding: 22px 25px; background: #f0f3e7; border: 1px solid #c7cfb5; border-radius: 4px; }
+.global-final-badge .process-detail-icon { display: none; }
+.global-final-badge h3 { font-size: 24px; }
+.workflow-run-outcome { padding: 20px 0; }
+.workflow-run-outcome > strong { display: block; margin-bottom: 8px; }
 .process-introduction { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 30px 0 24px; }
 .process-introduction > div:first-child { max-width: 750px; }
 .process-introduction > p { max-width: 780px; color: var(--muted); font-size: 14px; line-height: 1.85; }
@@ -260,11 +290,6 @@
 .process-map-inspector .process-step-detail { min-height: 0; }
 @media (min-width: 1700px) { .reading-process .inspector { max-width: 1240px; } }
 @media (max-width: 1100px) {
-  .global-stage-headings, .global-run-lane { grid-template-columns: 85px minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
-  .global-stage { padding: 13px 12px; }
-  .global-stage:not(:last-child)::after { width: 20px; }
-  .global-trajectory-origin { flex-wrap: wrap; }
-  .global-trajectory-origin > span { width: 100%; margin-left: 35px; }
   .process-task-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .process-reader { grid-template-columns: minmax(210px, 32%) minmax(0, 1fr); }
   .process-step-detail { padding: 24px; }
@@ -272,23 +297,34 @@
 }
 @media (max-width: 700px) {
   .row-route-open { margin-left: 39px; }
-  .global-stage-headings { display: none; }
-  .global-trajectory-origin { padding: 13px; align-items: flex-start; }
-  .global-trajectory-origin > div { flex: 1; }
-  .global-trajectory-origin > span { margin-left: 0; font-size: 9px; }
-  .global-trajectory-origin p { font-size: 11px; }
-  .global-run-lanes { margin-top: 19px; }
-  .global-run-lane { grid-template-columns: minmax(0, 1fr); gap: 18px; padding-left: 20px; border-left: 1px solid var(--line); margin-left: 5px; padding-bottom: 26px; }
-  .global-run-label { padding: 0 0 0 27px; }
-  .global-run-label > span { top: 3px; left: 0; }
-  .global-run-label time { display: inline; margin-left: 9px; }
-  .global-run-label strong { display: inline; }
-  .global-run-label small { margin-top: 3px; }
-  .global-run-lane:not(:last-child) .global-run-label::after { display: none; }
-  .global-stage { min-height: 0; padding: 14px; }
-  .global-stage:not(:last-child)::after { content: '↓'; left: calc(50% - 12px); top: 100%; height: 18px; width: 24px; line-height: 18px; font-size: 16px; }
-  .global-stage > strong { font-size: 14px; }
-  .global-branch-names { margin: 7px 0; }
+  .global-trajectory-origin { padding-bottom: 17px; }
+  .global-trajectory-origin > p { font-size: 13px; }
+  .global-run-lanes { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .global-run-lane { min-width: 0; flex: 0 0 132px; }
+  .global-run-lane button { padding: 10px; gap: 7px; }
+  .global-run-lane button > strong { font-size: 11px; }
+  .global-workflow-heading { align-items: flex-start; padding: 21px 0 17px; }
+  .global-workflow-heading h5 { font-size: 20px; }
+  .global-workflow-heading > span { font-size: 10px; padding-top: 5px; }
+  .global-workflow-stages { top: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .global-workflow-stages > button { padding: 10px 11px; font-size: 11px; gap: 7px; }
+  .global-workflow-stages > button:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .global-workflow-stages > button:nth-child(2) { border-right: 0; }
+  .global-workflow-stages > button > svg { display: none; }
+  .workflow-section { padding-top: 26px; scroll-margin-top: 95px; }
+  .workflow-section-heading > h5 { font-size: 19px; }
+  .workflow-section-actions { align-items: flex-start; }
+  .workflow-section-actions > p { font-size: 10px; max-width: 55%; }
+  .workflow-section-actions > button { font-size: 11px; }
+  .workflow-records { padding-left: 17px; }
+  .workflow-record::before { left: -22px; }
+  .workflow-record-meta { gap: 5px 10px; }
+  .workflow-record-heading { gap: 5px 9px; }
+  .workflow-record-heading h6 { width: 100%; font-size: 15px; order: 1; }
+  .workflow-record-status { font-size: 10px; }
+  .workflow-prose { font-size: 13px; }
+  .workflow-check-excerpt { font-size: 10px; padding: 10px; }
+  .global-final-badge { padding: 17px; }
   .process-view-toolbar { flex-wrap: wrap; }
   .process-view-toolbar > h4 { font-size: 22px; }
   .process-view-toolbar > .process-step-filters { width: 100%; }
