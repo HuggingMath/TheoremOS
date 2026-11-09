@@ -249,8 +249,9 @@
 .proof-walkthrough-next > button { background: transparent; color: var(--green); font-size: 12px; padding: 4px 0; white-space: nowrap; }
 .proof-walkthrough-outputs { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 14px 0 0 28px; font-size: 11px; line-height: 1.9; }
 .proof-walkthrough-outputs > span { color: var(--muted); }
-.proof-walkthrough-outputs > button { display: inline-flex; gap: 7px; padding: 1px 0; background: transparent; color: #946047; text-align: left; overflow-wrap: anywhere; }
+.proof-walkthrough-outputs > button { display: inline-flex; gap: 7px; max-width: 100%; padding: 1px 0; background: transparent; color: #946047; text-align: left; overflow-wrap: anywhere; }
 .proof-walkthrough-outputs > button > span { font: 10px/2 var(--mono); flex-shrink: 0; }
+.proof-walkthrough-inputs > button > [data-typeset-prose], .proof-walkthrough-outputs > button > [data-typeset-prose] { min-width: 0; flex: 0 1 auto; font: inherit; }
 .proof-walkthrough-source { margin-top: 20px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
 .proof-walkthrough-source > summary { cursor: pointer; padding: 12px 0; }
 .proof-walkthrough-source > summary > span { display: inline-block; font: 10px/1.8 var(--mono); margin-left: 15px; }
@@ -691,6 +692,7 @@
 .solution-route-contents button { display:flex; gap:7px; text-align:left; border:0; background:transparent; padding:4px 0; color:var(--solution-green); font:inherit; font-size:12px; line-height:1.8; cursor:pointer; }
 .solution-route-contents button span { color:var(--solution-muted); font-size:10px; font-variant-numeric:tabular-nums; }
 .solution-route-contents + .solution-route-relations { border-top:0; padding-top:0; }
+.solution-route[data-solution-reading=true] { overflow-anchor:none; }
 .solution-route[data-solution-reading=true] .solution-route-search,.solution-route[data-solution-reading=true] [data-solution-all],.solution-route[data-solution-reading=true] [data-solution-zoom],.solution-route[data-solution-reading=true] .solution-route-viewport { display:none; }
 .solution-route[data-solution-reading=true] .solution-route-workspace { display:block; }
 .solution-route[data-solution-reading=true] .solution-route-detail { height:auto; max-height:none; overflow:visible; width:100%; max-width:850px; margin:0 auto; padding:36px 40px 44px; border:0; }
