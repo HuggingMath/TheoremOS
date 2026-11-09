@@ -29,6 +29,8 @@ In the upper portion of the settings section, configure your model and proof env
 1. **Model Provider, Model, and API Key**: Select a **"Model provider"** from the platform's deployed dropdown list, then enter the **"Model"** name and your **"API Key"**. There is no custom Base URL field; your chosen provider and model must support the Responses API, and your key must match the selected provider. You can click **"Check key and model"** to verify credentials—note that this button only queries the provider's model list without invoking an inference model, so passing the list check does not guarantee that Responses API inference calls have been live-tested.
 2. **Proof Environment and Reasoning Effort**: Choose the **"Proof environment"** (`Standard library` or `Mathlib`) and the desired **"Reasoning effort"**.
 
+Newly entered keys are temporary by default and clear on refresh. If account key storage is enabled, explicitly choose **"Save to my account"** in natural-language Settings. The same checkbox in Lean Model connection starts unchecked; only selecting it before submission saves or replaces an account key. Saved keys are encrypted, only their last four characters are shown, and you can delete them at any time.
+
 ![TheoremOS English model settings section showing Model provider, Model, Proof environment, Reasoning effort, empty API Key input, and Check key and model button](../assets/guide/settings-en.png)
 
 *Figure 3: Selecting the model provider, model name, proof environment (Standard library / Mathlib), reasoning effort, and API key in the settings section.*
@@ -54,13 +56,15 @@ To familiarize yourself with the workflow, set the proof environment to **"Stand
 
 When working on actual research problems, state all definitions, hypotheses, ambient spaces, and conclusions explicitly, and cite relevant references where helpful.
 
-**Default Home-Page Workflow**: When you submit a problem from the home page, the system generates and reviews the Lean statement and then **proceeds automatically into proof search** without waiting for a manual confirmation click. You can open **"Problem / Lean"** and **"Formalization review"** at any time to inspect how your prompt corresponds to the generated Lean 4 statement.
+**The home page defaults to "Work together"**. After submission, the system generates the Lean statement, independently back-translates and reviews it, then waits for you to check its meaning in the conversation. Choose **"Confirm statement and draft plan"** to have 2 Agents draft the initial research plan. Check its tasks and dependencies, request changes if needed, then choose **"Approve plan and start proving"**. You can inspect **"Problem / Lean"** and **"Formalization review"** during or after a run.
+
+Drafting a plan and revising it after guidance consume the proof budget. While the system only waits for your review or approval, the proof timer pauses and no model is called. Approval continues the same run; closing and reopening the page needs no restart. If you select **"Run automatically"** before sending, 1 Agent starts proving after model review without waiting for statement confirmation or plan approval.
 
 Pay close attention to types (e.g., $`\mathbb{N}`$ vs. $`\mathbb{Z}`$), hypotheses, quantifier order, and conclusions. Automated formalization review is an aid and cannot guarantee that a natural-language question and a formal proposition are completely equivalent; what the Lean check ultimately certifies is the proof of the formal Lean statement.
 
-### Optional Workflow: Confirming the Statement Before Proof Search
+### Optional Workflow: Formalize Separately, Then Import a Research Draft
 
-If you prefer to manually confirm the Lean statement before spending any proof budget, use the standalone **Statement Formalization page** at [https://app.theoremos.top/formalize.html](https://app.theoremos.top/formalize.html).
+"Work together" on the home page already includes statement confirmation and initial plan approval. To generate and confirm a statement separately, use the standalone **Statement Formalization page** at [https://app.theoremos.top/formalize.html](https://app.theoremos.top/formalize.html).
 
 1. **Standalone Configuration**: This page **does not inherit model or budget settings from the home page**. It uses the platform default model and formalization budget displayed on the page (currently 10 min / 400,000 Tokens). Select your proof environment and reasoning effort, enter your API key, and click **"Generate Lean statement"**.
 2. **Review and Confirm**: Compare your original prompt against the generated Lean code and independent back-translation. Check the confirmation box to enable and click **"Confirm statement"**, then click **"Use in research draft"** in the next step.
@@ -84,7 +88,9 @@ TheoremOS provides three download options depending on what you need to archive 
 
 * **Download verification kit (ZIP)**: Click **"Download verification kit"** to download a ZIP archive containing `Original.lean` (the problem template), `Submission.lean` (the final proof), pinned project configuration files, verification scripts, and reproduction instructions. When `Original.lean` contains a template placeholder `sorry`, read `Submission.lean` for the complete proof. Reproducing the check locally requires fetching or installing the Lean environment dependencies according to the included instructions (see [`VERIFY.md`](VERIFY.md)). The verification kit never contains your model API key.
 * **Individual Lean Source & Report**: Direct download links for the standalone Lean source file and result report are available in the result area.
-* **Run Archive JSON**: The task menu allows you to download the full run archive JSON containing the decomposition tree and search logs.
+* **Run Archive JSON**: The task menu downloads the full archive saved by the server by default, including events, observations, Agent actions, source versions, checks and commands, with a coverage statement. Storage limits and records absent from older versions are reported explicitly; "full" refers to saved contents. Importing an archive extracts the original problem and settings into a new draft rather than restoring the historical server run.
+
+**"Continue from this version"** in the roadmap or source view starts a new run from that exact saved source and digest while retaining the frozen original problem. The new run still needs Lean checks and independent acceptance. **"Continue proof"**, shown when formalization finished but the proof queue could not accept it, reuses the existing statement without formalizing again.
 
 ![Download verification kit section from a built-in read-only workbench example showing the Download verification kit button and local verification instructions](../assets/guide/download-en.png)
 
@@ -95,7 +101,7 @@ TheoremOS provides three download options depending on what you need to archive 
 * **Email not authorized**: Submit an application via the [Early Access form](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml) and wait for private email confirmation before signing in.
 * **Key or model check/call fails**: Verify that your API key matches the exact **"Model provider"** selected in the dropdown and that the specified model supports the Responses API.
 * **Budget limit reached**: Inspect the current progress and intermediate lemmas before deciding whether to continue research with a higher budget or adjust your mathematical direction.
-* **Formal statement diverges from intended meaning**: Refine your original problem statement or formal statement (for example via [`formalize.html`](https://app.theoremos.top/formalize.html)) before running further proof research.
+* **The formal statement changes the intended meaning**: Edit assumptions or types at the statement confirmation step in "Work together", then generate and review the statement again. The standalone [`formalize.html`](https://app.theoremos.top/formalize.html) page is also available.
 
 ---
 To see how TheoremOS handles a research-level formalization in mathematical physics, read the [Planar Anderson Operator Case Study](CASE-STUDY.md). For research collaboration inquiries, contact `liuzhenhao@westlake.edu.cn`.
