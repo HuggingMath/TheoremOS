@@ -729,6 +729,11 @@
   .solution-route[data-solution-reading=true] .solution-route-detail-heading h4 { font-size:22px; }
   .solution-route[data-solution-reading=true] .solution-route-prose { font-size:14px; line-height:2; }
 }
+@media (max-width:900px) and (max-height:600px) {
+  .solution-route[data-solution-expanded=true] .solution-route-workspace { display:block; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+  .solution-route[data-solution-expanded=true] .solution-route-viewport { height:180px; overscroll-behavior:auto; }
+  .solution-route[data-solution-expanded=true] .solution-route-detail { height:auto; max-height:none; overflow:visible; }
+}
 
 /* KaTeX handles mathematical spacing and line breaks; wide indivisible expressions scroll inside their own box. */
 .math { display:inline-block; max-width:100%; vertical-align:middle; white-space:normal; overflow-x:auto; overflow-y:hidden; padding:2px 1px; margin:-2px -1px; line-height:1.5; text-indent:0; scrollbar-width:thin; overflow-wrap:normal; }
