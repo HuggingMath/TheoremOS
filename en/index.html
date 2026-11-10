@@ -37,6 +37,7 @@
           <p class="hero-category">A browser workspace. No local Lean setup.</p>
           <div class="hero-actions"><a class="button button-lime" href="#start" data-umami-event="request-access-hero">Request access<i data-lucide="arrow-up-right"></i></a><a class="text-link" href="https://app.theoremos.top/" data-umami-event="open-workbench-hero">Open workbench</a></div>
           <p class="hero-terms">Free during beta. Bring your own model API key.</p>
+          <p class="hero-practice"><a class="text-link" data-research-practice href="https://app.theoremos.top/practice.html?lang=en">Try the decisions without a key<i data-lucide="arrow-up-right"></i></a></p>
         </div>
         <section class="hero-demo" id="demo" aria-labelledby="demo-title">
           <h2 id="demo-title">Follow a proof to completion</h2>
@@ -62,6 +63,15 @@
             <a class="workbench-image-link" href="../assets/workbench-full-desktop-en.png" aria-label="Enlarge the workbench"><picture class="workbench-picture"><source media="(max-width: 900px)" srcset="../assets/workbench-mobile-en.png" width="350" height="520"><img src="../assets/workbench-desktop-en.png" alt="TheoremOS natural-language problem input with an addition-by-zero question, not yet submitted." width="900" height="520" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a>
           </figure>
         </div>
+        <section class="research-scenarios" id="research-entry" aria-labelledby="research-entry-title">
+          <div class="scenario-intro"><h3 id="research-entry-title">Bring a claim or a Lean draft</h3><p>The web workspace suits single-file problems with clear assumptions and goals.</p></div>
+          <ul class="scenario-list">
+            <li><h4>A mathematical claim</h4><p>State the objects, assumptions and goal. Review the Lean statement, then approve a proof plan. Start with addition by zero and replace it with your own claim.</p><a class="text-link" data-research-entry="statement" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=en">Prepare a claim<i data-lucide="arrow-up-right"></i></a></li>
+            <li><h4>A Lean draft</h4><p>Keep the imports, theorem statement and unfinished proof. Start from the square-expansion template in the fixed Mathlib environment and inspect each change.</p><a class="text-link" data-research-entry="lean" href="https://app.theoremos.top/?entry=lean&amp;template=polynomial&amp;environment=mathlib&amp;lang=en">Open a Lean template<i data-lucide="arrow-up-right"></i></a></li>
+          </ul>
+          <p class="scenario-boundary">For custom dependencies, multi-file Lake projects or a specific toolchain, <a href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20research%20collaboration">discuss a research collaboration</a>. <a href="https://github.com/LikC1606/TheoremOS/blob/main/docs/CAPABILITIES.md" target="_blank" rel="noreferrer">Read the current capabilities</a>.</p>
+          <p class="scenario-continuation">Your template and environment continue after sign-in. Preparing a draft does not call a model.</p>
+        </section>
         <section class="human-decision" id="human-decision" aria-labelledby="human-decision-title">
           <div class="human-decision-copy"><h3 id="human-decision-title">You confirm the question</h3><p>Review the assumptions and goals. Confirm to proceed to proof, or keep the statement under review.</p><p class="decision-example-label">Interactive example · Uses the addition-by-zero tutorial. No research is started.</p></div>
           <div class="decision-example" data-human-decision data-ui>
@@ -81,7 +91,7 @@
     </section>
 
     <section class="proofs-section" id="proofs" aria-labelledby="proofs-title"><div class="wrap">
-      <div class="section-heading proof-heading"><div><h2 id="proofs-title">Inspect the proof and its evidence</h2><p>Read the source, research process and verification record together.</p></div><div class="proof-totals"><a href="archive.html#status=accepted"><strong>10</strong><span>Official Lean-Eval passes</span></a><a class="campaign-results" href="archive.html#status=verified"><strong>16</strong><span>OpenAI Math local checks</span></a></div></div>
+      <div class="section-heading proof-heading"><div><h2 id="proofs-title">Inspect the proof and its evidence</h2><p>Read the source, research process and verification record together.</p></div><div class="proof-totals"><a href="archive.html#status=accepted"><strong>10</strong><span>Official Lean-Eval passes</span></a><a class="campaign-results" href="archive.html#status=verified"><strong>18</strong><span>OpenAI Math local checks</span></a></div></div>
       <nav class="case-guide" aria-labelledby="case-guide-title"><h3 id="case-guide-title">Choose where to begin</h3><ul>
         <li><a href="archive.html#view=quickstart" data-case-guide="intro"><strong>Follow a complete replay</strong><span>Start with addition by zero: a candidate, Lean feedback, a repair, and verification of the original goals.</span><span class="case-guide-action">First walkthrough<i data-lucide="arrow-up-right"></i></span></a></li>
         <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process" data-case-guide="route"><strong>Explore a complex proof route</strong><span>The triangle-face problem: move from the global attempts to the final route, then connect each deduction to its source.</span><span class="case-guide-action">Complex route<i data-lucide="arrow-up-right"></i></span></a></li>

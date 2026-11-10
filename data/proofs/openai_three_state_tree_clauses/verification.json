@@ -1,0 +1,31 @@
+{
+  "target": "ThreeStateTreeClauses",
+  "runId": "cea8d7e2-84e6-4591-af14-2c9a82d37eef",
+  "targets": [
+    "OAI.ThreeState.TreeClauses.channelWeight_nonneg",
+    "OAI.ThreeState.TreeClauses.channelWeight_sum",
+    "OAI.ThreeState.TreeClauses.Probability.poissonWeight_nonneg",
+    "OAI.ThreeState.TreeClauses.Probability.poissonWeight_mass",
+    "OAI.ThreeState.TreeClauses.Tree.regular_reconstructs_above_KS",
+    "OAI.ThreeState.TreeClauses.Tree.poisson_reconstructs_above_KS"
+  ],
+  "proofCommit": "dd91a86ad10e090bf296f1978b3b02e97da7314d",
+  "proofSha256": "06189f1bd81a78cf11435926017ecbb07bb62a135d5275b68da0026dc97d2d8a",
+  "kernelReceiptIds": [
+    "lean-c81fa38a6d740b74028fb0ba",
+    "lean-0b3b738c86b00b24f37eef52",
+    "lean-f37c633dbbd7978bbf4fc7d0",
+    "lean-a3fd66816b750759a9e14da8",
+    "lean-44ca4dc945d5c8e77370290d",
+    "lean-536041ff4566e782760991aa"
+  ],
+  "comparatorExitCode": 0,
+  "reviewStatus": "accepted",
+  "attribution": "TheoremOS 原生运行；当前接受运行未见外部数学编辑记录，保留已记录的历史续跑。",
+  "attributionEn": "TheoremOS native run. No external mathematical edit was found in the accepted run; recorded continuation is retained.",
+  "evidenceUrl": "data/proofs/openai_three_state_tree_clauses/verification.json",
+  "recordedAttribution": "",
+  "status": "evaluated_passed",
+  "kernelStatus": "kernel_verified",
+  "comparatorOutput": "✔ [8924/8928] Built Submission.Library.TheoremOS.Probability.TreeReconstruction (8.9s)\n⚠ [8925/8928] Built Challenge (4.1s)\nwarning: Challenge.lean:92:8: declaration uses `sorry`\nwarning: Challenge.lean:96:8: declaration uses `sorry`\n⚠ [8927/8928] Built Submission (11s)\nwarning: Submission.lean:90:8: Variable name `i` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _i\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: Submission.lean:768:5: Variable name `hKS` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hKS\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: Submission.lean:886:5: Variable name `hKS` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hKS\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nBuild completed successfully (8928 jobs).\nBuilding Challenge\n⚠ [8924/8925] Replayed Challenge\nwarning: Challenge.lean:92:8: declaration uses `sorry`\nwarning: Challenge.lean:96:8: declaration uses `sorry`\nBuild completed successfully (8925 jobs).\nExporting #[OAI.ThreeState.TreeClauses.Tree.regular_reconstructs_above_KS, OAI.ThreeState.TreeClauses.Tree.poisson_reconstructs_above_KS, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Challenge\nBuilding Submission\n⚠ [8925/8926] Replayed Submission\nwarning: Submission.lean:90:8: Variable name `i` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _i\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: Submission.lean:768:5: Variable name `hKS` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hKS\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nwarning: Submission.lean:886:5: Variable name `hKS` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hKS\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nBuild completed successfully (8926 jobs).\nExporting #[OAI.ThreeState.TreeClauses.Tree.regular_reconstructs_above_KS, OAI.ThreeState.TreeClauses.Tree.poisson_reconstructs_above_KS, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList] from Submission\nRunning Lean default kernel on solution.\nLean default kernel accepts the solution\nYour solution is okay!\n"
+}

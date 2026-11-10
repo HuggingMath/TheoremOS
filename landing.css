@@ -136,6 +136,8 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.7; }
 .hero-category { margin-top: 16px; color: var(--muted); font-size: 16px; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 28px; margin-top: 32px; }
 .hero-terms { margin-top: 20px; font-size: 16px; color: var(--muted); }
+.hero-practice { margin-top: 8px; }
+.hero-practice > a { color: var(--accent); }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 22px; gap: 24px; font-weight: 600; border-radius: var(--radius); transition: transform 160ms var(--ease-out), background 160ms; }
 .button:hover { text-decoration: none; }
 .button:active, .nav-start:active { transform: translateY(2px); }
@@ -179,6 +181,17 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 .source-fragment { display: grid; grid-template-columns: minmax(0, .64fr) minmax(0, 1.36fr); gap: 64px; align-items: center; margin-top: 72px; }
 .source-fragment h3 { font-size: 28px; }
 .human-decision { display: grid; grid-template-columns: minmax(0, .64fr) minmax(0, 1.36fr); gap: 64px; align-items: start; margin-top: 72px; }
+.research-scenarios { margin-top: 72px; }
+.scenario-intro { display: grid; grid-template-columns: minmax(0, .64fr) minmax(0, 1.36fr); gap: 64px; align-items: start; }
+.scenario-intro > p { font-size: 16px; }
+.scenario-list { list-style: none; padding: 0; margin: 28px 0 24px; }
+.scenario-list > li { display: grid; grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr) auto; gap: 24px; align-items: start; padding-block: 18px; }
+.scenario-list h4 { margin: 0; font-family: var(--serif); font-size: 20px; line-height: 1.4; font-weight: 500; }
+.scenario-list p { font-size: 16px; max-width: 40em; }
+.scenario-list .text-link { color: var(--accent); }
+.scenario-boundary, .scenario-continuation { font-size: 16px; max-width: 70em; }
+.scenario-boundary a { text-decoration: underline; }
+.scenario-continuation { margin-top: 8px; color: var(--muted); }
 .human-decision-copy > p { margin-top: 16px; font-size: 16px; max-width: 25em; }
 .human-decision-copy .decision-example-label { color: var(--muted); }
 .decision-example { min-width: 0; padding: 32px; background: var(--surface); }
@@ -373,6 +386,9 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
   .workbench-preview { width: 100%; max-width: 948px; justify-self: end; }
   .source-fragment figcaption { display: grid; grid-template-columns: 1fr 1.5fr; gap: 32px; }
   .human-decision { gap: 40px; }
+  .scenario-intro { gap: 40px; }
+  .scenario-list > li { grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); }
+  .scenario-list .text-link { grid-column: 2; }
   .case-guide li > a { grid-template-columns: minmax(0, .76fr) minmax(0, 1.24fr); }
   .case-guide-action { grid-column: 2; }
   .product-fragment figcaption p { margin: 0; max-width: 36em; }
@@ -416,6 +432,8 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
   .source-fragment { grid-template-columns: 1fr; gap: 24px; margin-top: 48px; }
   .human-decision { grid-template-columns: 1fr; gap: 24px; margin-top: 48px; }
   .human-decision-copy > p { max-width: 40em; }
+  .research-scenarios { margin-top: 48px; }
+  .scenario-intro { grid-template-columns: 1fr; gap: 16px; }
   .proof-heading { flex-direction: row; flex-wrap: wrap; align-items: center; }
   .featured-proof-sheet { grid-template-columns: 1fr; }
   .featured-problem { padding: 28px; }
@@ -434,6 +452,9 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
   html:not(.js) .mobile-nav a { min-height: 44px; }
 }
 @media (max-width: 600px) {
+  .scenario-list > li { display: block; padding-block: 18px; }
+  .scenario-list p { margin-top: 10px; }
+  .scenario-list .text-link { margin-top: 8px; }
   :root { --margin: 20px; --step-display: 40px; --step-head: 30px; --step-lead: 20px; --step-body: 16px; }
   .header-inner { min-height: 68px; gap: 12px; }
   .brand { font-size: 22px; gap: 8px; }

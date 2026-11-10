@@ -180,6 +180,7 @@
           "receiptIds": []
         }
       ],
+      "knowledgeApplications": [],
       "events": [
         {
           "at": "2026-10-28T09:14:49.355Z",
@@ -731,6 +732,8 @@
           ]
         }
       ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
       "review": {
         "status": "accepted",
         "summary": "Independent review of the frozen source and compiled proof: generated/problem/Submission.lean preserves the original import, namespace, declaration headers, Plane definition, ProperColoring definition, and final target header. The only original proof hole, OAI.Problem160.properColoring_seven, is closed by the term <triColor, proper_coloring>. check-lean on Submission.lean exited 0 with no messages (sourceDigest 7e5ba6c637ae02397d7321ac1d5a8e169d8e226513a3cb3389a8e0c217ed6e73, environmentDigest d0f454a68f7cca9567c3a99deb9a987184a5bb39b553fc96228ef3ac3d490be3, captureComplete true). An independent axiom probe importing Submission reports for properColoring_seven exactly [propext, Classical.choice, Quot.sound]; no sorry, admit, native_decide, unsafe, or new axiom is present. The proof is the triangular-lattice seven-coloring: every point lies within r = 3/(4*sqrt 3) of a lattice point, r < 1/2, and distinct same-colored lattice points have squared distance at least (3/4)^2*7 > (1+2r)^2, so the triangle inequality rules out equal colors at unit distance. This establishes the frozen conclusion ProperColoring 7 without extra assumptions."

@@ -37,6 +37,7 @@
           <p class="hero-category">浏览器中即开即用，无需安装 Lean。</p>
           <div class="hero-actions"><a class="button button-lime" href="#start" data-umami-event="request-access-hero">申请内测<i data-lucide="arrow-up-right"></i></a><a class="text-link" href="https://app.theoremos.top/" data-umami-event="open-workbench-hero">打开工作台</a></div>
           <p class="hero-terms">内测期间平台免费，自备模型 API Key。</p>
+          <p class="hero-practice"><a class="text-link" data-research-practice href="https://app.theoremos.top/practice.html?lang=zh">无需 Key，先操作一遍<i data-lucide="arrow-up-right"></i></a></p>
         </div>
         <section class="hero-demo" id="demo" aria-labelledby="demo-title">
           <h2 id="demo-title">看一份证明如何完成</h2>
@@ -62,6 +63,15 @@
             <a class="workbench-image-link" href="assets/workbench-full-desktop.png" aria-label="放大查看工作台"><picture class="workbench-picture"><source media="(max-width: 900px)" srcset="assets/workbench-mobile.png" width="350" height="520"><img src="assets/workbench-desktop.png" alt="TheoremOS 自然语言原题入口，输入自然数加零问题，尚未提交。" width="900" height="520" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a>
           </figure>
         </div>
+        <section class="research-scenarios" id="research-entry" aria-labelledby="research-entry-title">
+          <div class="scenario-intro"><h3 id="research-entry-title">选择你的研究起点</h3><p>网页适合条件明确、结论清楚的单文件数学任务。</p></div>
+          <ul class="scenario-list">
+            <li><h4>数学命题</h4><p>写明对象、假设和结论，先核对 Lean 陈述，再批准证明计划。用加零模板起步，可以替换成自己的题目。</p><a class="text-link" data-research-entry="statement" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=zh">准备命题草稿<i data-lucide="arrow-up-right"></i></a></li>
+            <li><h4>Lean 草稿</h4><p>保留 import、定理声明与未完成证明，在固定 Mathlib 环境继续。用平方展开模板起步，逐步检查每次修改。</p><a class="text-link" data-research-entry="lean" href="https://app.theoremos.top/?entry=lean&amp;template=polynomial&amp;environment=mathlib&amp;lang=zh">打开 Lean 模板<i data-lucide="arrow-up-right"></i></a></li>
+          </ul>
+          <p class="scenario-boundary">自定义依赖、多文件 Lake 工程或指定工具链，可先<a href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20%E7%A0%94%E7%A9%B6%E5%90%88%E4%BD%9C">讨论研究合作</a>。<a href="https://github.com/LikC1606/TheoremOS/blob/main/docs/CAPABILITIES.zh-CN.md" target="_blank" rel="noreferrer">查看当前能力范围</a>。</p>
+          <p class="scenario-continuation">登录后会带入所选模板与环境，准备草稿不调用模型。</p>
+        </section>
         <section class="human-decision" id="human-decision" aria-labelledby="human-decision-title">
           <div class="human-decision-copy"><h3 id="human-decision-title">原题对不对，由你决定</h3><p>先核对假设和目标。确认后进入证明；需要修改，就留在陈述审核。</p><p class="decision-example-label">交互示例 · 沿用上方加零题，不发起研究。</p></div>
           <div class="decision-example" data-human-decision data-ui>
@@ -81,7 +91,7 @@
     </section>
 
     <section class="proofs-section" id="proofs" aria-labelledby="proofs-title"><div class="wrap">
-      <div class="section-heading proof-heading"><div><h2 id="proofs-title">打开证明，核对依据</h2><p>从原题到验收记录，源码和研究过程一起保留。</p></div><div class="proof-totals"><a href="archive.html#status=accepted"><strong>10</strong><span>Lean-Eval 官方通过</span></a><a class="campaign-results" href="archive.html#status=verified"><strong>16</strong><span>OpenAI Math 本地验收</span></a></div></div>
+      <div class="section-heading proof-heading"><div><h2 id="proofs-title">打开证明，核对依据</h2><p>从原题到验收记录，源码和研究过程一起保留。</p></div><div class="proof-totals"><a href="archive.html#status=accepted"><strong>10</strong><span>Lean-Eval 官方通过</span></a><a class="campaign-results" href="archive.html#status=verified"><strong>18</strong><span>OpenAI Math 本地验收</span></a></div></div>
       <nav class="case-guide" aria-labelledby="case-guide-title"><h3 id="case-guide-title">从你想了解的地方开始</h3><ul>
         <li><a href="archive.html#view=quickstart" data-case-guide="intro"><strong>先看一份完整回放</strong><span>从自然数加零题，跟完候选、Lean 反馈、修复和原题验收。</span><span class="case-guide-action">入门流程<i data-lucide="arrow-up-right"></i></span></a></li>
         <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process" data-case-guide="route"><strong>展开一道复杂题的路线</strong><span>三角形面问题：从全局尝试进入最终路线，逐步看推导与源码怎样衔接。</span><span class="case-guide-action">复杂路线<i data-lucide="arrow-up-right"></i></span></a></li>

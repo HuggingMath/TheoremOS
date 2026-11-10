@@ -204,6 +204,8 @@
           ]
         }
       ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
       "review": {
         "status": "accepted",
         "summary": "The fixed Submission.lean proves the exact publisher target OAI.FiniteCongruence.graph_criterion (same binders and statement as the frozen source) via the previously checked direction lemmas and graph_criterion_from_directions. The saved source has no sorry, admit, native_decide, unsafe, or new axiom; it compiles successfully, and #print axioms for graph_criterion is [propext, Classical.choice, Quot.sound]. All frozen definitions, declaration kinds, headers, namespaces, and existing imports are preserved; only allowed Mathlib imports and helper declarations were added, and the original proof hole was replaced by an exact proof term. Checked at worktree HEAD 0336c9fbb3e415128a8365fe6045324a9cb11b83 with Submission.lean SHA-256 6b32441db35b95aed73a9f7acdb44c57bc0f5c3e1556113478e96f921b022a3f."

@@ -23,6 +23,7 @@
           ]
         }
       ],
+      "knowledgeApplications": [],
       "review": {
         "status": "accepted",
         "summary": "The fixed candidate proves OAI.HadamardSix.rowRatio_cubeFiber_sum_zero with the frozen declaration type and imports. The proof derives the first and second moments from row orthogonality, uses unimodularity to get v * star v = 1, and applies the cubic-fibre indicator identity; it compiles with no sorry or admitted subgoal and depends only on propext, Classical.choice, and Quot.sound."

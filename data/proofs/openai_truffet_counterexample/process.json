@@ -131,6 +131,8 @@
           ]
         }
       ],
+      "lemmaRequests": [],
+      "knowledgeApplications": [],
       "review": {
         "status": "accepted",
         "summary": "The fixed proof in generated/problem/Submission.lean is kernel-checked and satisfies the frozen target. The owned file contains no sorry, admit, native_decide, unsafe, or user-declared axiom; host check-lean returned exitCode 0 with captureComplete true and zero errors, direct lake env lean returned exit code 0, and #print axioms on OAI.TruffetV4Counterexample.finite_execution_not_optimal reports only [propext, Classical.choice, Quot.sound]. The frozen source prefix (lines 1-117) and theorem header/type are byte-identical to seed commit dcd33f0, the original declaration order and bodies are retained, and the trusted problem files are unchanged. The mathematical content also checks: the cross-row witness w = [0,0,|α|+10] works for both ordered row pairs, the two advances compute middle and finalState with all required ForcedSingletonStep predicates, output and better are feasible in initial, and 0 = eval initial.cost better < 1 = eval finalState.cost output = eval initial.cost output."

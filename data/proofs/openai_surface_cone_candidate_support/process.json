@@ -100,6 +100,7 @@
           ]
         }
       ],
+      "knowledgeApplications": [],
       "review": {
         "status": "accepted",
         "summary": "Reviewed the frozen target OAI.SmallCM.candidate_ring_properties at HEAD 210cac97c7c7bfec226ebafc32049f7b077eb0d6. The owned Submission.lean compiles under the pinned Lean/Mathlib environment via check-lean with exit code 0, no errors, and only style/deprecation warnings. The declaration name, kind, and exact frozen type are preserved, and the source contains no sorry, admit, native_decide, unsafe, axiom, or extra imports. A fresh audit importing Submission.lean re-elaborates the exact frozen existential type and reports the theorem's axioms as only propext, Classical.choice, and Quot.sound. The witness R = MvPowerSeries (Fin 3) ℂ establishes the required adic completeness, Krull dimension 3, residue-field bijectivity, domain, Noetherian, local, algebra, and integrally-closed properties. The protected seed files match their expected digests."
