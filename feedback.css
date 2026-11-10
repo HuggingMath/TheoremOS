@@ -36,6 +36,10 @@
 .feedback-field-meta span { flex-shrink: 0; font-variant-numeric: tabular-nums; }
 .feedback-submit-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 8px; }
 .feedback-submit-row .button { flex-shrink: 0; font-size: 16px; gap: 16px; }
+.feedback-draft-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; }
+.feedback-draft-row p { flex: 1 1 220px; }
+.feedback-draft-row button { min-height: 44px; }
+.feedback-draft-row button:disabled { opacity: .5; cursor: default; }
 #feedback-fallback .button { margin-top: 24px; }
 .feedback-footer { background: var(--field-mint); }
 .feedback-footer > div { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; min-height: 96px; padding-block: 20px; }

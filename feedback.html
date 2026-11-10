@@ -48,6 +48,7 @@
         <div class="feedback-field"><label for="feedback-subject">反馈标题</label><input id="feedback-subject" type="text" maxlength="100" required placeholder="用一句话概括" autocomplete="off"></div>
         <div class="feedback-field"><label for="feedback-description">详细描述</label><textarea id="feedback-description" rows="7" maxlength="10000" required aria-describedby="feedback-description-hint feedback-count" placeholder="请描述遇到的问题"></textarea><div class="feedback-field-meta"><p id="feedback-description-hint">附上复现步骤、错误信息和预期结果，方便排查。</p><span id="feedback-count">0 / 10000</span></div></div>
         <div class="feedback-field"><label for="feedback-environment">环境与版本 <span>选填</span></label><input id="feedback-environment" type="text" maxlength="240" placeholder="如：macOS · Chrome 130" autocomplete="off"></div>
+        <div class="feedback-draft-row"><p id="feedback-draft-status" role="status" aria-live="polite"></p><button class="text-link" id="feedback-clear-draft" type="button" disabled>清空草稿</button></div>
         <div class="feedback-submit-row"><p>截图与附件可在 GitHub 补充。</p><button class="button button-dark" id="feedback-preview" type="submit">预览反馈<i data-lucide="arrow-right"></i></button></div>
       </form>
     </section>

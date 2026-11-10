@@ -48,6 +48,7 @@
         <div class="feedback-field"><label for="feedback-subject">Title</label><input id="feedback-subject" type="text" maxlength="100" required placeholder="Sum it up in one sentence" autocomplete="off"></div>
         <div class="feedback-field"><label for="feedback-description">Description</label><textarea id="feedback-description" rows="7" maxlength="10000" required aria-describedby="feedback-description-hint feedback-count" placeholder="Describe the problem"></textarea><div class="feedback-field-meta"><p id="feedback-description-hint">Add steps to reproduce, error messages and the expected result.</p><span id="feedback-count">0 / 10000</span></div></div>
         <div class="feedback-field"><label for="feedback-environment">Environment <span>optional</span></label><input id="feedback-environment" type="text" maxlength="240" placeholder="For example: macOS · Chrome 130" autocomplete="off"></div>
+        <div class="feedback-draft-row"><p id="feedback-draft-status" role="status" aria-live="polite"></p><button class="text-link" id="feedback-clear-draft" type="button" disabled>Clear draft</button></div>
         <div class="feedback-submit-row"><p>Add screenshots and attachments on GitHub.</p><button class="button button-dark" id="feedback-preview" type="submit">Preview<i data-lucide="arrow-right"></i></button></div>
       </form>
     </section>
