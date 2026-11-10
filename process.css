@@ -38,6 +38,22 @@
 .proof-source-index button { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 7px 0; width: 100%; background: transparent; color: var(--ink); text-align: left; border-bottom: 1px solid var(--line); }
 .proof-source-index button code { overflow-wrap: anywhere; font-size: 11px; }
 .proof-source-index button > span { flex-shrink: 0; font: 10px var(--mono); color: var(--muted); }
+.proof-used-definitions { margin: 16px 0 4px; padding-top: 12px; border-top: 1px solid var(--line); }
+.proof-used-definitions > p { margin: 0 0 8px; color: var(--muted); font-size: 12px; }
+.proof-used-definitions > details { margin: 6px 0; }
+.proof-used-definitions > details > summary { cursor: pointer; color: var(--green); font-size: 12px; padding: 5px 0; }
+.proof-used-definitions .process-code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-used-definitions > details > button { background: transparent; color: var(--green); padding: 4px 0; font-size: 12px; }
+.acceptance-mathematics { margin: 18px 0 24px; }
+.acceptance-mathematics h4 { font-size: 15px; margin: 0 0 10px; }
+.acceptance-mathematics .process-detail-actions { margin: 14px 0; }
+.acceptance-target-note { color: var(--muted); font-size: 12px; line-height: 1.7; }
+.acceptance-targets { padding: 0; margin: 12px 0 0; list-style: none; }
+.acceptance-targets > li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.acceptance-targets code { display: block; font: 11px/1.7 var(--mono); overflow-wrap: anywhere; }
+.acceptance-targets span { display: block; color: var(--green); margin-top: 4px; font-size: 11px; }
+.acceptance-receipts { margin: 14px 0; }
+.acceptance-receipts > summary { color: var(--green); cursor: pointer; padding: 8px 0; font-size: 12px; }
 [data-proof-source-reading] .proof-walkthrough-step h5 { font: 500 17px/1.6 var(--mono); overflow-wrap: anywhere; }
 [id^="proof-source-helper-"] { scroll-margin-top: 90px; }
 @media (max-width: 700px) {
