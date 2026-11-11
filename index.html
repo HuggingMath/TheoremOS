@@ -66,11 +66,11 @@
         <section class="research-scenarios" id="research-entry" aria-labelledby="research-entry-title">
           <div class="scenario-intro"><h3 id="research-entry-title">选择你的研究起点</h3><p>网页适合条件明确、结论清楚的单文件数学任务。</p></div>
           <ul class="scenario-list">
-            <li><h4>数学命题</h4><p>写明对象、假设和结论，先核对 Lean 陈述，再批准证明计划。用加零模板起步，可以替换成自己的题目。</p><a class="text-link" data-research-entry="statement" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=zh">准备命题草稿<i data-lucide="arrow-up-right"></i></a></li>
+            <li><h4>数学命题</h4><p>写明对象、假设和结论，先核对 Lean 陈述，再批准证明计划。用加零模板起步，可以替换成自己的题目。</p><a class="text-link" data-research-entry="statement" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=mathlib&amp;lang=zh">准备命题草稿<i data-lucide="arrow-up-right"></i></a></li>
             <li><h4>Lean 草稿</h4><p>保留 import、定理声明与未完成证明，在固定 Mathlib 环境继续。用平方展开模板起步，逐步检查每次修改。</p><a class="text-link" data-research-entry="lean" href="https://app.theoremos.top/?entry=lean&amp;template=polynomial&amp;environment=mathlib&amp;lang=zh">打开 Lean 模板<i data-lucide="arrow-up-right"></i></a></li>
           </ul>
           <p class="scenario-boundary">自定义依赖、多文件 Lake 工程或指定工具链，可先<a href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20%E7%A0%94%E7%A9%B6%E5%90%88%E4%BD%9C">讨论研究合作</a>。<a href="https://github.com/LikC1606/TheoremOS/blob/main/docs/CAPABILITIES.zh-CN.md" target="_blank" rel="noreferrer">查看当前能力范围</a>。</p>
-          <p class="scenario-continuation">登录后会带入所选模板与环境，准备草稿不调用模型。</p>
+          <p class="scenario-continuation">登录后会带入所选模板，并使用统一的 TheoremOS 数学环境，准备草稿不调用模型。</p>
         </section>
         <section class="human-decision" id="human-decision" aria-labelledby="human-decision-title">
           <div class="human-decision-copy"><h3 id="human-decision-title">原题对不对，由你决定</h3><p>先核对假设和目标。确认后进入证明；需要修改，就留在陈述审核。</p><p class="decision-example-label">交互示例 · 沿用上方加零题，不发起研究。</p></div>
@@ -84,7 +84,7 @@
           </div>
         </section>
         <figure class="product-fragment source-fragment">
-          <figcaption><h3>源码始终在手边</h3><p>展开原题、证明草稿与 Lean 诊断。选择标准库或固定的 Mathlib 环境，逐步检查每一次修改。</p></figcaption>
+          <figcaption><h3>源码始终在手边</h3><p>展开原题、证明草稿与 Lean 诊断，在统一的 TheoremOS 数学环境中逐步检查每一次修改。</p></figcaption>
           <a href="assets/workbench-source-detail.png" target="_blank" rel="noreferrer" aria-label="放大查看 Lean 工作区"><picture><source media="(max-width: 600px)" srcset="assets/workbench-source-mobile.png" width="360" height="450"><img src="assets/workbench-source-detail.png" alt="Lean 工作区中的自然数加零证明草稿，尚未提交验收。" width="850" height="450" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a>
         </figure>
       </div>
@@ -211,13 +211,13 @@
         <ol class="access-steps"><li><strong>提交申请</strong><p>在 GitHub 或邮件中说明研究用途。</p></li><li><strong>私下确认邮箱</strong><p>收到回复后，确认用于登录的邮箱。</p></li><li><strong>登录工作台</strong><p>加入白名单后，用邮箱验证码登录并连接模型。</p></li></ol>
         <a class="text-link existing-access" href="https://app.theoremos.top/" data-umami-event="open-workbench">已有资格？打开工作台<i data-lucide="arrow-up-right"></i></a>
       </div>
-      <div class="faq-section" aria-labelledby="faq-title"><h2 id="faq-title">使用前的几个问题</h2><div class="faq-list"><details name="faq"><summary>需要自己配置 Lean 吗？<i data-lucide="plus"></i></summary><p>不用。工作台在浏览器中运行，提供 Lean 标准库或固定的 Mathlib 环境，无需在本机安装 Lean 或 Docker。</p></details><details name="faq"><summary>Lean 通过后，还要核对什么？<i data-lucide="plus"></i></summary><p>Lean 验收的是形式化陈述的证明。你仍需核对陈述是否准确表达原题的假设与目标；含义审核与证明验收分别展示。</p></details><details name="faq"><summary>支持哪些 Key，如何保存？<i data-lucide="plus"></i></summary><p>支持 OpenAI 和已配置网关。Key 由对应服务商或网关管理员提供，可临时使用，也可加密保存到账号，随时删除。「检查 Key 与模型」只读取模型列表，不调用模型。</p></details><details name="faq"><summary>如何设置预算？<i data-lucide="plus"></i></summary><p>默认形式化预算为 10 分钟 / 40 万 Token，证明预算为 5 分钟 / 20 万 Token，开始前可以调整。按已报告用量停止，在途请求可能超额；Token 上限不是费用封顶。</p></details><details name="faq"><summary>研究记录会保存吗？<i data-lucide="plus"></i></summary><p>运行记录归属账号，可下载源码和报告。删除账号会立即清除在线内容；维护备份与用量标识的保留方式见 <a href="privacy.html">隐私与条款</a>。</p></details></div></div>
+      <div class="faq-section" aria-labelledby="faq-title"><h2 id="faq-title">使用前的几个问题</h2><div class="faq-list"><details name="faq"><summary>需要自己配置 Lean 吗？<i data-lucide="plus"></i></summary><p>不用。网页新任务统一使用 TheoremOS 数学环境，包含 Lean 4.33.0、Mathlib 与 53 个自有库模块，无需在本机安装 Lean 或 Docker。</p></details><details name="faq"><summary>Lean 通过后，还要核对什么？<i data-lucide="plus"></i></summary><p>Lean 验收的是形式化陈述的证明。你仍需核对陈述是否准确表达原题的假设与目标；含义审核与证明验收分别展示。</p></details><details name="faq"><summary>支持哪些 Key，如何保存？<i data-lucide="plus"></i></summary><p>支持 OpenAI 和已配置网关。Key 由对应服务商或网关管理员提供，可临时使用，也可加密保存到账号，随时删除。「检查 Key 与模型」只读取模型列表，不调用模型。</p></details><details name="faq"><summary>如何设置预算？<i data-lucide="plus"></i></summary><p>新任务的形式化与证明默认不限时间和 Token，开始前可以分别设置上限。设置上限后，按已报告用量停止，在途请求可能超额；Token 上限不是费用封顶。</p></details><details name="faq"><summary>研究记录会保存吗？<i data-lucide="plus"></i></summary><p>运行记录归属账号，可下载源码和报告。删除账号会立即清除在线内容；维护备份与用量标识的保留方式见 <a href="privacy.html">隐私与条款</a>。</p></details></div></div>
     </div></section>
   </main>
   <footer class="site-footer wrap"><div class="footer-brand"><a class="brand" href="index.html">TheoremOS</a><p>数学研究与 Lean 证明工作台</p></div><nav aria-label="页脚链接"><a href="archive.html">浏览证明档案</a><a href="feedback.html">反馈</a><a href="privacy.html">隐私与条款</a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub</a></nav><span>© 2026 TheoremOS contributors</span></footer>
   <dialog class="preview-dialog" id="workbench-dialog" aria-labelledby="preview-title" aria-describedby="preview-description">
     <div class="preview-dialog-header"><div><strong id="preview-title">TheoremOS <span>研究工作台</span></strong><p id="preview-description">自然语言入口</p></div><div class="preview-dialog-actions"><button type="button" class="preview-zoom" aria-label="放大截图" aria-pressed="false" title="放大截图"><i data-lucide="zoom-in"></i><i data-lucide="zoom-out"></i></button><a class="preview-original" href="assets/workbench-full-desktop.png" target="_blank" rel="noreferrer" aria-label="打开原始截图" title="打开原始截图"><i data-lucide="external-link"></i></a><button type="button" class="preview-close" aria-label="关闭截图预览" title="关闭" autofocus><i data-lucide="x"></i></button></div></div>
-    <div class="preview-dialog-media" role="region" aria-label="研究工作台截图" tabindex="0"><picture><source media="(max-width: 600px)" srcset="assets/workbench-full-mobile.png" width="390" height="844"><img src="assets/workbench-full-desktop.png" alt="工作台自然语言入口，展示原题输入和默认两阶段预算。" width="1440" height="900" loading="lazy"></picture></div>
+    <div class="preview-dialog-media" role="region" aria-label="研究工作台截图" tabindex="0"><picture><source media="(max-width: 600px)" srcset="assets/workbench-full-mobile.png" width="390" height="844"><img src="assets/workbench-full-desktop.png" alt="工作台自然语言入口，展示原题输入和研究设置。" width="1440" height="900" loading="lazy"></picture></div>
   </dialog>
   <script src="landing.js" defer></script>
 </body>

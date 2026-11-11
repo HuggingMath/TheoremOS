@@ -24,33 +24,33 @@ After signing in, you will arrive at the main workbench. The main prompt box acc
 
 *Figure 2: The TheoremOS workbench home screen. The main input box accepts natural language and $`\TeX`$, with dedicated buttons below for Lean source input and "Configure model".*
 
-In the upper portion of the settings section, configure your model and proof environment:
+In the upper portion of the settings section, configure your model and reasoning effort:
 
 1. **Model Provider, Model, and API Key**: Select a **"Model provider"** from the platform's deployed dropdown list, then enter the **"Model"** name and your **"API Key"**. There is no custom Base URL field; your chosen provider and model must support the Responses API, and your key must match the selected provider. You can click **"Check key and model"** to verify credentials—note that this button only queries the provider's model list without invoking an inference model, so passing the list check does not guarantee that Responses API inference calls have been live-tested.
-2. **Proof Environment and Reasoning Effort**: Choose the **"Proof environment"** (`Standard library` or `Mathlib`) and the desired **"Reasoning effort"**.
+2. **Mathematics Environment and Reasoning Effort**: New tasks use the unified **TheoremOS mathematics environment** with Lean 4.33.0, Mathlib and 53 TheoremOS library modules. Set the desired **"Reasoning effort"**. Frozen tasks and historical evidence retain their original environment.
 
 Newly entered keys are temporary by default and clear on refresh. If account key storage is enabled, explicitly choose **"Save to my account"** in natural-language Settings. The same checkbox in Lean Model connection starts unchecked; only selecting it before submission saves or replaces an account key. Saved keys are encrypted, only their last four characters are shown, and you can delete them at any time.
 
 ![TheoremOS English model settings section showing Model provider, Model, Proof environment, Reasoning effort, empty API Key input, and Check key and model button](../assets/guide/settings-en.png)
 
-*Figure 3: Selecting the model provider, model name, proof environment (Standard library / Mathlib), reasoning effort, and API key in the settings section.*
+*Figure 3: The recorded settings view shows the model connection and reasoning controls. New tasks use the unified TheoremOS mathematics environment.*
 
-Next, configure the **two-stage budgets** in the lower portion of the settings section. TheoremOS separates formalization from proof search, allowing you to limit each stage independently. Current default limits on the interface are shown below (always refer to the live UI for exact values):
+Next, configure the **two-stage budgets** in the lower portion of the settings section. TheoremOS separates formalization from proof search, allowing you to limit each stage independently. New tasks default to unlimited budgets; set limits before sending if needed:
 
 | Budget Stage | Scope | Current Default Limit |
 | :--- | :--- | :--- |
-| **Formalization budget** | Controls generating and reviewing the formal Lean 4 statement from natural language or $`\TeX`$ | 10 min / 400,000 Tokens |
-| **Proof budget** | Controls subsequent lemma decomposition, proof search, and Lean kernel checks | 5 min / 200,000 Tokens / 5 rounds |
+| **Formalization budget** | Controls generating and reviewing the formal Lean 4 statement from natural language or $`\TeX`$ | Unlimited time and tokens |
+| **Proof budget** | Controls subsequent lemma decomposition, proof search, and Lean kernel checks | Unlimited time, tokens and rounds |
 
 > **Understanding Budgets and Billing**: These token and time settings act as usage and time limits rather than fixed costs or monetary caps. The system halts subsequent calls based on usage already reported by the provider, meaning an in-flight request may exceed the configured token number upon completion. You may also set spending limits in your model provider's billing settings (depending on the features offered by your provider).
 
 ![TheoremOS English two-stage budget settings section showing time, token, and round limits for Formalization budget and Proof budget](../assets/guide/budget-en.png)
 
-*Figure 4: Configuring the two-stage budgets: "Formalization budget" (10 min / 400,000 Tokens) and "Proof budget" (5 min / 200,000 Tokens / 5 rounds).*
+*Figure 4: The recorded view shows separate formalization and proof budget controls. New tasks default to unlimited budgets; values entered before sending set limits.*
 
 ## 3. Submitting a Problem and Reviewing the Formal Statement
 
-To familiarize yourself with the workflow, set the proof environment to **"Standard library"** and submit the following test prompt in the main input box (submitting immediately invokes the model and consumes API quota):
+To familiarize yourself with the workflow, submit the following test prompt in the main input box using the unified **TheoremOS mathematics environment** (submitting immediately invokes the model and consumes API quota):
 
 > For every natural number n, prove that n + 0 = n.
 
@@ -66,7 +66,7 @@ Pay close attention to types (e.g., $`\mathbb{N}`$ vs. $`\mathbb{Z}`$), hypothes
 
 "Work together" on the home page already includes statement confirmation and initial plan approval. To generate and confirm a statement separately, use the standalone **Statement Formalization page** at [https://app.theoremos.top/formalize.html](https://app.theoremos.top/formalize.html).
 
-1. **Standalone Configuration**: This page **does not inherit model or budget settings from the home page**. It uses the platform default model and formalization budget displayed on the page (currently 10 min / 400,000 Tokens). Select your proof environment and reasoning effort, enter your API key, and click **"Generate Lean statement"**.
+1. **Standalone Configuration**: This page **does not inherit model or budget settings from the home page**. It uses the platform default model and the unified TheoremOS mathematics environment, with unlimited formalization time and tokens by default. Set your reasoning effort and any budget limits, enter your API key, and click **"Generate Lean statement"**.
 2. **Review and Confirm**: Compare your original prompt against the generated Lean code and independent back-translation. Check the confirmation box to enable and click **"Confirm statement"**, then click **"Use in research draft"** in the next step.
 3. **Launch Proof Research**: Clicking "Use in research draft" **only imports the statement into a workbench draft; it does not start proof search automatically**, nor does it transfer a one-time API key from the standalone formalization page. In the workbench's **"Research settings"**, configure your proof model, API key, and proof budget, then click **"Start research"**.
 
