@@ -529,7 +529,7 @@
   .proof-route-current { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
   .proof-route-current [data-proof-reading-count] { font: 10px/1.8 var(--mono); color: var(--green); white-space: nowrap; }
   .proof-route-current [data-proof-reading-title] { font-size: 12px; line-height: 1.65; overflow-wrap: anywhere; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
-  .proof-route-panel[open] .proof-route-map { position: absolute; top: calc(100% + 1px); left: -1px; right: -1px; padding: 12px 12px 12px 54px; max-height: calc(100dvh - var(--proof-heading-clearance) - 12px); background: var(--paper, #faf9f5); border: 1px solid var(--line); box-shadow: 0 10px 22px #3c342316; }
+  .proof-route-panel[open] .proof-route-map { position: absolute; z-index: 1; top: calc(100% + 1px); left: -1px; right: -1px; padding: 12px 12px 12px 54px; max-height: calc(100dvh - var(--proof-heading-clearance) - 12px); background: var(--paper, #faf9f5); border: 1px solid var(--line); box-shadow: 0 10px 22px #3c342316; }
   .proof-route-legend, .proof-reading-bar { display: none; }
   .proof-reading-content { max-width: none; }
   .proof-route-nodes button { padding: 9px 10px; }
