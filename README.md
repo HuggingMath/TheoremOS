@@ -27,9 +27,9 @@
 
 ## Proof Walkthrough
 
-[![Preset Lean verification walkthrough](assets/proof-replay-en.gif)](https://theoremos.top/en/#demo)
+[![Lean verification walkthrough](assets/proof-replay-en.gif)](https://theoremos.top/en/#demo)
 
-*Preset 4-step Lean verification walkthrough (`n + 0 = n`) illustrating how the workbench inspects goals and checks proofs. This replay uses a built-in example without live model calls.*
+*A four-step check of `n + 0 = n`: submit a candidate, read the Lean feedback, repair it, then see whole-problem verification.*
 
 <details>
 <summary><b>Cloud Workbench Screenshot</b></summary>

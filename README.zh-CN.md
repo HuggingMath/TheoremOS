@@ -27,9 +27,9 @@
 
 ## 证明检查演示
 
-[![预设 Lean 证明检查回放](assets/proof-replay-zh.gif)](https://theoremos.top/#demo)
+[![Lean 证明检查回放](assets/proof-replay-zh.gif)](https://theoremos.top/#demo)
 
-*预设的四步 Lean 检查回放（以 `n + 0 = n` 为例），用于直观展示工作台核验目标与证明的过程。该演示为内置回放，不调用模型，非现场解题评测。*
+*以 `n + 0 = n` 为例的四步检查回放：先提交候选，再看 Lean 反馈、修复与完整原题验收。*
 
 <details>
 <summary><b>云端工作台截图</b></summary>
