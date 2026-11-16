@@ -47,47 +47,47 @@
         <div class="workbench-layout">
           <ol class="workflow-steps"><li><h3>Start with your question</h3><p>Write the assumptions and goal in natural language, TeX or Lean. Check that the statement says what you mean.</p></li><li><h3>Follow each attempt</h3><p>Read candidates, diagnostics and repairs as they happen. Set the time and token budget for your research.</p></li><li><h3>Keep the whole result</h3><p>Download Lean source and verification reports, or return to the record to continue an unfinished proof.</p></li></ol>
         </div>
-        <figure class="proof-stage" data-proof-stage data-step="6" role="img" aria-label="Illustration of the workbench, taken from the addition-by-zero tutorial: the system splits the problem into two tasks and the roadmap records every step while two Agents work. Right addition closes by rfl; left addition fails with rfl, then passes with Nat.zero_add after your guidance. Both goals pass the kernel check together, and the explanation pane turns the proof steps into plain language.">
+        <figure class="proof-stage" data-proof-stage data-step="6" role="img" aria-label="Illustration of the workbench, taken from the proof that the square root of two is irrational: the system splits the statement into two dependent tasks. Proof A first tries omega on the parity lemma, Lean rejects it, and a case split on the remainder of n modulo 2 passes. Proof B follows your guidance and finishes the infinite descent by strong induction. The statement then passes the kernel check, and the explanation pane turns each step into plain language.">
           <div class="proof-stage-canvas" aria-hidden="true">
             <div class="proof-window">
               <div class="proof-chrome">
-                <div class="proof-title"><strong>Tutorial.add_zero</strong><span>Classics library · Adding zero</span></div>
-                <span class="proof-run-state"><span class="state-running">Running · 2 Agents</span><span class="state-done">Finished · both goals verified</span></span>
+                <div class="proof-title"><strong>sqrt2_irrational</strong><span>Workbench demo · The square root of two is irrational</span></div>
+                <span class="proof-run-state"><span class="state-running">Running · 2 Agents</span><span class="state-done">Finished · statement verified</span></span>
                 <ol class="proof-tabs"><li class="is-current">Running now</li><li>Roadmap<span class="proof-tab-count" data-tab-count>5/5</span></li><li>Files</li></ol>
               </div>
               <div class="proof-deck">
                 <section class="proof-pane proof-feed-pane">
                   <h4 class="proof-pane-head">Collaboration</h4>
                   <ul class="proof-feed">
-                    <li data-step="1" class="is-you"><span class="feed-who">You</span><p>The statement and both goals are confirmed; research starts.</p></li>
-                    <li data-step="2"><span class="feed-who">Lead</span><p>Split into two tasks and handed one to each Agent.</p>
-                      <ul class="feed-tasks"><li data-step="2"><code>T1</code><span>n + 0 = n</span><em>Proof A</em></li><li data-step="2"><code>T2</code><span>0 + n = n</span><em>Proof B</em></li></ul></li>
-                    <li data-step="3"><span class="feed-who">Proof A</span><p><code>rfl</code> closes T1; right addition passes.</p><span class="feed-status is-pass">Check passed</span></li>
-                    <li data-step="4"><span class="feed-who">Proof B</span><p>rfl leaves unsolved goals on T2; left addition fails.</p><span class="feed-status is-fail">Failed</span></li>
-                    <li data-step="5" class="is-you"><span class="feed-who">You</span><p>Keep right addition; retry T2 with Nat.zero_add n.</p></li>
-                    <li data-step="6"><span class="feed-who">Proof B</span><p>Nat.zero_add n closes T2; both goals go to acceptance together.</p><span class="feed-status is-pass">Check passed</span></li>
+                    <li data-step="1" class="is-you"><span class="feed-who">You</span><p>Statement and both goals confirmed; research starts.</p></li>
+                    <li data-step="2"><span class="feed-who">Lead</span><p>Two tasks; T2 needs T1, so Proof A takes T1 first.</p>
+                      <ul class="feed-tasks"><li data-step="2"><code>T1</code><span>Parity lemma</span><em>Proof A</em></li><li data-step="2"><code>T2</code><span>Infinite descent</span><em>Proof B</em></li></ul></li>
+                    <li data-step="3"><span class="feed-who">Proof A</span><p><code>omega</code> fails: <code>n * n</code> is one atom, not linear arithmetic.</p><span class="feed-status is-fail">Failed</span></li>
+                    <li data-step="4"><span class="feed-who">Proof A</span><p>Split on n mod 2: odd n has an odd square, so 2 cannot divide n * n.</p><span class="feed-status is-pass">Check passed</span></li>
+                    <li data-step="5" class="is-you"><span class="feed-who">You</span><p>Prove T2 by strong induction on a + b; use strongRecOn, core has no strong_induction_on.</p></li>
+                    <li data-step="6"><span class="feed-who">Proof B</span><p>Then a = 2 * a' and b = 2 * b' with a' + b' smaller: contradiction. Shipped with the statement.</p><span class="feed-status is-pass">Check passed</span></li>
                   </ul>
                 </section>
                 <section class="proof-pane proof-roadmap-pane">
                   <h4 class="proof-pane-head">Roadmap<span class="proof-pane-meta">2 tasks · 1 acceptance</span></h4>
                   <div class="proof-stage-group" data-step="1"><h5>Problem and plan</h5>
-                    <div class="proof-node" data-step="1" data-done="1"><span class="node-kind">Problem</span><p>Tutorial.add_zero</p><small class="node-done">Both goals confirmed</small><small class="node-running">Awaiting confirmation</small></div>
-                    <div class="proof-node" data-step="2" data-done="2"><span class="node-kind">Plan</span><p>Split into T1 and T2 for two Agents</p><small class="node-done">Approved</small><small class="node-running">Splitting</small></div>
+                    <div class="proof-node" data-step="1" data-done="1"><span class="node-kind">Problem</span><p>sqrt2_irrational</p><small class="node-done">Both goals confirmed</small><small class="node-running">Awaiting confirmation</small></div>
+                    <div class="proof-node" data-step="2" data-done="2"><span class="node-kind">Plan</span><p>T1 first; T2's descent depends on it</p><small class="node-done">Approved</small><small class="node-running">Splitting</small></div>
                   </div>
                   <div class="proof-stage-group" data-step="2"><h5>Mathematical tasks</h5>
-                    <div class="proof-node" data-step="2" data-done="3"><span class="node-kind">Lemma</span><p><code>T1</code> n + 0 = n</p><small class="node-done">Proof A · passed</small><small class="node-running">Proof A working</small></div>
-                    <div class="proof-node" data-step="2" data-fail="4" data-done="6"><span class="node-kind">Lemma</span><p><code>T2</code> 0 + n = n</p><small class="node-done">Proof B · passed</small><small class="node-running">Retrying with your guidance</small><small class="node-failed">rfl failed</small></div>
+                    <div class="proof-node" data-step="2" data-fail="3" data-done="4"><span class="node-kind">Lemma</span><p><code>T1</code> n * n even implies n even</p><small class="node-done">Proof A · passed</small><small class="node-running">Proof A working</small><small class="node-failed">omega failed</small></div>
+                    <div class="proof-node" data-step="2" data-start="5" data-done="6"><span class="node-kind">Lemma</span><p><code>T2</code> a * a = 2 * (b * b) is false for b ≠ 0</p><small class="node-done">Proof B · passed</small><small class="node-running">Descent per your guidance</small><small class="node-waiting">Waiting for T1</small></div>
                   </div>
                   <div class="proof-stage-group" data-step="5"><h5>Proof and acceptance</h5>
-                    <div class="proof-node" data-step="5" data-done="6"><span class="node-kind">Acceptance</span><p>Full problem · both goals</p><small class="node-done">Kernel passed</small><small class="node-running">Waiting for T2</small></div>
+                    <div class="proof-node" data-step="5" data-done="6"><span class="node-kind">Acceptance</span><p>Statement · two lemmas combined</p><small class="node-done">Kernel passed</small><small class="node-running">Waiting for T2</small></div>
                   </div>
                 </section>
                 <section class="proof-pane proof-explain-pane">
                   <h4 class="proof-pane-head">Explanation<span class="proof-pane-meta">Updates with the proof</span></h4>
-                  <div class="proof-explain" data-step="3"><h5><code>n + 0 = n</code></h5><p>Addition recurses on its second argument. With zero there, the expression reduces to n, so rfl closes the goal.</p><pre><code>exact rfl</code></pre></div>
-                  <div class="proof-explain" data-step="4"><h5><code>0 + n = n</code></h5><p>Here the second argument is an arbitrary n, so definition reduction does not close the goal; cite the library or use induction.</p></div>
-                  <div class="proof-explain" data-step="6"><h5>Repairing <code>0 + n = n</code></h5><p>Nat.zero_add n closes the goal in one step.</p><pre><code>exact Nat.zero_add n</code></pre></div>
-                  <p class="proof-explain-note" data-step="6">Both goals pass the kernel check, which covers the saved source.</p>
+                  <div class="proof-explain" data-step="3"><h5><code>2 ∣ n * n → 2 ∣ n</code></h5><p>n and n * n share a parity: odd n gives an odd square, never divisible by 2. omega only reasons about linear arithmetic and treats n * n as one atom, so split on the remainder modulo 2.</p><pre><code>rcases Nat.mod_two_eq_zero_or_one n with h0 | h1</code></pre></div>
+                  <div class="proof-explain" data-step="4"><h5>Proof A passes</h5><p>When the remainder is 0 the lemma follows directly; when it is 1 the square also has remainder 1, contradicting the hypothesis.</p></div>
+                  <div class="proof-explain" data-step="6"><h5>Infinite descent</h5><p>If a * a = 2 * (b * b) with b nonzero, T1 gives a = 2 * a' and b = 2 * b'; simplifying leaves a' * a' = 2 * (b' * b') with a' + b' strictly smaller, contradicting the inductive hypothesis.</p><pre><code>exact ih (a' + b') (by omega) a' b' rfl hb'0 hsmall</code></pre></div>
+                  <p class="proof-explain-note" data-step="6">The statement and both lemmas pass the kernel check on the saved source.</p>
                 </section>
               </div>
             </div>

@@ -192,14 +192,14 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 .proof-tabs li { display: inline-flex; align-items: center; gap: 6px; height: 100%; color: var(--muted); font-size: 12.5px; border-bottom: 2px solid transparent; transition: color .25s, border-color .25s; }
 .proof-tabs li.is-current { color: var(--ink); border-bottom-color: var(--accent); }
 .proof-tab-count { padding: 1px 6px; border-radius: 9999px; background: var(--surface); font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
-.proof-deck { display: grid; grid-template-columns: 332px 360px minmax(0, 1fr); gap: 14px; flex: 1; min-height: 0; padding: 16px; }
-.proof-pane { display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 12px; border: 1px solid rgba(20, 20, 19, .07); border-radius: var(--radius); background: var(--surface); }
+.proof-deck { display: grid; grid-template-columns: 400px 330px minmax(0, 1fr); gap: 14px; flex: 1; min-height: 0; padding: 16px; }
+.proof-pane { display: flex; flex-direction: column; gap: 9px; min-width: 0; padding: 11px; border: 1px solid rgba(20, 20, 19, .07); border-radius: var(--radius); background: var(--surface); }
 .proof-pane-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 0; padding: 0 2px 2px; font-size: 12.5px; font-weight: 500; letter-spacing: .02em; }
 .proof-pane-meta { font-family: var(--mono); font-size: 10.5px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
-.proof-feed { display: flex; flex-direction: column; gap: 7px; margin: 0; padding: 0; list-style: none; }
-.proof-feed > li { padding: 8px 10px; border: 1px solid rgba(20, 20, 19, .07); border-radius: var(--radius); background: var(--bg); }
+.proof-feed { display: flex; flex-direction: column; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.proof-feed > li { padding: 7px 10px; border: 1px solid rgba(20, 20, 19, .07); border-radius: var(--radius); background: var(--bg); }
 .proof-feed > li.is-you { background: rgba(173, 80, 51, .06); border-color: rgba(173, 80, 51, .22); }
-.proof-feed p { margin: 3px 0 0; font-size: 12px; line-height: 1.55; color: var(--ink); }
+.proof-feed p { margin: 2px 0 0; font-size: 12px; line-height: 1.5; color: var(--ink); }
 .proof-feed p code { font-size: 11.5px; }
 .feed-who { font-size: 10.5px; font-weight: 500; letter-spacing: .04em; color: var(--muted); }
 .proof-feed > li.is-you .feed-who { color: var(--accent); }
@@ -214,13 +214,14 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 .proof-stage-group h5 { margin: 4px 0 0; padding: 0 2px; font-size: 10.5px; font-weight: 500; letter-spacing: .06em; color: var(--muted); }
 .proof-node { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 3px 8px; padding: 7px 9px 7px 11px; border-radius: var(--radius); border: 1px solid rgba(20, 20, 19, .07); border-left: 2px solid rgba(20, 20, 19, .14); background: var(--bg); transition: border-color .25s, background-color .25s; }
 .proof-node p { grid-column: 1 / -1; margin: 0; font-size: 12.5px; line-height: 1.45; }
-.proof-node p code { font-size: 11.5px; }
+.proof-node p code { margin-right: 2px; font-size: 11.5px; }
 .node-kind { font-size: 9.5px; font-weight: 500; letter-spacing: .06em; color: var(--muted); }
 .proof-node small { grid-column: 1 / -1; display: none; font-size: 10.5px; color: var(--muted); }
 .proof-node[data-state="running"] { border-left-color: var(--accent); background: rgba(173, 80, 51, .05); }
 .proof-node[data-state="running"] .node-running,
 .proof-node[data-state="done"] .node-done,
-.proof-node[data-state="failed"] .node-failed { display: block; }
+.proof-node[data-state="failed"] .node-failed,
+.proof-node[data-state="waiting"] .node-waiting { display: block; }
 .proof-node[data-state="done"] .node-done { color: var(--green); }
 .proof-node[data-state="done"] { border-left-color: var(--green); }
 .proof-node[data-state="failed"] .node-failed { color: var(--accent); }
@@ -230,9 +231,9 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 .proof-explain { padding: 9px 2px 10px; border-top: 1px solid rgba(20, 20, 19, .08); }
 .proof-explain-pane .proof-pane-head + .proof-explain { border-top: 0; padding-top: 0; }
 .proof-explain h5 { margin: 0; font-family: var(--mono); font-weight: 400; font-size: 12px; }
-.proof-explain p { margin: 4px 0 0; font-size: 12px; line-height: 1.6; color: var(--ink); }
-.proof-explain pre { margin: 7px 0 0; padding: 6px 9px; border-radius: 3px; background: var(--tool); color: var(--tool-ink); font-size: 11.5px; line-height: 1.5; overflow: hidden; }
-.proof-explain pre code { font-size: 11.5px; color: var(--tool-green); }
+.proof-explain p { margin: 4px 0 0; font-size: 11.5px; line-height: 1.55; color: var(--ink); }
+.proof-explain pre { margin: 6px 0 0; padding: 6px 9px; border-radius: 3px; background: var(--tool); color: var(--tool-ink); font-size: 10.5px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }
+.proof-explain pre code { font-size: 10.5px; color: var(--tool-green); }
 .proof-explain-note { margin: auto 0 0; padding: 10px 2px 4px; border-top: 1px solid rgba(20, 20, 19, .08); font-size: 11px; color: var(--muted); }
 /* Author display rules (grid, inline-flex) outrank the user agent's [hidden] rule, so hidden steps are closed here. */
 .js .proof-stage [hidden] { display: none; }
@@ -501,6 +502,8 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
   .proof-stage-canvas { position: relative; inset: auto; width: 100%; height: auto; transform: none; font-size: 13px; }
   .proof-window { box-shadow: none; }
   .proof-chrome { flex-wrap: wrap; gap: 6px 14px; height: auto; padding: 12px 14px 0; }
+  .proof-title { flex-wrap: wrap; gap: 2px 8px; }
+  .proof-title span { white-space: normal; }
   .proof-tabs { margin-left: 0; height: 34px; }
   /* On phones the three panes become one horizontally snapped row; the next pane stays partly visible. */
   .proof-deck { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px; gap: 10px; }

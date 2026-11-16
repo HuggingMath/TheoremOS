@@ -47,47 +47,47 @@
         <div class="workbench-layout">
           <ol class="workflow-steps"><li><h3>写下原题</h3><p>用自然语言、TeX 或 Lean 给出假设与目标，确认陈述准确表达你的原意。</p></li><li><h3>跟进每次尝试</h3><p>查看候选、诊断与修复过程，按自己的时间和 Token 预算推进研究。</p></li><li><h3>带走完整结果</h3><p>下载 Lean 源码与验收报告，也可以回到记录，继续未完成的证明。</p></li></ol>
         </div>
-        <figure class="proof-stage" data-proof-stage data-step="6" role="img" aria-label="工作台的演示，取自自然数加零教程：系统把原题拆成两个任务，路线图记录每一步，两个 Agent 分别尝试；右加零用 rfl 通过，左加零在 rfl 失败后按你的指导改用 Nat.zero_add 通过，最后两个目标一起通过内核检查，讲题把证明步骤换成中文。">
+        <figure class="proof-stage" data-proof-stage data-step="6" role="img" aria-label="工作台的演示，取自根号二不是有理数：系统把原题拆成两个有依赖的任务；证明 A 先用 omega 直接尝试奇偶引理，Lean 拒绝后改成按 n 除以 2 的余数分类并通过；证明 B 按你的指导用强归纳完成无限递降；最后原题通过内核检查，讲题把每一步的推理换成中文。">
           <div class="proof-stage-canvas" aria-hidden="true">
             <div class="proof-window">
               <div class="proof-chrome">
-                <div class="proof-title"><strong>Tutorial.add_zero</strong><span>经典题库 · 自然数加零</span></div>
-                <span class="proof-run-state"><span class="state-running">进行中 · 2 个 Agent</span><span class="state-done">已完成 · 两个目标验收通过</span></span>
+                <div class="proof-title"><strong>sqrt2_irrational</strong><span>工作台演示 · 根号二不是有理数</span></div>
+                <span class="proof-run-state"><span class="state-running">进行中 · 2 个 Agent</span><span class="state-done">已完成 · 原题验收通过</span></span>
                 <ol class="proof-tabs"><li class="is-current">正在执行</li><li>路线图<span class="proof-tab-count" data-tab-count>5/5</span></li><li>文件</li></ol>
               </div>
               <div class="proof-deck">
                 <section class="proof-pane proof-feed-pane" data-step="1">
                   <h4 class="proof-pane-head">协作记录</h4>
                   <ul class="proof-feed">
-                    <li data-step="1" class="is-you"><span class="feed-who">你</span><p>原题与两个目标都确认了，进入证明。</p></li>
-                    <li data-step="2"><span class="feed-who">Lead</span><p>拆成两个任务，交给两个 Agent 同时尝试。</p>
-                      <ul class="feed-tasks"><li data-step="2"><code>T1</code><span>n + 0 = n</span><em>证明 A</em></li><li data-step="2"><code>T2</code><span>0 + n = n</span><em>证明 B</em></li></ul></li>
-                    <li data-step="3"><span class="feed-who">证明 A</span><p><code>rfl</code> 直接关闭 T1，右加零通过。</p><span class="feed-status is-pass">检查通过</span></li>
-                    <li data-step="4"><span class="feed-who">证明 B</span><p>rfl 在 T2 留下未解决的目标，左加零失败。</p><span class="feed-status is-fail">未通过</span></li>
-                    <li data-step="5" class="is-you"><span class="feed-who">你</span><p>保留右加零，T2 引用 Nat.zero_add n 再试一次。</p></li>
-                    <li data-step="6"><span class="feed-who">证明 B</span><p>补上 Nat.zero_add n，T2 通过；两个目标一起交付验收。</p><span class="feed-status is-pass">检查通过</span></li>
+                    <li data-step="1" class="is-you"><span class="feed-who">你</span><p>原题与两个目标确认，进入证明。</p></li>
+                    <li data-step="2"><span class="feed-who">Lead</span><p>拆成两个任务，T2 依赖 T1，先让证明 A 试 T1。</p>
+                      <ul class="feed-tasks"><li data-step="2"><code>T1</code><span>奇偶引理</span><em>证明 A</em></li><li data-step="2"><code>T2</code><span>无限递降</span><em>证明 B</em></li></ul></li>
+                    <li data-step="3"><span class="feed-who">证明 A</span><p><code>omega</code> 证不出来：它只做线性算术，<code>n * n</code> 只是一个原子。</p><span class="feed-status is-fail">未通过</span></li>
+                    <li data-step="4"><span class="feed-who">证明 A</span><p>改按 n 除以 2 的余数分两类，奇数时平方也奇，与 2 整除 n * n 矛盾。</p><span class="feed-status is-pass">检查通过</span></li>
+                    <li data-step="5" class="is-you"><span class="feed-who">你</span><p>T2 用强归纳对 a + b 递降；核心库没有 strong_induction_on，改用 strongRecOn。</p></li>
+                    <li data-step="6"><span class="feed-who">证明 B</span><p>得 a = 2 * a'、b = 2 * b'，且 a' + b' 更小，与归纳假设矛盾；原题一起交付。</p><span class="feed-status is-pass">检查通过</span></li>
                   </ul>
                 </section>
                 <section class="proof-pane proof-roadmap-pane">
                   <h4 class="proof-pane-head">路线图<span class="proof-pane-meta">2 个任务 · 1 个验收</span></h4>
                   <div class="proof-stage-group" data-step="1"><h5>原题与计划</h5>
-                    <div class="proof-node" data-step="1" data-done="1"><span class="node-kind">原题</span><p>Tutorial.add_zero</p><small class="node-done">两个目标已确认</small><small class="node-running">等待确认</small></div>
-                    <div class="proof-node" data-step="2" data-done="2"><span class="node-kind">计划</span><p>拆成 T1、T2，分给两个 Agent</p><small class="node-done">已批准</small><small class="node-running">拆分中</small></div>
+                    <div class="proof-node" data-step="1" data-done="1"><span class="node-kind">原题</span><p>sqrt2_irrational</p><small class="node-done">两个目标已确认</small><small class="node-running">等待确认</small></div>
+                    <div class="proof-node" data-step="2" data-done="2"><span class="node-kind">计划</span><p>T1 奇偶引理先做，T2 递降依赖它</p><small class="node-done">已批准</small><small class="node-running">拆分中</small></div>
                   </div>
                   <div class="proof-stage-group" data-step="2"><h5>数学任务</h5>
-                    <div class="proof-node" data-step="2" data-done="3"><span class="node-kind">引理</span><p><code>T1</code> n + 0 = n</p><small class="node-done">证明 A · 已通过</small><small class="node-running">证明 A 尝试中</small></div>
-                    <div class="proof-node" data-step="2" data-fail="4" data-done="6"><span class="node-kind">引理</span><p><code>T2</code> 0 + n = n</p><small class="node-done">证明 B · 已通过</small><small class="node-running">按你的指导重试</small><small class="node-failed">rfl 未通过</small></div>
+                    <div class="proof-node" data-step="2" data-fail="3" data-done="4"><span class="node-kind">引理</span><p><code>T1</code> n * n 是偶数则 n 是偶数</p><small class="node-done">证明 A · 已通过</small><small class="node-running">证明 A 尝试中</small><small class="node-failed">omega 未通过</small></div>
+                    <div class="proof-node" data-step="2" data-start="5" data-done="6"><span class="node-kind">引理</span><p><code>T2</code> b 不为零时 a * a ≠ 2 * (b * b)</p><small class="node-done">证明 B · 已通过</small><small class="node-running">按你的指导递降</small><small class="node-waiting">等待 T1</small></div>
                   </div>
                   <div class="proof-stage-group" data-step="5"><h5>证明与验收</h5>
-                    <div class="proof-node" data-step="5" data-done="6"><span class="node-kind">验收</span><p>完整原题 · 两个目标</p><small class="node-done">内核通过</small><small class="node-running">等待 T2</small></div>
+                    <div class="proof-node" data-step="5" data-done="6"><span class="node-kind">验收</span><p>原题 · 两个引理合成</p><small class="node-done">内核通过</small><small class="node-running">等待 T2</small></div>
                   </div>
                 </section>
                 <section class="proof-pane proof-explain-pane">
                   <h4 class="proof-pane-head">讲题<span class="proof-pane-meta">随证明更新</span></h4>
-                  <div class="proof-explain" data-step="3"><h5><code>n + 0 = n</code></h5><p>加法对第二个参数递归定义，第二项是零时表达式直接化简为 n，所以 rfl 就能关闭目标。</p><pre><code>exact rfl</code></pre></div>
-                  <div class="proof-explain" data-step="4"><h5><code>0 + n = n</code></h5><p>这里第二项是任意 n，定义化简不成立，rfl 无法关闭目标；可以引用标准库，也可以用归纳法。</p></div>
-                  <div class="proof-explain" data-step="6"><h5><code>0 + n = n</code> 的修复</h5><p>引用 Nat.zero_add n，一步关闭目标。</p><pre><code>exact Nat.zero_add n</code></pre></div>
-                  <p class="proof-explain-note" data-step="6">两个目标都通过内核检查，检查对象是保存的源码。</p>
+                  <div class="proof-explain" data-step="3"><h5><code>2 ∣ n * n → 2 ∣ n</code></h5><p>平方和原数同奇偶：n 是奇数时 n * n 也奇，不可能被 2 整除。omega 只看线性算术，把 n * n 当成一个原子，所以这一步要按模 2 的余数分类。</p><pre><code>rcases Nat.mod_two_eq_zero_or_one n with h0 | h1</code></pre></div>
+                  <div class="proof-explain" data-step="4"><h5>证明 A 通过</h5><p>余数为 0 时直接得 2 整除 n；余数为 1 时平方的余数也是 1，与假设矛盾。</p></div>
+                  <div class="proof-explain" data-step="6"><h5>无限递降</h5><p>若 a * a = 2 * (b * b) 且 b 不为零，由 T1 得 a = 2 * a'、b = 2 * b'，化简后 a' * a' = 2 * (b' * b')，而 a' + b' 严格更小，与归纳假设矛盾。</p><pre><code>exact ih (a' + b') (by omega) a' b' rfl hb'0 hsmall</code></pre></div>
+                  <p class="proof-explain-note" data-step="6">原题与两个引理都通过内核检查，检查对象是保存的源码。</p>
                 </section>
               </div>
             </div>
