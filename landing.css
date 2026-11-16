@@ -135,11 +135,13 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.7; }
 .mobile-nav a { display: flex; align-items: center; justify-content: space-between; min-height: 48px; }
 .hero-shell { background: var(--bg); color: var(--ink); }
 .hero { padding-block: 112px 104px; }
-.hero-copy { max-width: 46em; }
-#hero-title { font-size: var(--step-display); line-height: 1.1; }
+/* Title on the left, copy and actions on the right, in the same right column as the section headings below. */
+.hero-copy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 26em); align-items: start; column-gap: 48px; }
+.hero-copy > * { grid-column: 2; }
+#hero-title { grid-column: 1; grid-row: 1 / span 5; font-size: var(--step-display); line-height: 1.1; }
 .hero-line { display: block; overflow: hidden; }
 .hero-name { display: block; }
-.hero-description { margin-top: 32px; max-width: 30em; font-size: 20px; line-height: 1.65; }
+.hero-description { max-width: 30em; font-size: 20px; line-height: 1.65; }
 .hero-category { margin-top: 16px; color: var(--muted); font-size: 16px; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 28px; margin-top: 32px; }
 .hero-terms { margin-top: 20px; font-size: 16px; color: var(--muted); }
@@ -444,6 +446,7 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
   .header-actions { margin-left: auto; gap: 16px; }
   .menu-toggle { display: grid; }
   .hero { padding-block: 48px 64px; }
+  .hero-copy { display: block; max-width: 46em; }
   .desktop-break { display: none; }
   .hero-description { max-width: 34em; }
   .hero-description, .hero-category { margin-top: 20px; }
