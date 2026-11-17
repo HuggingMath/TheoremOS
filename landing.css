@@ -1487,16 +1487,44 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 .landing-product-first .hero-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 24px; margin-top: 12px; }
 .landing-product-first .hero-practice, .landing-product-first .hero-terms { margin: 0; }
 .landing-product-first .hero-terms { font-size: 14px; }
-.landing-product-first .hero-workbench { width: min(100%, 1120px); min-width: 0; margin-inline: auto; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-.landing-product-first .hero-workbench-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); font-size: 14px; }
-.landing-product-first .hero-workbench-header > span:first-child { display: inline-flex; align-items: center; gap: 8px; }
-.landing-product-first .hero-workbench-header > span:last-child { color: var(--muted); }
-.landing-product-first .hero-workbench-header svg { width: 16px; height: 16px; }
-.landing-product-first .hero-workbench .workbench-image-link { border: 0; border-radius: 0; }
-.landing-product-first .hero-workbench-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 12px 20px; list-style: none; border-top: 1px solid var(--line); }
-.landing-product-first .hero-workbench-steps a { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; }
-.landing-product-first .hero-workbench-steps span { color: var(--accent); font-size: 13px; font-variant-numeric: tabular-nums; }
-.landing-product-first .hero-workbench-steps svg { width: 14px; height: 14px; margin-left: auto; flex-shrink: 0; }
+/* Restore the conversation and proof animation beneath the separate introduction. */
+.landing-product-first .hero-proof { width: min(100%, 1120px); aspect-ratio: auto; margin: 0 auto; border-color: var(--line); border-radius: var(--radius); box-shadow: none; }
+.hero-proof .proof-chrome { padding: 12px 24px; }
+.hero-proof .proof-title h2 { margin: 0; font: 500 16px/1.5 var(--sans); letter-spacing: 0; }
+.hero-proof-controls { display: flex; gap: 4px; flex-shrink: 0; }
+.hero-proof-controls button { min-width: 56px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font: 400 13px/1.5 var(--sans); cursor: pointer; transition: background 180ms var(--ease-out), color 180ms var(--ease-out); }
+.hero-proof-controls button:hover { color: var(--ink); background: var(--surface); }
+.hero-proof-controls button[aria-pressed="true"] { color: var(--accent); }
+.hero-proof .proof-deck { min-height: 430px; }
+.hero-proof .proof-pane { padding: 24px; }
+.hero-proof .proof-pane-head { margin-bottom: 18px; }
+.hero-proof-question { margin-bottom: 22px; padding: 12px 16px; border-radius: 10px; background: var(--surface); }
+.hero-proof-question p { margin-top: 6px; font-size: 14px; line-height: 1.7; }
+.hero-proof .proof-feed { min-height: 244px; gap: 16px; }
+.hero-proof .proof-feed > li { padding: 0; }
+.hero-proof .proof-feed .feed-who { display: flex; justify-content: space-between; gap: 8px; font-weight: 400; }
+.hero-proof .proof-feed .feed-status { margin: 0; }
+.hero-proof .proof-feed > li.is-current > .feed-who > :first-child { color: #9f3e29; }
+.hero-proof .proof-feed > li.is-current { animation: proof-in .3s var(--ease-out); }
+.hero-proof-panel { min-height: 246px; animation: proof-in .3s var(--ease-out); }
+.hero-proof-theorem { margin: 0 0 14px; color: var(--muted); font: 400 12px/1.5 var(--mono); overflow-wrap: anywhere; }
+.hero-proof-panel h4 { margin: 0; font: 400 28px/1.45 var(--serif); letter-spacing: -.02em; }
+.hero-proof-panel > p:not(.hero-proof-theorem) { margin-top: 14px; font-size: 15px; line-height: 1.8; }
+.hero-proof-panel pre { margin: 20px 0 12px; padding-block: 14px; border-block: 1px solid var(--line); font: 400 13px/1.8 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+.hero-proof-panel pre code { font: inherit; }
+.hero-proof-panel > a { font-size: 13px; }
+.hero-proof-receipt { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 16px; margin-top: auto; padding-top: 20px; font-size: 12px; color: var(--muted); }
+.hero-proof-receipt-state { width: 100%; color: var(--muted); }
+.hero-proof[data-proof-current="4"] .hero-proof-receipt-state { color: var(--green); }
+.hero-proof-receipt .text-link { font-size: 12px; }
+.hero-proof-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.hero-proof-steps button { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 10px; border: 0; background: transparent; color: var(--muted); font: 400 14px/1.5 var(--sans); cursor: pointer; transition: color 180ms var(--ease-out), background 180ms var(--ease-out); }
+.hero-proof-steps button > span { font-size: 12px; font-variant-numeric: tabular-nums; }
+.hero-proof-steps button:disabled { cursor: default; }
+.hero-proof-steps button:hover:not(:disabled) { color: var(--ink); background: var(--surface); }
+.hero-proof-steps button[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+.hero-proof button:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+.hero-proof [hidden] { display: none; }
 .landing-product-first #research-entry { border-top: 1px solid var(--line); }
 .landing-product-first .research-layout { grid-template-columns: minmax(0, 1fr); }
 .landing-product-first .human-decision-copy { margin-bottom: 16px; }
@@ -1516,7 +1544,6 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
   .landing-product-first .hero { padding-top: 104px; }
   .landing-product-first .hero-product-layout { gap: 32px; }
   .landing-product-first #hero-title { font-size: 56px; }
-  .landing-product-first .hero-workbench { width: 100%; }
 }
 @media (max-width: 600px) {
   .landing-product-first .hero { padding-block: 88px 40px; }
@@ -1526,17 +1553,29 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
   .landing-product-first .hero-actions { margin-top: 20px; gap: 8px; }
   .landing-product-first .hero-actions .button { padding-inline: 16px; }
   .landing-product-first .hero-meta { flex-direction: column; gap: 4px; }
-  .landing-product-first .hero-workbench-header { padding: 12px 16px; }
-  .landing-product-first .hero-workbench .workbench-picture img { height: auto; object-fit: contain; }
-  .landing-product-first .hero-workbench-steps { gap: 12px; padding: 8px 16px; }
-  .landing-product-first .hero-workbench-steps a { flex-wrap: wrap; gap: 4px 8px; }
-  .landing-product-first .hero-workbench-steps svg { display: none; }
+  .hero-proof .proof-chrome { padding: 12px 16px; }
+  .hero-proof .proof-title { flex: 1; }
+  .hero-proof .proof-title h2 { font-size: 15px; }
+  .hero-proof .proof-title span { font-size: 12px; }
+  .hero-proof .proof-deck { min-height: 0; }
+  .hero-proof .proof-pane { padding: 20px 16px; }
+  .hero-proof .proof-feed { min-height: 92px; }
+  .js .hero-proof .proof-feed > li:not(.is-current) { display: none; }
+  .hero-proof .proof-feed p { font-size: 14px; }
+  .hero-proof .proof-explain-pane { border-color: var(--line); }
+  .hero-proof-panel { min-height: 266px; }
+  .hero-proof-panel h4 { font-size: 25px; }
+  .hero-proof-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-proof-steps button { min-height: 48px; font-size: 13px; }
   .landing-product-first .decision-example { padding: 20px 16px; }
   .landing-product-first .decision-question { font-size: 16px; }
   .landing-product-first .decision-targets { grid-template-columns: minmax(0, 1fr); }
   .landing-product-first .decision-actions { align-items: stretch; }
   .landing-product-first .decision-actions > button { min-height: 44px; }
   .landing-product-first .hero-evidence-question h3 { font-size: 23px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-proof *, .hero-proof *::before, .hero-proof *::after { animation: none !important; transition: none !important; }
 }
 @media (max-width: 360px) {
   .landing-product-first #hero-title { font-size: 34px; }
