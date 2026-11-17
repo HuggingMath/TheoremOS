@@ -52,11 +52,45 @@
       <div class="wrap">
       <p class="section-eyebrow">01 / Workbench</p>
         <div class="section-heading"><h2 id="workflow-title">One workspace for your problem</h2><p class="heading-description">Keep the original question, formal statement, proof attempts and verification in one research record.</p></div>
-        <div class="workbench-layout">
+        <div class="workbench-layout has-live-preview">
           <ol class="workflow-steps"><li><h3>State the assumptions and goal</h3><p>Write in natural language or TeX, or bring an unfinished Lean draft.</p></li><li><h3>Review the statement and plan</h3><p>Confirm what to prove and set the time and token budget.</p></li><li><h3>Follow the proof and verification</h3><p>Read candidates and diagnostics. Download source and reports, or continue unfinished research.</p></li></ol>
-          <figure class="workbench-preview">
-            <a class="workbench-image-link" href="../assets/workbench-full-desktop-en.png" aria-label="Enlarge the workbench"><picture class="workbench-picture"><source media="(max-width: 900px)" srcset="../assets/workbench-mobile-en.png" width="350" height="594"><img src="../assets/workbench-desktop-en.png" alt="TheoremOS problem input, showing the triangle-expansion question and research modes." width="900" height="369" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a>
-          </figure>
+          <figure class="proof-stage" data-proof-stage data-step="6" role="img" aria-label="Illustration of the workbench, taken from the proof that the square root of two is irrational: the system splits the statement into two dependent tasks. Proof A first tries omega on the parity lemma, Lean rejects it, and a case split on the remainder of n modulo 2 passes. Proof B follows your guidance and finishes the infinite descent by strong induction. The statement then passes the kernel check, and the explanation pane turns each step into plain language.">
+          <div class="proof-stage-canvas" aria-hidden="true">
+            <div class="proof-window">
+              <div class="proof-chrome">
+                <div class="proof-title"><strong>The square root of two is irrational</strong><span>Research workspace</span></div>
+                <span class="proof-run-state"><span class="state-running">Researching · 2 Agents</span><span class="state-done">Statement verified</span></span>
+              </div>
+              <div class="proof-deck">
+                <section class="proof-pane proof-feed-pane">
+                  <h4 class="proof-pane-head">Conversation</h4>
+                  <ul class="proof-feed">
+                    <li data-step="1" class="is-you"><span class="feed-who">You</span><p>Statement and both goals confirmed; research starts.</p></li>
+                    <li data-step="2"><span class="feed-who">Lead</span><p>Two tasks; T2 needs T1, so Proof A takes T1 first.</p>
+                      <ul class="feed-tasks"><li data-step="2"><code>T1</code><span>Parity lemma</span><em>Proof A</em></li><li data-step="2"><code>T2</code><span>Infinite descent</span><em>Proof B</em></li></ul></li>
+                    <li data-step="3"><span class="feed-who">Proof A</span><p><code>omega</code> fails: <code>n * n</code> is one atom, not linear arithmetic.</p><span class="feed-status is-fail">Failed</span></li>
+                    <li data-step="4"><span class="feed-who">Proof A</span><p>Split on n mod 2: odd n has an odd square, so 2 cannot divide n * n.</p><span class="feed-status is-pass">Check passed</span></li>
+                    <li data-step="5" class="is-you"><span class="feed-who">You</span><p>Prove T2 by strong induction on a + b; use strongRecOn, core has no strong_induction_on.</p></li>
+                    <li data-step="6"><span class="feed-who">Proof B</span><p>Then a = 2 * a' and b = 2 * b' with a' + b' smaller: contradiction. Shipped with the statement.</p><span class="feed-status is-pass">Check passed</span></li>
+                  </ul>
+                  <div class="proof-composer"><span>Continue this research…</span><span class="proof-composer-send"><i data-lucide="arrow-up-right"></i></span></div>
+                </section>
+                <section class="proof-pane proof-explain-pane">
+                  <h4 class="proof-pane-head">Research results<span class="proof-pane-meta">Updated as research progresses</span></h4>
+                  <div class="proof-document-heading"><p>sqrt2_irrational</p><h5>The square root of two is irrational</h5></div>
+                  <div class="proof-explain" data-step="3"><h5>The parity lemma</h5><p>omega does not expand n * n. Split on the remainder of n modulo 2.</p><pre><code>rcases Nat.mod_two_eq_zero_or_one n with h0 | h1</code></pre></div>
+                  <div class="proof-explain" data-step="4"><h5>The parity lemma passes</h5><p>An odd n has an odd square, contradicting divisibility by 2; remainder 0 gives the claim directly.</p></div>
+                  <div class="proof-explain" data-step="6"><h5>Infinite descent</h5><p>T1 gives a = 2 * a' and b = 2 * b'. The same equation holds for a', b', with a' + b' strictly smaller: a contradiction.</p><pre><code>exact ih (a' + b') (by omega) a' b' rfl hb'0 hsmall</code></pre></div>
+                  <p class="proof-explain-note" data-step="6">The statement and both lemmas pass the kernel check on the saved source.</p>
+                  <div class="proof-progress" data-step="2"><h5>Lemma checks<span class="proof-tab-count" data-tab-count>2/2</span></h5>
+                    <div class="proof-node" data-state="done" data-step="2" data-fail="3" data-done="4"><span class="node-kind">Lemma</span><p><code>T1</code> n * n even implies n even</p><small class="node-done">Proof A · passed</small><small class="node-running">Proof A working</small><small class="node-failed">omega failed</small></div>
+                    <div class="proof-node" data-state="done" data-step="2" data-start="5" data-done="6"><span class="node-kind">Lemma</span><p><code>T2</code> a * a = 2 * (b * b) is false for b ≠ 0</p><small class="node-done">Proof B · passed</small><small class="node-running">Descent per your guidance</small><small class="node-waiting">Waiting for T1</small></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </figure>
         </div>
         <details class="source-disclosure" id="source">
           <summary><span><strong id="source-title">Lean source and diagnostics</strong><span class="source-disclosure-note">Statement and draft · Fixed environment · Compiler feedback</span></span><i data-lucide="chevron-down"></i></summary>
