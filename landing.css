@@ -1476,17 +1476,18 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 
 /* Product first: a working environment in front, original archives on demand. */
 .landing-product-first .hero { padding-block: 120px 56px; }
-.landing-product-first .hero-product-layout { display: grid; grid-template-columns: var(--split-left) minmax(0, 1fr); gap: 48px 24px; align-items: center; }
-.landing-product-first .hero-copy { grid-template-columns: 1fr; gap: 20px; }
-.landing-product-first .hero-category { margin: 0; font-size: 14px; color: var(--muted); }
-.landing-product-first #hero-title { font-size: clamp(42px, 4vw, 58px); line-height: 1.3; letter-spacing: -.025em; }
-.landing-product-first .hero-details { padding: 0; }
-.landing-product-first .hero-description { font-size: 18px; line-height: 1.75; }
-.landing-product-first .hero-actions { gap: 12px; margin-top: 24px; }
+.landing-product-first .hero-product-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+.landing-product-first .hero-copy { grid-template-columns: minmax(0, 1fr); gap: 20px; text-align: center; }
+.landing-product-first .hero-category { justify-self: center; margin: 0; font-size: 14px; color: var(--muted); }
+.landing-product-first #hero-title { font-size: clamp(54px, 5vw, 72px); line-height: 1.2; letter-spacing: -.025em; }
+.landing-product-first .hero-details { align-items: center; padding: 0; }
+.landing-product-first .hero-description { max-width: 40em; font-size: 18px; line-height: 1.75; text-wrap: balance; }
+.landing-product-first .hero-actions { justify-content: center; gap: 12px; margin-top: 24px; }
 .landing-product-first .hero-actions .button { padding-inline: 20px; }
-.landing-product-first .hero-practice { margin-top: 12px; }
-.landing-product-first .hero-terms { margin-top: 16px; font-size: 14px; }
-.landing-product-first .hero-workbench { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.landing-product-first .hero-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px 24px; margin-top: 12px; }
+.landing-product-first .hero-practice, .landing-product-first .hero-terms { margin: 0; }
+.landing-product-first .hero-terms { font-size: 14px; }
+.landing-product-first .hero-workbench { width: min(100%, 1120px); min-width: 0; margin-inline: auto; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .landing-product-first .hero-workbench-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); font-size: 14px; }
 .landing-product-first .hero-workbench-header > span:first-child { display: inline-flex; align-items: center; gap: 8px; }
 .landing-product-first .hero-workbench-header > span:last-child { color: var(--muted); }
@@ -1513,10 +1514,8 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 .landing-product-first .archive-case .hero-evidence { margin: 0 0 16px; }
 @media (max-width: 1023px) {
   .landing-product-first .hero { padding-top: 104px; }
-  .landing-product-first .hero-product-layout { grid-template-columns: 1fr; gap: 32px; }
-  .landing-product-first .hero-copy { grid-template-columns: var(--split-left) minmax(0, 1fr); column-gap: 24px; }
-  .landing-product-first .hero-category { grid-column: 1 / -1; }
-  .landing-product-first #hero-title { font-size: 40px; }
+  .landing-product-first .hero-product-layout { gap: 32px; }
+  .landing-product-first #hero-title { font-size: 56px; }
   .landing-product-first .hero-workbench { width: 100%; }
 }
 @media (max-width: 600px) {
@@ -1526,9 +1525,9 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
   .landing-product-first .hero-description { font-size: 16px; }
   .landing-product-first .hero-actions { margin-top: 20px; gap: 8px; }
   .landing-product-first .hero-actions .button { padding-inline: 16px; }
-  .landing-product-first .hero-terms { margin-top: 12px; }
+  .landing-product-first .hero-meta { flex-direction: column; gap: 4px; }
   .landing-product-first .hero-workbench-header { padding: 12px 16px; }
-  .landing-product-first .hero-workbench .workbench-picture img { height: 240px; object-fit: cover; object-position: bottom; }
+  .landing-product-first .hero-workbench .workbench-picture img { height: auto; object-fit: contain; }
   .landing-product-first .hero-workbench-steps { gap: 12px; padding: 8px 16px; }
   .landing-product-first .hero-workbench-steps a { flex-wrap: wrap; gap: 4px 8px; }
   .landing-product-first .hero-workbench-steps svg { display: none; }
