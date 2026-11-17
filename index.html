@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-type="software" lang="zh-CN">
+<html lang="zh-CN" data-type="software">
 <head>
   <meta charset="utf-8">
   <meta name="page-type" content="software">
@@ -11,437 +11,1320 @@
   <meta property="og:description" content="TheoremOS 数学研究工作台：输入自然语言、TeX 或 Lean 原题，核对陈述，追踪证明与独立验收。白名单内测，平台免费，自备模型 API Key。">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
+  <meta property="og:url" content="https://theoremos.top/">
   <meta property="og:image" content="https://theoremos.top/assets/social-preview.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://theoremos.top/">
   <link rel="alternate" hreflang="zh-CN" href="https://theoremos.top/">
   <link rel="alternate" hreflang="en" href="https://theoremos.top/en/">
   <link rel="icon" type="image/svg+xml" href="assets/mark.svg">
-  <link rel="stylesheet" href="replay.css">
-  <link rel="stylesheet" href="landing.css">
-  <script>document.documentElement.classList.add("m-enter");setTimeout(()=>document.documentElement.classList.add("m-enter-done"),2000)</script>
-  <link rel="stylesheet" href="assets/moments/counter-rolls/moment.css">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="design.css">
   <title>TheoremOS | 从原题到 Lean 证明</title>
 </head>
 <body class="landing-page">
-  <header class="site-header nav">
-    <div class="header-inner wrap">
-    <a class="skip-link" href="#main">跳到内容</a>
-      <a class="brand" href="index.html" aria-label="TheoremOS 首页"><img src="assets/mark.svg" alt="" width="31" height="31"><span>Theorem<span class="brand-os">OS</span></span></a>
-      <nav class="desktop-nav" aria-label="主导航"><a href="#workbench-preview">工作台</a><a href="#demo">证明回放</a><a href="#proofs">证明档案</a><a href="#research-system">深度研究</a><a href="initiative.html">共建计划</a></nav>
-      <div class="header-actions"><a class="lang-link" href="en/index.html" hreflang="en" lang="en" aria-label="English version">EN</a><a class="nav-start" href="#start" data-umami-event="request-access-nav">申请内测<i data-lucide="arrow-up-right"></i></a><button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="mobile-nav"><i data-lucide="menu"></i><i data-lucide="x"></i></button></div>
+  <a class="skip-link" href="#main">跳到内容</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="TheoremOS 首页">
+        <img class="brand-mark" src="assets/mark.svg" alt="" width="28" height="28">
+        <span>Theorem<span class="brand-os">OS</span></span>
+      </a>
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#workbench-preview">工作台</a>
+        <a href="#research-entry">陈述核对</a>
+        <a href="#demo">证明回放</a>
+        <a href="#proofs">证明档案</a>
+        <a href="#research-system">深度研究</a>
+        <a href="#components">研究组件</a>
+        <a href="initiative.html">共建计划</a>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-link" href="en/index.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <a class="btn btn-primary btn-sm header-cta" href="#start">申请内测</a>
+        <button class="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mobile-nav">
+          <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
     </div>
-    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="手机导航" hidden><a href="#start">申请内测<i data-lucide="arrow-down-right"></i></a><a href="#workbench-preview">研究工作台<i data-lucide="arrow-down-right"></i></a><a href="#demo">验收回放<i data-lucide="arrow-down-right"></i></a><a href="#proofs">证明成果<i data-lucide="arrow-down-right"></i></a><a href="#research-system">深度研究<i data-lucide="arrow-down-right"></i></a><a href="#components">研究组件<i data-lucide="arrow-down-right"></i></a><a href="archive.html">证明档案<i data-lucide="arrow-up-right"></i></a><a href="initiative.html">共建计划<i data-lucide="arrow-up-right"></i></a><a href="feedback.html">反馈与建议<i data-lucide="arrow-up-right"></i></a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub<i data-lucide="arrow-up-right"></i></a></nav>
+    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="手机导航" hidden>
+      <a href="#start">申请内测</a>
+      <a href="#workbench-preview">01 / 研究工作台</a>
+      <a href="#research-entry">02 / 陈述核对</a>
+      <a href="#demo">03 / 证明回放</a>
+      <a href="#proofs">04 / 成果与证据</a>
+      <a href="#research-cases">05 / 研究专题</a>
+      <a href="#research-system">06 / 深度研究</a>
+      <a href="#knowledge-reuse">07 / 引理与知识</a>
+      <a href="#research-collaboration">08 / 协作与交付</a>
+      <a href="#components">09 / 研究组件</a>
+      <a href="initiative.html">共建计划</a>
+      <a href="https://theoremos.top/archive.html" target="_blank" rel="noreferrer">公开证明档案 ↗</a>
+      <a href="https://app.theoremos.top/" target="_blank" rel="noreferrer">打开工作台 ↗</a>
+      <a href="feedback.html">问题与建议</a>
+      <a href="en/index.html" lang="en" hreflang="en">English</a>
+    </nav>
   </header>
+
   <main id="main" tabindex="-1">
-    <section class="hero landing-section" aria-labelledby="hero-title" data-enter>
-      <div class="wrap"><div class="hero-text">
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1 id="hero-title"><span class="hero-line"><span class="hero-name">从数学问题</span></span><span class="hero-line"><span class="hero-name">到 <em class="hero-focus">Lean 证明</em></span></span></h1>
-          <div class="hero-details">
-            <p class="hero-description">用自然语言或 TeX 提出问题，<br class="desktop-break">核对 Lean 陈述，跟进证明，保留源码与验收记录。</p>
-            <p class="hero-category">浏览器中即开即用，无需安装 Lean。</p>
-            <p class="hero-terms">内测期间平台费用 ¥0，自备模型 API Key。</p>
-            <div class="hero-actions"><a class="button button-dark" href="#start" data-umami-event="request-access-hero">申请内测<i data-lucide="arrow-up-right"></i></a><a class="button button-outline" href="https://app.theoremos.top/" data-umami-event="open-workbench-hero">打开工作台</a></div>
-            <p class="hero-practice"><a class="text-link" data-research-practice href="https://app.theoremos.top/practice.html?lang=zh">无需 Key，先操作一遍<i data-lucide="arrow-up-right"></i></a></p>
+          <p class="section-eyebrow">数学研究工作台 · 白名单内测</p>
+          <h1 id="hero-title" class="hero-title">
+            <span>从数学问题</span>
+            <span>到 <em class="hero-focus">Lean 证明</em></span>
+          </h1>
+          <p class="hero-lead">用自然语言或 TeX 提出问题，核对 Lean 陈述，跟进证明，保留源码与验收记录。</p>
+          <ul class="hero-facts" aria-label="产品核心信息">
+            <li><strong>浏览器中即开即用</strong>，无需在本机安装 Lean 或 Docker。</li>
+            <li><strong>内测期间平台费用 ¥0</strong>，自备模型 API Key（由模型服务商计费）。</li>
+            <li><strong>核对与验收分离</strong>：题意对齐由研究者确认，完整证明由独立 Lean 内核验收。</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#start">申请内测 ↗</a>
+            <a class="btn btn-secondary" href="https://app.theoremos.top/">打开工作台</a>
           </div>
+          <p class="hero-practice">
+            <a class="text-link" href="https://app.theoremos.top/practice.html?lang=zh">无需 Key，先操作一遍 ↗</a>
+          </p>
         </div>
-      </div></div>
+
+        <figure class="workbench-preview-card">
+          <div class="preview-card-bar">
+            <span class="preview-card-title">TheoremOS 研究工作台 · 自然语言与共同推进入口</span>
+            <button type="button" class="preview-expand-btn" data-open-dialog="workbench-dialog" aria-label="放大查看工作台截图">
+              <span>放大截图</span>
+            </button>
+          </div>
+          <a class="workbench-image-link" href="assets/workbench-full-desktop.png" data-open-dialog="workbench-dialog" aria-label="放大查看工作台">
+            <picture class="workbench-picture">
+              <source media="(max-width: 640px)" srcset="assets/workbench-mobile.png" width="350" height="443">
+              <img src="assets/workbench-desktop.png" alt="TheoremOS 原题输入区，展示三角展开题目与研究方式。" width="900" height="349">
+            </picture>
+          </a>
+          <figcaption class="preview-card-caption">
+            <span>默认「共同推进（2 个 Agent）」：生成 Lean 陈述 → 你确认题意 → 拟定计划 → 你批准后证明</span>
+            <a class="text-link" href="assets/workbench-full-desktop.png" target="_blank" rel="noreferrer">打开原图 ↗</a>
+          </figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section class="workflow-section landing-section" tabindex="-1" id="workbench-preview" aria-labelledby="workflow-title">
+    <!-- 01 / 研究工作台 -->
+    <section class="page-section" id="workbench-preview" aria-labelledby="workflow-title">
       <div class="wrap">
-      <p class="section-eyebrow">01 / 研究工作台</p>
-        <div class="section-heading"><h2 id="workflow-title">在工作台推进一道题</h2><p class="heading-description">原题、形式化陈述、证明尝试与验收结果，保存在同一份研究记录中。</p></div>
-        <div class="workbench-layout has-live-preview">
-          <ol class="workflow-steps"><li><h3>给出假设与目标</h3><p>输入自然语言、TeX，或带入未完成的 Lean 草稿。</p></li><li><h3>核对陈述与计划</h3><p>确认要证明什么，设置时间和 Token 预算，再开始尝试。</p></li><li><h3>跟进证明与验收</h3><p>查看候选和诊断，下载源码与报告，或继续未完成的研究。</p></li></ol>
-          <figure class="proof-stage" data-proof-stage data-step="6" role="img" aria-label="工作台的演示，取自根号二不是有理数：系统把原题拆成两个有依赖的任务；证明 A 先用 omega 直接尝试奇偶引理，Lean 拒绝后改成按 n 除以 2 的余数分类并通过；证明 B 按你的指导用强归纳完成无限递降；最后原题通过内核检查，讲题把每一步的推理换成中文。">
-          <div class="proof-stage-canvas" aria-hidden="true">
-            <div class="proof-window">
-              <div class="proof-chrome">
-                <div class="proof-title"><strong>根号二不是有理数</strong><span>研究工作台</span></div>
-                <span class="proof-run-state"><span class="state-running">研究中 · 2 个 Agent</span><span class="state-done">原题验收通过</span></span>
-              </div>
-              <div class="proof-deck">
-                <section class="proof-pane proof-feed-pane">
-                  <h4 class="proof-pane-head">对话</h4>
-                  <ul class="proof-feed">
-                    <li data-step="1" class="is-you"><span class="feed-who">你</span><p>原题与两个目标确认，进入证明。</p></li>
-                    <li data-step="2"><span class="feed-who">Lead</span><p>拆成两个任务，T2 依赖 T1，先让证明 A 试 T1。</p>
-                      <ul class="feed-tasks"><li data-step="2"><code>T1</code><span>奇偶引理</span><em>证明 A</em></li><li data-step="2"><code>T2</code><span>无限递降</span><em>证明 B</em></li></ul></li>
-                    <li data-step="3"><span class="feed-who">证明 A</span><p><code>omega</code> 证不出来：它只做线性算术，<code>n * n</code> 只是一个原子。</p><span class="feed-status is-fail">未通过</span></li>
-                    <li data-step="4"><span class="feed-who">证明 A</span><p>改按 n 除以 2 的余数分两类，奇数时平方也奇，与 2 整除 n * n 矛盾。</p><span class="feed-status is-pass">检查通过</span></li>
-                    <li data-step="5" class="is-you"><span class="feed-who">你</span><p>T2 用强归纳对 a + b 递降；核心库没有 strong_induction_on，改用 strongRecOn。</p></li>
-                    <li data-step="6"><span class="feed-who">证明 B</span><p>得 a = 2 * a'、b = 2 * b'，且 a' + b' 更小，与归纳假设矛盾；原题一起交付。</p><span class="feed-status is-pass">检查通过</span></li>
-                  </ul>
-                  <div class="proof-composer"><span>继续讨论这个证明…</span><span class="proof-composer-send"><i data-lucide="arrow-up-right"></i></span></div>
-                </section>
-                <section class="proof-pane proof-explain-pane">
-                  <h4 class="proof-pane-head">研究成果<span class="proof-pane-meta">随研究更新</span></h4>
-                  <div class="proof-document-heading"><p>sqrt2_irrational</p><h5>根号二不是有理数</h5></div>
-                  <div class="proof-explain" data-step="3"><h5>奇偶引理</h5><p>omega 无法处理 n * n 的非线性关系，改按 n 除以 2 的余数分类。</p><pre><code>rcases Nat.mod_two_eq_zero_or_one n with h0 | h1</code></pre></div>
-                  <div class="proof-explain" data-step="4"><h5>奇偶引理通过</h5><p>n 为奇数时平方也为奇数，与 2 整除 n * n 矛盾；余数为 0 时结论直接成立。</p></div>
-                  <div class="proof-explain" data-step="6"><h5>无限递降</h5><p>由 T1 得 a = 2 * a'、b = 2 * b'，化简后仍满足同样的方程，而 a' + b' 严格更小，与归纳假设矛盾。</p><pre><code>exact ih (a' + b') (by omega) a' b' rfl hb'0 hsmall</code></pre></div>
-                  <p class="proof-explain-note" data-step="6">原题与两个引理都通过内核检查，检查对象是保存的源码。</p>
-                  <div class="proof-progress" data-step="2"><h5>引理验证<span class="proof-tab-count" data-tab-count>2/2</span></h5>
-                    <div class="proof-node" data-state="done" data-step="2" data-fail="3" data-done="4"><span class="node-kind">引理</span><p><code>T1</code> n * n 是偶数则 n 是偶数</p><small class="node-done">证明 A · 已通过</small><small class="node-running">证明 A 尝试中</small><small class="node-failed">omega 未通过</small></div>
-                    <div class="proof-node" data-state="done" data-step="2" data-start="5" data-done="6"><span class="node-kind">引理</span><p><code>T2</code> b 不为零时 a * a ≠ 2 * (b * b)</p><small class="node-done">证明 B · 已通过</small><small class="node-running">按你的指导递降</small><small class="node-waiting">等待 T1</small></div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </figure>
+        <p class="section-eyebrow">01 / 研究工作台</p>
+        <div class="section-header">
+          <h2 id="workflow-title" class="section-title">在工作台推进一道题</h2>
+          <p class="section-desc">原题、形式化陈述、证明尝试与验收结果，保存在同一份研究记录中。</p>
         </div>
-        <details class="source-disclosure" id="source">
-          <summary><span><strong id="source-title">Lean 源码与诊断</strong><span class="source-disclosure-note">原题与草稿 · 固定环境 · 编译反馈</span></span><i data-lucide="chevron-down"></i></summary>
-          <div class="source-layout"><ol class="source-copy workflow-steps"><li><h3>原题与草稿</h3><p>展开题目陈述与证明源码。</p></li><li><h3>固定证明环境</h3><p>使用 Lean 标准库或固定的 Mathlib。</p></li><li><h3>查看 Lean 诊断</h3><p>对照反馈，逐步检查每一次修改。</p></li></ol><figure class="product-fragment source-fragment"><a href="assets/workbench-source-detail.png" target="_blank" rel="noreferrer" aria-label="放大查看 Lean 工作区"><picture><source media="(max-width: 600px)" srcset="assets/workbench-source-mobile.png" width="360" height="450"><img src="assets/workbench-source-detail.png" alt="Lean 工作区中三角展开问题的原始定理陈述，尚未提交验收。" width="850" height="450" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></figure></div>
+
+        <ol class="step-grid">
+          <li class="step-card">
+            <span class="step-num">01</span>
+            <h3>给出假设与目标</h3>
+            <p>输入自然语言、TeX，或带入未完成的 Lean 草稿。</p>
+          </li>
+          <li class="step-card">
+            <span class="step-num">02</span>
+            <h3>核对陈述与计划</h3>
+            <p>确认要证明什么，设置时间和 Token 预算，再开始尝试。</p>
+          </li>
+          <li class="step-card">
+            <span class="step-num">03</span>
+            <h3>跟进证明与验收</h3>
+            <p>查看候选和诊断，下载源码与报告，或继续未完成的研究。</p>
+          </li>
+        </ol>
+
+        <details class="disclosure-box" id="source">
+          <summary class="disclosure-summary">
+            <div class="disclosure-summary-title">
+              <strong>Lean 源码与诊断</strong>
+              <span class="disclosure-note">原题与草稿 · 固定环境 · 编译反馈</span>
+            </div>
+            <span class="disclosure-action">展开查看</span>
+          </summary>
+          <div class="disclosure-body source-layout">
+            <ol class="source-steps">
+              <li>
+                <h3>原题与草稿</h3>
+                <p>展开题目陈述与证明源码。</p>
+              </li>
+              <li>
+                <h3>固定证明环境</h3>
+                <p>使用 Lean 标准库或固定的 Mathlib（含 Lean 4.33.0、Mathlib 与 53 个自有库模块）。</p>
+              </li>
+              <li>
+                <h3>查看 Lean 诊断</h3>
+                <p>对照反馈，逐步检查每一次修改。</p>
+              </li>
+            </ol>
+            <figure class="source-fragment">
+              <a href="assets/workbench-source-detail.png" target="_blank" rel="noreferrer" aria-label="放大查看 Lean 工作区">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="assets/workbench-source-mobile.png" width="360" height="450">
+                  <img src="assets/workbench-source-detail.png" alt="Lean 工作区中三角展开问题的原始定理陈述，尚未提交验收。" width="850" height="450" loading="lazy">
+                </picture>
+              </a>
+              <figcaption>Lean 工作区中三角展开问题的原始定理陈述，尚未提交验收。</figcaption>
+            </figure>
+          </div>
         </details>
       </div>
     </section>
 
-    <section class="research-section landing-section g2m" tabindex="-1" id="research-entry" aria-labelledby="research-title">
+    <!-- 02 / 陈述核对 -->
+    <section class="page-section" id="research-entry" aria-labelledby="research-title">
       <div class="wrap">
-      <p class="section-eyebrow">02 / 陈述核对</p>
-        <div class="section-heading"><h2 id="research-title">先核对陈述，再进入证明</h2><p class="heading-description">Lean 检查形式化后的命题。假设与目标是否表达原意，由你确认。</p></div>
-        <div class="research-layout">
-          <div class="research-scenarios" aria-labelledby="research-entry-title">
-          <div class="scenario-intro"><h3 id="research-entry-title">选择你的研究起点</h3><p>网页适合条件明确、结论清楚的单文件数学任务。</p></div>
-          <ul class="scenario-list">
-            <li><h4>从数学命题开始</h4><p>用自然语言或 TeX 写出对象、假设与结论，再核对形式化陈述。</p><a class="text-link" data-research-entry="statement" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=zh">准备命题草稿<i data-lucide="arrow-up-right"></i></a></li>
-            <li><h4>继续 Lean 草稿</h4><p>保留 import、定理声明和未完成证明，在固定 Mathlib 环境继续。</p><a class="text-link" data-research-entry="lean" href="https://app.theoremos.top/?entry=lean&amp;template=polynomial&amp;environment=mathlib&amp;lang=zh">打开 Lean 模板<i data-lucide="arrow-up-right"></i></a></li>
-          </ul>
-          <details class="entry-scope"><summary>自定义依赖与多文件工程<i data-lucide="chevron-down"></i></summary><p class="scenario-boundary">自定义依赖、多文件 Lake 工程或指定工具链，可先<a href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20%E7%A0%94%E7%A9%B6%E5%90%88%E4%BD%9C">讨论研究合作</a>。<a href="https://github.com/LikC1606/TheoremOS/blob/main/docs/CAPABILITIES.zh-CN.md" target="_blank" rel="noreferrer">查看当前能力范围</a>。</p></details>
-          <p class="scenario-continuation">登录后会带入所选模板与环境，准备草稿不调用模型。</p>
+        <p class="section-eyebrow">02 / 陈述核对</p>
+        <div class="section-header">
+          <h2 id="research-title" class="section-title">先核对陈述，再进入证明</h2>
+          <p class="section-desc">Lean 检查形式化后的命题。假设与目标是否表达原意，由你确认。</p>
         </div>
-          <div class="human-decision" id="human-decision" aria-labelledby="human-decision-title">
-          <div class="human-decision-copy"><h3 id="human-decision-title">试着核对这两个目标</h3><p>确认后查看证明回放；也可以修改原题和目标，再重新核对。</p><p class="decision-example-label">TriangleFace · 目标摘要。核对操作不发起研究。</p></div>
-          <div class="decision-example" data-human-decision data-ui>
-            <p class="decision-question" data-decision-question>给定有完美匹配的有限无自环图，将度三顶点展开成三角形。证明原匹配多面体与展开图中切质量为 1 的面线性对应，并保持最小面。</p>
-            <ul class="decision-targets"><li><code data-decision-theorem="0">collapse_reattach</code><span data-decision-goal="0">展开后的顶点折叠回原顶点。</span></li><li><code data-decision-theorem="1">triangle_expansion_face</code><span data-decision-goal="1">构造线性面对应，并运输每一点的最小面。</span></li></ul>
-            <div class="decision-actions" data-decision-controls hidden><button class="button button-dark" type="button" data-decision="confirm" aria-pressed="false">确认这两个目标<i data-lucide="check"></i></button><button class="text-link" type="button" data-decision="revise" aria-pressed="false" aria-controls="decision-edit" aria-expanded="false">陈述还需修改</button></div>
-            <div class="decision-feedback" data-decision-feedback role="status" aria-atomic="true" hidden><strong data-decision-status>等待你的确认</strong><p data-decision-description>两个目标尚未确认，证明阶段还未开放。</p></div>
-            <form class="decision-edit" id="decision-edit" data-decision-edit hidden novalidate>
-              <div class="decision-edit-heading"><strong>修改这份陈述</strong><span>保存后重新核对两个目标。</span></div>
-              <div class="decision-field"><label for="decision-question">原题</label><textarea id="decision-question" rows="3" data-decision-field="question" aria-describedby="decision-question-error" required></textarea><p class="decision-field-error" id="decision-question-error" data-decision-error="question" hidden>请填写原题，不能只输入空格。</p></div>
-              <fieldset><legend>两个目标</legend><div class="decision-field"><label for="decision-goal-0">目标一</label><input id="decision-goal-0" type="text" data-decision-field="goal-0" aria-describedby="decision-goal-0-error" required><p class="decision-field-error" id="decision-goal-0-error" data-decision-error="goal-0" hidden>请填写目标一，不能只输入空格。</p></div><div class="decision-field"><label for="decision-goal-1">目标二</label><input id="decision-goal-1" type="text" data-decision-field="goal-1" aria-describedby="decision-goal-1-error" required><p class="decision-field-error" id="decision-goal-1-error" data-decision-error="goal-1" hidden>请填写目标二，不能只输入空格。</p></div></fieldset>
-              <div class="decision-edit-actions"><button class="button button-dark" type="submit">保存并重新核对<i data-lucide="check"></i></button><button class="text-link" type="button" data-decision="cancel-edit">取消修改</button></div>
-            </form>
-            <div class="decision-handoff" data-decision-handoff hidden><button class="text-link" type="button" data-decision-copy>复制修改稿<i data-lucide="copy"></i></button><p data-decision-copy-status role="status" aria-atomic="true">复制原题和两个目标，再粘贴到工作台。</p><textarea rows="6" readonly data-decision-export aria-label="可复制的修改稿" hidden></textarea></div>
-            <div class="decision-next" data-decision-next hidden><span data-decision-locked>确认后，可在下方逐步查看示例证明。</span><a class="text-link" href="#demo" data-decision-continue hidden>在本页查看证明回放<i data-lucide="arrow-down-right"></i></a><a class="text-link" href="https://app.theoremos.top/?lang=zh" target="_blank" rel="noreferrer" data-decision-workbench hidden>在新标签页打开工作台<i data-lucide="arrow-up-right"></i></a><button class="text-link decision-reset" type="button" data-decision="reset" hidden>恢复原始示例</button></div>
-            <noscript><p class="decision-fallback">确认原题后，工作台才会进入证明阶段；需要修改时，先返回陈述审核。<a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process">查看这道题的研究记录<i data-lucide="arrow-up-right"></i></a></p></noscript>
+
+        <div class="split-layout">
+          <div class="panel-card" aria-labelledby="research-entry-title">
+            <div class="panel-head">
+              <h3 id="research-entry-title">选择你的研究起点</h3>
+              <p>网页适合条件明确、结论清楚的单文件数学任务。</p>
+            </div>
+            <ul class="scenario-list">
+              <li>
+                <h4>从数学命题开始</h4>
+                <p>用自然语言或 TeX 写出对象、假设与结论，再核对形式化陈述。</p>
+                <a class="text-link" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=zh">准备命题草稿 ↗</a>
+              </li>
+              <li>
+                <h4>继续 Lean 草稿</h4>
+                <p>保留 import、定理声明和未完成证明，在固定 Mathlib 环境继续。</p>
+                <a class="text-link" href="https://app.theoremos.top/?entry=lean&amp;template=polynomial&amp;environment=mathlib&amp;lang=zh">打开 Lean 模板 ↗</a>
+              </li>
+            </ul>
+            <details class="inline-details">
+              <summary>自定义依赖与多文件工程</summary>
+              <p>自定义依赖、多文件 Lake 工程或指定工具链，可先<a class="inline-link" href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20%E7%A0%94%E7%A9%B6%E5%90%88%E4%BD%9C">讨论研究合作</a>。<a class="inline-link" href="https://github.com/LikC1606/TheoremOS/blob/main/docs/CAPABILITIES.zh-CN.md" target="_blank" rel="noreferrer">查看当前能力范围 ↗</a></p>
+            </details>
+            <p class="panel-footnote">登录后会带入所选模板与环境，准备草稿不调用模型。</p>
+          </div>
+
+          <div class="panel-card decision-card" id="human-decision" aria-labelledby="human-decision-title">
+            <div class="panel-head">
+              <div class="panel-title-row">
+                <h3 id="human-decision-title">试着核对这两个目标</h3>
+                <span class="badge badge-neutral">本地演练 · 不发起研究</span>
+              </div>
+              <p>确认后查看证明回放；也可以修改原题和目标，再重新核对。</p>
+              <p class="decision-subnote">TriangleFace · 目标摘要。核对操作在浏览器本地演练，不调用工作台。</p>
+            </div>
+
+            <div class="decision-example" data-human-decision>
+              <p class="decision-question" data-decision-question>给定有完美匹配的有限无自环图，将度三顶点展开成三角形。证明原匹配多面体与展开图中切质量为 1 的面线性对应，并保持最小面。</p>
+              <ul class="decision-targets">
+                <li>
+                  <code data-decision-theorem="0">collapse_reattach</code>
+                  <span data-decision-goal="0">展开后的顶点折叠回原顶点。</span>
+                </li>
+                <li>
+                  <code data-decision-theorem="1">triangle_expansion_face</code>
+                  <span data-decision-goal="1">构造线性面对应，并运输每一点的最小面。</span>
+                </li>
+              </ul>
+
+              <div class="decision-feedback" data-decision-feedback role="status" aria-atomic="true">
+                <strong data-decision-status>等待你的确认</strong>
+                <p data-decision-description>两个目标尚未确认。在真实工作台中，确认陈述前不会进入证明阶段。</p>
+              </div>
+
+              <div class="decision-actions" data-decision-controls>
+                <button class="btn btn-primary btn-sm" type="button" data-decision="confirm" aria-pressed="false">确认这两个目标</button>
+                <button class="btn btn-secondary btn-sm" type="button" data-decision="revise" aria-controls="decision-edit" aria-expanded="false">陈述还需修改</button>
+                <button class="text-link" type="button" data-decision="reset" hidden>恢复原始示例</button>
+              </div>
+
+              <form class="decision-edit" id="decision-edit" data-decision-edit hidden novalidate>
+                <div class="decision-edit-heading">
+                  <strong>修改这份陈述</strong>
+                  <span>保存后重新核对两个目标。</span>
+                </div>
+                <div class="form-field">
+                  <label for="decision-question-input">原题 *</label>
+                  <textarea id="decision-question-input" rows="3" data-decision-field="question" aria-describedby="decision-question-error" required>给定有完美匹配的有限无自环图，将度三顶点展开成三角形。证明原匹配多面体与展开图中切质量为 1 的面线性对应，并保持最小面。</textarea>
+                  <p class="field-error" id="decision-question-error" data-decision-error="question" hidden>请填写原题，不能只输入空格。</p>
+                </div>
+                <fieldset class="decision-fieldset">
+                  <legend>两个目标</legend>
+                  <div class="form-field">
+                    <label for="decision-goal-0">目标一 (<code>collapse_reattach</code>) *</label>
+                    <input id="decision-goal-0" type="text" data-decision-field="goal-0" value="展开后的顶点折叠回原顶点。" aria-describedby="decision-goal-0-error" required>
+                    <p class="field-error" id="decision-goal-0-error" data-decision-error="goal-0" hidden>请填写目标一，不能只输入空格。</p>
+                  </div>
+                  <div class="form-field">
+                    <label for="decision-goal-1">目标二 (<code>triangle_expansion_face</code>) *</label>
+                    <input id="decision-goal-1" type="text" data-decision-field="goal-1" value="构造线性面对应，并运输每一点的最小面。" aria-describedby="decision-goal-1-error" required>
+                    <p class="field-error" id="decision-goal-1-error" data-decision-error="goal-1" hidden>请填写目标二，不能只输入空格。</p>
+                  </div>
+                </fieldset>
+                <div class="decision-edit-actions">
+                  <button class="btn btn-primary btn-sm" type="submit">保存并重新核对</button>
+                  <button class="btn btn-secondary btn-sm" type="button" data-decision="cancel-edit">取消修改</button>
+                </div>
+              </form>
+
+              <div class="decision-handoff" data-decision-handoff hidden>
+                <div class="handoff-bar">
+                  <button class="btn btn-secondary btn-sm" type="button" data-decision-copy>复制修改稿</button>
+                  <span class="handoff-status" data-decision-copy-status role="status" aria-atomic="true">复制原题和两个目标，再粘贴到工作台。</span>
+                </div>
+                <textarea class="sr-only" rows="5" readonly data-decision-export aria-label="可复制的修改稿"></textarea>
+              </div>
+
+              <div class="decision-next" data-decision-next>
+                <span data-decision-locked>确认后，可在下方逐步查看示例证明。</span>
+                <a class="text-link" href="#demo" data-decision-continue hidden>在本页查看证明回放 ↓</a>
+                <a class="text-link" href="https://app.theoremos.top/?lang=zh" target="_blank" rel="noreferrer" data-decision-workbench hidden>在新标签页打开工作台 ↗</a>
+              </div>
+
+              <noscript>
+                <p class="panel-footnote">确认原题后，工作台才会进入证明阶段；需要修改时，先返回陈述审核。<a class="inline-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process">查看这道题的研究记录 ↗</a></p>
+              </noscript>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- 03 / 证明回放 -->
+    <section class="page-section" id="demo" aria-labelledby="demo-title">
+      <div class="wrap">
+        <p class="section-eyebrow">03 / 证明回放</p>
+        <div class="section-header">
+          <h2 id="demo-title" class="section-title">三角展开，如何保持面的对应？</h2>
+          <p class="section-desc">从图上的局部变换，到匹配多面体的线性对应。沿四个真实检查节点，查看构造、最小面运输与完整原题验收。</p>
+          <p class="section-meta">组合优化 · 1,233 行 Lean 证明 · 2 个原题目标 · <a class="inline-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=source" target="_blank" rel="noreferrer">阅读完整题目 ↗</a></p>
+        </div>
+
+        <div class="replay-window" data-replay-root data-run-id="d77dc453-baf2-4ffd-9afa-ae2af96decba">
+          <div class="replay-header-bar">
+            <div class="replay-badge-group">
+              <span class="status-dot status-dot-green"></span>
+              <strong>真实研究档案 · TriangleFace</strong>
+            </div>
+            <div class="replay-step-status">
+              <span class="mono" id="replay-step-number">04 / 04</span>
+              <span id="replay-step-label">完整原题验收</span>
+              <span class="badge badge-official">已归档</span>
+            </div>
+          </div>
+
+          <div class="replay-tabs" role="tablist" aria-label="已归档证明的四个关键节点">
+            <button type="button" class="replay-tab" role="tab" id="demo-candidate" aria-controls="stage-candidate" aria-selected="false" tabindex="-1" data-replay-stage="candidate" data-step-index="01 / 04" data-step-name="构造展开">
+              <span class="tab-num">01</span><span>构造展开</span>
+            </button>
+            <button type="button" class="replay-tab" role="tab" id="demo-feedback" aria-controls="stage-feedback" aria-selected="false" tabindex="-1" data-replay-stage="feedback" data-step-index="02 / 04" data-step-name="刻画切面">
+              <span class="tab-num">02</span><span>刻画切面</span>
+            </button>
+            <button type="button" class="replay-tab" role="tab" id="demo-repair" aria-controls="stage-repair" aria-selected="false" tabindex="-1" data-replay-stage="repair" data-step-index="03 / 04" data-step-name="运输最小面">
+              <span class="tab-num">03</span><span>运输最小面</span>
+            </button>
+            <button type="button" class="replay-tab is-active" role="tab" id="demo-verified" aria-controls="stage-verified" aria-selected="true" tabindex="0" data-replay-stage="verified" data-step-index="04 / 04" data-step-name="完整原题验收">
+              <span class="tab-num">04</span><span>完整原题验收</span>
+            </button>
+          </div>
+
+          <div class="replay-body-grid">
+            <div class="replay-editor-col">
+              <!-- Stage 1: L98-115 -->
+              <div class="replay-panel" id="stage-candidate" role="tabpanel" aria-labelledby="demo-candidate" tabindex="0" data-check-id="check-7f3828b042eb20639aad" data-source-digest="cc8d1eeaf402501497ee64b376bd205213e1d50fccfd96071e4c487a922396b4" hidden>
+                <div class="stage-summary">
+                  <h3>构造展开</h3>
+                  <p>把度三顶点替换成三角形。先证明展开后的顶点能折叠回原顶点。</p>
+                </div>
+                <div class="code-Subheader"><span>Submission.lean</span><span>L98–115</span></div>
+                <pre class="code-block" tabindex="0" role="region" aria-label="构造展开源码节选"><code>theorem collapse_reattach (v : V) (i : Fin 3) (w : V) :
+    triangleCollapse v (reattach v i w) = w := by
+  by_cases h : w = v
+  · subst w
+    fin_cases i &lt;;&gt; simp [reattach,triangleTip,triangleCollapse]
+  · simp [reattach,h,triangleCollapse]
+
+def triangleExpansion (G : LooplessGraph V E) (c : E → Fin 3) (v : V) :
+    LooplessGraph (V ⊕ Fin 2) (E ⊕ Fin 3) where
+  left := Sum.elim (fun e =&gt; reattach v (c e) (G.left e)) (fun i =&gt; triangleTip v (i + 1))
+  right := Sum.elim (fun e =&gt; reattach v (c e) (G.right e)) (fun i =&gt; triangleTip v (i + 2))
+  loopless := by
+    intro e h
+    rcases e with e | i
+    · have hh := congrArg (triangleCollapse v) h
+      exact G.loopless e ((collapse_reattach v (c e) (G.left e)).symm.trans
+        (hh.trans (collapse_reattach v (c e) (G.right e))))
+    · fin_cases i &lt;;&gt; simp [triangleTip] at h</code></pre>
+                <div class="stage-footer">
+                  <span>已检查的源码节选 · SHA-256: <code>cc8d1eeaf402...</code></span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-7f3828b042eb20639aad&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=cc8d1eeaf402501497ee64b376bd205213e1d50fccfd96071e4c487a922396b4&amp;line=98&amp;endLine=115" target="_blank" rel="noreferrer">查看该次检查 ↗</a>
+                </div>
+              </div>
+
+              <!-- Stage 2: L238-253 -->
+              <div class="replay-panel" id="stage-feedback" role="tabpanel" aria-labelledby="demo-feedback" tabindex="0" data-check-id="check-91023ca5fd66be269b5b" data-source-digest="3eee740c3fd216a46f0adc2322519e26d8db6a63e672ea54bdf79b6efc83b1a7" hidden>
+                <div class="stage-summary">
+                  <h3>刻画切面</h3>
+                  <p>把三角形边界上的切质量写成原图边坐标之和，定位要证明的面。</p>
+                </div>
+                <div class="code-Subheader"><span>Submission.lean</span><span>L238–253</span></div>
+                <pre class="code-block" tabindex="0" role="region" aria-label="刻画切面源码节选"><code>theorem cutMass_triangleVertices (G : LooplessGraph V E) (c : E → Fin 3) (v : V)
+    (y : E ⊕ Fin 3 → ℝ) :
+    MatchingEntropyBounds.LooplessGraph.cutMass (triangleExpansion G c v) y (triangleVertices v) =
+      ∑ e : E, if G.Incident v e then y (Sum.inl e) else 0 := by
+  classical
+  rw [MatchingEntropyBounds.LooplessGraph.cutMass, MatchingEntropyBounds.LooplessGraph.cut, Finset.sum_filter, Fintype.sum_sum_type]
+  have hnew : (∑ i : Fin 3,
+      (if MatchingEntropyBounds.LooplessGraph.Crosses (triangleExpansion G c v) (triangleVertices v) (Sum.inr i)
+        then y (Sum.inr i) else 0)) = 0 := by
+    apply Finset.sum_eq_zero
+    intro i _
+    simp [not_crosses_inr G c v i]
+  rw [hnew, add_zero]
+  apply Finset.sum_congr rfl
+  intro e _
+  by_cases h : G.Incident v e &lt;;&gt; simp [crosses_inl_iff, h]</code></pre>
+                <div class="stage-footer">
+                  <span>已检查的源码节选 · SHA-256: <code>3eee740c3fd2...</code></span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-91023ca5fd66be269b5b&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=3eee740c3fd216a46f0adc2322519e26d8db6a63e672ea54bdf79b6efc83b1a7&amp;line=238&amp;endLine=253" target="_blank" rel="noreferrer">查看该次检查 ↗</a>
+                </div>
+              </div>
+
+              <!-- Stage 3: L822-836 -->
+              <div class="replay-panel" id="stage-repair" role="tabpanel" aria-labelledby="demo-repair" tabindex="0" data-check-id="check-9cc7d934b222eb94861b" data-source-digest="7d45ff2be76a3dd3377b9b677b09906734e6202b670d53e5dac3a367cb79de62" hidden>
+                <div class="stage-summary">
+                  <h3>运输最小面</h3>
+                  <p>证明带有线性逆映射的面对应，会把每一点的最小面一同运输。</p>
+                </div>
+                <div class="code-Subheader"><span>Submission.lean</span><span>L822–836</span></div>
+                <pre class="code-block" tabindex="0" role="region" aria-label="运输最小面源码节选"><code>theorem minFace_linear_image {A B : Type*} [AddCommGroup A] [Module ℝ A]
+    [AddCommGroup B] [Module ℝ B] (P : Set A) (R : Set B) (f : A →ₗ[ℝ] B)
+    (g : B →ₗ[ℝ] A) (hP : Convex ℝ P) (hR : Convex ℝ R)
+    (hQext : IsExtreme ℝ R (f &#39;&#39; P)) (hgf : ∀ x, g (f x) = x)
+    (hfg : ∀ y, y ∈ f &#39;&#39; P → f (g y) = y) :
+    ∀ x, x ∈ P → CanonicalFace198.minFace R (f x) = f &#39;&#39; CanonicalFace198.minFace P x := by
+  intro x hx
+  classical
+  set Q : Set B := f &#39;&#39; P with hQdef
+  have hQext&#39; : IsExtreme ℝ R Q := hQext
+  have hfinj : Function.Injective f := by
+    intro a b hab
+    calc a = g (f a) := (hgf a).symm
+      _ = g (f b) := by rw [hab]
+      _ = b := hgf b</code></pre>
+                <div class="stage-footer">
+                  <span>已检查的源码节选 · SHA-256: <code>7d45ff2be76a...</code></span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-9cc7d934b222eb94861b&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=7d45ff2be76a3dd3377b9b677b09906734e6202b670d53e5dac3a367cb79de62&amp;line=822&amp;endLine=836" target="_blank" rel="noreferrer">查看该次检查 ↗</a>
+                </div>
+              </div>
+
+              <!-- Stage 4: L1186-1229 (Complete Verbatim Source) -->
+              <div class="replay-panel" id="stage-verified" role="tabpanel" aria-labelledby="demo-verified" tabindex="0" data-check-id="check-eabf122f7f3f7b3fffab" data-source-digest="1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450">
+                <div class="stage-summary">
+                  <h3>完整原题验收</h3>
+                  <p>合并面对应、互逆映射与最小面运输，完成原题的全部结论。</p>
+                </div>
+                <div class="code-Subheader"><span>Submission.lean</span><span>L1186–1229</span></div>
+                <pre class="code-block" tabindex="0" role="region" aria-label="完整原题验收源码节选"><code>theorem triangle_expansion_face {V : Type uV} {E : Type uE}
+    [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] (G : LooplessGraph V E) (v : V)
+    (hdeg : Fintype.card {e : E // G.Incident v e} = 3)
+    (_hmatching : Nonempty G.Matching) :
+    ∃ (c : E → Fin 3) (hc : LocalLabels G v c),
+      let H := triangleExpansion G c v
+      let f := localExtension G c v hc
+      let Q := {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1}
+      f &#39;&#39; G.polytope = Q ∧
+      Convex ℝ Q ∧ IsExtreme ℝ H.polytope Q ∧
+      (∀ x, oldRestriction (f x) = x) ∧
+      (∀ y ∈ Q, f (oldRestriction y) = y) ∧
+      (∀ x e, f x (Sum.inl e) = x e) ∧
+      (∀ x i, f x (Sum.inr i) = x (localEdge G c v hc i)) ∧
+      (∀ x, (∀ e, x e = (1/3 : ℝ)) → ∀ e, f x e = (1/3 : ℝ)) ∧
+      (∀ x ∈ G.polytope, CanonicalFace198.minFace H.polytope (f x) = f &#39;&#39; CanonicalFace198.minFace G.polytope x)  := by
+  classical
+  obtain ⟨c, hc⟩ := existsLocalLabels G v hdeg
+  refine ⟨c, hc, ?_⟩
+  dsimp only
+  have hfg : ∀ y ∈ {y | y ∈ (triangleExpansion G c v).polytope ∧
+      MatchingEntropyBounds.LooplessGraph.cutMass (triangleExpansion G c v) y (triangleVertices v) = 1},
+      localExtension G c v hc (oldRestriction y) = y := by
+    intro y hy
+    have hy&#39; : y ∈ localExtension G c v hc &#39;&#39; G.polytope := by
+      rw [← cut_one_image_eq G c v hc]
+      exact ⟨hy.1, by rw [cutLinear_apply]; exact hy.2⟩
+    obtain ⟨x, -, rfl⟩ := hy&#39;
+    rfl
+  have hgf : ∀ x, oldRestriction (localExtension G c v hc x) = x := by
+    intro x
+    rfl
+  refine ⟨?_, convex_polytope_cut_eq_one G c v, isExtreme_polytope_cut_eq_one G c v,
+    hgf, hfg, ?_, ?_, ?_, ?_⟩
+  · rw [← cut_one_image_eq G c v hc]
+    rfl
+  · intro x e
+    rfl
+  · intro x i
+    rfl
+  · intro x hx e
+    cases e &lt;;&gt; simp [localExtension, hx]
+  · exact minFace_transport_consumer G c v hc (by rw [← cut_one_image_eq G c v hc]; rfl)
+      (isExtreme_polytope_cut_eq_one G c v) hgf hfg</code></pre>
+                <div class="stage-footer">
+                  <span>已检查的源码节选 · SHA-256: <code>1f05b4d19928...</code></span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450&amp;line=1186&amp;endLine=1229" target="_blank" rel="noreferrer">查看该次检查 ↗</a>
+                </div>
+              </div>
+            </div>
+
+            <aside class="replay-receipt" aria-label="TriangleFace 完整原题验收">
+              <div class="receipt-box">
+                <div class="receipt-pass-banner">
+                  <strong>两个目标，完整原题通过。</strong>
+                  <code>evaluated_passed</code>
+                </div>
+                <div class="receipt-links">
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">查看完整研究过程 ↗</a>
+                  <a class="code-link" href="https://theoremos.top/data/proofs/openai_triangle_face/verification.json" target="_blank" rel="noreferrer">原始验收记录 (JSON) ↗</a>
+                </div>
+              </div>
+
+              <div class="receipt-details-card">
+                <div class="receipt-card-head">
+                  <span>核对验收与来源</span>
+                  <span class="badge badge-local">LOCAL</span>
+                </div>
+                <ul class="receipt-target-list">
+                  <li>
+                    <strong>展开后折叠回原顶点</strong>
+                    <code>OAI.MatchingEntropyBounds.Refined.collapse_reattach</code>
+                  </li>
+                  <li>
+                    <strong>面对应及最小面运输</strong>
+                    <code>OAI.TriangleFace198.triangle_expansion_face</code>
+                  </li>
+                </ul>
+                <dl class="receipt-facts">
+                  <div><dt>验收方式</dt><dd>独立 Lean 内核检查</dd></div>
+                  <div><dt>最终源码</dt><dd>1,233 行</dd></div>
+                  <div><dt>检查日期</dt><dd>2026-11-05 UTC</dd></div>
+                  <div><dt>研究归属</dt><dd>TheoremOS · deepseek-flash</dd></div>
+                  <div><dt>接受运行</dt><dd><code>d77dc453-baf2-4ffd-9afa-ae2af96decba</code></dd></div>
+                  <div><dt>源码 SHA-256</dt><dd><code class="break-all">1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450</code></dd></div>
+                </dl>
+                <p class="receipt-attribution">TheoremOS 原生运行；当前接受运行未见外部数学编辑记录，保留已记录的历史续跑。</p>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="replay-section landing-section" tabindex="-1" id="demo" aria-labelledby="demo-title">
+    <!-- 04 / 成果与证据 -->
+    <section class="page-section" id="proofs" aria-labelledby="proofs-title">
       <div class="wrap">
-      <p class="section-eyebrow">03 / 证明回放</p>
-        <div class="replay-heading"><h2 id="demo-title">三角展开，如何保持面的对应？</h2><p>从图上的局部变换，到匹配多面体的线性对应。沿四个真实检查节点，查看构造、最小面运输与完整原题验收。</p><p class="example-context">组合优化 · 1,233 行 Lean 证明 · 2 个原题目标 <a href="archive.html#proof=openai_triangle_face&amp;tab=source">阅读完整题目<i data-lucide="arrow-up-right"></i></a></p></div>
-        <div class="product-demo" aria-label="TheoremOS 三角展开研究回放"><div class="replay-window archived-example" data-ui data-replay-playing="false" data-replay-current="verified" data-replay-state="paused" data-example="openai_triangle_face" data-run-id="d77dc453-baf2-4ffd-9afa-ae2af96decba">
-    <div class="replay-sidebar"><div class="replay-tabs" role="tablist" aria-label="已归档证明的四个关键节点"><button type="button" role="tab" id="demo-candidate" aria-controls="stage-candidate" aria-selected="false" tabindex="-1" data-replay-stage="candidate" data-step-state="complete" disabled><span>构造展开</span><i data-lucide="arrow-right"></i></button><button type="button" role="tab" id="demo-feedback" aria-controls="stage-feedback" aria-selected="false" tabindex="-1" data-replay-stage="feedback" data-step-state="complete" disabled><span>刻画切面</span><i data-lucide="arrow-right"></i></button><button type="button" role="tab" id="demo-repair" aria-controls="stage-repair" aria-selected="false" tabindex="-1" data-replay-stage="repair" data-step-state="complete" disabled><span>运输最小面</span><i data-lucide="arrow-right"></i></button><button type="button" role="tab" id="demo-verified" aria-controls="stage-verified" aria-selected="true" tabindex="0" data-replay-stage="verified" data-step-state="current" disabled><span>完整原题验收</span><i data-lucide="arrow-right"></i></button></div></div>
-    <div class="replay-main"><div class="replay-chrome"><span class="replay-badge"><span class="status-dot"></span>真实研究档案 · TriangleFace</span></div>
-    <div class="replay-toolbar"><div class="replay-playback" hidden><button type="button" id="replay-play" aria-label="播放证明回放" title="播放证明回放" aria-pressed="false"><i data-lucide="play"></i><i data-lucide="pause"></i></button><button type="button" id="replay-prev" aria-label="回放上一步" title="回放上一步"><i data-lucide="chevron-left"></i></button><button type="button" id="replay-next" aria-label="回放下一步" title="回放下一步" disabled><i data-lucide="chevron-right"></i></button><button type="button" id="replay-restart" aria-label="重新播放" title="重新播放"><i data-lucide="rotate-ccw"></i></button></div><span class="replay-position"><span class="mono" id="replay-step-number">04 / 04</span><span id="replay-step-label">完整原题验收</span></span><span class="replay-state" id="replay-status" role="status" aria-live="polite" aria-atomic="true">已归档</span></div>
-    <div class="replay-progress" id="replay-progress" role="progressbar" aria-label="证明回放步骤" aria-valuemin="1" aria-valuemax="4" aria-valuenow="4" aria-valuetext="第 4 步，共 4 步：完整原题验收"><span class="replay-progress-fill"></span></div>
-    <div class="replay-layout"><div class="replay-editor"><div class="replay-panel" id="stage-candidate" role="tabpanel" aria-labelledby="demo-candidate" tabindex="0" data-check-id="check-7f3828b042eb20639aad" data-source-digest="cc8d1eeaf402501497ee64b376bd205213e1d50fccfd96071e4c487a922396b4" data-source-start="98" data-source-end="115" hidden><div class="archived-stage-summary"><h3>构造展开</h3><p>把度三顶点替换成三角形。先证明展开后的顶点能折叠回原顶点。</p></div><div class="editor-heading"><span><i data-lucide="file-code-2"></i>Submission.lean</span><span>L98–115</span></div><pre class="demo-code" tabindex="0" role="region" aria-label="滚动查看已检查的源码"><code><span class="code-line" data-line="98"><span class="syntax-keyword">theorem</span> collapse_reattach (v : V) (i : Fin 3) (w : V) :</span><span class="code-line" data-line="99">    triangleCollapse v (reattach v i w) = w := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="100">  by_cases h : w = v</span><span class="code-line" data-line="101">  · subst w</span><span class="code-line" data-line="102">    fin_cases i &lt;;&gt; simp [reattach,triangleTip,triangleCollapse]</span><span class="code-line" data-line="103">  · simp [reattach,h,triangleCollapse]</span><span class="code-line" data-line="104">&#8203;</span><span class="code-line" data-line="105">def triangleExpansion (G : LooplessGraph V E) (c : E → Fin 3) (v : V) :</span><span class="code-line" data-line="106">    LooplessGraph (V ⊕ Fin 2) (E ⊕ Fin 3) where</span><span class="code-line" data-line="107">  left := Sum.elim (fun e =&gt; reattach v (c e) (G.left e)) (fun i =&gt; triangleTip v (i + 1))</span><span class="code-line" data-line="108">  right := Sum.elim (fun e =&gt; reattach v (c e) (G.right e)) (fun i =&gt; triangleTip v (i + 2))</span><span class="code-line" data-line="109">  loopless := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="110">    intro e h</span><span class="code-line" data-line="111">    rcases e with e | i</span><span class="code-line" data-line="112">    · have hh := congrArg (triangleCollapse v) h</span><span class="code-line" data-line="113">      <span class="syntax-keyword">exact</span> G.loopless e ((collapse_reattach v (c e) (G.left e)).symm.trans</span><span class="code-line" data-line="114">        (hh.trans (collapse_reattach v (c e) (G.right e))))</span><span class="code-line" data-line="115">    · fin_cases i &lt;;&gt; simp [triangleTip] at h</span></code></pre><p class="archived-check"><i data-lucide="check"></i>已检查的源码节选<a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-7f3828b042eb20639aad&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=cc8d1eeaf402501497ee64b376bd205213e1d50fccfd96071e4c487a922396b4&amp;line=98&amp;endLine=115">查看该次检查<i data-lucide="arrow-up-right"></i></a></p></div><div class="replay-panel" id="stage-feedback" role="tabpanel" aria-labelledby="demo-feedback" tabindex="0" data-check-id="check-91023ca5fd66be269b5b" data-source-digest="3eee740c3fd216a46f0adc2322519e26d8db6a63e672ea54bdf79b6efc83b1a7" data-source-start="238" data-source-end="253" hidden><div class="archived-stage-summary"><h3>刻画切面</h3><p>把三角形边界上的切质量写成原图边坐标之和，定位要证明的面。</p></div><div class="editor-heading"><span><i data-lucide="file-code-2"></i>Submission.lean</span><span>L238–253</span></div><pre class="demo-code" tabindex="0" role="region" aria-label="滚动查看已检查的源码"><code><span class="code-line" data-line="238"><span class="syntax-keyword">theorem</span> cutMass_triangleVertices (G : LooplessGraph V E) (c : E → Fin 3) (v : V)</span><span class="code-line" data-line="239">    (y : E ⊕ Fin 3 → ℝ) :</span><span class="code-line" data-line="240">    MatchingEntropyBounds.LooplessGraph.cutMass (triangleExpansion G c v) y (triangleVertices v) =</span><span class="code-line" data-line="241">      ∑ e : E, if G.Incident v e then y (Sum.inl e) else 0 := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="242">  classical</span><span class="code-line" data-line="243">  rw [MatchingEntropyBounds.LooplessGraph.cutMass, MatchingEntropyBounds.LooplessGraph.cut, Finset.sum_filter, Fintype.sum_sum_type]</span><span class="code-line" data-line="244">  have hnew : (∑ i : Fin 3,</span><span class="code-line" data-line="245">      (if MatchingEntropyBounds.LooplessGraph.Crosses (triangleExpansion G c v) (triangleVertices v) (Sum.inr i)</span><span class="code-line" data-line="246">        then y (Sum.inr i) else 0)) = 0 := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="247">    apply Finset.sum_eq_zero</span><span class="code-line" data-line="248">    intro i _</span><span class="code-line" data-line="249">    simp [not_crosses_inr G c v i]</span><span class="code-line" data-line="250">  rw [hnew, add_zero]</span><span class="code-line" data-line="251">  apply Finset.sum_congr <span class="syntax-keyword">rfl</span></span><span class="code-line" data-line="252">  intro e _</span><span class="code-line" data-line="253">  by_cases h : G.Incident v e &lt;;&gt; simp [crosses_inl_iff, h]</span></code></pre><p class="archived-check"><i data-lucide="check"></i>已检查的源码节选<a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-91023ca5fd66be269b5b&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=3eee740c3fd216a46f0adc2322519e26d8db6a63e672ea54bdf79b6efc83b1a7&amp;line=238&amp;endLine=253">查看该次检查<i data-lucide="arrow-up-right"></i></a></p></div><div class="replay-panel" id="stage-repair" role="tabpanel" aria-labelledby="demo-repair" tabindex="0" data-check-id="check-9cc7d934b222eb94861b" data-source-digest="7d45ff2be76a3dd3377b9b677b09906734e6202b670d53e5dac3a367cb79de62" data-source-start="822" data-source-end="836" hidden><div class="archived-stage-summary"><h3>运输最小面</h3><p>证明带有线性逆映射的面对应，会把每一点的最小面一同运输。</p></div><div class="editor-heading"><span><i data-lucide="file-code-2"></i>Submission.lean</span><span>L822–836</span></div><pre class="demo-code" tabindex="0" role="region" aria-label="滚动查看已检查的源码"><code><span class="code-line" data-line="822"><span class="syntax-keyword">theorem</span> minFace_linear_image {A B : Type*} [AddCommGroup A] [Module ℝ A]</span><span class="code-line" data-line="823">    [AddCommGroup B] [Module ℝ B] (P : Set A) (R : Set B) (f : A →ₗ[ℝ] B)</span><span class="code-line" data-line="824">    (g : B →ₗ[ℝ] A) (hP : Convex ℝ P) (hR : Convex ℝ R)</span><span class="code-line" data-line="825">    (hQext : IsExtreme ℝ R (f &#39;&#39; P)) (hgf : ∀ x, g (f x) = x)</span><span class="code-line" data-line="826">    (hfg : ∀ y, y ∈ f &#39;&#39; P → f (g y) = y) :</span><span class="code-line" data-line="827">    ∀ x, x ∈ P → CanonicalFace198.minFace R (f x) = f &#39;&#39; CanonicalFace198.minFace P x := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="828">  intro x hx</span><span class="code-line" data-line="829">  classical</span><span class="code-line" data-line="830">  set Q : Set B := f &#39;&#39; P with hQdef</span><span class="code-line" data-line="831">  have hQext&#39; : IsExtreme ℝ R Q := hQext</span><span class="code-line" data-line="832">  have hfinj : Function.Injective f := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="833">    intro a b hab</span><span class="code-line" data-line="834">    calc a = g (f a) := (hgf a).symm</span><span class="code-line" data-line="835">      _ = g (f b) := <span class="syntax-keyword">by</span> rw [hab]</span><span class="code-line" data-line="836">      _ = b := hgf b</span></code></pre><p class="archived-check"><i data-lucide="check"></i>已检查的源码节选<a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-9cc7d934b222eb94861b&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=7d45ff2be76a3dd3377b9b677b09906734e6202b670d53e5dac3a367cb79de62&amp;line=822&amp;endLine=836">查看该次检查<i data-lucide="arrow-up-right"></i></a></p></div><div class="replay-panel" id="stage-verified" role="tabpanel" aria-labelledby="demo-verified" tabindex="0" data-check-id="check-eabf122f7f3f7b3fffab" data-source-digest="1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450" data-source-start="1186" data-source-end="1229"><div class="archived-stage-summary"><h3>完整原题验收</h3><p>合并面对应、互逆映射与最小面运输，完成原题的全部结论。</p></div><div class="editor-heading"><span><i data-lucide="file-code-2"></i>Submission.lean</span><span>L1186–1229</span></div><pre class="demo-code" tabindex="0" role="region" aria-label="滚动查看已检查的源码"><code><span class="code-line" data-line="1186"><span class="syntax-keyword">theorem</span> triangle_expansion_face {V : Type uV} {E : Type uE}</span><span class="code-line" data-line="1187">    [Fintype V] [Fintype E] [DecidableEq V] [DecidableEq E] (G : LooplessGraph V E) (v : V)</span><span class="code-line" data-line="1188">    (hdeg : Fintype.card {e : E // G.Incident v e} = 3)</span><span class="code-line" data-line="1189">    (_hmatching : Nonempty G.Matching) :</span><span class="code-line" data-line="1190">    ∃ (c : E → Fin 3) (hc : LocalLabels G v c),</span><span class="code-line" data-line="1191">      let H := triangleExpansion G c v</span><span class="code-line" data-line="1192">      let f := localExtension G c v hc</span><span class="code-line" data-line="1193">      let Q := {y | y ∈ H.polytope ∧ H.cutMass y (triangleVertices v) = 1}</span><span class="code-line" data-line="1194">      f &#39;&#39; G.polytope = Q ∧</span><span class="code-line" data-line="1195">      Convex ℝ Q ∧ IsExtreme ℝ H.polytope Q ∧</span><span class="code-line" data-line="1196">      (∀ x, oldRestriction (f x) = x) ∧</span><span class="code-line" data-line="1197">      (∀ y ∈ Q, f (oldRestriction y) = y) ∧</span><span class="code-line" data-line="1198">      (∀ x e, f x (Sum.inl e) = x e) ∧</span><span class="code-line" data-line="1199">      (∀ x i, f x (Sum.inr i) = x (localEdge G c v hc i)) ∧</span><span class="code-line" data-line="1200">      (∀ x, (∀ e, x e = (1/3 : ℝ)) → ∀ e, f x e = (1/3 : ℝ)) ∧</span><span class="code-line" data-line="1201">      (∀ x ∈ G.polytope, CanonicalFace198.minFace H.polytope (f x) = f &#39;&#39; CanonicalFace198.minFace G.polytope x)  := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="1202">  classical</span><span class="code-line" data-line="1203">  obtain ⟨c, hc⟩ := existsLocalLabels G v hdeg</span><span class="code-line" data-line="1204">  refine ⟨c, hc, ?_⟩</span><span class="code-line" data-line="1205">  dsimp only</span><span class="code-line" data-line="1206">  have hfg : ∀ y ∈ {y | y ∈ (triangleExpansion G c v).polytope ∧</span><span class="code-line" data-line="1207">      MatchingEntropyBounds.LooplessGraph.cutMass (triangleExpansion G c v) y (triangleVertices v) = 1},</span><span class="code-line" data-line="1208">      localExtension G c v hc (oldRestriction y) = y := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="1209">    intro y hy</span><span class="code-line" data-line="1210">    have hy&#39; : y ∈ localExtension G c v hc &#39;&#39; G.polytope := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="1211">      rw [← cut_one_image_eq G c v hc]</span><span class="code-line" data-line="1212">      <span class="syntax-keyword">exact</span> ⟨hy.1, <span class="syntax-keyword">by</span> rw [cutLinear_apply]; <span class="syntax-keyword">exact</span> hy.2⟩</span><span class="code-line" data-line="1213">    obtain ⟨x, -, <span class="syntax-keyword">rfl</span>⟩ := hy&#39;</span><span class="code-line" data-line="1214">    <span class="syntax-keyword">rfl</span></span><span class="code-line" data-line="1215">  have hgf : ∀ x, oldRestriction (localExtension G c v hc x) = x := <span class="syntax-keyword">by</span></span><span class="code-line" data-line="1216">    intro x</span><span class="code-line" data-line="1217">    <span class="syntax-keyword">rfl</span></span><span class="code-line" data-line="1218">  refine ⟨?_, convex_polytope_cut_eq_one G c v, isExtreme_polytope_cut_eq_one G c v,</span><span class="code-line" data-line="1219">    hgf, hfg, ?_, ?_, ?_, ?_⟩</span><span class="code-line" data-line="1220">  · rw [← cut_one_image_eq G c v hc]</span><span class="code-line" data-line="1221">    <span class="syntax-keyword">rfl</span></span><span class="code-line" data-line="1222">  · intro x e</span><span class="code-line" data-line="1223">    <span class="syntax-keyword">rfl</span></span><span class="code-line" data-line="1224">  · intro x i</span><span class="code-line" data-line="1225">    <span class="syntax-keyword">rfl</span></span><span class="code-line" data-line="1226">  · intro x hx e</span><span class="code-line" data-line="1227">    cases e &lt;;&gt; simp [localExtension, hx]</span><span class="code-line" data-line="1228">  · <span class="syntax-keyword">exact</span> minFace_transport_consumer G c v hc (<span class="syntax-keyword">by</span> rw [← cut_one_image_eq G c v hc]; <span class="syntax-keyword">rfl</span>)</span><span class="code-line" data-line="1229">      (isExtreme_polytope_cut_eq_one G c v) hgf hfg</span></code></pre><p class="archived-check"><i data-lucide="check"></i>已检查的源码节选<a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450&amp;line=1186&amp;endLine=1229">查看该次检查<i data-lucide="arrow-up-right"></i></a></p></div></div>
-    <aside class="replay-receipt" aria-label="TriangleFace 完整原题验收"><div class="receipt-summary"><div class="receipt-status"><span class="receipt-check"><i data-lucide="check"></i></span><div><strong>两个目标，完整原题通过。</strong><code>evaluated_passed</code></div></div><div class="receipt-links"><a href="archive.html#proof=openai_triangle_face&tab=process" class="receipt-link">查看完整研究过程<i data-lucide="arrow-up-right"></i></a><a href="data/proofs/openai_triangle_face/verification.json" class="receipt-link receipt-evidence" target="_blank" rel="noreferrer">原始验收记录<i data-lucide="file-json-2"></i></a></div></div>
-    <details class="receipt-details"><summary class="receipt-title"><i data-lucide="shield-check"></i><span>核对验收与来源</span><span class="receipt-local">LOCAL</span><i data-lucide="chevron-down"></i></summary><div class="receipt-targets"><div><i data-lucide="check"></i><span><strong>展开后折叠回原顶点</strong><code>OAI.MatchingEntropyBounds.Refined.collapse_reattach</code></span></div><div><i data-lucide="check"></i><span><strong>面对应及最小面运输</strong><code>OAI.TriangleFace198.triangle_expansion_face</code></span></div></div><dl class="receipt-facts"><div><dt>验收方式</dt><dd>独立 Lean 内核检查</dd></div><div><dt>最终源码</dt><dd>1,233 行</dd></div><div><dt>检查日期</dt><dd>2026-11-05 UTC</dd></div><div><dt>研究归属</dt><dd>TheoremOS · deepseek-flash</dd></div><div><dt>接受运行</dt><dd><code>d77dc453-baf2-4ffd-9afa-ae2af96decba</code></dd></div><div><dt>源码 SHA-256</dt><dd><code>1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450</code></dd></div></dl><p class="archived-attribution">TheoremOS 原生运行；当前接受运行未见外部数学编辑记录，保留已记录的历史续跑。</p></details></aside></div></div></div></div>
-      </div>
-    </section>
+        <p class="section-eyebrow">04 / 成果与证据</p>
+        <div class="section-header section-header-split">
+          <div>
+            <h2 id="proofs-title" class="section-title">每份成果，都能核对依据</h2>
+            <p class="section-desc">官方通过与本地验收分别记录，原始研究归属随源码与证据保留。</p>
+          </div>
+          <div class="proof-totals" aria-label="公开证明档案统计">
+            <a class="stat-pill" href="https://theoremos.top/archive.html#status=accepted" target="_blank" rel="noreferrer">
+              <strong class="stat-count stat-green">10</strong>
+              <span>Lean-Eval 官方通过</span>
+            </a>
+            <a class="stat-pill" href="https://theoremos.top/archive.html#status=verified" target="_blank" rel="noreferrer">
+              <strong class="stat-count stat-accent">18</strong>
+              <span>OpenAI Math 本地验收</span>
+            </a>
+            <a class="stat-pill" href="https://theoremos.top/archive.html#status=progress" target="_blank" rel="noreferrer">
+              <strong class="stat-count">1</strong>
+              <span>研究中记录 (Szemerédi)</span>
+            </a>
+          </div>
+        </div>
 
-    <section class="proofs-section landing-section g2m" tabindex="-1" id="proofs" aria-labelledby="proofs-title"><div class="wrap">
-      <p class="section-eyebrow">04 / 成果与证据</p>
-      <div class="section-heading proof-heading"><div><h2 id="proofs-title">每份成果，都能核对依据</h2><p>官方通过与本地验收分别记录，原始研究归属随源码与证据保留。</p></div><div class="proof-totals" data-moment="counter-rolls"><a href="archive.html#status=accepted"><strong data-count>10</strong><span>Lean-Eval 官方通过</span></a><a class="campaign-results" href="archive.html#status=verified"><strong data-count>18</strong><span>OpenAI Math 本地验收</span></a></div></div>
-      <figure class="featured-proof" id="featured-proof" data-featured-proof="dimitrov" aria-labelledby="featured-proof-title">
-    <div class="featured-proof-sheet">
-      <div class="featured-problem"><h3 id="featured-proof-title">共轭最大模的下界</h3><p class="featured-statement">Dimitrov · 历史验收案例</p><p class="featured-question">对非零且非单位根的代数整数，证明其所有代数共轭的最大绝对值（house）的下界。</p><a class="text-link" href="archive.html#proof=dimitrov&tab=source">查看完整题目与源码<i data-lucide="arrow-up-right"></i></a></div>
-      <div class="featured-answer" data-ui><div class="featured-receipt"><p><i data-lucide="shield-check"></i>Lean-Eval 官方通过</p><a class="text-link" href="https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969" target="_blank" rel="noreferrer">核对官方结果<i data-lucide="arrow-up-right"></i></a></div><details class="featured-source" open><summary class="featured-code-heading"><span>Lean 证明体节选</span><span class="featured-file"><code>Submission.lean</code><i data-lucide="chevron-down"></i></span></summary><pre class="featured-code"><code>by
+        <!-- Featured Proof: Dimitrov -->
+        <figure class="featured-proof-card" id="featured-proof" aria-labelledby="featured-proof-title">
+          <div class="featured-proof-grid">
+            <div class="featured-problem">
+              <div class="featured-meta-row">
+                <span class="badge badge-official">Lean-Eval 官方通过</span>
+                <span class="featured-tag">Dimitrov · 历史验收案例 · 数论</span>
+              </div>
+              <h3 id="featured-proof-title">共轭最大模的下界</h3>
+              <p>对非零且非单位根的代数整数，证明其所有代数共轭的最大绝对值（house）的下界。</p>
+              <div class="featured-links">
+                <a class="text-link" href="https://theoremos.top/archive.html#proof=dimitrov&amp;tab=source" target="_blank" rel="noreferrer">查看完整题目与源码 ↗</a>
+                <a class="text-link" href="https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969" target="_blank" rel="noreferrer">核对官方结果 ↗</a>
+              </div>
+            </div>
+            <div class="featured-code-box">
+              <div class="code-Subheader"><span>Lean 证明体节选</span><code>Submission.lean</code></div>
+              <pre class="code-block"><code>by
   exact Helpers.rpow_from_nat_power (NumberField.house α) _
     (NumberField.house_nonneg α) (Helpers.argument_card_pos α)
-    (Helpers.house_power_lower_bound α α_int α_ne_zero α_not_rootOfUnity)</code></pre></details></div>
-    </div>
-    <figcaption>历史成果 · 原始归属：DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</figcaption>
-  </figure>
-      <nav class="case-guide" aria-labelledby="case-guide-title"><h3 id="case-guide-title">按你要看的内容进入档案</h3><ul>
-        <li><a href="archive.html#proof=openai_triangle_face&amp;tab=source" data-case-guide="intro"><strong>三角展开的完整证明</strong><span>对照原始陈述，阅读全部 1,233 行源码。</span><span class="case-guide-action">原题与源码<i data-lucide="arrow-up-right"></i></span></a></li>
-        <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process" data-case-guide="route"><strong>匹配多面体的证明路线</strong><span>沿证明路线，逐步对照推导与源码。</span><span class="case-guide-action">复杂路线<i data-lucide="arrow-up-right"></i></span></a></li>
-        <li><a href="archive.html#proof=dimitrov&amp;tab=evidence" data-case-guide="evidence"><strong>Dimitrov 验收证据</strong><span>核对官方回执、本地检查与提交版本。</span><span class="case-guide-action">验收证据<i data-lucide="arrow-up-right"></i></span></a></li>
-      </ul></nav>
-      <details class="research-disclosure proof-reading-guide" id="proof-reading"><summary>怎样判断一份成果的范围？<i data-lucide="plus"></i></summary><div class="research-disclosure-body"><p>先核对它证明的是完整原题、辅助引理，还是带额外假设的条件命题，再读验收标签。</p><table class="proof-reading-table"><caption class="sr-only">档案状态与证据范围</caption><thead><tr><th scope="col">档案标签</th><th scope="col">可以确认什么</th></tr></thead><tbody><tr><th scope="row"><a href="archive.html#status=accepted" data-proof-status="accepted">官方通过<i data-lucide="arrow-up-right"></i></a></th><td>原提交对应的外部基准已给出通过记录；可查看官方响应。</td></tr><tr><th scope="row"><a href="archive.html#status=verified" data-proof-status="verified">本地验收通过<i data-lucide="arrow-up-right"></i></a></th><td>项目已在记录的环境中检查形式化目标；不代表已获外部官方确认。</td></tr><tr><th scope="row"><a href="archive.html#status=progress" data-proof-status="progress">研究中<i data-lucide="arrow-up-right"></i></a></th><td>保留探索过程与候选源码，尚不构成最终验收。</td></tr></tbody></table><p>局部引理通过后，集成源码仍需接受完整原题检查。公开档案也包含历史项目与外部协助，其原始归属随证据保留。</p></div></details>
-      <div class="archive-footer"><div class="archive-actions"><a class="text-link" href="archive.html">浏览全部证明档案<i data-lucide="arrow-up-right"></i></a><div class="proof-register-slot"><button class="proof-register-open text-link" type="button" aria-haspopup="dialog" aria-controls="proof-register-dialog" hidden>查看全部官方验收记录<i data-lucide="arrow-up-right"></i></button><div class="proof-list"><h3>查看全部官方验收记录</h3><table class="proof-table" data-ui><caption class="sr-only">查看全部官方验收记录</caption><thead><tr><th scope="col">题目与领域</th><th scope="col">原始研究归属</th><th scope="col">验收与源码</th></tr></thead><tbody>
-    <tr class="proof-row" data-accepted-proof="annals_improved_bounds_sunflower_lemma">
-      <th scope="row"><h3><a href="archive.html#proof=annals_improved_bounds_sunflower_lemma">Sunflower lemma</a></h3><p class="proof-subtitle">向日葵引理的改进界<span class="proof-area"> · 组合数学</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_improved_bounds_sunflower_lemma&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100" target="_blank" rel="noreferrer" aria-label="Sunflower lemma 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_lorentzian_polynomials">
-      <th scope="row"><h3><a href="archive.html#proof=annals_lorentzian_polynomials">Lorentzian polynomials</a></h3><p class="proof-subtitle">Lorentzian 多项式<span class="proof-area"> · 代数组合</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_lorentzian_polynomials&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100" target="_blank" rel="noreferrer" aria-label="Lorentzian polynomials 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_optimal_moebius">
-      <th scope="row"><h3><a href="archive.html#proof=annals_optimal_moebius">Optimal paper Möbius band</a></h3><p class="proof-subtitle">纸带 Möbius 环的长宽比下界<span class="proof-area"> · 几何</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_optimal_moebius&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100" target="_blank" rel="noreferrer" aria-label="Optimal paper Möbius band 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_algebraic_integers">
-      <th scope="row"><h3><a href="archive.html#proof=annals_algebraic_integers">Algebraic integers</a></h3><p class="proof-subtitle">代数整数：λ_SSS 的上界<span class="proof-area"> · 代数数论</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_algebraic_integers&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100" target="_blank" rel="noreferrer" aria-label="Algebraic integers 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="dimitrov">
-      <th scope="row"><h3><a href="archive.html#proof=dimitrov">Dimitrov</a></h3><p class="proof-subtitle">代数整数的 house 下界<span class="proof-area"> · 数论</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=dimitrov&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969" target="_blank" rel="noreferrer" aria-label="Dimitrov 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="hopf_rinow">
-      <th scope="row"><h3><a href="archive.html#proof=hopf_rinow">Hopf–Rinow</a></h3><p class="proof-subtitle">测地完备与度量完备<span class="proof-area"> · 微分几何</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=hopf_rinow&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2143#issuecomment-6215093969" target="_blank" rel="noreferrer" aria-label="Hopf–Rinow 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_fractional_expectation_thresholds">
-      <th scope="row"><h3><a href="archive.html#proof=annals_fractional_expectation_thresholds">Fractional expectation thresholds</a></h3><p class="proof-subtitle">分数期望阈值<span class="proof-area"> · 概率组合</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_fractional_expectation_thresholds&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2141#issuecomment-6197783762" target="_blank" rel="noreferrer" aria-label="Fractional expectation thresholds 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_equiangular_lines_fixed_angle">
-      <th scope="row"><h3><a href="archive.html#proof=annals_equiangular_lines_fixed_angle">Equiangular lines</a></h3><p class="proof-subtitle">固定夹角等角线<span class="proof-area"> · 离散几何</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_equiangular_lines_fixed_angle&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2135#issuecomment-6186332699" target="_blank" rel="noreferrer" aria-label="Equiangular lines 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_rademacher_enflo_type">
-      <th scope="row"><h3><a href="archive.html#proof=annals_rademacher_enflo_type">Rademacher &amp; Enflo type</a></h3><p class="proof-subtitle">Rademacher 型与 Enflo 型的一致性<span class="proof-area"> · 泛函分析</span></p></th><td class="proof-credit">DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_rademacher_enflo_type&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/2115#issuecomment-6161355838" target="_blank" rel="noreferrer" aria-label="Rademacher &amp; Enflo type 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr>
-    <tr class="proof-row" data-accepted-proof="annals_unit_conjecture">
-      <th scope="row"><h3><a href="archive.html#proof=annals_unit_conjecture">Unit conjecture</a></h3><p class="proof-subtitle">群环单位猜想<span class="proof-area"> · 代数</span></p></th><td class="proof-credit">DeepScientist + GPT-5.6</td>
-      <td><div class="proof-links"><a data-proof-source href="archive.html#proof=annals_unit_conjecture&tab=source">Lean 源码<i data-lucide="arrow-right"></i></a><a class="official-link proof-pass" href="https://github.com/leanprover/lean-eval-submissions/issues/1246#issuecomment-5380977645" target="_blank" rel="noreferrer" aria-label="Unit conjecture 官方验收记录"><i data-lucide="check"></i>官方通过<i data-lucide="arrow-up-right"></i></a></div></td>
-    </tr></tbody></table></div></div></div><p class="proof-provenance">档案保留前身 DeepScientist / DeepScientist Math 历史成果的原始归属、源码与验收记录。</p></div>
-      <dialog class="proof-register-dialog" id="proof-register-dialog" aria-labelledby="proof-register-title"><div class="proof-register-heading"><h2 id="proof-register-title">查看全部官方验收记录</h2><button class="proof-register-close" type="button" aria-label="关闭证明目录" autofocus><i data-lucide="x"></i></button></div><div class="proof-register-content"></div></dialog>
-    </div></section>
+    (Helpers.house_power_lower_bound α α_int α_ne_zero α_not_rootOfUnity)</code></pre>
+            </div>
+          </div>
+          <figcaption class="featured-caption">历史成果 · 原始归属：DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</figcaption>
+        </figure>
 
-    <section class="research-cases-section landing-section" tabindex="-1" id="research-cases" aria-labelledby="research-cases-title">
+        <!-- Case Guide -->
+        <nav class="case-guide-grid" aria-labelledby="case-guide-title">
+          <h3 id="case-guide-title" class="sr-only">按你要看的内容进入档案</h3>
+          <a class="guide-card" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=source" target="_blank" rel="noreferrer">
+            <strong>三角展开的完整证明</strong>
+            <p>对照原始陈述，阅读全部 1,233 行源码。</p>
+            <span class="guide-action">原题与源码 ↗</span>
+          </a>
+          <a class="guide-card" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">
+            <strong>匹配多面体的证明路线</strong>
+            <p>沿证明路线，逐步对照推导与源码。</p>
+            <span class="guide-action">复杂路线 ↗</span>
+          </a>
+          <a class="guide-card" href="https://theoremos.top/archive.html#proof=dimitrov&amp;tab=evidence" target="_blank" rel="noreferrer">
+            <strong>Dimitrov 验收证据</strong>
+            <p>核对官方回执、本地检查与提交版本。</p>
+            <span class="guide-action">验收证据 ↗</span>
+          </a>
+        </nav>
+
+        <!-- Scope Disclosure -->
+        <details class="disclosure-box">
+          <summary class="disclosure-summary">
+            <div class="disclosure-summary-title">
+              <strong>怎样判断一份成果的范围？</strong>
+              <span class="disclosure-note">官方通过 · 本地验收通过 · 研究中</span>
+            </div>
+            <span class="disclosure-action">展开说明</span>
+          </summary>
+          <div class="disclosure-body">
+            <p>先核对它证明的是完整原题、辅助引理，还是带额外假设的条件命题，再读验收标签。</p>
+            <div class="table-scroll">
+              <table class="data-table">
+                <caption class="sr-only">档案状态与证据范围</caption>
+                <thead>
+                  <tr><th scope="col">档案标签</th><th scope="col">可以确认什么</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><a class="text-link" href="https://theoremos.top/archive.html#status=accepted" target="_blank" rel="noreferrer">官方通过 ↗</a></th>
+                    <td>原提交对应的外部基准已给出通过记录；可查看官方响应。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a class="text-link" href="https://theoremos.top/archive.html#status=verified" target="_blank" rel="noreferrer">本地验收通过 ↗</a></th>
+                    <td>项目已在记录的环境中检查形式化目标；不代表已获外部官方确认。</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><a class="text-link" href="https://theoremos.top/archive.html#status=progress" target="_blank" rel="noreferrer">研究中 ↗</a></th>
+                    <td>保留探索过程与候选源码，尚不构成最终验收（如 Szemerédi 课题）。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="disclosure-foot">局部引理通过后，集成源码仍需接受完整原题检查。公开档案也包含历史项目与外部协助，其原始归属随证据保留。</p>
+          </div>
+        </details>
+
+        <!-- 10 Official Records Table -->
+        <details class="disclosure-box" id="official-records">
+          <summary class="disclosure-summary">
+            <div class="disclosure-summary-title">
+              <strong>查看全部官方验收记录（10 项 Lean-Eval 官方通过）</strong>
+              <span class="disclosure-note">保留前身 DeepScientist / DeepScientist Math 历史成果的原始归属、源码与验收记录</span>
+            </div>
+            <span class="disclosure-action">收起 / 展开</span>
+          </summary>
+          <div class="disclosure-body">
+            <div class="table-scroll">
+              <table class="data-table archive-table">
+                <caption class="sr-only">10 项 Lean-Eval 官方通过记录</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">题目与领域</th>
+                    <th scope="col">原始研究归属</th>
+                    <th scope="col">验收与源码</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>Sunflower lemma</strong>
+                      <span class="table-sub">向日葵引理的改进界 · 组合数学</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_improved_bounds_sunflower_lemma&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_improved_bounds_sunflower_lemma&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Lorentzian polynomials</strong>
+                      <span class="table-sub">Lorentzian 多项式 · 代数组合</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_lorentzian_polynomials&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_lorentzian_polynomials&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Optimal paper Möbius band</strong>
+                      <span class="table-sub">纸带 Möbius 环的长宽比下界 · 几何</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_optimal_moebius&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_optimal_moebius&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Algebraic integers</strong>
+                      <span class="table-sub">代数整数：λ_SSS 的上界 · 代数数论</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_algebraic_integers&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_algebraic_integers&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Dimitrov</strong>
+                      <span class="table-sub">代数整数的 house 下界 · 数论</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=dimitrov&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=dimitrov&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Hopf–Rinow</strong>
+                      <span class="table-sub">测地完备与度量完备 · 微分几何</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=hopf_rinow&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=hopf_rinow&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Fractional expectation thresholds</strong>
+                      <span class="table-sub">分数期望阈值 · 概率组合</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_fractional_expectation_thresholds&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_fractional_expectation_thresholds&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Equiangular lines</strong>
+                      <span class="table-sub">固定夹角等角线 · 离散几何</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_equiangular_lines_fixed_angle&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_equiangular_lines_fixed_angle&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Rademacher &amp; Enflo type</strong>
+                      <span class="table-sub">Rademacher 型与 Enflo 型的一致性 · 泛函分析</span>
+                    </td>
+                    <td><code>DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_rademacher_enflo_type&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_rademacher_enflo_type&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Unit conjecture</strong>
+                      <span class="table-sub">群环单位猜想 · 代数</span>
+                    </td>
+                    <td><code>DeepScientist + GPT-5.6</code></td>
+                    <td class="table-links">
+                      <a class="text-link" href="https://theoremos.top/archive.html#proof=annals_unit_conjecture&amp;tab=source" target="_blank" rel="noreferrer">Lean 源码 ↗</a>
+                      <a class="badge badge-official" href="https://theoremos.top/archive.html#proof=annals_unit_conjecture&amp;tab=evidence" target="_blank" rel="noreferrer">官方通过 ↗</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="archive-more-bar">
+              <p class="disclosure-foot">档案保留前身 DeepScientist / DeepScientist Math 历史成果的原始归属、源码与验收记录。</p>
+              <a class="btn btn-secondary btn-sm" href="https://theoremos.top/archive.html" target="_blank" rel="noreferrer">浏览全部 29 份证明档案 ↗</a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 05 / 研究专题 -->
+    <section class="page-section" id="research-cases" aria-labelledby="cases-title">
       <div class="wrap">
         <p class="section-eyebrow">05 / 研究专题</p>
-        <div class="section-heading"><h2 id="research-cases-title">沿着不同数学问题读证明</h2><p class="heading-description">从算子构造、几何覆盖到算法反例。展开一道真实题目，对照关键步骤与已检查的源码。</p></div>
-        <div class="research-case-list">
-          <details class="research-case" name="research-case" data-research-case="anderson" open>
-            <summary><span class="research-case-name"><span>概率与谱论</span><strong>随机势下的算子谱</strong></span><span class="research-case-goal">ℤ² 上，h &gt; 0，势在 [−h,h] 内独立均匀分布：谱几乎必然为 [−4−h,4+h]。</span><i data-lucide="plus"></i></summary>
-            <div class="research-case-body">
-              <div class="research-case-route"><h3>关键证明步骤</h3><ol><li>构造有界自伴的 Anderson 算子，用范数控制谱的范围。</li><li>在同一个满测度事件上，找到任意大的近常值方块。</li><li>构造截断平面波，控制边界误差，证明谱的反向包含。</li></ol><a class="text-link" data-case-walkthrough href="archive.html#proof=openai_planar_anderson_spectrum&amp;tab=reading">阅读逐步推导<i data-lucide="arrow-up-right"></i></a></div>
-              <div class="case-source" data-ui data-case-proof="openai_planar_anderson_spectrum" data-case-source-sha256="2fd7e2d1c71eff673ce58cd82f694526f9d6ed0a4ace42f800b159b26482cfc7">
-                <div class="case-source-heading"><span>Submission.lean</span><span>1446–1449</span></div>
-                <pre aria-label="随机势下的算子谱 · Lean"><code><span data-case-source-line="1446">theorem anderson_spectrum_ae {h : ℝ} (hh : 0 &lt; h) :</span>
-<span data-case-source-line="1447">    ∀ᵐ v ∂disorderLaw h, ∃ H : Hilbert →L[ℂ] Hilbert,</span>
-<span data-case-source-line="1448">      IsAndersonOperator v H ∧ IsSelfAdjoint H ∧ spectrum ℂ H = spectralInterval h := by</span>
-<span data-case-source-line="1449">  exact anderson_spectrum_ae_sorry_free hh</span></code></pre>
-                <div class="case-source-result"><span><i data-lucide="check"></i>完整原题 · 本地验收通过</span><a data-case-evidence href="archive.html#proof=openai_planar_anderson_spectrum&amp;tab=process&amp;run=818b8243-22b1-4315-954c-d5610eff1e44&amp;mode=steps&amp;step=check%3Acheck-1d66afce6974559d0595&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=2fd7e2d1c71eff673ce58cd82f694526f9d6ed0a4ace42f800b159b26482cfc7&amp;line=1446&amp;endLine=1449">查看源码与验收<i data-lucide="arrow-up-right"></i></a></div>
+        <div class="section-header">
+          <h2 id="cases-title" class="section-title">沿着不同数学问题读证明</h2>
+          <p class="section-desc">从算子构造、几何覆盖到算法反例。展开一道真实题目，对照关键步骤与已检查的源码。</p>
+        </div>
+
+        <div class="case-accordion" data-case-accordion>
+          <!-- Case 1: Planar Anderson -->
+          <details class="case-item" open>
+            <summary class="case-summary">
+              <div class="case-summary-main">
+                <span class="badge badge-local">概率与谱论</span>
+                <strong class="case-title">随机势下的算子谱</strong>
+                <span class="case-claim">ℤ² 上，h &gt; 0，势在 [−h,h] 内独立均匀分布：谱几乎必然为 [−4−h,4+h]。</span>
+              </div>
+              <span class="disclosure-action">查看推导与源码</span>
+            </summary>
+            <div class="case-body split-layout">
+              <div class="case-steps-col">
+                <h3>关键证明步骤</h3>
+                <ol class="numbered-steps">
+                  <li>构造有界自伴的 Anderson 算子，用范数控制谱的范围。</li>
+                  <li>在同一个满测度事件上，找到任意大的近常值方块。</li>
+                  <li>构造截断平面波，控制边界误差，证明谱的反向包含。</li>
+                </ol>
+                <a class="text-link" href="https://theoremos.top/archive.html#proof=openai_planar_anderson_spectrum&amp;tab=process" target="_blank" rel="noreferrer">阅读逐步推导 ↗</a>
+              </div>
+              <div class="case-code-col">
+                <div class="code-Subheader"><span>Submission.lean</span><span>1446–1449</span></div>
+                <pre class="code-block" tabindex="0"><code>theorem anderson_spectrum_ae {h : ℝ} (hh : 0 &lt; h) :
+    ∀ᵐ v ∂disorderLaw h, ∃ H : Hilbert →L[ℂ] Hilbert,
+      IsAndersonOperator v H ∧ IsSelfAdjoint H ∧ spectrum ℂ H = spectralInterval h := by
+  exact anderson_spectrum_ae_sorry_free hh</code></pre>
+                <div class="stage-footer">
+                  <span>完整原题 · 本地验收通过（TheoremOS · deepseek-flash）</span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_planar_anderson_spectrum&amp;tab=evidence" target="_blank" rel="noreferrer">查看源码与验收 ↗</a>
+                </div>
               </div>
             </div>
           </details>
-          <details class="research-case" name="research-case" data-research-case="coloring">
-            <summary><span class="research-case-name"><span>离散几何</span><strong>欧氏平面的七色着色</strong></span><span class="research-case-goal">构造七色着色，使距离恰为 1 的任意两点颜色不同。</span><i data-lucide="plus"></i></summary>
-            <div class="research-case-body">
-              <div class="research-case-route"><h3>关键证明步骤</h3><ol><li>为三角格点分配模 7 颜色，证明同色中心的分离下界。</li><li>在四个相邻格点中选出足够近的中心，覆盖整个平面。</li><li>让每点继承中心颜色，用距离估计排除单位距离同色。</li></ol><a class="text-link" data-case-walkthrough href="archive.html#proof=openai_plane_coloring&amp;tab=reading">阅读逐步推导<i data-lucide="arrow-up-right"></i></a></div>
-              <div class="case-source" data-ui data-case-proof="openai_plane_coloring" data-case-source-sha256="3e842122e50547b602873e71db599cc6782414fec9c60a08c664d43586341d12">
-                <div class="case-source-heading"><span>Submission.lean</span><span>301–302</span></div>
-                <pre aria-label="欧氏平面的七色着色 · Lean"><code><span data-case-source-line="301">theorem properColoring_seven : ProperColoring 7 :=</span>
-<span data-case-source-line="302">  ⟨triColor, proper_coloring⟩</span></code></pre>
-                <div class="case-source-result"><span><i data-lucide="check"></i>完整原题 · 本地验收通过</span><a data-case-evidence href="archive.html#proof=openai_plane_coloring&amp;tab=process&amp;run=58e5a793-5940-4b38-aa6a-2a71ae0cac3f&amp;mode=steps&amp;step=check%3Acheck-186cf3d786ab8ebb8f82&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=3e842122e50547b602873e71db599cc6782414fec9c60a08c664d43586341d12&amp;line=301&amp;endLine=302">查看源码与验收<i data-lucide="arrow-up-right"></i></a></div>
+
+          <!-- Case 2: Plane Coloring -->
+          <details class="case-item">
+            <summary class="case-summary">
+              <div class="case-summary-main">
+                <span class="badge badge-local">离散几何</span>
+                <strong class="case-title">欧氏平面的七色着色</strong>
+                <span class="case-claim">构造七色着色，使距离恰为 1 的任意两点颜色不同。</span>
+              </div>
+              <span class="disclosure-action">查看推导与源码</span>
+            </summary>
+            <div class="case-body split-layout">
+              <div class="case-steps-col">
+                <h3>关键证明步骤</h3>
+                <ol class="numbered-steps">
+                  <li>为三角格点分配模 7 颜色，证明同色中心的分离下界。</li>
+                  <li>在四个相邻格点中选出足够近的中心，覆盖整个平面。</li>
+                  <li>让每点继承中心颜色，用距离估计排除单位距离同色。</li>
+                </ol>
+                <a class="text-link" href="https://theoremos.top/archive.html#proof=openai_plane_coloring&amp;tab=process" target="_blank" rel="noreferrer">阅读逐步推导 ↗</a>
+              </div>
+              <div class="case-code-col">
+                <div class="code-Subheader"><span>Submission.lean</span><span>301–302</span></div>
+                <pre class="code-block" tabindex="0"><code>theorem properColoring_seven : ProperColoring 7 :=
+  ⟨triColor, proper_coloring⟩</code></pre>
+                <div class="stage-footer">
+                  <span>完整原题 · 本地验收通过（TheoremOS · deepseek-flash）</span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_plane_coloring&amp;tab=evidence" target="_blank" rel="noreferrer">查看源码与验收 ↗</a>
+                </div>
               </div>
             </div>
           </details>
-          <details class="research-case" name="research-case" data-research-case="truffet">
-            <summary><span class="research-case-name"><span>热带优化</span><strong>终止程序中的非最优输出</strong></span><span class="research-case-goal">两步均具有唯一选择并正常终止，所得可行解成本为 1，另有成本为 0 的可行点。</span><i data-lucide="plus"></i></summary>
-            <div class="research-case-body">
-              <div class="research-case-route"><h3>关键证明步骤</h3><ol><li>给出具体 max-plus 系统，核对原题要求的交叉行约束。</li><li>跟踪两步强制消元，同时更新约束与目标函数。</li><li>重建输出并给出更优可行点，用 0 &lt; 1 完成反例。</li></ol><a class="text-link" data-case-walkthrough href="archive.html#proof=openai_truffet_counterexample&amp;tab=reading">阅读逐步推导<i data-lucide="arrow-up-right"></i></a></div>
-              <div class="case-source" data-ui data-case-proof="openai_truffet_counterexample" data-case-source-sha256="442334bfd22cf81c9582b071cd6b370f2b6969d961418e6b084a25cc87ae4a91">
-                <div class="case-source-heading"><span>Submission.lean</span><span>545–555</span></div>
-                <pre aria-label="终止程序中的非最优输出 · Lean"><code><span data-case-source-line="545">theorem finite_execution_not_optimal :</span>
-<span data-case-source-line="546">    crossRowRestriction initial ∧</span>
-<span data-case-source-line="547">    ForcedSingletonStep initial middle 0 1 ∧</span>
-<span data-case-source-line="548">    ForcedSingletonStep middle finalState 1 0 ∧</span>
-<span data-case-source-line="549">    (¬ ∃ j, finalState.remaining j) ∧ stop finalState ∧</span>
-<span data-case-source-line="550">    feasible initial output ∧ feasible initial better ∧</span>
-<span data-case-source-line="551">    output 2 = 0 ∧ better 2 = 0 ∧</span>
-<span data-case-source-line="552">    (output 1 : Coeff) = eval (lowerForm initial 0 1) output ∧</span>
-<span data-case-source-line="553">    (output 0 : Coeff) = eval (lowerForm middle 1 0) output ∧</span>
-<span data-case-source-line="554">    eval initial.cost output = eval finalState.cost output ∧</span>
-<span data-case-source-line="555">    eval initial.cost better &lt; eval finalState.cost output := by</span></code></pre>
-                <div class="case-source-result"><span><i data-lucide="check"></i>完整原题 · 本地验收通过</span><a data-case-evidence href="archive.html#proof=openai_truffet_counterexample&amp;tab=process&amp;run=de7a57e9-becf-4f94-9276-2090ab3f2738&amp;mode=steps&amp;step=check%3Acheck-e921c5e179d84067ed74&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=442334bfd22cf81c9582b071cd6b370f2b6969d961418e6b084a25cc87ae4a91&amp;line=545&amp;endLine=555">查看源码与验收<i data-lucide="arrow-up-right"></i></a></div>
+
+          <!-- Case 3: Truffet Counterexample -->
+          <details class="case-item">
+            <summary class="case-summary">
+              <div class="case-summary-main">
+                <span class="badge badge-local">热带优化</span>
+                <strong class="case-title">终止程序中的非最优输出</strong>
+                <span class="case-claim">两步均具有唯一选择并正常终止，所得可行解成本为 1，另有成本为 0 的可行点。</span>
+              </div>
+              <span class="disclosure-action">查看推导与源码</span>
+            </summary>
+            <div class="case-body split-layout">
+              <div class="case-steps-col">
+                <h3>关键证明步骤</h3>
+                <ol class="numbered-steps">
+                  <li>给出具体 max-plus 系统，核对原题要求的交叉行约束。</li>
+                  <li>跟踪两步强制消元，同时更新约束与目标函数。</li>
+                  <li>重建输出并给出更优可行点，用 0 &lt; 1 完成反例。</li>
+                </ol>
+                <a class="text-link" href="https://theoremos.top/archive.html#proof=openai_truffet_counterexample&amp;tab=process" target="_blank" rel="noreferrer">阅读逐步推导 ↗</a>
+              </div>
+              <div class="case-code-col">
+                <div class="code-Subheader"><span>Submission.lean</span><span>545–555</span></div>
+                <pre class="code-block" tabindex="0"><code>theorem finite_execution_not_optimal :
+    crossRowRestriction initial ∧
+    ForcedSingletonStep initial middle 0 1 ∧
+    ForcedSingletonStep middle finalState 1 0 ∧
+    (¬ ∃ j, finalState.remaining j) ∧ stop finalState ∧
+    feasible initial output ∧ feasible initial better ∧
+    output 2 = 0 ∧ better 2 = 0 ∧
+    (output 1 : Coeff) = eval (lowerForm initial 0 1) output ∧
+    (output 0 : Coeff) = eval (lowerForm middle 1 0) output ∧
+    eval initial.cost output = eval finalState.cost output ∧
+    eval initial.cost better &lt; eval finalState.cost output := by</code></pre>
+                <div class="stage-footer">
+                  <span>完整原题 · 本地验收通过（TheoremOS · deepseek-flash）</span>
+                  <a class="code-link" href="https://theoremos.top/archive.html#proof=openai_truffet_counterexample&amp;tab=evidence" target="_blank" rel="noreferrer">查看源码与验收 ↗</a>
+                </div>
               </div>
             </div>
           </details>
         </div>
-        <p class="research-cases-scope">以上三例通过本项目的 Lean 与原题比较器检查，尚未确认 OpenAI 官方评测结果。原始研究归属与历史续跑记录保存在各自档案中。</p>
+        <p class="section-footnote">以上三例通过本项目的 Lean 与原题比较器检查，尚未确认 OpenAI 官方评测结果。原始研究归属与历史续跑记录保存在各自档案中。</p>
       </div>
     </section>
 
-    <section class="research-system-section landing-section" tabindex="-1" id="research-system" aria-labelledby="research-system-title">
+    <!-- 06 / 深度研究 -->
+    <section class="page-section" id="research-system" aria-labelledby="system-title">
       <div class="wrap">
         <p class="section-eyebrow">06 / 深度研究</p>
-        <div class="section-heading"><h2 id="research-system-title">为复杂证明组织研究</h2><p class="heading-description">拆解引理、调用已有知识，在固定环境中验证。让多轮尝试留下可继续、可复核的研究成果。</p></div>
-        <div class="research-system-layout">
-          <ol class="research-capabilities">
-            <li><span class="research-capability-number" aria-hidden="true">01</span><div><h3>按引理分工协作</h3><p>把主问题拆成有依赖关系的任务，分别探索、证明和审阅，再合并回完整原题。</p></div></li>
-            <li><span class="research-capability-number" aria-hidden="true">02</span><div><h3>在固定环境里推导</h3><p>用确定版本的 Lean 与 Mathlib 检查候选，从库中检索定义和已有定理。</p></div></li>
-            <li><span class="research-capability-number" aria-hidden="true">03</span><div><h3>把研究接着做下去</h3><p>任务、笔记、源码与检查记录随运行保存；恢复时沿用原题和已完成的工作。</p></div></li>
-            <li><span class="research-capability-number" aria-hidden="true">04</span><div><h3>每个结论都能追溯</h3><p>从结论回到代码、检查回执与原题。导出源码和环境，在本地复核。</p></div></li>
+        <div class="section-header">
+          <h2 id="system-title" class="section-title">为复杂证明组织研究</h2>
+          <p class="section-desc">拆解引理、调用已有知识，在固定环境中验证。让多轮尝试留下可继续、可复核的研究成果。</p>
+        </div>
+
+        <div class="split-layout">
+          <ol class="capability-grid">
+            <li class="capability-card">
+              <span class="step-num">01</span>
+              <h3>按引理分工协作</h3>
+              <p>把主问题拆成有依赖关系的任务，分别探索、证明和审阅，再合并回完整原题。</p>
+            </li>
+            <li class="capability-card">
+              <span class="step-num">02</span>
+              <h3>在固定环境里推导</h3>
+              <p>用确定版本的 Lean 与 Mathlib 检查候选，从库中检索定义和已有定理。</p>
+            </li>
+            <li class="capability-card">
+              <span class="step-num">03</span>
+              <h3>把研究接着做下去</h3>
+              <p>任务、笔记、源码与检查记录随运行保存；恢复时沿用原题和已完成的工作。</p>
+            </li>
+            <li class="capability-card">
+              <span class="step-num">04</span>
+              <h3>每个结论都能追溯</h3>
+              <p>从结论回到代码、检查回执与原题。导出源码和环境，在本地复核。</p>
+            </li>
           </ol>
-          <div class="research-evidence">
-            <div class="research-task-map" data-ui aria-labelledby="research-task-title" aria-describedby="research-task-description">
-              <div class="research-task-header"><div><p>TriangleFace · 历史任务快照</p><h3 id="research-task-title">从引理到主定理</h3></div><time datetime="2026-11-05">2026.11.05</time></div>
-              <p class="sr-only" id="research-task-description">四个已检查任务的节选。折叠恒等式用于切质量分解；切质量分解与局部标号共同用于主定理。点击任务查看该轮记录。</p>
-              <ol class="research-task-grid">
-                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=collapse_reattach_goal"><span class="research-task-kind">结构引理<i data-lucide="arrow-up-right"></i></span><h4>折叠恒等式</h4><code>collapse_reattach</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a><span class="research-task-arrow research-task-arrow-down" aria-hidden="true">↓</span></li>
-                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=local_labels_exists"><span class="research-task-kind">构造引理<i data-lucide="arrow-up-right"></i></span><h4>局部标号</h4><code>existsLocalLabels</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a><span class="research-task-arrow research-task-arrow-down" aria-hidden="true">↓</span></li>
-                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=cutMass_triangleVertices"><span class="research-task-kind">定量引理<i data-lucide="arrow-up-right"></i></span><h4>切质量分解</h4><code>cutMass_triangleVertices</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a><span class="research-task-arrow research-task-arrow-right" aria-hidden="true">→</span></li>
-                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=triangle_face_goal"><span class="research-task-kind">主定理<i data-lucide="arrow-up-right"></i></span><h4>建立面的对应</h4><code>triangle_expansion_face</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a></li>
-              </ol>
-              <div class="research-task-footer"><span>4 个任务节选 · 依赖关系来自该轮记录</span><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757">查看完整任务图<i data-lucide="arrow-up-right"></i></a></div>
+
+          <div class="panel-card task-graph-card">
+            <div class="panel-head">
+              <div class="panel-title-row">
+                <span class="section-eyebrow">TriangleFace · 历史任务快照</span>
+                <span class="mono">2026.11.05</span>
+              </div>
+              <h3>从引理到主定理</h3>
+              <p>四个已检查任务的节选。折叠恒等式用于切质量分解；切质量分解与局部标号共同用于主定理。点击任务查看该轮记录。</p>
             </div>
-            <div class="research-verification"><h3>合并之后，再验收完整原题</h3><p>局部引理通过后，仍需检查集成源码和原题的全部目标。</p><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab">查看最终独立验收<i data-lucide="arrow-up-right"></i></a></div>
+            <ul class="task-node-list">
+              <li>
+                <a class="task-node" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">
+                  <span class="task-kind">结构引理</span>
+                  <strong>折叠恒等式</strong>
+                  <code>collapse_reattach</code>
+                  <span class="badge badge-official">已检查 ↓</span>
+                </a>
+              </li>
+              <li>
+                <a class="task-node" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">
+                  <span class="task-kind">构造引理</span>
+                  <strong>局部标号</strong>
+                  <code>existsLocalLabels</code>
+                  <span class="badge badge-official">已检查 ↓</span>
+                </a>
+              </li>
+              <li>
+                <a class="task-node" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">
+                  <span class="task-kind">定量引理</span>
+                  <strong>切质量分解</strong>
+                  <code>cutMass_triangleVertices</code>
+                  <span class="badge badge-official">已检查 →</span>
+                </a>
+              </li>
+              <li>
+                <a class="task-node task-node-main" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">
+                  <span class="task-kind">主定理</span>
+                  <strong>建立面的对应</strong>
+                  <code>triangle_expansion_face</code>
+                  <span class="badge badge-official">已检查</span>
+                </a>
+              </li>
+            </ul>
+            <div class="task-graph-footer">
+              <span>4 个任务节选 · 依赖关系来自该轮记录</span>
+              <a class="text-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=process" target="_blank" rel="noreferrer">查看完整任务图 ↗</a>
+            </div>
+            <div class="merge-notice-box">
+              <strong>合并之后，再验收完整原题</strong>
+              <p>局部引理通过后，仍需检查集成源码和原题的全部目标。</p>
+              <div class="merge-links">
+                <a class="text-link" href="#demo">查看最终独立验收 ↑</a>
+                <a class="text-link" href="#knowledge-reuse">查看引理如何复用 ↓</a>
+              </div>
+            </div>
           </div>
         </div>
-        <a class="text-link research-system-next" href="#knowledge-reuse">查看引理如何复用<i data-lucide="arrow-down-right"></i></a>
       </div>
     </section>
 
-    <section class="knowledge-section landing-section" tabindex="-1" id="knowledge-reuse" aria-labelledby="knowledge-title">
+    <!-- 07 / 引理与知识 -->
+    <section class="page-section" id="knowledge-reuse" aria-labelledby="reuse-title">
       <div class="wrap">
         <p class="section-eyebrow">07 / 引理与知识</p>
-        <div class="section-heading"><h2 id="knowledge-title">让已验证引理参与下一次证明</h2><p class="heading-description">按当前目标检索已有知识，读清类型与前提，再检查它在新证明中的实际引用。</p></div>
-        <div class="research-content-layout">
-          <div class="research-content-copy">
-            <ol class="research-practices">
-              <li><h3>从当前目标检索</h3><p>在本账户的已验证引理目录中查找相关结果，保留完整声明与来源。</p></li>
-              <li><h3>核对每个前提</h3><p>查看类型签名、证明源码和依赖环境，确认引理适用于当前数学对象。</p></li>
-              <li><h3>在新证明中重检</h3><p>新研究固定所选目录的快照；引理进入证明环境后仍需编译，整题另做独立验收。</p></li>
-            </ol>
-            <a class="text-link research-content-link" href="https://app.theoremos.top/library.html?lang=zh">打开知识库<i data-lucide="arrow-up-right"></i></a>
-          </div>
-          <article class="lemma-example" aria-labelledby="lemma-example-title">
-            <div class="lemma-intro"><p class="research-content-label">TriangleFace · 通用引理</p><h3 id="lemma-example-title">最小面沿线性映射运输</h3><p>在凸性与极面条件下，先证明一般的最小面对应，再用于图的三角展开。</p></div>
-            <div class="lemma-source" data-ui data-source-sha256="1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450">
-              <div class="lemma-source-heading"><span>Submission.lean</span><span>804–809</span></div>
-              <pre aria-label="minFace_linear_image 的完整引理声明"><code><span data-source-line="804">theorem minFace_linear_image {A B : Type*} [AddCommGroup A] [Module ℝ A]</span>
-<span data-source-line="805">    [AddCommGroup B] [Module ℝ B] (P : Set A) (R : Set B) (f : A →ₗ[ℝ] B)</span>
-<span data-source-line="806">    (g : B →ₗ[ℝ] A) (hP : Convex ℝ P) (hR : Convex ℝ R)</span>
-<span data-source-line="807">    (hQext : IsExtreme ℝ R (f &#x27;&#x27; P)) (hgf : ∀ x, g (f x) = x)</span>
-<span data-source-line="808">    (hfg : ∀ y, y ∈ f &#x27;&#x27; P → f (g y) = y) :</span>
-<span data-source-line="809">    ∀ x, x ∈ P → CanonicalFace198.minFace R (f x) = f &#x27;&#x27; CanonicalFace198.minFace P x := by</span></code></pre>
-              <a class="lemma-source-link" data-lemma-source href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450&amp;line=804&amp;endLine=809"><span><i data-lucide="check"></i>来自已验收的完整源码</span><span>查看证明<i data-lucide="arrow-up-right"></i></span></a>
+        <div class="section-header">
+          <h2 id="reuse-title" class="section-title">让已验证引理参与下一次证明</h2>
+          <p class="section-desc">按当前目标检索已有知识，读清类型与前提，再检查它在新证明中的实际引用。</p>
+        </div>
+
+        <div class="split-layout">
+          <div class="panel-card">
+            <ul class="scenario-list">
+              <li>
+                <h3>从当前目标检索</h3>
+                <p>在本账户的已验证引理目录中查找相关结果，保留完整声明与来源。</p>
+              </li>
+              <li>
+                <h3>核对每个前提</h3>
+                <p>查看类型签名、证明源码和依赖环境，确认引理适用于当前数学对象。</p>
+              </li>
+              <li>
+                <h3>在新证明中重检</h3>
+                <p>新研究固定所选目录的快照；引理进入证明环境后仍需编译，整题另做独立验收。</p>
+              </li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-secondary btn-sm" href="https://app.theoremos.top/library.html?lang=zh">打开知识库 ↗</a>
             </div>
-            <details class="research-disclosure"><summary>检索到的引理，能直接套用吗？<i data-lucide="plus"></i></summary><p>先核对假设，再检查实际调用。检索命中本身不算证明通过；不兼容的 Lean 环境也不能直接沿用。这里展示的是已验收源码中的通用引理。</p></details>
-          </article>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-head">
+              <span class="section-eyebrow">TriangleFace · 通用引理</span>
+              <h3>最小面沿线性映射运输</h3>
+              <p>在凸性与极面条件下，先证明一般的最小面对应，再用于图的三角展开。</p>
+            </div>
+            <div class="code-Subheader"><span>Submission.lean</span><span>声明节选</span></div>
+            <pre class="code-block" tabindex="0"><code>theorem minFace_linear_image {A B : Type*} [AddCommGroup A] [Module ℝ A]
+    [AddCommGroup B] [Module ℝ B] (P : Set A) (R : Set B) (f : A →ₗ[ℝ] B)
+    (g : B →ₗ[ℝ] A) (hP : Convex ℝ P) (hR : Convex ℝ R)
+    (hQext : IsExtreme ℝ R (f &#39;&#39; P)) (hgf : ∀ x, g (f x) = x)
+    (hfg : ∀ y, y ∈ f &#39;&#39; P → f (g y) = y) :
+    ∀ x, x ∈ P → CanonicalFace198.minFace R (f x) = f &#39;&#39; CanonicalFace198.minFace P x := by</code></pre>
+            <div class="stage-footer stage-footer-light">
+              <span>来自已验收的完整源码</span>
+              <a class="text-link" href="https://theoremos.top/archive.html#proof=openai_triangle_face&amp;tab=source" target="_blank" rel="noreferrer">查看证明 ↗</a>
+            </div>
+            <details class="inline-details">
+              <summary>检索到的引理，能直接套用吗？</summary>
+              <p>先核对假设，再检查实际调用。检索命中本身不算证明通过；不兼容的 Lean 环境也不能直接沿用。这里展示的是已验收源码中的通用引理。</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="collaboration-section landing-section" tabindex="-1" id="research-collaboration" aria-labelledby="collaboration-title">
+    <!-- 08 / 协作与交付 -->
+    <section class="page-section" id="research-collaboration" aria-labelledby="collab-title">
       <div class="wrap">
         <p class="section-eyebrow">08 / 协作与交付</p>
-        <div class="section-heading"><h2 id="collaboration-title">与同行围绕同一题协作</h2><p class="heading-description">核对题意、审阅计划，让讨论对应具体任务。分享成果时，把原题、证明与验收依据一起交给同行。</p></div>
-        <div class="research-content-layout">
-          <div class="research-content-copy">
-            <ol class="research-practices">
-              <li><h3>审阅题意与初始计划</h3><p>选择共同推进，确认陈述、审阅计划后再展开证明；研究中可以补充指导与调整方案。</p></li>
-              <li><h3>对着具体任务讨论</h3><p>意见对应任务和版本，分别查看指导是否送达、是否采纳，以及后续修改和检查。</p></li>
-              <li><h3>决定成员能做什么</h3><p>邀请同伴参与项目，分别设置可见范围与运行操作权限；成员授权和分享入口均可撤销。</p></li>
-            </ol>
-            <a class="text-link research-content-link" href="https://app.theoremos.top/theorems.html?lang=zh">打开协作项目<i data-lucide="arrow-up-right"></i></a>
-          </div>
-          <article class="research-delivery" aria-labelledby="delivery-title">
-            <p class="research-content-label">Dimitrov · 独立复核包</p>
-            <h3 id="delivery-title">让同行在本地重新检查</h3>
-            <p class="delivery-intro">下载公开材料，在固定环境里核对证明，无需 TheoremOS 账号或模型 API Key。</p>
-            <div class="delivery-package" data-ui aria-label="Dimitrov 复核包文件">
-              <div class="delivery-package-heading"><i data-lucide="folder-open"></i><code>proof-kits/dimitrov</code></div>
-            <dl class="delivery-files">
-              <div><dt>原题与证明</dt><dd><a href="proof-kits/dimitrov/Challenge.lean" download><code>Challenge.lean</code></a><a href="proof-kits/dimitrov/Submission.lean" download><code>Submission.lean</code></a></dd></div>
-              <div><dt>工具链与依赖</dt><dd><a href="proof-kits/dimitrov/lean-toolchain" download><code>lean-toolchain</code></a><a href="proof-kits/dimitrov/lake-manifest.json" download><code>lake-manifest.json</code></a></dd></div>
-              <div><dt>校验与复核</dt><dd><a href="proof-kits/dimitrov/SHA256SUMS" download><code>SHA256SUMS</code></a><a href="proof-kits/dimitrov/verify.py" download><code>verify.py</code></a></dd></div>
-            </dl>
-            </div>
-            <a class="text-link delivery-guide" data-proof-kit href="https://github.com/HuggingMath/TheoremOS/tree/main/proof-kits/dimitrov" target="_blank" rel="noreferrer">查看复核包与说明<i data-lucide="arrow-up-right"></i></a>
-            <details class="research-disclosure" data-review-disclosure><summary>下载后，怎样开始复核？<i data-lucide="plus"></i></summary><div class="research-disclosure-body"><p>在包目录下先核对文件，再准备固定依赖并运行 Lean 检查。需安装 Python 3、Git 与 Lean 工具链管理器 Elan。</p><pre><code>python3 verify.py --check-files
-python3 verify.py --prepare --lean-only</code></pre><p>完整题面对照还需按包内说明配置上游比较器，再运行 <code>python3 verify.py</code>。</p></div></details>
-            <details class="research-disclosure" data-sharing-disclosure><summary>分享链接会公开哪些内容？<i data-lucide="plus"></i></summary><p>分享选定成果的原题、证明、结果与环境信息；如有题意核对记录，一并展示。API Key、邮箱和 Agent 对话不包含在内。撤销后链接不再可访问，已下载的副本仍由接收者保留。 <a href="privacy.html">查看隐私与条款</a>。</p></details>
-          </article>
+        <div class="section-header">
+          <h2 id="collab-title" class="section-title">与同行围绕同一题协作</h2>
+          <p class="section-desc">核对题意、审阅计划，让讨论对应具体任务。分享成果时，把原题、证明与验收依据一起交给同行。</p>
         </div>
-        <a class="text-link research-system-next" href="#components">了解可替换的研究组件<i data-lucide="arrow-down-right"></i></a>
+
+        <div class="split-layout">
+          <div class="panel-card">
+            <ul class="scenario-list">
+              <li>
+                <h3>审阅题意与初始计划</h3>
+                <p>选择共同推进，确认陈述、审阅计划后再展开证明；研究中可以补充指导与调整方案。</p>
+              </li>
+              <li>
+                <h3>对着具体任务讨论</h3>
+                <p>意见对应任务和版本，分别查看指导是否送达、是否采纳，以及后续修改和检查。</p>
+              </li>
+              <li>
+                <h3>决定成员能做什么</h3>
+                <p>邀请同伴参与项目，分别设置可见范围与运行操作权限；成员授权和分享入口均可撤销。</p>
+              </li>
+            </ul>
+            <div class="panel-actions">
+              <a class="btn btn-secondary btn-sm" href="https://app.theoremos.top/?lang=zh">打开协作项目 ↗</a>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-head">
+              <div class="panel-title-row">
+                <span class="section-eyebrow">Dimitrov · 独立复核包</span>
+                <code>proof-kits/dimitrov</code>
+              </div>
+              <h3>让同行在本地重新检查</h3>
+              <p>下载公开材料，在固定环境里核对证明，无需 TheoremOS 账号或模型 API Key。</p>
+            </div>
+            <dl class="kit-manifest">
+              <div>
+                <dt>原题与证明</dt>
+                <dd><code>Challenge.lean</code> · <code>Submission.lean</code></dd>
+              </div>
+              <div>
+                <dt>工具链与依赖</dt>
+                <dd><code>lean-toolchain</code> · <code>lake-manifest.json</code></dd>
+              </div>
+              <div>
+                <dt>校验与复核</dt>
+                <dd><code>SHA256SUMS</code> · <code>verify.py</code></dd>
+              </div>
+            </dl>
+            <div class="panel-actions">
+              <a class="text-link" href="https://github.com/LikC1606/TheoremOS/blob/main/proof-kits/dimitrov/README.zh-CN.md" target="_blank" rel="noreferrer">查看复核包与说明 ↗</a>
+            </div>
+            <details class="inline-details">
+              <summary>下载后，怎样开始复核？</summary>
+              <p>在包目录下先核对文件，再准备固定依赖并运行 Lean 检查。需安装 Python 3、Git 与 Lean 工具链管理器 Elan。</p>
+              <pre class="code-block code-block-sm"><code>python3 verify.py --check-files
+python3 verify.py --prepare --lean-only</code></pre>
+              <p>完整题面对照还需按包内说明配置上游比较器，再运行 <code>python3 verify.py</code>。</p>
+            </details>
+            <details class="inline-details">
+              <summary>分享链接会公开哪些内容？</summary>
+              <p>分享选定成果的原题、证明、结果与环境信息；如有题意核对记录，一并展示。API Key、邮箱和 Agent 对话不包含在内。撤销后链接不再可访问，已下载的副本仍由接收者保留。<a class="inline-link" href="privacy.html" target="_blank" rel="noreferrer">查看隐私与条款 ↗</a></p>
+            </details>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="components-section landing-section" tabindex="-1" id="components" aria-labelledby="components-title"><div class="wrap">
-      <p class="section-eyebrow">09 / 研究组件</p>
-      <div class="section-heading"><h2 id="components-title">试验你的证明方法</h2><p class="heading-description">固定题目、环境、模型与预算，比较不同策略和协作方式的结果。</p></div>
-      <div class="component-layout"><div class="component-explorer"><h3 class="component-picker-title">五个研究组件</h3>
-        <div class="component-tabs" data-ui role="tablist" aria-label="五个研究组件" aria-orientation="vertical">
-          <button class="component-tab" type="button" id="tab-m1" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m1"><span class="component-number">M1</span><strong>证明构造</strong><i data-lucide="arrow-up-right"></i></button>
-          <button class="component-tab" type="button" id="tab-m2" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m2"><span class="component-number">M2</span><strong>检查反馈</strong><i data-lucide="arrow-up-right"></i></button>
-          <button class="component-tab" type="button" id="tab-m3" role="tab" aria-selected="true" aria-controls="component-panel" tabindex="0" data-component="m3"><span class="component-number">M3</span><strong>搜索决策</strong><i data-lucide="arrow-up-right"></i></button>
-          <button class="component-tab" type="button" id="tab-m4" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m4"><span class="component-number">M4</span><strong>上下文选择</strong><i data-lucide="arrow-up-right"></i></button>
-          <button class="component-tab" type="button" id="tab-m5" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m5"><span class="component-number">M5</span><strong>协作复用</strong><i data-lucide="arrow-up-right"></i></button>
+    <!-- 09 / 研究组件 -->
+    <section class="page-section" id="components" aria-labelledby="components-title">
+      <div class="wrap" data-components-root>
+        <p class="section-eyebrow">09 / 研究组件</p>
+        <div class="section-header">
+          <h2 id="components-title" class="section-title">试验你的证明方法</h2>
+          <p class="section-desc">固定题目、环境、模型与预算，比较不同策略和协作方式的结果。</p>
         </div>
-        <div class="component-panel" id="component-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-m3">
-          <div class="module-details"><div><h3 id="module-title">选择下一步任务</h3><p id="module-description">选择就绪任务，决定继续、重试或停止，结合路线与共享预算安排尝试。</p></div><dl><div><dt>输入</dt><dd id="module-input">研究状态 · 候选操作 · 共享预算</dd></div><div><dt>输出</dt><dd id="module-output">下一步操作 · 有序就绪任务</dd></div></dl><p class="module-contract" id="module-kicker">M3 · 搜索接口</p></div>
-          <div class="independent-check"><span>S3 始终独立验收完整原题。</span></div>
-        </div>
-      </div><div class="module-media"><figure class="module-showcase" aria-labelledby="module-preview-heading">
-        <div class="module-preview-toolbar"><h3 id="module-preview-heading" class="sr-only">模块图谱与方案库</h3><div class="module-preview-tabs" role="tablist" aria-label="模块视图" hidden><button type="button" id="module-preview-tab-modules" role="tab" aria-selected="true" aria-controls="module-preview-panel" data-module-preview="modules"><i data-lucide="network"></i>模块图谱</button><button type="button" id="module-preview-tab-library" role="tab" aria-selected="false" aria-controls="module-preview-panel" tabindex="-1" data-module-preview="library"><i data-lucide="folder-open"></i>方案库</button></div></div>
-        <div id="module-preview-panel" role="tabpanel" aria-labelledby="module-preview-tab-modules" tabindex="0">
-          <div class="module-graph" data-ui role="group" aria-label="交互式模块图谱" aria-describedby="module-graph-description">
-            <p class="sr-only" id="module-graph-description">M5 组织协作；研究循环依次经过 M3 搜索、M4 上下文、M1 构造与 M2 检查，再将反馈交回 M3。集成后的证明交给 S3，对完整原题独立验收。</p>
-            <div class="module-graph-canvas">
-              <svg class="module-graph-edges" aria-hidden="true" focusable="false">
-                <defs><marker id="module-graph-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--muted)" stroke-width="1.4"></path></marker><marker id="module-graph-arrow-active" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="var(--accent)" stroke-width="1.4"></path></marker></defs>
-              <path data-graph-from="m5" data-graph-to="m3" class="graph-coordination-edge" marker-end="url(#module-graph-arrow)"></path>
-              <path data-graph-from="m5" data-graph-to="m4" class="graph-coordination-edge" marker-end="url(#module-graph-arrow)"></path>
-              <path data-graph-from="m3" data-graph-to="m4" marker-end="url(#module-graph-arrow)"></path>
-              <path data-graph-from="m4" data-graph-to="m1" marker-end="url(#module-graph-arrow)"></path>
-              <path data-graph-from="m1" data-graph-to="m2" marker-end="url(#module-graph-arrow)"></path>
-              <path data-graph-from="m2" data-graph-to="m3" marker-end="url(#module-graph-arrow)"></path>
-              <path data-graph-from="m2" data-graph-to="s3" marker-end="url(#module-graph-arrow)"></path>
-              </svg>
-              <button type="button" class="graph-node graph-node-wide" data-graph-component="m5" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M5</span><strong>协作复用</strong><i data-lucide="arrow-up-right"></i></button>
-              <div class="module-graph-loop">
-                <button type="button" class="graph-node" data-graph-component="m3" aria-pressed="true" aria-controls="component-panel" disabled><span class="graph-node-id">M3</span><strong>选择任务</strong><i data-lucide="arrow-up-right"></i></button>
-                <button type="button" class="graph-node" data-graph-component="m4" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M4</span><strong>整理上下文</strong><i data-lucide="arrow-up-right"></i></button>
-                <button type="button" class="graph-node" data-graph-component="m1" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M1</span><strong>构造证明</strong><i data-lucide="arrow-up-right"></i></button>
-                <button type="button" class="graph-node" data-graph-component="m2" aria-pressed="false" aria-controls="component-panel" disabled><span class="graph-node-id">M2</span><strong>检查候选</strong><i data-lucide="arrow-up-right"></i></button>
+
+        <div class="split-layout">
+          <div class="panel-card">
+            <h3 class="panel-subtitle">五个研究组件</h3>
+            <div class="component-tabs" role="tablist" aria-label="五个研究组件">
+              <button type="button" class="comp-tab" role="tab" aria-selected="false" data-component="M1" data-title="构造与修复候选" data-desc="调用模型会话，在隔离工作区中构造和修复 Lean 候选。研究你的生成方式、提示和修复策略。" data-input="题目 · 上下文 · 操作 · 模型会话" data-output="候选记录 · 工作区中的证明" data-tag="M1 · 证明构造">
+                <span class="comp-id">M1</span><span>证明构造</span>
+              </button>
+              <button type="button" class="comp-tab" role="tab" aria-selected="false" data-component="M2" data-title="整理 Lean 诊断" data-desc="检查候选与辅助证明，把 Lean 诊断交还研究过程。局部检查之后，集成结果仍需接受完整原题的独立验收。" data-input="固定题目 · 候选源码 · 检查环境" data-output="绑定源码摘要的检查与诊断" data-tag="M2 · 检查反馈">
+                <span class="comp-id">M2</span><span>检查反馈</span>
+              </button>
+              <button type="button" class="comp-tab is-active" role="tab" aria-selected="true" data-component="M3" data-title="选择下一步任务" data-desc="选择就绪任务，决定继续、重试或停止，结合路线与共享预算安排尝试。" data-input="研究状态 · 候选操作 · 共享预算" data-output="下一步操作 · 有序就绪任务" data-tag="M3 · 搜索接口">
+                <span class="comp-id">M3</span><span>搜索决策</span>
+              </button>
+              <button type="button" class="comp-tab" role="tab" aria-selected="false" data-component="M4" data-title="选择研究上下文" data-desc="从题目、已有成果与失败记录中整理上下文。比较信息选择、上下文压缩和检索策略。" data-input="题目 · 当前任务 · 可见证据" data-output="带来源身份的上下文包" data-tag="M4 · 上下文选择">
+                <span class="comp-id">M4</span><span>上下文选择</span>
+              </button>
+              <button type="button" class="comp-tab" role="tab" aria-selected="false" data-component="M5" data-title="分工与复用证明" data-desc="组织隔离工作区、任务分配与独立审阅。比较单 Agent、独立并行与任务协作的研究方法。" data-input="就绪任务 · Worker · 路线约束" data-output="工作区配置 · 任务与审阅分配" data-tag="M5 · 协作复用">
+                <span class="comp-id">M5</span><span>协作复用</span>
+              </button>
+            </div>
+
+            <div class="component-detail" id="component-detail" data-component-detail role="region" aria-live="polite">
+              <div class="comp-detail-head">
+                <h4 data-comp-detail-title>选择下一步任务</h4>
+                <span class="badge badge-neutral" data-comp-detail-tag>M3 · 搜索接口</span>
               </div>
-              <details class="graph-verification">
-                <summary data-graph-terminal="s3"><span class="graph-node-id">S3</span><strong>独立验收</strong><i data-lucide="chevron-down"></i></summary>
-                <p>集成后的证明须在固定环境中通过 Lean 对完整原题的检查。局部检查与模型的完成消息均不构成最终验收。</p>
+              <p data-comp-detail-desc>选择就绪任务，决定继续、重试或停止，结合路线与共享预算安排尝试。</p>
+              <dl class="comp-io-list">
+                <div>
+                  <dt>输入</dt>
+                  <dd data-comp-detail-input>研究状态 · 候选操作 · 共享预算</dd>
+                </div>
+                <div>
+                  <dt>输出</dt>
+                  <dd data-comp-detail-output>下一步操作 · 有序就绪任务</dd>
+                </div>
+              </dl>
+              <p class="comp-s3-note"><strong>S3 始终独立验收完整原题。</strong></p>
+            </div>
+          </div>
+
+          <div class="panel-card">
+            <div class="panel-title-row">
+              <h3 class="panel-subtitle">模块图谱与方案库</h3>
+              <div class="view-switch" role="tablist" aria-label="切换模块图谱与方案库">
+                <button type="button" class="view-btn is-active" role="tab" aria-selected="true" data-comp-view="map">模块图谱</button>
+                <button type="button" class="view-btn" role="tab" aria-selected="false" data-comp-view="library">方案库</button>
+              </div>
+            </div>
+
+            <div class="comp-view-panel" data-comp-panel="map">
+              <p class="panel-intro">M5 组织协作；研究循环依次经过 M3 搜索、M4 上下文、M1 构造与 M2 检查，再将反馈交回 M3。集成后的证明交给 S3，对完整原题独立验收。</p>
+              <div class="module-diagram" aria-label="研究模块与独立验收流程图">
+                <div class="diagram-row diagram-top">
+                  <div class="diagram-node" data-diagram-node="M5"><strong>M5</strong><span>协作复用</span></div>
+                </div>
+                <div class="diagram-loop">
+                  <div class="diagram-node is-highlighted" data-diagram-node="M3"><strong>M3</strong><span>选择任务</span></div>
+                  <span class="diagram-arrow" aria-hidden="true">→</span>
+                  <div class="diagram-node" data-diagram-node="M4"><strong>M4</strong><span>整理上下文</span></div>
+                  <span class="diagram-arrow" aria-hidden="true">→</span>
+                  <div class="diagram-node" data-diagram-node="M1"><strong>M1</strong><span>构造证明</span></div>
+                  <span class="diagram-arrow" aria-hidden="true">→</span>
+                  <div class="diagram-node" data-diagram-node="M2"><strong>M2</strong><span>检查候选</span></div>
+                </div>
+                <div class="diagram-s3-box" data-diagram-node="S3">
+                  <div class="s3-head">
+                    <strong>S3 独立验收</strong>
+                    <span class="badge badge-official">终审边界</span>
+                  </div>
+                  <p>集成后的证明须在固定环境中通过 Lean 对完整原题的检查。局部检查与模型的完成消息均不构成最终验收。</p>
+                </div>
+              </div>
+              <p class="diagram-caption" data-diagram-caption>M3 → M4 · 根据就绪任务，整理下一步所需的上下文。</p>
+            </div>
+
+            <div class="comp-view-panel" data-comp-panel="library" hidden>
+              <figure class="library-figure">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="assets/workbench-library-mobile.png" width="360" height="420">
+                  <img src="assets/workbench-library-desktop.png" alt="模块方案库：Mathlib 代数研究方案，启用两项自定义策略。" width="850" height="480" loading="lazy">
+                </picture>
+                <figcaption>模块方案库：Mathlib 代数研究方案，启用两项自定义策略。网页端策略设置属于提示与调度引导，不改变最终 Lean 检查标准。</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 / 申请内测与常见问题 -->
+    <section class="page-section" id="start" aria-labelledby="start-title">
+      <div class="wrap">
+        <p class="section-eyebrow">10 / 申请内测与常见问题</p>
+        <div class="split-layout">
+          <div class="panel-card access-card">
+            <span class="badge badge-neutral">白名单内测 · 平台免费</span>
+            <h2 id="start-title" class="section-title">带一道题来试试</h2>
+            <p>工作台目前为白名单内测。介绍你的研究用途，公开题目或 Lean 链接选填。</p>
+            <p>内测期间平台免费。模型调用使用你的 API Key，由模型服务商计费。</p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml" target="_blank" rel="noreferrer">GitHub 申请内测 ↗</a>
+              <a class="btn btn-secondary" href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20%E5%86%85%E6%B5%8B%E7%94%B3%E8%AF%B7">邮件申请</a>
+              <a class="text-link" href="initiative.html">参与共建计划 →</a>
+            </div>
+            <p class="panel-footnote">GitHub 申请公开，请勿填写 Key 或个人联系方式。</p>
+
+            <ol class="access-steps">
+              <li>
+                <strong>01 / 提交申请</strong>
+                <span>在 GitHub 或邮件中说明研究用途。</span>
+              </li>
+              <li>
+                <strong>02 / 私下确认邮箱</strong>
+                <span>收到回复后，确认用于登录的邮箱。</span>
+              </li>
+              <li>
+                <strong>03 / 登录工作台</strong>
+                <span>加入白名单后，用邮箱验证码登录并连接模型。</span>
+              </li>
+            </ol>
+
+            <p class="access-signin">已有资格？<a class="text-link" href="https://app.theoremos.top/">打开工作台 ↗</a></p>
+          </div>
+
+          <div class="faq-column" aria-labelledby="faq-title">
+            <h3 id="faq-title" class="panel-subtitle">使用前的几个问题</h3>
+            <div class="faq-list">
+              <details class="faq-item" open>
+                <summary>需要自己配置 Lean 吗？</summary>
+                <p>不用。工作台在浏览器中运行，提供 Lean 标准库或固定的 Mathlib 环境，无需在本机安装 Lean 或 Docker。</p>
+              </details>
+              <details class="faq-item">
+                <summary>Lean 通过后，还要核对什么？</summary>
+                <p>Lean 验收的是形式化陈述的证明。你仍需核对陈述是否准确表达原题的假设与目标；含义审核与证明验收分别展示。</p>
+              </details>
+              <details class="faq-item">
+                <summary>支持哪些 Key，如何保存？</summary>
+                <p>支持 OpenAI 和已配置网关。Key 由对应服务商或网关管理员提供，可临时使用，也可加密保存到账号，随时删除。「检查 Key 与模型」只读取模型列表，不调用模型。</p>
+              </details>
+              <details class="faq-item">
+                <summary>如何设置预算？</summary>
+                <p>默认形式化预算为 10 分钟 / 40 万 Token，证明预算为 5 分钟 / 20 万 Token，开始前可以调整。按已报告用量停止，在途请求可能超额；Token 上限不是费用封顶。</p>
+              </details>
+              <details class="faq-item">
+                <summary>研究记录会保存吗？</summary>
+                <p>运行记录归属账号，可下载源码和报告。删除账号会立即清除在线内容；维护备份与用量标识的保留方式见 <a class="inline-link" href="privacy.html" target="_blank" rel="noreferrer">隐私与条款</a>。</p>
+              </details>
+              <details class="faq-item">
+                <summary>已有证明思路，怎样带入？</summary>
+                <p>在原题后补充已知引理、关键构造和希望尝试的路线；已有 Lean 时可保留声明与未完成证明，从草稿继续。开始前仍需核对题意与所用环境。</p>
+              </details>
+              <details class="faq-item">
+                <summary>研究未完成，还能继续吗？</summary>
+                <p>保留源码、笔记和检查记录。在运行详情选择“从这一版继续”，以保存的源码新建研究，沿用冻结原题并重新检查；已有局部结果不等于整题完成。</p>
               </details>
             </div>
-            <p class="module-graph-route" id="module-graph-route" aria-live="polite" aria-atomic="true">M3 → M4 · 根据就绪任务，整理下一步所需的上下文。</p>
           </div>
-          <div class="module-library" hidden><a class="module-preview-link" href="assets/workbench-library-desktop.png" target="_blank" rel="noreferrer" aria-label="查看方案库原始截图" title="查看原始截图"><picture><source media="(max-width: 600px)" srcset="assets/workbench-library-mobile.png" width="360" height="650"><img src="assets/workbench-library-desktop.png" alt="模块方案库：Mathlib 代数研究方案，启用两项自定义策略。" width="848" height="530" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></div>
         </div>
-      </figure><p class="sr-only"><span id="module-preview-caption" aria-live="polite">研究模块与独立验收</span></p></div>
-
       </div>
-      <noscript><p class="no-script-note">M5 组织协作；研究循环依次经过 M3 搜索、M4 上下文、M1 构造与 M2 检查，再将反馈交回 M3。集成后的证明交给 S3，对完整原题独立验收。</p></noscript>
-    </div></section>
-
+    </section>
   </main>
-  <footer class="closing start-section landing-section" id="start" tabindex="-1" aria-labelledby="start-title"><div class="wrap">
-    <div class="closing-content">
-      <div class="closing-heading">
-      <h2 id="start-title">带一道题来试试</h2>
-      <div class="closing-action"><a class="button button-lime" data-umami-event="apply-github" href="https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml" target="_blank" rel="noreferrer">申请内测<i data-lucide="arrow-up-right"></i></a></div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img class="brand-mark" src="assets/mark.svg" alt="" width="24" height="24">
+          <span>Theorem<span class="brand-os">OS</span></span>
+        </a>
+        <p>数学研究与 Lean 证明工作台</p>
       </div>
-      <div class="start-layout">
-      <div class="start-copy"><p>工作台目前为白名单内测。介绍你的研究用途，公开题目或 Lean 链接选填。</p><p class="access-cost">内测期间平台免费。模型调用使用你的 API Key，由模型服务商计费。</p>
-        <div class="start-links"><a class="text-link" data-umami-event="apply-email" href="mailto:liuzhenhao@westlake.edu.cn?subject=TheoremOS%20%E5%86%85%E6%B5%8B%E7%94%B3%E8%AF%B7&amp;body=%E7%A0%94%E7%A9%B6%E7%94%A8%E9%80%94%EF%BC%9A%0A%0A%E5%85%AC%E5%BC%80%E9%A2%98%E7%9B%AE%E6%88%96%20Lean%20%E9%93%BE%E6%8E%A5%EF%BC%88%E9%80%89%E5%A1%AB%EF%BC%89%EF%BC%9A%0A%0A%E8%AE%A1%E5%88%92%E4%BD%BF%E7%94%A8%E7%9A%84%E6%A8%A1%E5%9E%8B%E6%9C%8D%E5%8A%A1%EF%BC%88%E9%80%89%E5%A1%AB%EF%BC%89%EF%BC%9A">邮件申请</a><a class="text-link" href="initiative.html">共建计划<i data-lucide="arrow-up-right"></i></a></div>
-        <p class="start-note">GitHub 申请公开，请勿填写 Key 或个人联系方式。</p>
-        <ol class="access-steps"><li><strong>提交申请</strong><p>在 GitHub 或邮件中说明研究用途。</p></li><li><strong>私下确认邮箱</strong><p>收到回复后，确认用于登录的邮箱。</p></li><li><strong>登录工作台</strong><p>加入白名单后，用邮箱验证码登录并连接模型。</p></li></ol>
-        <a class="text-link existing-access" href="https://app.theoremos.top/" data-umami-event="open-workbench">已有资格？打开工作台<i data-lucide="arrow-up-right"></i></a>
-      </div>
-      <div class="faq-section" aria-labelledby="faq-title"><h3 id="faq-title">使用前的几个问题</h3><div class="faq-list"><details name="faq"><summary>需要自己配置 Lean 吗？<i data-lucide="plus"></i></summary><p>不用。工作台在浏览器中运行，提供 Lean 标准库或固定的 Mathlib 环境，无需在本机安装 Lean 或 Docker。</p></details><details name="faq"><summary>Lean 通过后，还要核对什么？<i data-lucide="plus"></i></summary><p>Lean 验收的是形式化陈述的证明。你仍需核对陈述是否准确表达原题的假设与目标；含义审核与证明验收分别展示。</p></details><details name="faq"><summary>支持哪些 Key，如何保存？<i data-lucide="plus"></i></summary><p>支持 OpenAI 和已配置网关。Key 由对应服务商或网关管理员提供，可临时使用，也可加密保存到账号，随时删除。「检查 Key 与模型」只读取模型列表，不调用模型。</p></details><details name="faq"><summary>如何设置预算？<i data-lucide="plus"></i></summary><p>默认形式化预算为 10 分钟 / 40 万 Token，证明预算为 5 分钟 / 20 万 Token，开始前可以调整。按已报告用量停止，在途请求可能超额；Token 上限不是费用封顶。</p></details><details name="faq"><summary>研究记录会保存吗？<i data-lucide="plus"></i></summary><p>运行记录归属账号，可下载源码和报告。删除账号会立即清除在线内容；维护备份与用量标识的保留方式见 <a href="privacy.html">隐私与条款</a>。</p></details><details name="faq" data-continuation-faq><summary>已有证明思路，怎样带入？<i data-lucide="plus"></i></summary><p>在原题后补充已知引理、关键构造和希望尝试的路线；已有 Lean 时可保留声明与未完成证明，从草稿继续。开始前仍需核对题意与所用环境。</p></details><details name="faq" data-continuation-faq><summary>研究未完成，还能继续吗？<i data-lucide="plus"></i></summary><p>保留源码、笔记和检查记录。在运行详情选择“从这一版继续”，以保存的源码新建研究，沿用冻结原题并重新检查；已有局部结果不等于整题完成。</p></details></div></div></div>
+      <nav class="footer-nav" aria-label="页脚导航">
+        <a href="https://theoremos.top/archive.html" target="_blank" rel="noreferrer">浏览证明档案</a>
+        <a href="initiative.html">共建计划</a>
+        <a href="feedback.html">反馈</a>
+        <a href="privacy.html" target="_blank" rel="noreferrer">隐私与条款</a>
+        <a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+      <p class="footer-copy">© 2026 TheoremOS contributors</p>
     </div>
-    <div class="site-footer"><div class="footer-brand"><a class="brand" href="index.html">TheoremOS</a><p>数学研究与 Lean 证明工作台</p></div><nav aria-label="页脚链接"><a href="archive.html">浏览证明档案</a><a href="initiative.html">共建计划</a><a href="feedback.html">反馈</a><a href="privacy.html">隐私与条款</a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub</a></nav><span>© 2026 TheoremOS contributors</span></div>
-  </div></footer>
-  <dialog class="preview-dialog" id="workbench-dialog" aria-labelledby="preview-title" aria-describedby="preview-description">
-    <div class="preview-dialog-header"><div><strong id="preview-title">TheoremOS <span>研究工作台</span></strong><p id="preview-description">自然语言入口</p></div><div class="preview-dialog-actions"><button type="button" class="preview-zoom" aria-label="放大截图" aria-pressed="false" title="放大截图"><i data-lucide="zoom-in"></i><i data-lucide="zoom-out"></i></button><a class="preview-original" href="assets/workbench-full-desktop.png" target="_blank" rel="noreferrer" aria-label="打开原始截图" title="打开原始截图"><i data-lucide="external-link"></i></a><button type="button" class="preview-close" aria-label="关闭截图预览" title="关闭" autofocus><i data-lucide="x"></i></button></div></div>
-    <div class="preview-dialog-media" role="region" aria-label="研究工作台截图" tabindex="0"><picture><source media="(max-width: 600px)" srcset="assets/workbench-full-mobile.png" width="374" height="443"><img src="assets/workbench-full-desktop.png" alt="TheoremOS 原题输入区，展示三角展开题目与研究方式。" width="900" height="349" loading="lazy"></picture></div>
+  </footer>
+
+  <dialog class="image-dialog" id="workbench-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <div class="dialog-bar">
+        <strong id="dialog-title">TheoremOS 研究工作台 · 自然语言入口</strong>
+        <button type="button" class="btn btn-secondary btn-sm" data-close-dialog="workbench-dialog">关闭预览 (Esc)</button>
+      </div>
+      <figure class="dialog-figure">
+        <img src="assets/workbench-full-desktop.png" alt="TheoremOS 原题输入区，展示三角展开题目与研究方式。" width="1280" height="800" loading="lazy">
+      </figure>
+    </div>
   </dialog>
-  <script src="landing.js" defer></script>
-  <script src="assets/moments/preview-loader.js" defer></script>
+
+  <script src="design.js"></script>
 </body>
 </html>
