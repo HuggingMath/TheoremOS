@@ -1406,6 +1406,7 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 .landing-refined .replay-source .editor-heading { display: none; }
 .landing-refined .replay-source .demo-code { max-height: 320px; }
 .landing-refined .research-cases-scope { margin: -8px 0 24px; max-width: 70em; font-size: 14px; }
+.landing-refined .case-guide-case { display: block; margin-bottom: 4px; color: var(--muted); font: 400 13px/1.5 var(--sans); }
 .landing-refined .community-participation { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line); scroll-margin-top: 80px; }
 .landing-refined .community-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px 24px; }
 .landing-refined .community-heading h3 { margin: 0; font: 500 22px/1.4 var(--serif); }
@@ -1417,6 +1418,8 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 .landing-refined .community-paths a > span { min-width: 0; }
 .landing-refined .community-paths strong { display: block; font-size: 18px; font-weight: 500; line-height: 1.5; }
 .landing-refined .community-paths a > span > span { display: block; margin-top: 8px; font-size: 16px; line-height: 1.7; }
+.landing-refined .community-proof-kit { margin-top: 16px; font-size: 14px; line-height: 1.75; }
+.landing-refined .community-proof-kit a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .landing-refined .community-scope { margin-top: 16px; color: var(--muted); font-size: 14px; line-height: 1.75; }
 @media (hover: hover) and (pointer: fine) {
   .landing-refined .community-paths a:hover { transform: translateY(-2px); border-color: var(--accent); }
