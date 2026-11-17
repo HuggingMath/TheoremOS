@@ -44,11 +44,48 @@
             <div class="hero-meta"><p class="hero-practice"><a class="text-link" href="#human-decision">先试试陈述核对<i data-lucide="arrow-down-right"></i></a></p><p class="hero-terms">白名单内测期间平台免费，自备模型 API Key。</p></div>
           </div>
         </div></div>
-        <figure class="hero-workbench" aria-label="TheoremOS 原题输入与研究方式" data-ui data-enter-media>
-          <div class="hero-workbench-header"><span><i data-lucide="file-code-2"></i>TheoremOS 工作台</span><span>从一道题开始</span></div>
-          <a class="workbench-image-link" href="assets/workbench-full-desktop.png" aria-haspopup="dialog" aria-controls="workbench-dialog" aria-label="放大查看工作台输入界面"><picture class="workbench-picture"><source media="(max-width: 600px)" srcset="assets/workbench-full-mobile.png" width="374" height="443"><img src="assets/workbench-full-desktop.png" alt="工作台原题输入区：选择研究方式，输入数学问题，再核对生成的陈述与计划。" width="900" height="349" fetchpriority="high"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a>
-          <ol class="hero-workbench-steps" aria-label="研究步骤"><li><a href="#research-entry"><span>01</span>写下问题<i data-lucide="arrow-down-right"></i></a></li><li><a href="#human-decision"><span>02</span>核对陈述<i data-lucide="arrow-down-right"></i></a></li><li><a href="#demo"><span>03</span>查看证明<i data-lucide="arrow-down-right"></i></a></li></ol>
-        </figure>
+        <div class="proof-stage hero-proof" id="hero-proof" data-hero-proof data-proof-current="4" data-proof-playing="false" role="group" aria-labelledby="hero-proof-title">
+          <div class="proof-window">
+            <div class="proof-chrome">
+              <div class="proof-title"><h2 id="hero-proof-title">三角展开，如何保持面的对应？</h2><span>TriangleFace · 真实研究回放</span></div>
+              <div class="hero-proof-controls" hidden><button type="button" data-proof-play aria-pressed="false">播放</button><button type="button" data-proof-restart>重播</button></div>
+            </div>
+            <div class="proof-deck">
+              <div class="proof-pane proof-feed-pane">
+                <h3 class="proof-pane-head">研究过程<span class="proof-pane-meta">4 个已归档检查节点</span></h3>
+                <div class="hero-proof-question"><span class="feed-who">原题</span><p>将度三顶点展开成三角形，构造匹配多面体的线性面对应，并保持最小面。</p></div>
+                <ol class="proof-feed hero-proof-feed">
+                  <li data-proof-entry="1" data-check-id="check-7f3828b042eb20639aad"><span class="feed-who"><span>01 / 构造展开</span><span class="feed-status is-pass">已检查</span></span><p>先证明展开后的顶点能折叠回原顶点。</p></li>
+                  <li data-proof-entry="2" data-check-id="check-91023ca5fd66be269b5b"><span class="feed-who"><span>02 / 刻画切面</span><span class="feed-status is-pass">已检查</span></span><p>把三角形边界的切质量写成原图边坐标之和。</p></li>
+                  <li data-proof-entry="3" data-check-id="check-9cc7d934b222eb94861b"><span class="feed-who"><span>03 / 运输最小面</span><span class="feed-status is-pass">已检查</span></span><p>沿带有线性逆映射的面对应，运输每一点的最小面。</p></li>
+                  <li data-proof-entry="4" data-check-id="check-eabf122f7f3f7b3fffab"><span class="feed-who"><span>04 / 完整原题验收</span><span class="feed-status is-pass">本地通过</span></span><p>合并面对应、互逆映射与最小面运输，完成全部结论。</p></li>
+                </ol>
+              </div>
+              <div class="proof-pane proof-explain-pane">
+                <h3 class="proof-pane-head">证明成果<span class="proof-pane-meta" data-proof-position>04 / 04</span></h3>
+                <div class="hero-proof-panel" id="hero-proof-panel-1" data-proof-panel="1" hidden>
+                  <p class="hero-proof-theorem">collapse_reattach</p><h4>展开之后，仍能回到原图</h4><p>先给出折叠映射，验证重新连接后的顶点会回到原来的位置。</p>
+                  <pre><code>triangleCollapse v (reattach v i w) = w</code></pre><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;entry=check:check-7f3828b042eb20639aad">查看这次检查 · L98–115<i data-lucide="arrow-up-right"></i></a>
+                </div>
+                <div class="hero-proof-panel" id="hero-proof-panel-2" data-proof-panel="2" hidden>
+                  <p class="hero-proof-theorem">cutMass_triangleVertices</p><h4>找到展开图中对应的面</h4><p>把新三角形边界的切质量化为原图坐标，刻画切质量为 1 的面。</p>
+                  <pre><code>∑ e : E, if G.Incident v e then y (Sum.inl e) else 0</code></pre><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;entry=check:check-91023ca5fd66be269b5b">查看这次检查 · L238–253<i data-lucide="arrow-up-right"></i></a>
+                </div>
+                <div class="hero-proof-panel" id="hero-proof-panel-3" data-proof-panel="3" hidden>
+                  <p class="hero-proof-theorem">minFace_linear_image</p><h4>面对应，也保持最小面</h4><p>在线性映射及其逆映射之间，证明每一点所在的最小面一同对应。</p>
+                  <pre><code>CanonicalFace198.minFace R (f x) =
+  f '' CanonicalFace198.minFace P x</code></pre><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;entry=check:check-9cc7d934b222eb94861b">查看这次检查 · L822–836<i data-lucide="arrow-up-right"></i></a>
+                </div>
+                <div class="hero-proof-panel" id="hero-proof-panel-4" data-proof-panel="4">
+                  <p class="hero-proof-theorem">triangle_expansion_face</p><h4>从局部展开，到完整原题</h4><p>面对应、互逆映射与最小面运输合为完整结论，保存的源码通过本地验收。</p>
+                  <pre><code>f '' G.polytope = Q</code></pre><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=evidence">查看原题验收依据<i data-lucide="arrow-up-right"></i></a>
+                </div>
+                <div class="hero-proof-receipt"><span class="hero-proof-receipt-state" data-proof-receipt>完整原题 · 本地验收通过</span><span>1,233 行 Lean 源码</span><a class="text-link" href="#demo">逐步阅读源码<i data-lucide="arrow-down-right"></i></a></div>
+              </div>
+            </div>
+            <div class="hero-proof-steps" role="group" aria-label="选择解题动画的检查节点"><button type="button" data-proof-select="1" aria-controls="hero-proof-panel-1" aria-pressed="false" disabled><span>01</span>构造展开</button><button type="button" data-proof-select="2" aria-controls="hero-proof-panel-2" aria-pressed="false" disabled><span>02</span>刻画切面</button><button type="button" data-proof-select="3" aria-controls="hero-proof-panel-3" aria-pressed="false" disabled><span>03</span>运输最小面</button><button type="button" data-proof-select="4" aria-controls="hero-proof-panel-4" aria-pressed="true" disabled><span>04</span>原题验收</button></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -423,6 +460,7 @@ python3 verify.py --prepare --lean-only</code></pre><p>完整题面对照还需�
     <div class="preview-dialog-media" role="region" aria-label="研究工作台截图" tabindex="0"><picture><source media="(max-width: 600px)" srcset="assets/workbench-full-mobile.png" width="374" height="443"><img src="assets/workbench-full-desktop.png" alt="TheoremOS 原题输入区，展示三角展开题目与研究方式。" width="900" height="349" loading="lazy"></picture></div>
   </dialog>
   <script src="landing.js" defer></script>
+  <script src="hero-proof.js" defer></script>
   <script src="assets/moments/preview-loader.js" defer></script>
 </body>
 </html>
