@@ -204,12 +204,78 @@
             <div class="research-verification"><h3>合并之后，再验收完整原题</h3><p>局部引理通过后，仍需检查集成源码和原题的全部目标。</p><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab">查看最终独立验收<i data-lucide="arrow-up-right"></i></a></div>
           </div>
         </div>
+        <a class="text-link research-system-next" href="#knowledge-reuse">查看引理如何复用<i data-lucide="arrow-down-right"></i></a>
+      </div>
+    </section>
+
+    <section class="knowledge-section landing-section" tabindex="-1" id="knowledge-reuse" aria-labelledby="knowledge-title">
+      <div class="wrap">
+        <p class="section-eyebrow">06 / 引理与知识</p>
+        <div class="section-heading"><h2 id="knowledge-title">让已验证引理参与下一次证明</h2><p class="heading-description">按当前目标检索已有知识，读清类型与前提，再检查它在新证明中的实际引用。</p></div>
+        <div class="research-content-layout">
+          <div class="research-content-copy">
+            <ol class="research-practices">
+              <li><h3>从当前目标检索</h3><p>在本账户的已验证引理目录中查找相关结果，保留完整声明与来源。</p></li>
+              <li><h3>核对每个前提</h3><p>查看类型签名、证明源码和依赖环境，确认引理适用于当前数学对象。</p></li>
+              <li><h3>在新证明中重检</h3><p>新研究固定所选目录的快照；引理进入证明环境后仍需编译，整题另做独立验收。</p></li>
+            </ol>
+            <a class="text-link research-content-link" href="https://app.theoremos.top/library.html?lang=zh">打开知识库<i data-lucide="arrow-up-right"></i></a>
+          </div>
+          <article class="lemma-example" aria-labelledby="lemma-example-title">
+            <div class="lemma-intro"><p class="research-content-label">TriangleFace · 通用引理</p><h3 id="lemma-example-title">最小面沿线性映射运输</h3><p>在凸性与极面条件下，先证明一般的最小面对应，再用于图的三角展开。</p></div>
+            <div class="lemma-source" data-ui data-source-sha256="1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450">
+              <div class="lemma-source-heading"><span>Submission.lean</span><span>804–809</span></div>
+              <pre aria-label="minFace_linear_image 的完整引理声明"><code><span data-source-line="804">theorem minFace_linear_image {A B : Type*} [AddCommGroup A] [Module ℝ A]</span>
+<span data-source-line="805">    [AddCommGroup B] [Module ℝ B] (P : Set A) (R : Set B) (f : A →ₗ[ℝ] B)</span>
+<span data-source-line="806">    (g : B →ₗ[ℝ] A) (hP : Convex ℝ P) (hR : Convex ℝ R)</span>
+<span data-source-line="807">    (hQext : IsExtreme ℝ R (f &#x27;&#x27; P)) (hgf : ∀ x, g (f x) = x)</span>
+<span data-source-line="808">    (hfg : ∀ y, y ∈ f &#x27;&#x27; P → f (g y) = y) :</span>
+<span data-source-line="809">    ∀ x, x ∈ P → CanonicalFace198.minFace R (f x) = f &#x27;&#x27; CanonicalFace198.minFace P x := by</span></code></pre>
+              <a class="lemma-source-link" data-lemma-source href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450&amp;line=804&amp;endLine=809"><span><i data-lucide="check"></i>来自已验收的完整源码</span><span>查看证明<i data-lucide="arrow-up-right"></i></span></a>
+            </div>
+            <details class="research-disclosure"><summary>检索到的引理，能直接套用吗？<i data-lucide="plus"></i></summary><p>先核对假设，再检查实际调用。检索命中本身不算证明通过；不兼容的 Lean 环境也不能直接沿用。这里展示的是已验收源码中的通用引理。</p></details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="collaboration-section landing-section" tabindex="-1" id="research-collaboration" aria-labelledby="collaboration-title">
+      <div class="wrap">
+        <p class="section-eyebrow">07 / 协作与交付</p>
+        <div class="section-heading"><h2 id="collaboration-title">与同行围绕同一题协作</h2><p class="heading-description">核对题意、审阅计划，让讨论对应具体任务。分享成果时，把原题、证明与验收依据一起交给同行。</p></div>
+        <div class="research-content-layout">
+          <div class="research-content-copy">
+            <ol class="research-practices">
+              <li><h3>审阅题意与初始计划</h3><p>选择共同推进，确认陈述、审阅计划后再展开证明；研究中可以补充指导与调整方案。</p></li>
+              <li><h3>对着具体任务讨论</h3><p>意见对应任务和版本，分别查看指导是否送达、是否采纳，以及后续修改和检查。</p></li>
+              <li><h3>决定成员能做什么</h3><p>邀请同伴参与项目，分别设置可见范围与运行操作权限；成员授权和分享入口均可撤销。</p></li>
+            </ol>
+            <a class="text-link research-content-link" href="https://app.theoremos.top/theorems.html?lang=zh">打开协作项目<i data-lucide="arrow-up-right"></i></a>
+          </div>
+          <article class="research-delivery" aria-labelledby="delivery-title">
+            <p class="research-content-label">Dimitrov · 独立复核包</p>
+            <h3 id="delivery-title">让同行在本地重新检查</h3>
+            <p class="delivery-intro">下载公开材料，在固定环境里核对证明，无需 TheoremOS 账号或模型 API Key。</p>
+            <div class="delivery-package" data-ui aria-label="Dimitrov 复核包文件">
+              <div class="delivery-package-heading"><i data-lucide="folder-open"></i><code>proof-kits/dimitrov</code></div>
+            <dl class="delivery-files">
+              <div><dt>原题与证明</dt><dd><a href="proof-kits/dimitrov/Challenge.lean" download><code>Challenge.lean</code></a><a href="proof-kits/dimitrov/Submission.lean" download><code>Submission.lean</code></a></dd></div>
+              <div><dt>工具链与依赖</dt><dd><a href="proof-kits/dimitrov/lean-toolchain" download><code>lean-toolchain</code></a><a href="proof-kits/dimitrov/lake-manifest.json" download><code>lake-manifest.json</code></a></dd></div>
+              <div><dt>校验与复核</dt><dd><a href="proof-kits/dimitrov/SHA256SUMS" download><code>SHA256SUMS</code></a><a href="proof-kits/dimitrov/verify.py" download><code>verify.py</code></a></dd></div>
+            </dl>
+            </div>
+            <a class="text-link delivery-guide" data-proof-kit href="https://github.com/HuggingMath/TheoremOS/tree/main/proof-kits/dimitrov" target="_blank" rel="noreferrer">查看复核包与说明<i data-lucide="arrow-up-right"></i></a>
+            <details class="research-disclosure" data-review-disclosure><summary>下载后，怎样开始复核？<i data-lucide="plus"></i></summary><div class="research-disclosure-body"><p>在包目录下先核对文件，再准备固定依赖并运行 Lean 检查。需安装 Python 3、Git 与 Lean 工具链管理器 Elan。</p><pre><code>python3 verify.py --check-files
+python3 verify.py --prepare --lean-only</code></pre><p>完整题面对照还需按包内说明配置上游比较器，再运行 <code>python3 verify.py</code>。</p></div></details>
+            <details class="research-disclosure" data-sharing-disclosure><summary>分享链接会公开哪些内容？<i data-lucide="plus"></i></summary><p>分享选定成果的原题、证明、结果与环境信息；如有题意核对记录，一并展示。API Key、邮箱和 Agent 对话不包含在内。撤销后链接不再可访问，已下载的副本仍由接收者保留。 <a href="privacy.html">查看隐私与条款</a>。</p></details>
+          </article>
+        </div>
         <a class="text-link research-system-next" href="#components">了解可替换的研究组件<i data-lucide="arrow-down-right"></i></a>
       </div>
     </section>
 
     <section class="components-section landing-section" tabindex="-1" id="components" aria-labelledby="components-title"><div class="wrap">
-      <p class="section-eyebrow">06 / 研究组件</p>
+      <p class="section-eyebrow">08 / 研究组件</p>
       <div class="section-heading"><h2 id="components-title">试验你的证明方法</h2><p class="heading-description">固定题目、环境、模型与预算，比较不同策略和协作方式的结果。</p></div>
       <div class="component-layout"><div class="component-explorer"><h3 class="component-picker-title">五个研究组件</h3>
         <div class="component-tabs" data-ui role="tablist" aria-label="五个研究组件" aria-orientation="vertical">

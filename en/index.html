@@ -204,12 +204,78 @@
             <div class="research-verification"><h3>Verify the full problem after integration</h3><p>Checked lemmas still need an integrated source check and verification of every original goal.</p><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab">Read the final independent check<i data-lucide="arrow-up-right"></i></a></div>
           </div>
         </div>
+        <a class="text-link research-system-next" href="#knowledge-reuse">See how lemmas are reused<i data-lucide="arrow-down-right"></i></a>
+      </div>
+    </section>
+
+    <section class="knowledge-section landing-section" tabindex="-1" id="knowledge-reuse" aria-labelledby="knowledge-title">
+      <div class="wrap">
+        <p class="section-eyebrow">06 / Lemmas and knowledge</p>
+        <div class="section-heading"><h2 id="knowledge-title">Bring verified lemmas into the next proof</h2><p class="heading-description">Search against the current goal, read the types and premises, then check the actual use in a new proof.</p></div>
+        <div class="research-content-layout">
+          <div class="research-content-copy">
+            <ol class="research-practices">
+              <li><h3>Search from the current goal</h3><p>Find relevant results in your account’s verified lemma catalog, with full declarations and sources.</p></li>
+              <li><h3>Read every premise</h3><p>Inspect the type signature, proof source and dependencies to check whether a lemma applies.</p></li>
+              <li><h3>Check it in the new proof</h3><p>Pin a catalog snapshot for the new run. Compile its lemmas in the proof environment, then verify the complete problem separately.</p></li>
+            </ol>
+            <a class="text-link research-content-link" href="https://app.theoremos.top/library.html?lang=en">Open the library<i data-lucide="arrow-up-right"></i></a>
+          </div>
+          <article class="lemma-example" aria-labelledby="lemma-example-title">
+            <div class="lemma-intro"><p class="research-content-label">TriangleFace · General lemma</p><h3 id="lemma-example-title">Transport minimal faces through a linear map</h3><p>Under convexity and extreme-face conditions, prove the general correspondence before applying it to the triangle expansion.</p></div>
+            <div class="lemma-source" data-ui data-source-sha256="1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450">
+              <div class="lemma-source-heading"><span>Submission.lean</span><span>804–809</span></div>
+              <pre aria-label="Full declaration of minFace_linear_image"><code><span data-source-line="804">theorem minFace_linear_image {A B : Type*} [AddCommGroup A] [Module ℝ A]</span>
+<span data-source-line="805">    [AddCommGroup B] [Module ℝ B] (P : Set A) (R : Set B) (f : A →ₗ[ℝ] B)</span>
+<span data-source-line="806">    (g : B →ₗ[ℝ] A) (hP : Convex ℝ P) (hR : Convex ℝ R)</span>
+<span data-source-line="807">    (hQext : IsExtreme ℝ R (f &#x27;&#x27; P)) (hgf : ∀ x, g (f x) = x)</span>
+<span data-source-line="808">    (hfg : ∀ y, y ∈ f &#x27;&#x27; P → f (g y) = y) :</span>
+<span data-source-line="809">    ∀ x, x ∈ P → CanonicalFace198.minFace R (f x) = f &#x27;&#x27; CanonicalFace198.minFace P x := by</span></code></pre>
+              <a class="lemma-source-link" data-lemma-source href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab&amp;code=source&amp;source=Submission.lean&amp;sourceSha256=1f05b4d19928f89030bbe1ef6430f9b06bcca2273e082c8e339f77e44cdcf450&amp;line=804&amp;endLine=809"><span><i data-lucide="check"></i>From the accepted complete source</span><span>Read the proof<i data-lucide="arrow-up-right"></i></span></a>
+            </div>
+            <details class="research-disclosure"><summary>Can a search result be used directly?<i data-lucide="plus"></i></summary><p>Check its assumptions and actual application first. A search hit is not proof acceptance, and an incompatible Lean environment cannot be reused directly. This example is a general lemma inside the accepted source.</p></details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="collaboration-section landing-section" tabindex="-1" id="research-collaboration" aria-labelledby="collaboration-title">
+      <div class="wrap">
+        <p class="section-eyebrow">07 / Collaboration and delivery</p>
+        <div class="section-heading"><h2 id="collaboration-title">Work with colleagues on the same problem</h2><p class="heading-description">Review the statement and plan, discuss specific tasks, and share the problem, proof and verification evidence together.</p></div>
+        <div class="research-content-layout">
+          <div class="research-content-copy">
+            <ol class="research-practices">
+              <li><h3>Review the statement and plan</h3><p>Choose collaborative research to review the statement and initial plan before proving. Add guidance or revise the plan as the work develops.</p></li>
+              <li><h3>Discuss a specific task</h3><p>Connect feedback to a task and version. See delivery, adoption, subsequent changes and checks as separate states.</p></li>
+              <li><h3>Choose each member’s access</h3><p>Invite colleagues to a project. Set visibility and run permissions separately; member access and share links can be revoked.</p></li>
+            </ol>
+            <a class="text-link research-content-link" href="https://app.theoremos.top/theorems.html?lang=en">Open research projects<i data-lucide="arrow-up-right"></i></a>
+          </div>
+          <article class="research-delivery" aria-labelledby="delivery-title">
+            <p class="research-content-label">Dimitrov · Independent proof kit</p>
+            <h3 id="delivery-title">Let colleagues check the proof locally</h3>
+            <p class="delivery-intro">Download the public materials and check the proof in its fixed environment. No TheoremOS account or model API key is needed.</p>
+            <div class="delivery-package" data-ui aria-label="Dimitrov proof kit files">
+              <div class="delivery-package-heading"><i data-lucide="folder-open"></i><code>proof-kits/dimitrov</code></div>
+            <dl class="delivery-files">
+              <div><dt>Problem and proof</dt><dd><a href="../proof-kits/dimitrov/Challenge.lean" download><code>Challenge.lean</code></a><a href="../proof-kits/dimitrov/Submission.lean" download><code>Submission.lean</code></a></dd></div>
+              <div><dt>Toolchain and dependencies</dt><dd><a href="../proof-kits/dimitrov/lean-toolchain" download><code>lean-toolchain</code></a><a href="../proof-kits/dimitrov/lake-manifest.json" download><code>lake-manifest.json</code></a></dd></div>
+              <div><dt>Integrity and verification</dt><dd><a href="../proof-kits/dimitrov/SHA256SUMS" download><code>SHA256SUMS</code></a><a href="../proof-kits/dimitrov/verify.py" download><code>verify.py</code></a></dd></div>
+            </dl>
+            </div>
+            <a class="text-link delivery-guide" data-proof-kit href="https://github.com/HuggingMath/TheoremOS/tree/main/proof-kits/dimitrov" target="_blank" rel="noreferrer">Read the proof kit guide<i data-lucide="arrow-up-right"></i></a>
+            <details class="research-disclosure" data-review-disclosure><summary>How do I start after downloading?<i data-lucide="plus"></i></summary><div class="research-disclosure-body"><p>In the kit directory, check the files, prepare the pinned dependencies and run Lean. Install Python 3, Git and the Elan toolchain manager first.</p><pre><code>python3 verify.py --check-files
+python3 verify.py --prepare --lean-only</code></pre><p>For the full comparison against the original problem, follow the kit’s comparator setup, then run <code>python3 verify.py</code>.</p></div></details>
+            <details class="research-disclosure" data-sharing-disclosure><summary>What does a share link disclose?<i data-lucide="plus"></i></summary><p>It includes the selected problem, proof, result and environment, plus the statement review when available. API keys, email addresses and agent conversations are excluded. Revocation stops access through the link; recipients retain any copies already downloaded. <a href="privacy.html">Read privacy and terms</a>.</p></details>
+          </article>
+        </div>
         <a class="text-link research-system-next" href="#components">See the replaceable research components<i data-lucide="arrow-down-right"></i></a>
       </div>
     </section>
 
     <section class="components-section landing-section" tabindex="-1" id="components" aria-labelledby="components-title"><div class="wrap">
-      <p class="section-eyebrow">06 / Research modules</p>
+      <p class="section-eyebrow">08 / Research modules</p>
       <div class="section-heading"><h2 id="components-title">Compare proof methods</h2><p class="heading-description">Keep the problem, environment, model and budget fixed. Compare different strategies and ways of working together.</p></div>
       <div class="component-layout"><div class="component-explorer"><h3 class="component-picker-title">Five research components</h3>
         <div class="component-tabs" data-ui role="tablist" aria-label="Five research components" aria-orientation="vertical">
