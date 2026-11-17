@@ -1421,6 +1421,9 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 .landing-refined .community-proof-kit { margin-top: 16px; font-size: 14px; line-height: 1.75; }
 .landing-refined .community-proof-kit a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .landing-refined .community-scope { margin-top: 16px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+@media (min-width: 901px) {
+  .landing-refined .proof-heading { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
+}
 @media (hover: hover) and (pointer: fine) {
   .landing-refined .community-paths a:hover { transform: translateY(-2px); border-color: var(--accent); }
 }
