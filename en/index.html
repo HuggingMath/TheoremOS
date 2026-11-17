@@ -32,7 +32,7 @@
     </div>
     <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#start">Request access<i data-lucide="arrow-down-right"></i></a><a href="#workbench-preview">Research workbench<i data-lucide="arrow-down-right"></i></a><a href="#demo">Verification replay<i data-lucide="arrow-down-right"></i></a><a href="#proofs">Proofs<i data-lucide="arrow-down-right"></i></a><a href="#components">Research components<i data-lucide="arrow-down-right"></i></a><a href="archive.html">Proof archive<i data-lucide="arrow-up-right"></i></a><a href="feedback.html">Feedback<i data-lucide="arrow-up-right"></i></a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub<i data-lucide="arrow-up-right"></i></a></nav>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero landing-section" aria-labelledby="hero-title" data-enter>
       <div class="wrap"><div class="hero-text">
         <div class="hero-copy">
@@ -48,7 +48,7 @@
       </div></div>
     </section>
 
-    <section class="workflow-section landing-section" id="workbench-preview" aria-labelledby="workflow-title">
+    <section class="workflow-section landing-section" tabindex="-1" id="workbench-preview" aria-labelledby="workflow-title">
       <div class="wrap">
         <div class="section-heading"><h2 id="workflow-title">One workspace for your problem</h2><p class="heading-description">Keep the original question, formal statement, proof attempts and verification in one research record.</p></div>
         <div class="workbench-layout">
@@ -58,13 +58,13 @@
           </figure>
         </div>
         <details class="source-disclosure" id="source">
-          <summary><span><strong id="source-title">Explore Lean source and diagnostics</strong><span class="source-disclosure-note">Statement and draft · Fixed environment · Compiler feedback</span></span><i data-lucide="chevron-down"></i></summary>
+          <summary><span><strong id="source-title">Lean source and diagnostics</strong><span class="source-disclosure-note">Statement and draft · Fixed environment · Compiler feedback</span></span><i data-lucide="chevron-down"></i></summary>
           <div class="source-layout"><ol class="source-copy workflow-steps"><li><h3>Statement and draft</h3><p>Open the statement and its Lean source.</p></li><li><h3>Fixed environment</h3><p>Use the Lean standard library or a fixed Mathlib version.</p></li><li><h3>Lean diagnostics</h3><p>Follow the feedback and inspect each change.</p></li></ol><figure class="product-fragment source-fragment"><a href="../assets/workbench-source-detail-en.png" target="_blank" rel="noreferrer" aria-label="Enlarge the Lean workspace"><picture><source media="(max-width: 600px)" srcset="../assets/workbench-source-mobile-en.png" width="360" height="450"><img src="../assets/workbench-source-detail-en.png" alt="An addition-by-zero proof draft in the Lean workspace, not yet submitted for verification." width="850" height="450" loading="lazy"></picture><span class="preview-expand"><i data-lucide="maximize-2"></i></span></a></figure></div>
         </details>
       </div>
     </section>
 
-    <section class="research-section landing-section g2m" id="research-entry" aria-labelledby="research-title">
+    <section class="research-section landing-section g2m" tabindex="-1" id="research-entry" aria-labelledby="research-title">
       <div class="wrap">
         <div class="section-heading"><h2 id="research-title">Review the statement before proving</h2><p class="heading-description">Lean checks the formal claim. You confirm that its assumptions and goal express the intended question.</p></div>
         <div class="research-layout">
@@ -78,14 +78,20 @@
           <p class="scenario-continuation">Your template and environment continue after sign-in. Preparing a draft does not call a model.</p>
         </div>
           <div class="human-decision" id="human-decision" aria-labelledby="human-decision-title">
-          <div class="human-decision-copy"><h3 id="human-decision-title">Try reviewing these two goals</h3><p>Confirm to view the proof replay, or keep the statement under review.</p><p class="decision-example-label">Addition-by-zero example. No research is started.</p></div>
+          <div class="human-decision-copy"><h3 id="human-decision-title">Try reviewing these two goals</h3><p>Confirm to view the proof replay, or edit the question and goals to review again.</p><p class="decision-example-label">Addition-by-zero example. No research is started.</p></div>
           <div class="decision-example" data-human-decision data-ui>
             <p class="decision-question" data-decision-question>Prove that adding zero on either side leaves every natural number unchanged.</p>
-            <ul class="decision-targets"><li><code>Tutorial.add_zero</code><span><code data-decision-goal="0">n + 0 = n</code></span></li><li><code>Tutorial.zero_add</code><span><code data-decision-goal="1">0 + n = n</code></span></li></ul>
-            <div class="decision-actions" data-decision-controls hidden><button class="button button-dark" type="button" data-decision="confirm" aria-pressed="false">Confirm both goals<i data-lucide="check"></i></button><button class="text-link" type="button" data-decision="revise" aria-pressed="false">The statement needs work</button></div>
+            <ul class="decision-targets"><li><code data-decision-theorem="0">Tutorial.add_zero</code><span><code data-decision-goal="0">n + 0 = n</code></span></li><li><code data-decision-theorem="1">Tutorial.zero_add</code><span><code data-decision-goal="1">0 + n = n</code></span></li></ul>
+            <div class="decision-actions" data-decision-controls hidden><button class="button button-dark" type="button" data-decision="confirm" aria-pressed="false">Confirm both goals<i data-lucide="check"></i></button><button class="text-link" type="button" data-decision="revise" aria-pressed="false" aria-controls="decision-edit" aria-expanded="false">The statement needs work</button></div>
             <div class="decision-feedback" data-decision-feedback role="status" aria-atomic="true" hidden><strong data-decision-status>Waiting for your confirmation</strong><p data-decision-description>The two goals are still under review. The proof stage is locked.</p></div>
-            <form class="decision-edit" data-decision-edit hidden novalidate><div class="decision-edit-heading"><strong>Edit this statement</strong><span>Save it, then review both goals again.</span></div><label>Question<textarea rows="3" data-decision-field="question" required>Prove that adding zero on either side leaves every natural number unchanged.</textarea></label><fieldset><legend>Both goals</legend><label><span>Goal one</span><input type="text" data-decision-field="goal-0" value="n + 0 = n" required></label><label><span>Goal two</span><input type="text" data-decision-field="goal-1" value="0 + n = n" required></label></fieldset><div class="decision-edit-actions"><button class="button button-dark" type="submit">Save and review again<i data-lucide="check"></i></button><button class="text-link" type="button" data-decision="cancel-edit">Cancel</button></div></form>
-            <div class="decision-next" data-decision-next hidden><span data-decision-locked>Confirm to explore this problem’s proof replay.</span><a class="text-link" href="archive.html#view=quickstart" data-decision-continue hidden>Open the recorded replay<i data-lucide="arrow-up-right"></i></a><a class="text-link" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=en" data-decision-workbench hidden>Open the workbench to continue editing<i data-lucide="arrow-up-right"></i></a><button class="text-link decision-reset" type="button" data-decision="reset" hidden>Try again</button></div>
+            <form class="decision-edit" id="decision-edit" data-decision-edit hidden novalidate>
+              <div class="decision-edit-heading"><strong>Edit this statement</strong><span>Save it, then review both goals again.</span></div>
+              <div class="decision-field"><label for="decision-question">Question</label><textarea id="decision-question" rows="3" data-decision-field="question" aria-describedby="decision-question-error" required></textarea><p class="decision-field-error" id="decision-question-error" data-decision-error="question" hidden>Enter the question, using more than spaces.</p></div>
+              <fieldset><legend>Both goals</legend><div class="decision-field"><label for="decision-goal-0">Goal one</label><input id="decision-goal-0" type="text" data-decision-field="goal-0" aria-describedby="decision-goal-0-error" required><p class="decision-field-error" id="decision-goal-0-error" data-decision-error="goal-0" hidden>Enter the first goal, using more than spaces.</p></div><div class="decision-field"><label for="decision-goal-1">Goal two</label><input id="decision-goal-1" type="text" data-decision-field="goal-1" aria-describedby="decision-goal-1-error" required><p class="decision-field-error" id="decision-goal-1-error" data-decision-error="goal-1" hidden>Enter the second goal, using more than spaces.</p></div></fieldset>
+              <div class="decision-edit-actions"><button class="button button-dark" type="submit">Save and review again<i data-lucide="check"></i></button><button class="text-link" type="button" data-decision="cancel-edit">Cancel changes</button></div>
+            </form>
+            <div class="decision-handoff" data-decision-handoff hidden><button class="text-link" type="button" data-decision-copy>Copy revised statement<i data-lucide="copy"></i></button><p data-decision-copy-status role="status" aria-atomic="true">Copy the question and both goals, then paste them into the workbench.</p><textarea rows="6" readonly data-decision-export aria-label="Revised statement to copy" hidden></textarea></div>
+            <div class="decision-next" data-decision-next hidden><span data-decision-locked>Confirm to explore the example proof below.</span><a class="text-link" href="#demo" data-decision-continue hidden>View the proof replay below<i data-lucide="arrow-down-right"></i></a><a class="text-link" href="https://app.theoremos.top/?entry=statement&amp;template=add-zero&amp;environment=standard&amp;lang=en" target="_blank" rel="noreferrer" data-decision-workbench hidden>Open the workbench in a new tab<i data-lucide="arrow-up-right"></i></a><button class="text-link decision-reset" type="button" data-decision="reset" hidden>Restore the original example</button></div>
             <noscript><p class="decision-fallback">The workbench proceeds to proof after you confirm the statement. If it needs changes, statement review continues first.<a class="text-link" href="archive.html#view=quickstart">Explore the recorded tutorial replay<i data-lucide="arrow-up-right"></i></a></p></noscript>
           </div>
         </div>
@@ -93,7 +99,7 @@
       </div>
     </section>
 
-    <section class="replay-section landing-section" id="demo" aria-labelledby="demo-title">
+    <section class="replay-section landing-section" tabindex="-1" id="demo" aria-labelledby="demo-title">
       <div class="wrap">
         <div class="replay-heading"><h2 id="demo-title">Follow a proof, step by step</h2><p>For every natural number <code>n</code>, prove <code>n + 0 = n</code> and <code>0 + n = n</code>. Choose a step to inspect the candidate, Lean feedback and final verification.</p></div>
         <div class="product-demo" aria-label="TheoremOS recorded proof replay"><div class="replay-window" data-ui data-replay-playing="false" data-replay-current="verified" data-replay-state="paused"><div class="replay-sidebar"><div class="replay-tabs" role="tablist" aria-label="The four steps of the preset replay"><button type="button" role="tab" id="demo-candidate" aria-controls="stage-candidate" aria-selected="false" tabindex="-1" data-replay-stage="candidate" data-step-state="complete" disabled><span>Candidate</span><i data-lucide="arrow-right"></i></button><button type="button" role="tab" id="demo-feedback" aria-controls="stage-feedback" aria-selected="false" tabindex="-1" data-replay-stage="feedback" data-step-state="complete" disabled><span>Lean feedback</span><i data-lucide="arrow-right"></i></button><button type="button" role="tab" id="demo-repair" aria-controls="stage-repair" aria-selected="false" tabindex="-1" data-replay-stage="repair" data-step-state="complete" disabled><span>Repair</span><i data-lucide="arrow-right"></i></button><button type="button" role="tab" id="demo-verified" aria-controls="stage-verified" aria-selected="true" tabindex="0" data-replay-stage="verified" data-step-state="current" disabled><span>Full verification</span><i data-lucide="shield-check"></i></button></div></div><div class="replay-main">
@@ -108,7 +114,7 @@
       </div>
     </section>
 
-    <section class="proofs-section landing-section g2m" id="proofs" aria-labelledby="proofs-title"><div class="wrap">
+    <section class="proofs-section landing-section g2m" tabindex="-1" id="proofs" aria-labelledby="proofs-title"><div class="wrap">
       <div class="section-heading proof-heading"><div><h2 id="proofs-title">Every result has evidence to inspect</h2><p>Official passes and local checks are recorded separately, with the original research attribution.</p></div><div class="proof-totals" data-moment="counter-rolls"><a href="archive.html#status=accepted"><strong data-count>10</strong><span>Official Lean-Eval passes</span></a><a class="campaign-results" href="archive.html#status=verified"><strong data-count>18</strong><span>OpenAI Math local checks</span></a></div></div>
       <figure class="featured-proof" id="featured-proof" data-featured-proof="dimitrov" aria-labelledby="featured-proof-title">
     <div class="featured-proof-sheet">
@@ -170,7 +176,7 @@
       <dialog class="proof-register-dialog" id="proof-register-dialog" aria-labelledby="proof-register-title"><div class="proof-register-heading"><h2 id="proof-register-title">View all official verification records</h2><button class="proof-register-close" type="button" aria-label="Close proof index" autofocus><i data-lucide="x"></i></button></div><div class="proof-register-content"></div></dialog>
     </div></section>
 
-    <section class="components-section landing-section" id="components" aria-labelledby="components-title"><div class="wrap">
+    <section class="components-section landing-section" tabindex="-1" id="components" aria-labelledby="components-title"><div class="wrap">
       <div class="section-heading"><h2 id="components-title">Compare proof methods</h2><p class="heading-description">Keep the problem, environment, model and budget fixed. Compare different strategies and ways of working together.</p></div>
       <div class="component-layout"><div class="component-explorer"><h3 class="component-picker-title">Five research components</h3>
         <div class="component-tabs" data-ui role="tablist" aria-label="Five research components" aria-orientation="vertical">
@@ -223,7 +229,7 @@
     </div></section>
 
   </main>
-  <footer class="closing start-section landing-section" id="start" aria-labelledby="start-title"><div class="wrap">
+  <footer class="closing start-section landing-section" id="start" tabindex="-1" aria-labelledby="start-title"><div class="wrap">
     <div class="closing-content">
       <h2 id="start-title">Bring a problem to try</h2>
       <div class="closing-action"><a class="button button-lime" data-umami-event="apply-github" href="https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml" target="_blank" rel="noreferrer">Request access<i data-lucide="arrow-up-right"></i></a></div>
