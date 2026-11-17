@@ -27,10 +27,10 @@
     <div class="header-inner wrap">
     <a class="skip-link" href="#main">Skip to content</a>
       <a class="brand" href="index.html" aria-label="TheoremOS home"><img src="../assets/mark.svg" alt="" width="31" height="31"><span>Theorem<span class="brand-os">OS</span></span></a>
-      <nav class="desktop-nav" aria-label="Main navigation"><a href="#workbench-preview">Workbench</a><a href="#demo">Replay</a><a href="#proofs">Proof archive</a><a href="#components">Components</a></nav>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="#workbench-preview">Workbench</a><a href="#demo">Replay</a><a href="#proofs">Proof archive</a><a href="#research-system">Research</a></nav>
       <div class="header-actions"><a class="lang-link" href="../index.html" hreflang="zh-CN" lang="zh-CN" aria-label="中文版">中文</a><a class="nav-start" href="#start" data-umami-event="request-access-nav">Request access<i data-lucide="arrow-up-right"></i></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><i data-lucide="menu"></i><i data-lucide="x"></i></button></div>
     </div>
-    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#start">Request access<i data-lucide="arrow-down-right"></i></a><a href="#workbench-preview">Research workbench<i data-lucide="arrow-down-right"></i></a><a href="#demo">Verification replay<i data-lucide="arrow-down-right"></i></a><a href="#proofs">Proofs<i data-lucide="arrow-down-right"></i></a><a href="#components">Research components<i data-lucide="arrow-down-right"></i></a><a href="archive.html">Proof archive<i data-lucide="arrow-up-right"></i></a><a href="feedback.html">Feedback<i data-lucide="arrow-up-right"></i></a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub<i data-lucide="arrow-up-right"></i></a></nav>
+    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#start">Request access<i data-lucide="arrow-down-right"></i></a><a href="#workbench-preview">Research workbench<i data-lucide="arrow-down-right"></i></a><a href="#demo">Verification replay<i data-lucide="arrow-down-right"></i></a><a href="#proofs">Proofs<i data-lucide="arrow-down-right"></i></a><a href="#research-system">Advanced research<i data-lucide="arrow-down-right"></i></a><a href="#components">Research components<i data-lucide="arrow-down-right"></i></a><a href="archive.html">Proof archive<i data-lucide="arrow-up-right"></i></a><a href="feedback.html">Feedback<i data-lucide="arrow-up-right"></i></a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub<i data-lucide="arrow-up-right"></i></a></nav>
   </header>
   <main id="main" tabindex="-1">
     <section class="hero landing-section" aria-labelledby="hero-title" data-enter>
@@ -178,8 +178,38 @@
       <dialog class="proof-register-dialog" id="proof-register-dialog" aria-labelledby="proof-register-title"><div class="proof-register-heading"><h2 id="proof-register-title">View all official verification records</h2><button class="proof-register-close" type="button" aria-label="Close proof index" autofocus><i data-lucide="x"></i></button></div><div class="proof-register-content"></div></dialog>
     </div></section>
 
+    <section class="research-system-section landing-section" tabindex="-1" id="research-system" aria-labelledby="research-system-title">
+      <div class="wrap">
+        <p class="section-eyebrow">05 / Advanced research</p>
+        <div class="section-heading"><h2 id="research-system-title">Structure a complex proof</h2><p class="heading-description">Break down lemmas, use established results and verify in a fixed environment. Keep the research ready to continue and review.</p></div>
+        <div class="research-system-layout">
+          <ol class="research-capabilities">
+            <li><span class="research-capability-number" aria-hidden="true">01</span><div><h3>Divide the work by lemma</h3><p>Track dependencies between tasks. Explore, prove and review them separately, then integrate the results into the original problem.</p></div></li>
+            <li><span class="research-capability-number" aria-hidden="true">02</span><div><h3>Work in a fixed environment</h3><p>Check candidates with pinned Lean and Mathlib versions. Search the library for definitions and existing theorems.</p></div></li>
+            <li><span class="research-capability-number" aria-hidden="true">03</span><div><h3>Continue where you left off</h3><p>Save tasks, notes, source and checks with each run. Resume with the same problem and the work already completed.</p></div></li>
+            <li><span class="research-capability-number" aria-hidden="true">04</span><div><h3>Trace a result to its evidence</h3><p>Follow the conclusion back to its source, check receipts and original statement. Export the proof and environment for local review.</p></div></li>
+          </ol>
+          <div class="research-evidence">
+            <div class="research-task-map" data-ui aria-labelledby="research-task-title" aria-describedby="research-task-description">
+              <div class="research-task-header"><div><p>TriangleFace · Archived tasks</p><h3 id="research-task-title">From lemmas to the theorem</h3></div><time datetime="2026-11-05">2026.11.05</time></div>
+              <p class="sr-only" id="research-task-description">Four checked tasks from an archived run. The collapse identity feeds the cut-mass decomposition. The decomposition and local labels feed the main theorem. Open a task to read its record.</p>
+              <ol class="research-task-grid">
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=collapse_reattach_goal"><span class="research-task-kind">Structural lemma<i data-lucide="arrow-up-right"></i></span><h4>Collapse identity</h4><code>collapse_reattach</code><span class="research-task-status"><i data-lucide="check"></i>Checked</span></a><span class="research-task-arrow research-task-arrow-down" aria-hidden="true">↓</span></li>
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=local_labels_exists"><span class="research-task-kind">Construction lemma<i data-lucide="arrow-up-right"></i></span><h4>Local labels</h4><code>existsLocalLabels</code><span class="research-task-status"><i data-lucide="check"></i>Checked</span></a><span class="research-task-arrow research-task-arrow-down" aria-hidden="true">↓</span></li>
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=cutMass_triangleVertices"><span class="research-task-kind">Quantitative lemma<i data-lucide="arrow-up-right"></i></span><h4>Cut-mass decomposition</h4><code>cutMass_triangleVertices</code><span class="research-task-status"><i data-lucide="check"></i>Checked</span></a><span class="research-task-arrow research-task-arrow-right" aria-hidden="true">→</span></li>
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=triangle_face_goal"><span class="research-task-kind">Main theorem<i data-lucide="arrow-up-right"></i></span><h4>Face correspondence</h4><code>triangle_expansion_face</code><span class="research-task-status"><i data-lucide="check"></i>Checked</span></a></li>
+              </ol>
+              <div class="research-task-footer"><span>4 selected tasks · Recorded dependencies</span><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757">View the full task graph<i data-lucide="arrow-up-right"></i></a></div>
+            </div>
+            <div class="research-verification"><h3>Verify the full problem after integration</h3><p>Checked lemmas still need an integrated source check and verification of every original goal.</p><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab">Read the final independent check<i data-lucide="arrow-up-right"></i></a></div>
+          </div>
+        </div>
+        <a class="text-link research-system-next" href="#components">See the replaceable research components<i data-lucide="arrow-down-right"></i></a>
+      </div>
+    </section>
+
     <section class="components-section landing-section" tabindex="-1" id="components" aria-labelledby="components-title"><div class="wrap">
-      <p class="section-eyebrow">05 / Research modules</p>
+      <p class="section-eyebrow">06 / Research modules</p>
       <div class="section-heading"><h2 id="components-title">Compare proof methods</h2><p class="heading-description">Keep the problem, environment, model and budget fixed. Compare different strategies and ways of working together.</p></div>
       <div class="component-layout"><div class="component-explorer"><h3 class="component-picker-title">Five research components</h3>
         <div class="component-tabs" data-ui role="tablist" aria-label="Five research components" aria-orientation="vertical">

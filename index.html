@@ -27,10 +27,10 @@
     <div class="header-inner wrap">
     <a class="skip-link" href="#main">跳到内容</a>
       <a class="brand" href="index.html" aria-label="TheoremOS 首页"><img src="assets/mark.svg" alt="" width="31" height="31"><span>Theorem<span class="brand-os">OS</span></span></a>
-      <nav class="desktop-nav" aria-label="主导航"><a href="#workbench-preview">工作台</a><a href="#demo">证明回放</a><a href="#proofs">证明档案</a><a href="#components">研究组件</a></nav>
+      <nav class="desktop-nav" aria-label="主导航"><a href="#workbench-preview">工作台</a><a href="#demo">证明回放</a><a href="#proofs">证明档案</a><a href="#research-system">深度研究</a></nav>
       <div class="header-actions"><a class="lang-link" href="en/index.html" hreflang="en" lang="en" aria-label="English version">EN</a><a class="nav-start" href="#start" data-umami-event="request-access-nav">申请内测<i data-lucide="arrow-up-right"></i></a><button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="mobile-nav"><i data-lucide="menu"></i><i data-lucide="x"></i></button></div>
     </div>
-    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="手机导航" hidden><a href="#start">申请内测<i data-lucide="arrow-down-right"></i></a><a href="#workbench-preview">研究工作台<i data-lucide="arrow-down-right"></i></a><a href="#demo">验收回放<i data-lucide="arrow-down-right"></i></a><a href="#proofs">证明成果<i data-lucide="arrow-down-right"></i></a><a href="#components">研究组件<i data-lucide="arrow-down-right"></i></a><a href="archive.html">证明档案<i data-lucide="arrow-up-right"></i></a><a href="feedback.html">反馈与建议<i data-lucide="arrow-up-right"></i></a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub<i data-lucide="arrow-up-right"></i></a></nav>
+    <nav class="mobile-nav wrap" id="mobile-nav" aria-label="手机导航" hidden><a href="#start">申请内测<i data-lucide="arrow-down-right"></i></a><a href="#workbench-preview">研究工作台<i data-lucide="arrow-down-right"></i></a><a href="#demo">验收回放<i data-lucide="arrow-down-right"></i></a><a href="#proofs">证明成果<i data-lucide="arrow-down-right"></i></a><a href="#research-system">深度研究<i data-lucide="arrow-down-right"></i></a><a href="#components">研究组件<i data-lucide="arrow-down-right"></i></a><a href="archive.html">证明档案<i data-lucide="arrow-up-right"></i></a><a href="feedback.html">反馈与建议<i data-lucide="arrow-up-right"></i></a><a href="https://github.com/LikC1606/TheoremOS" target="_blank" rel="noreferrer">GitHub<i data-lucide="arrow-up-right"></i></a></nav>
   </header>
   <main id="main" tabindex="-1">
     <section class="hero landing-section" aria-labelledby="hero-title" data-enter>
@@ -178,8 +178,38 @@
       <dialog class="proof-register-dialog" id="proof-register-dialog" aria-labelledby="proof-register-title"><div class="proof-register-heading"><h2 id="proof-register-title">查看全部官方验收记录</h2><button class="proof-register-close" type="button" aria-label="关闭证明目录" autofocus><i data-lucide="x"></i></button></div><div class="proof-register-content"></div></dialog>
     </div></section>
 
+    <section class="research-system-section landing-section" tabindex="-1" id="research-system" aria-labelledby="research-system-title">
+      <div class="wrap">
+        <p class="section-eyebrow">05 / 深度研究</p>
+        <div class="section-heading"><h2 id="research-system-title">为复杂证明组织研究</h2><p class="heading-description">拆解引理、调用已有知识，在固定环境中验证。让多轮尝试留下可继续、可复核的研究成果。</p></div>
+        <div class="research-system-layout">
+          <ol class="research-capabilities">
+            <li><span class="research-capability-number" aria-hidden="true">01</span><div><h3>按引理分工协作</h3><p>把主问题拆成有依赖关系的任务，分别探索、证明和审阅，再合并回完整原题。</p></div></li>
+            <li><span class="research-capability-number" aria-hidden="true">02</span><div><h3>在固定环境里推导</h3><p>用确定版本的 Lean 与 Mathlib 检查候选，从库中检索定义和已有定理。</p></div></li>
+            <li><span class="research-capability-number" aria-hidden="true">03</span><div><h3>把研究接着做下去</h3><p>任务、笔记、源码与检查记录随运行保存；恢复时沿用原题和已完成的工作。</p></div></li>
+            <li><span class="research-capability-number" aria-hidden="true">04</span><div><h3>每个结论都能追溯</h3><p>从结论回到代码、检查回执与原题。导出源码和环境，在本地复核。</p></div></li>
+          </ol>
+          <div class="research-evidence">
+            <div class="research-task-map" data-ui aria-labelledby="research-task-title" aria-describedby="research-task-description">
+              <div class="research-task-header"><div><p>TriangleFace · 历史任务快照</p><h3 id="research-task-title">从引理到主定理</h3></div><time datetime="2026-11-05">2026.11.05</time></div>
+              <p class="sr-only" id="research-task-description">四个已检查任务的节选。折叠恒等式用于切质量分解；切质量分解与局部标号共同用于主定理。点击任务查看该轮记录。</p>
+              <ol class="research-task-grid">
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=collapse_reattach_goal"><span class="research-task-kind">结构引理<i data-lucide="arrow-up-right"></i></span><h4>折叠恒等式</h4><code>collapse_reattach</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a><span class="research-task-arrow research-task-arrow-down" aria-hidden="true">↓</span></li>
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=local_labels_exists"><span class="research-task-kind">构造引理<i data-lucide="arrow-up-right"></i></span><h4>局部标号</h4><code>existsLocalLabels</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a><span class="research-task-arrow research-task-arrow-down" aria-hidden="true">↓</span></li>
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=cutMass_triangleVertices"><span class="research-task-kind">定量引理<i data-lucide="arrow-up-right"></i></span><h4>切质量分解</h4><code>cutMass_triangleVertices</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a><span class="research-task-arrow research-task-arrow-right" aria-hidden="true">→</span></li>
+                <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757&amp;task=triangle_face_goal"><span class="research-task-kind">主定理<i data-lucide="arrow-up-right"></i></span><h4>建立面的对应</h4><code>triangle_expansion_face</code><span class="research-task-status"><i data-lucide="check"></i>已检查</span></a></li>
+              </ol>
+              <div class="research-task-footer"><span>4 个任务节选 · 依赖关系来自该轮记录</span><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=46411529-fe40-4bb8-8fbb-071b6ecee757">查看完整任务图<i data-lucide="arrow-up-right"></i></a></div>
+            </div>
+            <div class="research-verification"><h3>合并之后，再验收完整原题</h3><p>局部引理通过后，仍需检查集成源码和原题的全部目标。</p><a class="text-link" href="archive.html#proof=openai_triangle_face&amp;tab=process&amp;run=d77dc453-baf2-4ffd-9afa-ae2af96decba&amp;mode=steps&amp;step=check%3Acheck-eabf122f7f3f7b3fffab">查看最终独立验收<i data-lucide="arrow-up-right"></i></a></div>
+          </div>
+        </div>
+        <a class="text-link research-system-next" href="#components">了解可替换的研究组件<i data-lucide="arrow-down-right"></i></a>
+      </div>
+    </section>
+
     <section class="components-section landing-section" tabindex="-1" id="components" aria-labelledby="components-title"><div class="wrap">
-      <p class="section-eyebrow">05 / 研究组件</p>
+      <p class="section-eyebrow">06 / 研究组件</p>
       <div class="section-heading"><h2 id="components-title">试验你的证明方法</h2><p class="heading-description">固定题目、环境、模型与预算，比较不同策略和协作方式的结果。</p></div>
       <div class="component-layout"><div class="component-explorer"><h3 class="component-picker-title">五个研究组件</h3>
         <div class="component-tabs" data-ui role="tablist" aria-label="五个研究组件" aria-orientation="vertical">
