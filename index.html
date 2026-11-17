@@ -137,9 +137,9 @@
     <figcaption>历史成果 · 原始归属：DeepScientist Math + GPT-6.1 (gpt-6.1-sol)</figcaption>
   </figure>
       <nav class="case-guide" aria-labelledby="case-guide-title"><h3 id="case-guide-title">选择想了解的内容</h3><ul>
-        <li><a href="archive.html#proof=openai_triangle_face&amp;tab=source" data-case-guide="intro"><strong>三角展开的完整证明</strong><span>对照原始陈述，阅读全部 1,233 行源码。</span><span class="case-guide-action">原题与源码<i data-lucide="arrow-up-right"></i></span></a></li>
-        <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process" data-case-guide="route"><strong>匹配多面体的证明路线</strong><span>沿证明路线，逐步对照推导与源码。</span><span class="case-guide-action">复杂路线<i data-lucide="arrow-up-right"></i></span></a></li>
-        <li><a href="archive.html#proof=dimitrov&amp;tab=evidence" data-case-guide="evidence"><strong>Dimitrov 验收证据</strong><span>核对官方回执、本地检查与提交版本。</span><span class="case-guide-action">验收证据<i data-lucide="arrow-up-right"></i></span></a></li>
+        <li><a href="archive.html#proof=openai_triangle_face&amp;tab=source" data-case-guide="intro"><strong><span class="case-guide-case">TriangleFace</span>三角展开的完整证明</strong><span>对照原始陈述，阅读全部 1,233 行源码。</span><span class="case-guide-action">原题与源码<i data-lucide="arrow-up-right"></i></span></a></li>
+        <li><a href="archive.html#proof=openai_triangle_face&amp;tab=process" data-case-guide="route"><strong><span class="case-guide-case">TriangleFace</span>匹配多面体的证明路线</strong><span>沿证明路线，逐步对照推导与源码。</span><span class="case-guide-action">复杂路线<i data-lucide="arrow-up-right"></i></span></a></li>
+        <li><a href="archive.html#proof=dimitrov&amp;tab=evidence" data-case-guide="evidence"><strong><span class="case-guide-case">Dimitrov</span>验收证据</strong><span>核对官方回执、本地检查与提交版本。</span><span class="case-guide-action">验收证据<i data-lucide="arrow-up-right"></i></span></a></li>
       </ul></nav>
       <details class="research-disclosure proof-reading-guide" id="proof-reading"><summary>这份成果证明了什么？<i data-lucide="plus"></i></summary><div class="research-disclosure-body"><p>先看它证明的是完整原题、辅助引理，还是增加了假设的条件命题，再核对验收标签。</p><table class="proof-reading-table"><caption class="sr-only">档案状态与证据范围</caption><thead><tr><th scope="col">档案标签</th><th scope="col">可以确认什么</th></tr></thead><tbody><tr><th scope="row"><a href="archive.html#status=accepted" data-proof-status="accepted">官方通过<i data-lucide="arrow-up-right"></i></a></th><td>原提交对应的外部基准已给出通过记录；可查看官方响应。</td></tr><tr><th scope="row"><a href="archive.html#status=verified" data-proof-status="verified">本地验收通过<i data-lucide="arrow-up-right"></i></a></th><td>项目已在记录的环境中检查形式化目标；不代表已获外部官方确认。</td></tr><tr><th scope="row"><a href="archive.html#status=progress" data-proof-status="progress">研究中<i data-lucide="arrow-up-right"></i></a></th><td>保留探索过程与候选源码，尚不构成最终验收。</td></tr></tbody></table><p>局部引理通过后，仍需检查合并源码是否覆盖完整原题。模型的完成消息不能代替验收。档案中的历史成果与外部协助，均保留原始归属。</p></div></details>
       <div class="archive-footer"><div class="archive-actions"><a class="text-link" href="archive.html">浏览全部证明档案<i data-lucide="arrow-up-right"></i></a><div class="proof-register-slot"><button class="proof-register-open text-link" type="button" aria-haspopup="dialog" aria-controls="proof-register-dialog" hidden>查看全部官方验收记录<i data-lucide="arrow-up-right"></i></button><div class="proof-list"><h3>查看全部官方验收记录</h3><table class="proof-table" data-ui><caption class="sr-only">查看全部官方验收记录</caption><thead><tr><th scope="col">题目与领域</th><th scope="col">原始研究归属</th><th scope="col">验收与源码</th></tr></thead><tbody>
@@ -343,6 +343,7 @@ python3 verify.py --prepare --lean-only</code></pre><p>完整题面对照还需�
             <li><a href="archive.html"><i data-lucide="file-check-2"></i><span><strong>复查一段证明</strong><span>从原题、源码和验收依据，核对已有成果。</span></span><i data-lucide="arrow-up-right"></i></a></li>
             <li><a href="https://github.com/HuggingMath/TheoremOS/issues" target="_blank" rel="noreferrer"><i data-lucide="git-fork"></i><span><strong>交流引理与工具</strong><span>分享愿意公开的方法，讨论工具需求与改进。</span></span><i data-lucide="arrow-up-right"></i></a></li>
           </ul>
+          <p class="community-proof-kit">可从 <a href="https://github.com/HuggingMath/TheoremOS/tree/main/proof-kits/dimitrov" target="_blank" rel="noreferrer">Dimitrov 独立复核包</a>开始，按说明在本地检查证明。</p>
           <p class="community-scope">是否公开研究记录由你决定；交流和复用时，保留原作者、来源与适用条件。</p>
         </div>
         <a class="text-link research-system-next" href="#components">了解可替换的研究组件<i data-lucide="arrow-down-right"></i></a>
@@ -361,7 +362,7 @@ python3 verify.py --prepare --lean-only</code></pre><p>完整题面对照还需�
           <button class="component-tab" type="button" id="tab-m5" role="tab" aria-selected="false" aria-controls="component-panel" tabindex="-1" data-component="m5"><span class="component-number">M5</span><strong>协作复用</strong><i data-lucide="arrow-up-right"></i></button>
         </div>
         <div class="component-panel" id="component-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-m3">
-          <div class="module-details"><div><h3 id="module-title">决定下一步做什么</h3><p id="module-description">从就绪任务中选择下一步，结合研究路线和共享预算，决定继续、重试或停止。</p></div><dl><div><dt>输入</dt><dd id="module-input">研究状态 · 候选操作 · 共享预算</dd></div><div><dt>输出</dt><dd id="module-output">下一步操作 · 有序就绪任务</dd></div></dl><p class="module-contract" id="module-kicker">M3 · 搜索接口</p></div>
+          <div class="module-details"><div><h3 id="module-title">决定下一步做什么</h3><p id="module-description">从就绪任务中选择下一步，结合研究路线和共享预算，决定继续、重试或停止。</p></div><dl><div><dt>输入</dt><dd id="module-input">研究状态 · 候选操作 · 共享预算</dd></div><div><dt>输出</dt><dd id="module-output">下一步操作 · 有序就绪任务</dd></div></dl><p class="module-contract" id="module-kicker">M3 · 搜索决策</p></div>
           <div class="independent-check"><span>S3 始终独立验收完整原题。</span></div>
         </div>
       </div><div class="module-media"><figure class="module-showcase" aria-labelledby="module-preview-heading">
