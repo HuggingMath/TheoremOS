@@ -86,3 +86,13 @@ gsap/CSSPlugin.js:
 */
 
 (function(){const u=matchMedia("(prefers-reduced-motion: reduce)");function w(){const t=document.querySelector("[data-proof-stage]");if(!t)return;const a=t.querySelector(".proof-stage-canvas");if(!a)return;const f=e=>t.style.setProperty("--stage-scale",String(e/1120));f(t.getBoundingClientRect().width),typeof ResizeObserver=="function"?new ResizeObserver(e=>e.forEach(s=>f(s.contentRect.width))).observe(t):window.addEventListener("resize",()=>f(t.getBoundingClientRect().width));const y=Array.from(a.querySelectorAll("[data-step]")),h=Array.from(a.querySelectorAll(".proof-node")).map(e=>({node:e,start:Number(e.dataset.start??e.dataset.step??0),step:Number(e.dataset.step??0),fail:Number(e.dataset.fail??-1),done:Number(e.dataset.done??e.dataset.step??0)})),g=a.querySelector("[data-tab-count]"),m=e=>{t.dataset.step=String(e),y.forEach(l=>{l.hidden=Number(l.dataset.step)>e});let s=0;h.forEach(({node:l,start:L,fail:p,done:S})=>{const v=e>=S?"done":e>=p&&p>0?"failed":e>=L?"running":"waiting";l.dataset.state=v,v==="done"&&(s+=1)}),g&&(g.textContent=`${s}/${h.length}`)},n=[[900,1],[1100,2],[1200,3],[1400,4],[1200,5],[1300,6]],E=n[n.length-1][1];let i=0,r=0,o=!1,c=!1;const b=()=>{i=0,m(n[r++][1]),r<n.length?i=window.setTimeout(b,n[r][0]):c=!0},d=()=>{if(clearTimeout(i),i=0,u.matches){t.classList.remove("is-prepared"),m(E),r=n.length,c=!0;return}c||(r===0&&(t.classList.add("is-prepared"),m(0)),o&&!document.hidden&&r<n.length&&(i=window.setTimeout(b,n[r][0])))};u.addEventListener("change",()=>{u.matches||(c=!1,r=0),d()}),document.addEventListener("visibilitychange",d),"IntersectionObserver"in window?new IntersectionObserver(e=>{const s=e[0].isIntersecting&&e[0].intersectionRatio>=.25;s!==o&&(o=s,d())},{threshold:.25}).observe(t):o=!0,d()}w()})();
+
+// Keep the first-screen declaration compact on phones; the disclosure stays user-controlled.
+(() => {
+  const source = document.querySelector('[data-hero-source]');
+  if (!source) return;
+  const phone = window.matchMedia('(max-width: 600px)');
+  const syncSource = () => { source.open = !phone.matches; };
+  syncSource();
+  phone.addEventListener('change', syncSource);
+})();
