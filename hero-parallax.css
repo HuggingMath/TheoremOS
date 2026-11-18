@@ -1,0 +1,34 @@
+/* Separate scroll layers keep the existing entrance and proof animations intact. */
+.landing-page .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.hero > .wrap { position: relative; z-index: 1; }
+.hero-parallax-title, .hero-parallax-media { min-width: 0; }
+
+.hero-parallax-background {
+  position: absolute;
+  inset: -26% 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(90deg, rgb(139 116 86 / 5%) 1px, transparent 1px),
+    linear-gradient(rgb(139 116 86 / 5%) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 35%, rgb(184 132 84 / 5%), transparent 68%);
+  background-size: 88px 88px, 88px 88px, 100% 100%;
+  mask-image: radial-gradient(ellipse 65% 52% at 50% 35%, #000, transparent);
+}
+
+@media (max-width: 767px) {
+  .hero-parallax-background { background-size: 64px 64px, 64px 64px, 100% 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-parallax-background, .hero-parallax-title, .hero-parallax-media { transform: none !important; }
+}
+
+@media (forced-colors: active) {
+  .hero-parallax-background { display: none; }
+}

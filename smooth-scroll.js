@@ -15,6 +15,8 @@
     virtualScroll: () => !motion.matches,
   });
 
+  if (window.ScrollTrigger) scroll.on('scroll', window.ScrollTrigger.update);
+
   // Handle section links separately from the archive's hash-based application routes.
   document.addEventListener('click', event => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
