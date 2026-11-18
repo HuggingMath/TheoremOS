@@ -5,6 +5,10 @@
   if (!hero || !gsap || !ScrollTrigger) return;
 
   gsap.registerPlugin(ScrollTrigger);
+  const story = hero.querySelector('[data-proof-story]');
+  const storyFrame = story?.querySelector('[data-proof-story-frame]');
+  // Pin spacing belongs to the story; keep the introduction's parallax range unchanged.
+  const heroHeight = () => hero.offsetHeight - (story ? Math.max(0, story.offsetHeight - storyFrame.offsetHeight) : 0);
   const media = gsap.matchMedia();
   media.add({
     small: '(max-width: 767px)',
@@ -18,7 +22,7 @@
         id: 'hero-parallax',
         trigger: hero,
         start: 0,
-        end: () => hero.offsetHeight,
+        end: heroHeight,
         scrub: true,
         invalidateOnRefresh: true,
       },
@@ -33,15 +37,19 @@
     for (const [selector, rate, limit] of layers) {
       const layer = hero.querySelector(selector);
       if (!layer) continue;
+      // The story's frame needs untransformed ancestors to stay fixed in the viewport.
+      if (layer === story) continue;
       timeline.fromTo(layer, { y: 0 }, {
-        y: () => Math.sign(rate) * Math.min(hero.offsetHeight * Math.abs(rate), limit) * strength,
+        y: () => Math.sign(rate) * Math.min(heroHeight() * Math.abs(rate), limit) * strength,
         force3D: true,
       }, 0);
     }
 
     // The mobile replay can change height when a different checkpoint is selected.
     const observer = new ResizeObserver(() => ScrollTrigger.refresh(true));
-    observer.observe(hero);
+    observer.observe(hero.querySelector('.hero-parallax-title'));
+    if (storyFrame) observer.observe(storyFrame);
+    else observer.observe(hero);
     return () => observer.disconnect();
   });
 

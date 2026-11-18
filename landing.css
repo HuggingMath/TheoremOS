@@ -1578,6 +1578,15 @@ html:not(.js) .proof-stage-canvas { position: relative; width: 100%; height: aut
 .hero-proof-steps button[aria-pressed="true"] { color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
 .hero-proof button:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
 .hero-proof [hidden] { display: none; }
+.hero-proof-panels { display: grid; }
+.hero-proof-panels > .hero-proof-panel { grid-area: 1 / 1; }
+.proof-story-frame { width: min(100%, 1120px); margin-inline: auto; }
+.proof-story-guide-copy { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 12px; color: var(--muted); font-size: 13px; }
+.proof-story-guide-copy .text-link { min-height: 32px; font-size: 13px; }
+.proof-story-progress { height: 2px; margin-bottom: 14px; overflow: hidden; background: var(--line); }
+.proof-story-progress > span { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
+/* Invisible future checkpoints reserve their space while the frame is pinned. */
+[data-proof-story-mode="scroll"] .hero-proof :is(.hero-proof-panel, [data-proof-entry])[hidden] { display: block !important; visibility: hidden; animation: none; }
 .landing-product-first #research-entry { border-top: 1px solid var(--line); }
 .landing-product-first .research-layout { grid-template-columns: minmax(0, 1fr); }
 .landing-product-first .human-decision-copy { margin-bottom: 16px; }
