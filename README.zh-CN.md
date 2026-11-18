@@ -16,7 +16,7 @@
 
 **云端工作台：** [申请研究内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录](https://app.theoremos.top/) · [访问说明](./docs/ACCESS.md)
 
-<img src="./assets/theoremos-readme-cover-anime.webp" alt="简洁动漫插画：一位数学家在笔记本电脑上使用 TheoremOS 工作台。" width="1280">
+<img src="./assets/theoremos-readme-cover-workflow.webp" alt="TheoremOS 协作科研流程图：动漫小人演示输入研究问题、审阅 Lean 陈述和证明计划；引理分支汇成候选证明，再交给 Lean 4 独立验真。" width="1280">
 
 本仓库公开[官网](https://theoremos.top/)（[English](https://theoremos.top/en/)）、证明档案和本地复核材料。工作台在线使用，运行时源码和 CLI 安装包未公开。
 
