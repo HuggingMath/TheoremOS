@@ -16,7 +16,7 @@
 
 **云端工作台：** [申请研究内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录](https://app.theoremos.top/) · [访问说明](./docs/ACCESS.md)
 
-<img src="./assets/theoremos-readme-cover-image26.webp" alt="几条金属轨道在检验框前汇合的概念插画" width="1280">
+<img src="./assets/theoremos-readme-cover-academic.webp" alt="研究者确认数学问题的 Lean 4 陈述，再探索证明路线与引理。候选证明交由 Lean 4 独立验真。" width="1280">
 
 本仓库公开[官网](https://theoremos.top/)（[English](https://theoremos.top/en/)）、证明档案和本地复核材料。工作台在线使用，运行时源码和 CLI 安装包未公开。
 
