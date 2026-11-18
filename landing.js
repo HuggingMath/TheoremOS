@@ -16,10 +16,18 @@ pi.add("(prefers-reduced-motion: no-preference)",()=>{
   const heroEntrance=E.timeline({defaults:{duration:.65,ease:"power3.out"},onComplete:ps});
   heroEntranceTargets.forEach((target,index)=>{
     const titleLine=target.classList.contains("hero-name");
-    E.set(target,titleLine?{yPercent:115,autoAlpha:0}:{translate:"0 14px",autoAlpha:0});
-    heroEntrance.to(target,titleLine
+    const blurRadius=titleLine?8:target.classList.contains("hero-proof")?6:0;
+    const fromState=titleLine?{yPercent:115,autoAlpha:0}:{translate:"0 14px",autoAlpha:0};
+    const toState=titleLine
       ?{yPercent:0,autoAlpha:1,duration:.82,clearProps:"opacity,visibility,transform"}
-      :{translate:"0 0px",autoAlpha:1,clearProps:"opacity,visibility,translate"},index*.08);
+      :{translate:"0 0px",autoAlpha:1,clearProps:"opacity,visibility,translate"};
+    if(blurRadius){
+      fromState.filter=`blur(${blurRadius}px)`;
+      toState.filter="blur(0px)";
+      toState.clearProps+=",filter";
+    }
+    E.set(target,fromState);
+    heroEntrance.to(target,toState,index*.08);
   });
   document.documentElement.classList.add("m-enter-started");
 });

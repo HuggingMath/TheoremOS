@@ -179,6 +179,7 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.7; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero :is(.hero-name, .hero-category, .hero-description, .hero-actions > *, .hero-practice, .hero-terms, .hero-proof) { translate: none !important; opacity: 1 !important; visibility: visible !important; }
+  .hero :is(.hero-name, .hero-proof) { filter: none !important; }
   .hero-name { transform: none !important; }
 }
 .hero-description { max-width: 26em; font-size: 20px; line-height: 1.65; text-wrap: pretty; }
