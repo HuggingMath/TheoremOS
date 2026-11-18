@@ -16,7 +16,7 @@ Bring a mathematical problem to the TheoremOS workbench. Review its Lean 4 state
 
 **Workbench:** [Request research preview access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Sign in](https://app.theoremos.top/) · [Access guide](./docs/ACCESS.md)
 
-<img src="./assets/theoremos-readme-cover-academic.webp" alt="A researcher confirms the Lean 4 statement of a math problem. Proof and lemma branches yield a candidate for independent Lean 4 verification." width="1280">
+<img src="./assets/theoremos-readme-cover-editorial.webp" alt="A mathematician compares a handwritten problem with a formal statement beside a square lattice sketch, while a colleague monitors a separate Lean 4 terminal." width="1280">
 
 This public repository contains the [website](https://theoremos.top/en/) ([中文](https://theoremos.top/)), proof records, and local verification materials. The workbench runs online. Runtime source and a public CLI installer are not included.
 
