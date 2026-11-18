@@ -5,7 +5,7 @@
 
 把数学问题带进 TheoremOS 在线工作台，你可以核对生成的 Lean 4 陈述、给证明路线提意见。系统会检索已有结果、探索引理，并将完整候选证明交给独立的 Lean 环境检查。
 
-### [项目官网 · theoremos.top](https://theoremos.top/)
+<a href="https://theoremos.top/"><img src="./assets/readme-website.png" width="242" height="62" alt="项目官网 · theoremos.top"></a>
 
 可以给[仓库点 Star](https://github.com/HuggingMath/TheoremOS)，方便回看证明档案和复核包。
 
