@@ -13,7 +13,10 @@ pi.add("(prefers-reduced-motion: no-preference)",()=>{
   if(fs)return;
   fs=!0;
   const heroEntranceTargets=E.utils.toArray(".hero .hero-name, .hero .hero-category, .hero .hero-description, .hero .hero-actions > *, .hero .hero-practice, .hero .hero-terms, .hero .hero-proof");
+  const logoLetters=E.utils.toArray(".site-header .brand-letter");
+  E.set(logoLetters,{yPercent:115,autoAlpha:0});
   const heroEntrance=E.timeline({defaults:{duration:.65,ease:"power3.out"},onComplete:ps});
+  heroEntrance.to(logoLetters,{yPercent:0,autoAlpha:1,duration:.55,stagger:.08,clearProps:"opacity,visibility,transform"},0);
   heroEntranceTargets.forEach((target,index)=>{
     const titleLine=target.classList.contains("hero-name");
     const blurRadius=titleLine?8:target.classList.contains("hero-proof")?6:0;

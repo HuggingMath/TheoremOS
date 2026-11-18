@@ -155,6 +155,8 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.7; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-size: 24px; font-weight: 600; line-height: 1; letter-spacing: -.01em; flex-shrink: 0; }
 .brand img { width: 30px; height: 30px; }
 .brand:hover { text-decoration: none; }
+.brand-wordmark { display: inline-block; overflow: hidden; padding-block: .1em; margin-block: -.1em; white-space: nowrap; }
+.brand-letter { display: inline-block; }
 .desktop-nav { display: flex; align-items: center; gap: 28px; margin-left: auto; font-size: 16px; }
 .desktop-nav a { display: flex; align-items: center; min-height: 44px; }
 .header-actions { display: flex; align-items: center; gap: 28px; font-size: 16px; }
@@ -175,9 +177,11 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.7; }
 .hero-line { display: block; overflow: hidden; }
 .hero-name { display: block; }
 @media (prefers-reduced-motion: no-preference) {
+  html.m-enter:not(.m-enter-started):not(.m-enter-done) .site-header .brand-letter { visibility: hidden; }
   html.m-enter:not(.m-enter-started):not(.m-enter-done) .hero :is(.hero-name, .hero-category, .hero-description, .hero-actions > *, .hero-practice, .hero-terms, .hero-proof) { visibility: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .site-header .brand-letter { transform: none !important; opacity: 1 !important; visibility: visible !important; }
   .hero :is(.hero-name, .hero-category, .hero-description, .hero-actions > *, .hero-practice, .hero-terms, .hero-proof) { translate: none !important; opacity: 1 !important; visibility: visible !important; }
   .hero :is(.hero-name, .hero-proof) { filter: none !important; }
   .hero-name { transform: none !important; }
