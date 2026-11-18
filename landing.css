@@ -696,6 +696,10 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 
 /* Landing chapters share one 12-column grid. Code and receipts keep their real content. */
 .landing-page { --padb: 72px; --split-left: calc((100% + 24px) * 5 / 12 - 24px); }
+.landing-page :is(button, .button, .nav-start, .preview-original) {
+  transition: background-color 0.3s ease-out, color 0.3s ease-out, border-color 0.3s ease-out, transform 0.3s ease-out;
+}
+.landing-page .text-link svg { transition: transform 0.3s ease-out; }
 .landing-page .site-header { position: fixed; inset: 0 0 auto; }
 .landing-page .brand { min-height: 44px; }
 .landing-page .skip-link { left: max(var(--margin), calc((100vw - 1280px) / 2)); }
