@@ -5,7 +5,11 @@
 
 Bring a mathematical problem to the TheoremOS workbench. Review its Lean 4 statement and guide the proof plan while TheoremOS looks for related results and explores possible lemmas. Completed candidates go through an independent Lean check.
 
-<a href="https://theoremos.top/en/"><img src="./assets/readme-website.png" width="242" height="62" alt="Official website · theoremos.top"></a>
+<p align="center">
+  <a href="https://theoremos.top/en/">
+    <img src="./assets/readme-website.png" width="336" alt="Official website · theoremos.top">
+  </a>
+</p>
 
 [Star this repository](https://github.com/HuggingMath/TheoremOS) to find the public archive and verification kits again.
 
