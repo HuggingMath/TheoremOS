@@ -953,6 +953,31 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 .landing-page .hero-copy { display: grid; grid-template-columns: 1fr; gap: 20px; text-align: center; }
 .landing-page #hero-title { font-size: clamp(56px, 6.1vw, 88px); line-height: 1.18; letter-spacing: -.035em; }
 .landing-page .hero-focus { font-style: normal; color: var(--accent); }
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .landing-page .hero-focus {
+    background-image: linear-gradient(110deg, var(--accent) 44%, #c97a50 50%, var(--accent) 56%);
+    background-size: 250% 100%;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  @media (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+    html.js.m-enter-done .landing-page .hero-focus { animation: hero-text-shine 5.6s linear infinite; }
+  }
+}
+@keyframes hero-text-shine {
+  0% { background-position: 100% 50%; }
+  22%, 100% { background-position: 0% 50%; }
+}
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  .landing-page .hero-focus { background-image: none; color: var(--accent); -webkit-text-fill-color: currentColor; }
+}
+@media (forced-colors: active) {
+  .landing-page .hero-focus { color: CanvasText; -webkit-text-fill-color: CanvasText; }
+}
 .landing-page .hero-details { display: flex; flex-direction: column; align-items: center; padding: 0; }
 .landing-page .hero-description { max-width: 32em; font-size: 20px; line-height: 1.7; }
 .landing-page .hero-category { margin-top: 10px; font-size: 16px; }
