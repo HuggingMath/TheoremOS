@@ -16,9 +16,7 @@ Bring a mathematical problem to the TheoremOS workbench. Review its Lean 4 state
 
 **Workbench:** [Request research preview access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Sign in](https://app.theoremos.top/) · [Access guide](./docs/ACCESS.md)
 
-<img src="./assets/theoremos-readme-cover-plane-coloring.webp" alt="A mathematician reviews the Lean statement for a seven-coloring of the plane. A triangular lattice covers the plane. Two points of the same color lie less than one unit apart if they share a center, and more than one unit apart if they have distinct centers. The research record leads to local Lean 4 and comparator checks." width="1280">
-
-The cover illustrates an archived proof of a seven-coloring of the plane. Assign each point to a nearby center on a triangular lattice. Two points with the same color are less than one unit apart if they share a center, and more than one unit apart if they have distinct centers. That rules out a same-color pair at unit distance. [Lean proof](./data/proofs/openai_plane_coloring/Submission.lean) · [Run record](./data/proofs/openai_plane_coloring/process.json) · [Local verification report](./data/proofs/openai_plane_coloring/verification.json)
+<img src="./assets/theoremos-readme-cover-workbench.webp" alt="An illustrated TheoremOS workbench. An anime mathematician compares the problem with its Lean statement. Mathlib results inform the lemma work, and a candidate proof enters an independent Lean 4 check. Below are feedback, a proof revision, the check report, and materials for local verification." width="1280">
 
 This public repository contains the [website](https://theoremos.top/en/) ([中文](https://theoremos.top/)), proof records, and local verification materials. The workbench runs online. Runtime source and a public CLI installer are not included.
 

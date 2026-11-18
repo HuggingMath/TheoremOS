@@ -16,9 +16,7 @@
 
 **云端工作台：** [申请研究内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录](https://app.theoremos.top/) · [访问说明](./docs/ACCESS.md)
 
-<img src="./assets/theoremos-readme-cover-plane-coloring.webp" alt="平面七染色的科研插图。数学家在电脑前核对 Lean 陈述，三角格点覆盖平面。同色两点分到同一中心时距离小于 1，分到不同中心时距离大于 1。下方的运行记录通向 Lean 4 和原题比较器的本地核验结果。" width="1280">
-
-封面选自档案中的平面七染色案例。证明把每个点分到附近的三角格点。同色两点分到同一中心时，距离小于 1。分到不同中心时，距离大于 1。因此相距 1 的两个点颜色不同。 [Lean 证明](./data/proofs/openai_plane_coloring/Submission.lean) · [运行记录](./data/proofs/openai_plane_coloring/process.json) · [本地核验报告](./data/proofs/openai_plane_coloring/verification.json)
+<img src="./assets/theoremos-readme-cover-workbench.webp" alt="TheoremOS 科研工作台插图。动漫数学家在电脑前核对原题和 Lean 陈述。Mathlib 检索为引理提供参考，候选证明交给 Lean 4 独立检查。下方展示诊断反馈、证明修订、检查报告与本地复核材料。" width="1280">
 
 本仓库公开[官网](https://theoremos.top/)（[English](https://theoremos.top/en/)）、证明档案和本地复核材料。工作台在线使用，运行时源码和 CLI 安装包未公开。
 
