@@ -16,7 +16,7 @@
 
 **云端工作台：** [申请研究内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录](https://app.theoremos.top/) · [访问说明](./docs/ACCESS.md)
 
-<img src="./assets/theoremos-readme-cover-claude-style.webp" alt="TheoremOS 协作科研流程：将问题形式化并确认原意，审阅计划并探索引理，再由 Lean 4 独立检查汇合后的候选证明。两处数学家小人标出研究者参与的位置。" width="1280">
+<img src="./assets/theoremos-readme-cover-4k.webp" alt="TheoremOS 协作科研流程：将问题形式化并确认原意，审阅计划并探索引理，再由 Lean 4 独立检查汇合后的候选证明。数学家小人出现在电脑前和计划审阅处。" width="1280">
 
 本仓库公开[官网](https://theoremos.top/)（[English](https://theoremos.top/en/)）、证明档案和本地复核材料。工作台在线使用，运行时源码和 CLI 安装包未公开。
 
