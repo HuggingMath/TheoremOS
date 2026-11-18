@@ -175,10 +175,11 @@ svg.lucide { width: 20px; height: 20px; flex-shrink: 0; stroke-width: 1.7; }
 .hero-line { display: block; overflow: hidden; }
 .hero-name { display: block; }
 @media (prefers-reduced-motion: no-preference) {
-  html.m-enter:not(.m-enter-started):not(.m-enter-done) .hero-name { visibility: hidden; }
+  html.m-enter:not(.m-enter-started):not(.m-enter-done) .hero :is(.hero-name, .hero-category, .hero-description, .hero-actions > *, .hero-practice, .hero-terms, .hero-proof) { visibility: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-name { transform: none !important; visibility: visible !important; }
+  .hero :is(.hero-name, .hero-category, .hero-description, .hero-actions > *, .hero-practice, .hero-terms, .hero-proof) { translate: none !important; opacity: 1 !important; visibility: visible !important; }
+  .hero-name { transform: none !important; }
 }
 .hero-description { max-width: 26em; font-size: 20px; line-height: 1.65; text-wrap: pretty; }
 .hero-category { margin-top: 10px; color: var(--muted); font-size: 14px; }
