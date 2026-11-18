@@ -5,6 +5,8 @@
 
 Bring a mathematical problem to the TheoremOS workbench. Review its Lean 4 statement and guide the proof plan while TheoremOS looks for related results and explores possible lemmas. Completed candidates go through an independent Lean check.
 
+### [Official website · theoremos.top](https://theoremos.top/en/)
+
 [Star this repository](https://github.com/HuggingMath/TheoremOS) to find the public archive and verification kits again.
 
 <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS"></a>
