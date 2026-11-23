@@ -34,6 +34,7 @@ This public repository contains the [website](https://theoremos.top/en/) ([中�
 1. **Browse without an account.** Open the proof archive above for statements, Lean source, recorded attempts, and verification reports. The [planar Anderson spectrum case (EN)](./docs/CASE-STUDY.md) ([中文](./docs/CASE-STUDY.zh-CN.md)) walks through one example.
 2. **Start a research task online.** Apply for email allowlist access and sign in with a verification code. Workbench access is free during the preview; you supply a model API key for a supported Responses API provider and pay that provider for inference. Set time and token limits before running. The [first-task guide (EN)](./docs/GETTING-STARTED.md) ([中文](./docs/GETTING-STARTED.zh-CN.md)) shows the workflow.
 3. **Check a proof locally.** You need no TheoremOS account or model key. Start with the [Lean verification guide (EN)](./docs/VERIFY.md) ([中文](./docs/VERIFY.zh-CN.md)), or take the [Dimitrov proof kit (EN)](./proof-kits/dimitrov/README.md) ([中文](./proof-kits/dimitrov/README.zh-CN.md)) for a frozen benchmark workspace, proof, and comparator instructions.
+4. **Use a result in a new proof.** Run a local example that imports an archived result, or see how two tree reconstruction proofs share a lemma. [Reuse an archived proof](./docs/PROOF-REUSE.md)
 
 <img src="./assets/workbench-desktop-en.png" alt="TheoremOS workbench showing problem input, model settings and proof budgets" width="1100">
 

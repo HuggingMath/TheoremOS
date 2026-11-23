@@ -34,6 +34,7 @@
 1. **先看档案，无须账号。** 打开上面的证明档案，查看题面、Lean 源码、已记录的尝试和检查报告。[平面 Anderson 算子谱案例（中文）](./docs/CASE-STUDY.zh-CN.md)（[EN](./docs/CASE-STUDY.md)）展示了怎样读这些材料。
 2. **在网页上开始研究。** 申请邮箱白名单，审核后用邮箱验证码登录。内测期间平台免费，用户需自备受支持的 Responses API 模型密钥，并向模型服务商支付调用费用。建议运行前设置时间和 token 预算。操作见[首次使用教程（中文）](./docs/GETTING-STARTED.zh-CN.md)（[EN](./docs/GETTING-STARTED.md)）。
 3. **在本地复核证明。** 不需要 TheoremOS 账号或模型密钥。可以从[Lean 复核指引（中文）](./docs/VERIFY.zh-CN.md)（[EN](./docs/VERIFY.md)）的入门示例开始，或使用包含固定评测环境、证明与对照检查步骤的 [Dimitrov 复核包（中文）](./proof-kits/dimitrov/README.zh-CN.md)（[EN](./proof-kits/dimitrov/README.md)）。
+4. **把归档结论用到新题目。** 在本地运行调用档案定理的示例，或查看两份树重构证明如何调用同一条引理。[复用归档证明](./docs/PROOF-REUSE.zh-CN.md)
 
 <img src="./assets/workbench-desktop.png" alt="TheoremOS 工作台中的数学问题输入、模型设置和证明预算" width="1100">
 
