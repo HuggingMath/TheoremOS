@@ -8,7 +8,8 @@ title: TheoremOS
 authors:
   - family-names: Liu
     given-names: Zhenhao
+    affiliation: "WestlakeNLP, Westlake University"
 version: 0.1.0-preview.1
 date-released: "2026-11-08"
 url: https://theoremos.top/
-repository-artifact: https://github.com/LikC1606/TheoremOS
+repository-artifact: https://github.com/HuggingMath/TheoremOS

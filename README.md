@@ -1,9 +1,11 @@
-<!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-18 -->
+<!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-23 -->
 <p align="center">English · <a href="./README.zh-CN.md" lang="zh-CN">简体中文</a></p>
 
 # TheoremOS
 
-Bring a mathematical problem to the TheoremOS workbench. Review its Lean 4 statement and guide the proof plan while TheoremOS looks for related results and explores possible lemmas. Completed candidates go through an independent Lean check.
+> Developed at [**WestlakeNLP**](https://westlakenlp.com/) (Natural Language Processing Lab, [Westlake University](https://en.westlake.edu.cn/)).
+
+Bring a mathematical problem to the TheoremOS workbench: review its Lean 4 formalization, steer the proof plan while TheoremOS retrieves related Mathlib results and explores candidate lemmas, and validate finished candidates through an independent Lean 4 check.
 
 <p align="center">
   <a href="https://theoremos.top/en/">
@@ -11,9 +13,10 @@ Bring a mathematical problem to the TheoremOS workbench. Review its Lean 4 state
   </a>
 </p>
 
-[Star this repository](https://github.com/HuggingMath/TheoremOS) to find the public archive and verification kits again.
+[Star this repository](https://github.com/HuggingMath/TheoremOS) to follow updates and bookmark the public proof archive and local verification kits.
 
 <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS"></a>
+<a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f"></a>
 <a href="./CHANGELOG.md"><img alt="Research preview 0.1.0-preview.1" src="https://img.shields.io/badge/research_preview-0.1.0--preview.1-blue"></a>
 <a href="./docs/VERIFY.md"><img alt="Lean 4 verification" src="https://img.shields.io/badge/verification-Lean_4-2f855a"></a>
 <a href="./LICENSE"><img alt="Public materials rights reserved" src="https://img.shields.io/badge/public_materials-rights_reserved-lightgrey"></a>
@@ -101,6 +104,13 @@ These records link to the saved local Lean and problem-comparator checks. The al
 
 </details>
 
+## About WestlakeNLP
+
+TheoremOS is developed at [**WestlakeNLP**](https://westlakenlp.com/), the Natural Language Processing Lab at [Westlake University](https://en.westlake.edu.cn/) (founded in 2018 and led by [Prof. Yue Zhang](https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html)). The lab pursues fundamental and applied work in natural language processing, language-model reasoning, and AI for Science to advance discovery across the natural and human sciences.
+
+- **Lab Website:** [westlakenlp.com](https://westlakenlp.com/)
+- **X (Twitter):** [@NlpWestlake](https://x.com/NlpWestlake)
+
 ## Repository and reuse
 
 | Path | What you can inspect |
@@ -113,4 +123,4 @@ These records link to the saved local Lean and problem-comparator checks. The al
 
 [LICENSE](./LICENSE) reserves rights to project-authored public materials. Archived proofs and third-party materials retain their own terms; see [Public materials, reuse, and citation](./docs/PUBLIC-MATERIALS.md). Cite the project through [CITATION.cff](./CITATION.cff) and cite the original sources of any proof you discuss.
 
-For a multi-file Lean project, a custom toolchain, or a controlled CLI experiment, use the collaboration route in the [access guide](./docs/ACCESS.md). [Open an issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose) for archive corrections or feedback, and [star the repository](https://github.com/HuggingMath/TheoremOS) to keep the verification resources handy.
+For a multi-file Lean project, a custom toolchain, or a controlled CLI experiment, use the collaboration route in the [access guide](./docs/ACCESS.md). [Open an issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose) for archive corrections or feedback, and [star the repository](https://github.com/HuggingMath/TheoremOS) to follow updates from WestlakeNLP and keep the verification resources handy.

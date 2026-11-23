@@ -1,9 +1,11 @@
-<!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-18 -->
+<!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-23 -->
 <p align="center">简体中文 · <a href="./README.md" lang="en">English</a></p>
 
 # TheoremOS
 
-把数学问题带进 TheoremOS 在线工作台，你可以核对生成的 Lean 4 陈述、给证明路线提意见。系统会检索已有结果、探索引理，并将完整候选证明交给独立的 Lean 环境检查。
+> 由[西湖大学](https://www.westlake.edu.cn/) [**WestlakeNLP 实验室**](https://westlakenlp.com/)（西湖大学自然语言处理实验室）研发。
+
+把数学问题带进 TheoremOS 在线工作台：你可以核对生成的 Lean 4 形式化陈述，并在系统检索 Mathlib 已有结果、探索候选引理的过程中随时调整证明路线；完整候选证明最终交给独立的 Lean 4 环境核验。
 
 <p align="center">
   <a href="https://theoremos.top/">
@@ -11,9 +13,10 @@
   </a>
 </p>
 
-可以给[仓库点 Star](https://github.com/HuggingMath/TheoremOS)，方便回看证明档案和复核包。
+欢迎给[仓库点 Star](https://github.com/HuggingMath/TheoremOS)，关注项目进展并收藏公开证明档案与本地复核包。
 
 <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS"></a>
+<a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f"></a>
 <a href="./CHANGELOG.md"><img alt="Research preview 0.1.0-preview.1" src="https://img.shields.io/badge/research_preview-0.1.0--preview.1-blue"></a>
 <a href="./docs/VERIFY.md"><img alt="Lean 4 verification" src="https://img.shields.io/badge/verification-Lean_4-2f855a"></a>
 <a href="./LICENSE"><img alt="Public materials rights reserved" src="https://img.shields.io/badge/public_materials-rights_reserved-lightgrey"></a>
@@ -101,6 +104,13 @@
 
 </details>
 
+## 关于 WestlakeNLP
+
+TheoremOS 由[西湖大学](https://www.westlake.edu.cn/) [**WestlakeNLP 实验室**](https://westlakenlp.com/)（自然语言处理实验室，2018 年成立，由[张岳教授](https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html)领导）研发。实验室围绕自然语言处理、大模型推理与 AI for Science 开展基础与应用研究，致力于探索能够辅助自然科学与人文社科发现的智能系统。
+
+- **实验室官网：** [westlakenlp.com](https://westlakenlp.com/)
+- **X (Twitter)：** [@NlpWestlake](https://x.com/NlpWestlake)
+
 ## 仓库内容与引用
 
 | 路径 | 可以查到什么 |
@@ -113,4 +123,4 @@
 
 [LICENSE](./LICENSE) 保留项目自有公开材料的权利。归档证明和第三方材料沿用各自的许可，见[公开材料、复用与引用](./docs/PUBLIC-MATERIALS.md)。引用项目请用 [CITATION.cff](./CITATION.cff)，引用具体证明时也请注明该证明的原始来源。
 
-需要多文件 Lean 项目、自定义工具链或 CLI 对照实验，可以通过[访问说明](./docs/ACCESS.md)中的方式联系团队。欢迎[提交 Issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose)纠正档案或反馈问题，也可以[点 Star](https://github.com/HuggingMath/TheoremOS)收藏复核资料。
+需要多文件 Lean 项目、自定义工具链或 CLI 对照实验，可以通过[访问说明](./docs/ACCESS.md)中的方式联系团队。欢迎[提交 Issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose)纠正档案或反馈问题，也可以[点 Star](https://github.com/HuggingMath/TheoremOS)关注 WestlakeNLP 的后续更新并收藏复核资料。
