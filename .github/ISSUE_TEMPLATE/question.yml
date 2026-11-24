@@ -6,8 +6,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        先查看使用与 CLI 申请说明：https://github.com/LikC1606/TheoremOS/blob/main/docs/ACCESS.md
-        Start with the access and CLI guide: https://github.com/LikC1606/TheoremOS/blob/main/docs/ACCESS.md
+        先查看使用说明：https://github.com/HuggingMath/TheoremOS/blob/main/docs/ACCESS.md ，工作台与 CLI 源码见：https://github.com/HuggingMath/theorem-os
+        Start with the access guide: https://github.com/HuggingMath/TheoremOS/blob/main/docs/ACCESS.md (workbench & CLI source: https://github.com/HuggingMath/theorem-os)
 
         请勿在公开 Issue 中填写 API Key 或未公开的研究材料。
         Do not include API keys or private research material in a public issue.
