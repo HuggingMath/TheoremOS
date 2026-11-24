@@ -1,7 +1,11 @@
 <!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-24 -->
 <div align="center">
   <p>简体中文 · <a href="./README.md" lang="en">English</a></p>
-  <img src="./assets/mark.png" alt="TheoremOS" width="64" height="64">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-mark-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/readme-mark.svg">
+    <img src="./assets/readme-mark.svg" alt="TheoremOS" width="60" height="60">
+  </picture>
   <h1>TheoremOS</h1>
   <p><strong>人机协同的 Lean 4 数学证明工作台 —— 形式化命题、引理探索与独立内核核验。</strong></p>
   <p>由<a href="https://www.westlake.edu.cn/">西湖大学</a> <a href="https://westlakenlp.com/"><strong>WestlakeNLP 实验室</strong></a>（自然语言处理实验室）研发</p>
