@@ -1,7 +1,11 @@
 <!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-24 -->
 <div align="center">
   <p>English · <a href="./README.zh-CN.md" lang="zh-CN">简体中文</a></p>
-  <img src="./assets/mark.png" alt="TheoremOS" width="64" height="64">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme-mark-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/readme-mark.svg">
+    <img src="./assets/readme-mark.svg" alt="TheoremOS" width="60" height="60">
+  </picture>
   <h1>TheoremOS</h1>
   <p><strong>Collaborative Lean 4 mathematical research — formalize statements, explore lemmas, and verify independently.</strong></p>
   <p>Developed at <a href="https://westlakenlp.com/"><strong>WestlakeNLP</strong></a> (Natural Language Processing Lab, <a href="https://en.westlake.edu.cn/">Westlake University</a>)</p>
