@@ -12,7 +12,7 @@ TheoremOS 面向数学家与形式化研究者，用来核对形式化题面、�
 
 | 功能模块 | 可用入口 | 说明与使用边界 |
 | :--- | :--- | :--- |
-| 访问与计费 | 网页工作台全局<br>[申请入口](./ACCESS.md) | 邮箱白名单研究内测，平台本身免费。用户自备支持 Responses API 的 Key，模型费用直接支付给对应服务商。可通过 [GitHub Issue](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml) 或发信至 `liuzhenhao@westlake.edu.cn` 申请（请勿在公开 Issue 中填写 API Key）。 |
+| 访问与计费 | 网页工作台全局<br>[申请入口](./ACCESS.md) | 邮箱白名单研究内测，平台本身免费。用户自备支持 Responses API 的 Key，模型费用直接支付给对应服务商。可通过 [GitHub Issue](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) 或发信至 `liuzhenhao@westlake.edu.cn` 申请（请勿在公开 Issue 中填写 API Key）。 |
 | 自然语言、TeX 与 Lean 输入 | 工作台首页 / 高级 Lean 入口 | 首页接受自然语言或 TeX 数学问题；高级 Lean 入口支持粘贴或导入单个 `.lean` 文件（可含未完成的 `sorry`）。网页新任务统一运行在 TheoremOS 数学环境中（具体版本与容量限制见界面），不支持上传任意多文件 Lake 工程。 |
 | 形式化陈述生成与人工确认 | 工作台首页 / [独立形式化页](https://app.theoremos.top/formalize.html) | 生成的 Lean 陈述会经过编译检查与独立回译对照，帮助发现遗漏假设或量词偏差，但仍需研究者判断其与非形式化原题是否等价。首页默认“共同推进”：先由您确认题意，再由 2 个 Agent 拟定初始计划，等待您批准后展开证明。主动选择“自动推进”时，1 个 Agent 在模型核对后直接开始。独立 `formalize.html` 仍可确认陈述并带入研究草稿。`formalize.html` 使用其默认模型与预算，不继承首页设置或一次性 Key。 |
 | 模型服务商配置 | 工作台模型设置区 | 从平台已部署的服务商列表中选择，填入模型名称与 API Key。网页端不支持自定义 Base URL；“检查 Key 与模型”仅测试模型列表连通性，不测试证明能力。新填 Key 默认临时使用；自然语言设置的保存按钮或 Lean 中默认不勾选的保存框可主动保存或替换账号 Key，也可删除。 |
@@ -30,7 +30,7 @@ TheoremOS 面向数学家与形式化研究者，用来核对形式化题面、�
 | :--- | :--- | :--- |
 | 策略替换与受控消融 | 算法与形式化研究合作 | 通过 CLI 研究合作接口对 M1–M5 决策策略进行源码级替换、运行受控预算消融实验，或使用批量引理目录构建工具。 |
 | 复杂工程与长程课题 | 联合课题攻关 | 若课题涉及自定义包、私有依赖、多文件 Lake 工程或特定 Mathlib/Lean 工具链，请联系团队讨论适配与合作范围。 |
-| 仓库与分发边界 | 公开仓库说明 | 本仓库仅包含网站说明、文档、公开证明档案与独立验证材料。TheoremOS 运行时与 CLI 不公开源码或安装器；网页内测资格不包含底层源码授权。 |
+| 仓库与分发边界 | 公开官网与工作台源码 | 本仓库发布官网说明、文档、公开证明档案与独立验证材料（见 [`LICENSE`](../LICENSE)）。工作台与 CLI 源码托管于独立仓库 [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os)（`AGPL-3.0-only`）。 |
 
 ## 系统模块现状：已实现与规划中
 

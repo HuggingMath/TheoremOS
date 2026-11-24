@@ -8,7 +8,7 @@ TheoremOS 是面向数学研究者的云端协作系统，支持自然语言、$
 
 ## 1. 申请访问与登录工作台
 
-当前云端内测采用邮箱白名单机制。首次使用前，请通过 [GitHub Early Access 申请表单](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml)提交公开的研究用途说明（切勿在公开 Issue 中填写任何 API Key 或敏感信息；具体登录邮箱将在审核回复后私下确认，详见 [`ACCESS.md`](ACCESS.md)）。
+当前云端内测采用邮箱白名单机制。首次使用前，请通过 [GitHub Early Access 申请表单](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml)提交公开的研究用途说明（切勿在公开 Issue 中填写任何 API Key 或敏感信息；具体登录邮箱将在审核回复后私下确认，详见 [`ACCESS.md`](ACCESS.md)）。
 
 邮箱加入白名单后，访问云端工作台 [https://app.theoremos.top/](https://app.theoremos.top/)。第一步，在登录界面输入白名单邮箱并完成 5 位数字图形验证码，点击发送验证码；第二步，查收邮件并在随后出现的输入框中填入 6 位邮箱验证码完成登录（首次登录或协议更新时需勾选同意服务条款）。
 
@@ -98,7 +98,7 @@ TheoremOS 是面向数学研究者的云端协作系统，支持自然语言、$
 
 ## 5. 常见阻塞与排查
 
-* **提示邮箱未开通权限**：请先通过 [Early Access 表单](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml)提交申请，待审核回复并私下确认邮箱加入白名单后再登录。
+* **提示邮箱未开通权限**：请先通过 [Early Access 表单](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml)提交申请，待审核回复并私下确认邮箱加入白名单后再登录。
 * **Key 或模型检查/调用失败**：请确认所填 API Key 与下拉所选的“模型服务商”严格对应，且所填模型名称在该服务商处支持 Responses API。
 * **预算达到上限停止**：检查当前已完成的中间引理与探索进展，再决定是调高预算继续研究还是调整证明方向。
 * **生成的形式化题意偏离原意**：在“共同推进”的题意确认步骤修改原题中的假设或类型定义，再生成并核对陈述；也可使用独立 [`formalize.html`](https://app.theoremos.top/formalize.html) 页面。
