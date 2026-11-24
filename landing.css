@@ -845,7 +845,7 @@ summary svg { flex-shrink: 0; transition: transform 180ms var(--ease-out); }
 .landing-page .faq-section > h3 { font-size: var(--step-lead); margin-bottom: 12px; }
 .landing-page .faq-list details { padding-inline: 0; background: none; }
 .landing-page .faq-list summary { min-height: 48px; }
-.landing-page .faq-list details[open] { padding: 0 16px 16px; }
+.landing-page .faq-list details[open] { padding: 0 16px 16px; background: var(--dark-surface); color: inherit; }
 .landing-page .site-footer { padding-block: 16px 0; color: var(--tool-ink); }
 .landing-page .footer-brand p { margin-top: 8px; }
 .landing-page .footer-brand p, .landing-page .site-footer > span { color: var(--dark-muted); }
