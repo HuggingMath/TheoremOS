@@ -22,12 +22,12 @@
     <a href="./CITATION.cff">Cite</a>
   </p>
   <p>
-    <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS?style=flat"></a>
-    <a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f"></a>
-    <a href="./CHANGELOG.md"><img alt="Research preview v0.1.0-preview.1" src="https://img.shields.io/badge/preview-v0.1.0--preview.1-blue"></a>
-    <a href="./docs/VERIFY.md"><img alt="Lean 4.33.0" src="https://img.shields.io/badge/Lean-4.33.0-2f855a"></a>
-    <a href="https://github.com/HuggingMath/theorem-os"><img alt="Workbench & CLI: AGPL-3.0-only" src="https://img.shields.io/badge/workbench%20%26%20CLI-AGPL--3.0--only-orange"></a>
-    <a href="./LICENSE"><img alt="Site & Archive License" src="https://img.shields.io/badge/site%20%26%20archive-rights%20reserved-lightgrey"></a>
+    <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS?style=flat&amp;labelColor=292524&amp;color=1e3a5f"></a>
+    <a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f?style=flat&amp;labelColor=292524"></a>
+    <a href="./CHANGELOG.md"><img alt="Research preview v0.1.0-preview.1" src="https://img.shields.io/badge/preview-v0.1.0--preview.1-57534e?style=flat&amp;labelColor=292524"></a>
+    <a href="./docs/VERIFY.md"><img alt="Lean 4.33.0" src="https://img.shields.io/badge/Lean-4.33.0-2f6f56?style=flat&amp;labelColor=292524"></a>
+    <a href="https://github.com/HuggingMath/theorem-os"><img alt="Workbench & CLI: AGPL-3.0-only" src="https://img.shields.io/badge/workbench%20%26%20CLI-AGPL--3.0--only-c95633?style=flat&amp;labelColor=292524"></a>
+    <a href="./LICENSE"><img alt="Site & Archive License" src="https://img.shields.io/badge/site%20%26%20archive-rights%20reserved-44403c?style=flat&amp;labelColor=292524"></a>
   </p>
   <br>
   <a href="https://theoremos.top/en/">
@@ -74,13 +74,19 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 <table width="100%">
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <a href="./assets/guide/statement-review-en.png"><img src="./assets/guide/statement-review-en.png" alt="TheoremOS formalization review showing Lean statement, blind back-translation, and reviewer check" width="100%"></a>
-      <p align="center"><sub><strong>Step 2 · Statement Review</strong> — Compare the Lean 4 statement against blind back-translation before approving search (<a href="./assets/guide/statement-review-zh.png">中文截图</a>).</sub></p>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <a href="./assets/proof-replay-en.gif"><img src="./assets/proof-replay-en.gif" alt="Four-step preset Lean verification replay: candidate, Lean feedback, repair, and full acceptance" width="100%"></a>
-      <p align="center"><sub><strong>Step 3 · Verification Replay</strong> — Four-step loop: candidate → Lean feedback → repair → independent kernel acceptance (<a href="./assets/proof-replay-zh.gif">中文回放</a>).</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <sub><strong>Step 2 · Statement Review</strong> — Compare the Lean 4 statement against blind back-translation before approving search (<a href="./assets/guide/statement-review-zh.png">中文截图</a>).</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <sub><strong>Step 3 · Verification Replay</strong> — Four-step loop: candidate → Lean feedback → repair → independent kernel acceptance (<a href="./assets/proof-replay-zh.gif">中文回放</a>).</sub>
     </td>
   </tr>
 </table>
@@ -92,20 +98,26 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 1. **Statement Review** — Submit natural language, TeX, or an incomplete Lean file. Formalization generates a type-checked Lean statement alongside a semantic review comparison; the researcher confirms mathematical intent before proof search begins.
 2. **Route & Lemma Decomposition** — Test whether candidate helper lemmas imply the main theorem before filling in all sub-proofs, then prove lemmas separately and assemble a `sorry`-free final proof.
 3. **Trace Inspection & Lemma Reuse** — Inspect recorded proof attempts and compiler diagnostics, steer the plan interactively, and reuse verified lemmas (always re-checked in the target Lean environment).
-4. **Open-Source CLI & Policy Experiments** — The workbench, CLI, and replaceable M1–M5 modules (construction, feedback, search, context, collaboration) are open source at [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os). For custom Lake toolchains or joint evaluations, see [Capabilities & Collaboration (EN)](./docs/CAPABILITIES.md) ([中文](./docs/CAPABILITIES.zh-CN.md)).
+4. **Open-Source CLI & Policy Experiments** — The workbench, CLI, and replaceable M1–M5 modules (construction, feedback, search, context, collaboration) are open source at [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os). For custom Lake toolchains or joint evaluations, see [Capabilities & Collaboration (EN)](./docs/CAPABILITIES.md) ([中文](./docs/CAPABILITIES.zh-CN.md)).
 
 <details>
 <summary><b>View architecture diagram and end-to-end illustrated workflow</b></summary>
 <br>
 <table width="100%">
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <img src="./assets/theoremos-readme-cover-workbench.webp" alt="Illustrated TheoremOS workflow from problem formalization and Mathlib lookup to independent Lean 4 verification" width="100%">
-      <p align="center"><sub>End-to-end collaborative proving &amp; local reproduction</sub></p>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <img src="./assets/workbench-modules-desktop-en.png" alt="Five replaceable research modules and independent final acceptance loop" width="100%">
-      <p align="center"><sub>M1–M5 research loop separated from fixed S3 acceptance (<a href="./assets/workbench-modules-desktop.png">中文图</a>)</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <sub>End-to-end collaborative proving &amp; local reproduction</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <sub>M1–M5 research loop separated from fixed S3 acceptance (<a href="./assets/workbench-modules-desktop.png">中文图</a>)</sub>
     </td>
   </tr>
 </table>
@@ -117,9 +129,9 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 | Collection | Records | Verification Standard | Browse Files |
 | --- | :---: | --- | --- |
-| **Lean-Eval** | **10** | Official Lean-Eval pass records on frozen submission targets | [`accepted/`](./accepted/) · [`submitted/`](./submitted/) |
-| **OpenAI Math** | **18** | Checked locally with Lean 4 and problem comparators *(no official OpenAI confirmation)* | [`data/proofs/`](./data/proofs/) |
-| **In Progress** | **1** | Recorded intermediate draft snapshot | [`in-progress/`](./in-progress/) |
+| **Lean-Eval** | **10** | Official Lean-Eval pass records on frozen submission targets | [accepted/](./accepted/) · [submitted/](./submitted/) |
+| **OpenAI Math** | **18** | Checked locally with Lean 4 and problem comparators *(no official OpenAI confirmation)* | [data/proofs/](./data/proofs/) |
+| **In Progress** | **1** | Recorded intermediate draft snapshot | [in-progress/](./in-progress/) |
 
 > [!NOTE]
 > The [archive catalog](./data/catalog.json) contains 29 records in total. Some OpenAI Math entries check a supporting result or conditional statement, and the [evaluation notes (EN)](./docs/EVALUATION.md) ([中文](./docs/EVALUATION.zh-CN.md)) describe an earlier snapshot of selected runs rather than a system-wide pass rate or cost.
@@ -180,11 +192,11 @@ Model and provenance metadata are recorded in [`accepted.json`](accepted/accepte
 
 | Path | Contents |
 | --- | --- |
-| [`accepted/`](./accepted/) · [`submitted/`](./submitted/) | Lean-Eval proof packages and official submission provenance |
-| [`data/proofs/`](./data/proofs/) | OpenAI Math problem statements, proof files, local checks, and saved trajectories |
-| [`in-progress/`](./in-progress/) | Earlier drafts, some with unclosed `sorry` placeholders |
-| [`proof-kits/`](./proof-kits/) · [`examples/`](./examples/) | Standalone Dimitrov benchmark verification kit and short Lean reuse examples |
-| [`docs/`](./docs/) · [`CHANGELOG.md`](./CHANGELOG.md) | Access, verification, reuse, capability, evaluation, and release documentation |
+| [accepted/](./accepted/) · [submitted/](./submitted/) | Lean-Eval proof packages and official submission provenance |
+| [data/proofs/](./data/proofs/) | OpenAI Math problem statements, proof files, local checks, and saved trajectories |
+| [in-progress/](./in-progress/) | Earlier drafts, some with unclosed `sorry` placeholders |
+| [proof-kits/](./proof-kits/) · [examples/](./examples/) | Standalone Dimitrov benchmark verification kit and short Lean reuse examples |
+| [docs/](./docs/) · [CHANGELOG.md](./CHANGELOG.md) | Access, verification, reuse, capability, evaluation, and release documentation |
 
 ---
 
@@ -209,7 +221,24 @@ Model and provenance metadata are recorded in [`accepted.json`](accepted/accepte
 
 ## License & Citation
 
-[`LICENSE`](./LICENSE) reserves rights to project-authored public site and documentation materials in this repository, while [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) is licensed under `AGPL-3.0-only`. Archived proofs and third-party materials retain their original terms — see [Public materials, reuse, and citation](./docs/PUBLIC-MATERIALS.md). Please cite TheoremOS via [`CITATION.cff`](./CITATION.cff) alongside the original problem/proof authors.
+[LICENSE](./LICENSE) reserves rights to project-authored public site and documentation materials in this repository, while [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) is licensed under `AGPL-3.0-only`. Archived proofs and third-party materials retain their original terms — see [Public materials, reuse, and citation](./docs/PUBLIC-MATERIALS.md). Please cite TheoremOS via [CITATION.cff](./CITATION.cff) alongside the original problem/proof authors.
+
+<details>
+<summary><b>Cite TheoremOS (BibTeX)</b></summary>
+
+```bibtex
+@software{liu2026theoremos,
+  author  = {Liu, Zhenhao},
+  title   = {TheoremOS},
+  version = {0.1.0-preview.1},
+  year    = {2026},
+  month   = nov,
+  note    = {WestlakeNLP, Westlake University},
+  url     = {https://theoremos.top/}
+}
+```
+
+</details>
 
 ---
 
