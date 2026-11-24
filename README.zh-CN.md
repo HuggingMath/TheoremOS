@@ -8,7 +8,10 @@
   </picture>
   <h1>TheoremOS</h1>
   <p><strong>人机协同的 Lean 4 数学证明工作台 —— 形式化命题、引理探索与独立内核核验。</strong></p>
-  <p>由<a href="https://www.westlake.edu.cn/">西湖大学</a> <a href="https://westlakenlp.com/"><strong>WestlakeNLP 实验室</strong></a>（自然语言处理实验室）研发</p>
+  <p>
+    由<a href="https://www.westlake.edu.cn/">西湖大学</a>
+    <a href="https://westlakenlp.com/"><img src="./assets/westlakenlp-logo.png" alt="WestlakeNLP" width="18" height="18"> <strong>WestlakeNLP 实验室</strong></a>（自然语言处理实验室）研发
+  </p>
   <p>
     <a href="https://theoremos.top/">产品官网</a> ·
     <a href="https://theoremos.top/archive.html">证明档案</a> ·
@@ -35,8 +38,8 @@ TheoremOS 致力于与数学研究者协同构造严谨的形式化证明：由�
 
 | 仓库 | 定位与内容 | 许可证 |
 | --- | --- | --- |
-| [**`HuggingMath/TheoremOS`**](https://github.com/HuggingMath/TheoremOS) *（本仓库）* | [项目官网](https://theoremos.top/)、公开证明档案（10 份 Lean-Eval、18 条 OpenAI Math、1 条进行中）、Dimitrov 独立复核包与双语文档 | [保留权利](./LICENSE) |
-| [**`HuggingMath/theorem-os`**](https://github.com/HuggingMath/theorem-os) | 开源网页工作台、命令行工具（`bun run math`）及可替换的 M1–M5 决策策略组件 | [`AGPL-3.0-only`](https://github.com/HuggingMath/theorem-os/blob/main/LICENSE) |
+| [HuggingMath/TheoremOS](https://github.com/HuggingMath/TheoremOS) | [项目官网](https://theoremos.top/)、29 条公开证明档案、Dimitrov 独立复核包与双语文档 | [保留权利](./LICENSE) |
+| [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) | 开源网页工作台、命令行工具（`bun run math`）与 M1–M5 可替换组件 | [AGPL-3.0-only](https://github.com/HuggingMath/theorem-os/blob/main/LICENSE) |
 
 ---
 
@@ -47,8 +50,19 @@ TheoremOS 致力于与数学研究者协同构造严谨的形式化证明：由�
 | **免账号浏览已验证证明与过程** | [中文证明档案](https://theoremos.top/archive.html) · [English](https://theoremos.top/en/archive.html) · [案例研究](./docs/CASE-STUDY.zh-CN.md) | 浏览器即可（无需账号） |
 | **在本地独立复核证明** | [Lean 复核指引](./docs/VERIFY.zh-CN.md) · [Dimitrov 复核包](./proof-kits/dimitrov/README.zh-CN.md) | 本地 Lean / Python / Git（无需模型 Key） |
 | **在云端工作台发起研究任务** | [申请内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录工作台](https://app.theoremos.top/) · [首次使用教程](./docs/GETTING-STARTED.zh-CN.md) | 白名单邮箱与支持 Responses API 的模型 Key |
-| **本地部署或替换 M1–M5 策略** | [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) · [能力与开放范围](./docs/CAPABILITIES.zh-CN.md) | 本地 TypeScript / Lean 运行环境（`AGPL-3.0-only`） |
+| **本地部署或替换 M1–M5 策略** | [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) · [能力与开放范围](./docs/CAPABILITIES.zh-CN.md) | 本地 TypeScript / Lean 运行环境（`AGPL-3.0-only`） |
 | **将归档引理复用到新题目** | [复用归档证明指南](./docs/PROOF-REUSE.zh-CN.md) | 本地 Lean 4 工作区 |
+
+<details>
+<summary><b>三行命令本地复核预设 Lean 示例（无需下载 Mathlib 或模型 Key）</b></summary>
+
+```bash
+git clone https://github.com/HuggingMath/TheoremOS.git && cd TheoremOS
+elan toolchain install leanprover/lean4:v4.33.0
+lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
+```
+
+</details>
 
 ---
 
@@ -175,9 +189,22 @@ TheoremOS 致力于与数学研究者协同构造严谨的形式化证明：由�
 
 ## 关于 WestlakeNLP
 
-TheoremOS 由[西湖大学](https://www.westlake.edu.cn/) [**WestlakeNLP 实验室**](https://westlakenlp.com/)（自然语言处理实验室，2018 年成立，由[张岳教授](https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html)领导）研发。实验室围绕自然语言处理、大模型推理与 AI for Science 开展基础与应用研究，致力于探索辅助自然科学与人文社科发现的智能系统。
-
-- **实验室官网：** [westlakenlp.com](https://westlakenlp.com/) · **X (Twitter)：** [@NlpWestlake](https://x.com/NlpWestlake) · **联系邮箱：** [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)
+<table width="100%">
+  <tr>
+    <td width="124" align="center" valign="middle">
+      <a href="https://westlakenlp.com/">
+        <img src="./assets/westlakenlp-logo.png" alt="WestlakeNLP · 西湖大学自然语言处理实验室" width="88" height="88">
+      </a>
+    </td>
+    <td valign="middle">
+      TheoremOS 由<a href="https://www.westlake.edu.cn/">西湖大学</a> <a href="https://westlakenlp.com/"><strong>WestlakeNLP 实验室</strong></a>（自然语言处理实验室，2018 年成立，由<a href="https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html">张岳教授</a>领导）研发。实验室围绕自然语言处理、大模型推理与 AI for Science 开展基础与应用研究，致力于探索辅助自然科学与人文社科发现的智能系统。
+      <br><br>
+      <strong>实验室官网：</strong><a href="https://westlakenlp.com/">westlakenlp.com</a> ·
+      <strong>X (Twitter)：</strong><a href="https://x.com/NlpWestlake">@NlpWestlake</a> ·
+      <strong>联系邮箱：</strong><a href="mailto:liuzhenhao@westlake.edu.cn">liuzhenhao@westlake.edu.cn</a>
+    </td>
+  </tr>
+</table>
 
 ## 许可与引用
 
