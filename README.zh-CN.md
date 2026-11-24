@@ -13,6 +13,7 @@
     <a href="https://westlakenlp.com/"><img src="./assets/westlakenlp-logo.png" alt="WestlakeNLP" width="18" height="18"> <strong>WestlakeNLP 实验室</strong></a>（自然语言处理实验室）研发
   </p>
   <p>
+    <a href="https://github.com/HuggingMath/TheoremOS"><strong>⭐ 点赞收藏</strong></a> ·
     <a href="https://theoremos.top/">产品官网</a> ·
     <a href="https://theoremos.top/archive.html">证明档案</a> ·
     <a href="https://github.com/HuggingMath/theorem-os">工作台与 CLI 源码</a> ·
@@ -35,6 +36,15 @@
 </div>
 
 TheoremOS 致力于与数学研究者协同构造严谨的形式化证明：由研究者提出数学问题、核对生成的 Lean 4 形式化陈述并把控引理拆解与研究路线，系统承担 Mathlib 检索、并行候选探索，并交由独立的 Lean 4 内核完成最终验收。
+
+> [!TIP]
+> **觉得项目有帮助？** 欢迎点击右上角给 [**HuggingMath/TheoremOS**](https://github.com/HuggingMath/TheoremOS)（以及开源工作台与 CLI 仓库 [**HuggingMath/theorem-os**](https://github.com/HuggingMath/theorem-os)）点亮 **⭐ Star**！你的支持能帮助更多数学与 AI4Science 研究者发现我们的公开证明档案、独立复核包与 [WestlakeNLP](https://westlakenlp.com/) 后续更新。
+
+### 核心亮点
+
+| 高难度公开证明档案 | 人机协同与过程可控 | 完整开源与零密钥本地复现 |
+| :--- | :--- | :--- |
+| 收录 **10 份 Lean-Eval 官方通过证明**（含*单位猜想*、*Hopf–Rinow 定理*、*Dimitrov 下界*、*向日葵引理改进界*、*Lorentzian 多项式*等）与 **18 条本地核验的 OpenAI Math 记录**及完整研究轨迹（[来源口径](#公开证明证据)）。 | 在启动大规模探索前通过**独立盲回译**把关形式化陈述，支持先验路线再补引理、实时干预计划与已验证引理跨任务复用。 | 无需模型 API Key 即可通过 [Dimitrov 复核包](./proof-kits/dimitrov/README.zh-CN.md)在本地独立核验，完整网页工作台、CLI 与 M1–M5 组件已在 [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) 以 `AGPL-3.0-only` 开源。 |
 
 | 仓库 | 定位与内容 | 许可证 |
 | --- | --- | --- |
@@ -241,9 +251,15 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 ---
 
+## 支持与社区参与
+
+- **⭐ Star 支持两个仓库** — 点亮 [HuggingMath/TheoremOS](https://github.com/HuggingMath/TheoremOS) 收藏公开证明档案与独立复核资料，同时关注开源运行仓库 [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os)（`AGPL-3.0-only`）获取工作台、CLI 与求解策略更新。
+- **💬 反馈与共建引理** — 欢迎[提交 Issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose)分享你的本地复核结果、可复用 Lean 引理或工具改进建议。
+- **🤝 关注与研究合作** — 关注 [WestlakeNLP](https://westlakenlp.com/) 官方 X（[@NlpWestlake](https://x.com/NlpWestlake)）获取最新研究动态，或致信 [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn) 探讨多文件 Lake 工程适配与联合研究。
+
 <p align="center">
-  <a href="https://github.com/HuggingMath/TheoremOS"><b>点 Star 关注仓库</b></a> ·
+  <a href="https://github.com/HuggingMath/TheoremOS"><b>⭐ Star TheoremOS</b></a> ·
+  <a href="https://github.com/HuggingMath/theorem-os"><b>⭐ Star theorem-os</b></a> ·
   <a href="https://github.com/HuggingMath/TheoremOS/issues/new/choose"><b>提交 Issue</b></a> ·
-  <a href="./docs/ACCESS.md"><b>内测申请与合作</b></a> ·
-  <a href="https://github.com/HuggingMath/theorem-os"><b>查看工作台与 CLI 源码</b></a>
+  <a href="./docs/ACCESS.md"><b>内测申请与合作</b></a>
 </p>

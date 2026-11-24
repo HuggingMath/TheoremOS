@@ -14,6 +14,7 @@
     (Natural Language Processing Lab, <a href="https://en.westlake.edu.cn/">Westlake University</a>)
   </p>
   <p>
+    <a href="https://github.com/HuggingMath/TheoremOS"><strong>⭐ Star</strong></a> ·
     <a href="https://theoremos.top/en/">Website</a> ·
     <a href="https://theoremos.top/en/archive.html">Proof Archive</a> ·
     <a href="https://github.com/HuggingMath/theorem-os">Workbench &amp; CLI Source</a> ·
@@ -36,6 +37,15 @@
 </div>
 
 TheoremOS pairs mathematicians with AI research agents for formal proof construction: researchers define the problem, inspect generated Lean 4 statements, and steer lemma decomposition while the system handles Mathlib retrieval, parallel exploration, and independent Lean 4 kernel verification.
+
+> [!TIP]
+> **Enjoying TheoremOS?** If our verified Lean 4 proof archives, standalone verification kits, or open-source workbench are useful to your research, please give [**HuggingMath/TheoremOS**](https://github.com/HuggingMath/TheoremOS) (and our runtime repo [**HuggingMath/theorem-os**](https://github.com/HuggingMath/theorem-os)) a **⭐ Star** to help more researchers discover the project and follow upcoming releases from [WestlakeNLP](https://westlakenlp.com/).
+
+### Why TheoremOS?
+
+| Frontier Proof Archives | Human-in-the-Loop Control | Open Code &amp; Local Reproduction |
+| :--- | :--- | :--- |
+| **10 official Lean-Eval passes** (incl. *Unit Conjecture*, *Hopf–Rinow*, *Dimitrov*, *Sunflower bounds*, *Lorentzian polynomials*) &amp; **18 locally verified OpenAI Math** records with full research trajectories ([provenance](#proof-evidence)). | Review formal Lean 4 statements via **blind back-translation** before spending search budget, test candidate lemma routes early, and reuse verified lemmas across tasks. | Reproduce proofs locally with **zero API key** via the [Dimitrov Proof Kit](./proof-kits/dimitrov/README.md), or run and customize the full M1–M5 workbench &amp; CLI (`AGPL-3.0-only`) at [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os). |
 
 | Repository | Scope | License |
 | --- | --- | --- |
@@ -242,9 +252,15 @@ Model and provenance metadata are recorded in [`accepted.json`](accepted/accepte
 
 ---
 
+## Support &amp; Community
+
+- **⭐ Star both repositories** — Bookmark [HuggingMath/TheoremOS](https://github.com/HuggingMath/TheoremOS) for verified proof archives and verification kits, and [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) (`AGPL-3.0-only`) for the open-source workbench, CLI, and solver updates.
+- **💬 Contribute &amp; report checks** — [Open an issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose) to share local verification reports, reusable Lean lemmas, or feature requests.
+- **🤝 Follow &amp; collaborate** — Follow [@NlpWestlake](https://x.com/NlpWestlake) for research releases from [WestlakeNLP](https://westlakenlp.com/), or reach out at [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn) for multi-file Lake projects and joint evaluations.
+
 <p align="center">
-  <a href="https://github.com/HuggingMath/TheoremOS"><b>Star on GitHub</b></a> ·
+  <a href="https://github.com/HuggingMath/TheoremOS"><b>⭐ Star TheoremOS</b></a> ·
+  <a href="https://github.com/HuggingMath/theorem-os"><b>⭐ Star theorem-os</b></a> ·
   <a href="https://github.com/HuggingMath/TheoremOS/issues/new/choose"><b>Open an Issue</b></a> ·
-  <a href="./docs/ACCESS.md"><b>Request Access / Collaborate</b></a> ·
-  <a href="https://github.com/HuggingMath/theorem-os"><b>Explore Workbench &amp; CLI Source</b></a>
+  <a href="./docs/ACCESS.md"><b>Request Access / Collaborate</b></a>
 </p>
