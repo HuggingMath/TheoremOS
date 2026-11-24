@@ -1,57 +1,106 @@
-<!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-23 -->
-<p align="center">English · <a href="./README.zh-CN.md" lang="zh-CN">简体中文</a></p>
-
-# TheoremOS
-
-> Developed at [**WestlakeNLP**](https://westlakenlp.com/) (Natural Language Processing Lab, [Westlake University](https://en.westlake.edu.cn/)).
-
-Bring a mathematical problem to the TheoremOS workbench: review its Lean 4 formalization, steer the proof plan while TheoremOS retrieves related Mathlib results and explores candidate lemmas, and validate finished candidates through an independent Lean 4 check.
-
-<p align="center">
+<!-- README_SYNC: source=16ba55670be597f22058a32c185727a047f63791; updated=2026-11-24 -->
+<div align="center">
+  <p>English · <a href="./README.zh-CN.md" lang="zh-CN">简体中文</a></p>
+  <img src="./assets/mark.png" alt="TheoremOS" width="64" height="64">
+  <h1>TheoremOS</h1>
+  <p><strong>Collaborative Lean 4 mathematical research — formalize statements, explore lemmas, and verify independently.</strong></p>
+  <p>Developed at <a href="https://westlakenlp.com/"><strong>WestlakeNLP</strong></a> (Natural Language Processing Lab, <a href="https://en.westlake.edu.cn/">Westlake University</a>)</p>
+  <p>
+    <a href="https://theoremos.top/en/">Website</a> ·
+    <a href="https://theoremos.top/en/archive.html">Proof Archive</a> ·
+    <a href="https://github.com/HuggingMath/theorem-os">Workbench &amp; CLI Source</a> ·
+    <a href="./docs/ACCESS.md">Access Guide</a> ·
+    <a href="./docs/VERIFY.md">Verify Locally</a> ·
+    <a href="./CITATION.cff">Cite</a>
+  </p>
+  <p>
+    <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS?style=flat"></a>
+    <a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f"></a>
+    <a href="./CHANGELOG.md"><img alt="Research preview v0.1.0-preview.1" src="https://img.shields.io/badge/preview-v0.1.0--preview.1-blue"></a>
+    <a href="./docs/VERIFY.md"><img alt="Lean 4.33.0" src="https://img.shields.io/badge/Lean-4.33.0-2f855a"></a>
+    <a href="https://github.com/HuggingMath/theorem-os"><img alt="Workbench & CLI: AGPL-3.0-only" src="https://img.shields.io/badge/workbench%20%26%20CLI-AGPL--3.0--only-orange"></a>
+    <a href="./LICENSE"><img alt="Site & Archive License" src="https://img.shields.io/badge/site%20%26%20archive-rights%20reserved-lightgrey"></a>
+  </p>
+  <br>
   <a href="https://theoremos.top/en/">
-    <img src="./assets/readme-website.png" width="336" alt="Official website · theoremos.top">
+    <img src="./assets/TheoremOS-cover-v4.png" alt="TheoremOS — Working alongside mathematicians: five replaceable research modules and four-step preset Lean verification replay" width="100%">
   </a>
-</p>
+</div>
 
-[Star this repository](https://github.com/HuggingMath/TheoremOS) to follow updates and bookmark the public proof archive and local verification kits.
+TheoremOS pairs mathematicians with AI research agents for formal proof construction: researchers define the problem, inspect generated Lean 4 statements, and steer lemma decomposition while the system handles Mathlib retrieval, parallel exploration, and independent Lean 4 kernel verification.
 
-<a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS"></a>
-<a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f"></a>
-<a href="./CHANGELOG.md"><img alt="Research preview 0.1.0-preview.1" src="https://img.shields.io/badge/research_preview-0.1.0--preview.1-blue"></a>
-<a href="./docs/VERIFY.md"><img alt="Lean 4 verification" src="https://img.shields.io/badge/verification-Lean_4-2f855a"></a>
-<a href="./LICENSE"><img alt="Public materials rights reserved" src="https://img.shields.io/badge/public_materials-rights_reserved-lightgrey"></a>
+| Repository | Scope | License |
+| --- | --- | --- |
+| [**`HuggingMath/TheoremOS`**](https://github.com/HuggingMath/TheoremOS) *(this repo)* | Product site ([`theoremos.top`](https://theoremos.top/en/)), archived proof records (10 Lean-Eval, 18 OpenAI Math, 1 in-progress), Dimitrov Proof Kit & documentation | [Rights reserved](./LICENSE) |
+| [**`HuggingMath/theorem-os`**](https://github.com/HuggingMath/theorem-os) | Open-source web workbench, CLI runner (`bun run math`), and replaceable M1–M5 strategy modules | [`AGPL-3.0-only`](https://github.com/HuggingMath/theorem-os/blob/main/LICENSE) |
 
-**Proof archive:** [English](https://theoremos.top/en/archive.html) · [简体中文](https://theoremos.top/archive.html)
+---
 
-**Workbench:** [Request research preview access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Sign in](https://app.theoremos.top/) · [Access guide](./docs/ACCESS.md) · [Workbench & CLI source (`AGPL-3.0-only`)](https://github.com/HuggingMath/theorem-os)
+## Quick Start
 
-<img src="./assets/theoremos-readme-cover-workbench.webp" alt="An illustrated TheoremOS workbench. An anime mathematician compares the problem with its Lean statement. Mathlib results inform the lemma work, and a candidate proof enters an independent Lean 4 check. Below are feedback, a proof revision, the check report, and materials for local verification." width="1280">
+| What you want to do | Where to start | What you need |
+| --- | --- | --- |
+| **Browse verified proofs & trajectories** | [Proof Archive (EN)](https://theoremos.top/en/archive.html) · [中文档案](https://theoremos.top/archive.html) · [Case Study](./docs/CASE-STUDY.md) | Browser only (no account required) |
+| **Verify a proof locally** | [Verification Guide](./docs/VERIFY.md) · [Dimitrov Proof Kit](./proof-kits/dimitrov/README.md) | Local Lean / Python / Git (no API key) |
+| **Start an online research task** | [Request Access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Workbench](https://app.theoremos.top/) · [First-Task Guide](./docs/GETTING-STARTED.md) | Allowlisted email & BYOK Responses API key |
+| **Run locally or replace M1–M5 policies** | [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) · [Capabilities](./docs/CAPABILITIES.md) | Local TypeScript / Lean runtime (`AGPL-3.0-only`) |
+| **Reuse an archived lemma** | [Proof Reuse Guide](./docs/PROOF-REUSE.md) | Local Lean 4 workspace |
 
-This public repository contains the [website](https://theoremos.top/en/) ([中文](https://theoremos.top/)), proof records, and local verification materials ([`LICENSE`](./LICENSE)). The open-source workbench, CLI, and replaceable solver components live at [**HuggingMath/theorem-os**](https://github.com/HuggingMath/theorem-os) (`AGPL-3.0-only`).
+---
 
-## Try TheoremOS
+## Workbench & Verification Replay
 
-1. **Browse without an account.** Open the proof archive above for statements, Lean source, recorded attempts, and verification reports. The [planar Anderson spectrum case (EN)](./docs/CASE-STUDY.md) ([中文](./docs/CASE-STUDY.zh-CN.md)) walks through one example.
-2. **Start a research task online.** Apply for email allowlist access and sign in with a verification code. Workbench access is free during the preview; you supply a model API key for a supported Responses API provider and pay that provider for inference. Set time and token limits before running. The [first-task guide (EN)](./docs/GETTING-STARTED.md) ([中文](./docs/GETTING-STARTED.zh-CN.md)) shows the workflow.
-3. **Check a proof locally.** You need no TheoremOS account or model key. Start with the [Lean verification guide (EN)](./docs/VERIFY.md) ([中文](./docs/VERIFY.zh-CN.md)), or take the [Dimitrov proof kit (EN)](./proof-kits/dimitrov/README.md) ([中文](./proof-kits/dimitrov/README.zh-CN.md)) for a frozen benchmark workspace, proof, and comparator instructions.
-4. **Use a result in a new proof.** Run a local example that imports an archived result, or see how two tree reconstruction proofs share a lemma. [Reuse an archived proof](./docs/PROOF-REUSE.md)
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <a href="./assets/workbench-desktop-en.png"><img src="./assets/workbench-desktop-en.png" alt="TheoremOS workbench showing problem input, research mode, and budget controls" width="100%"></a>
+      <p align="center"><strong>Online Workbench</strong> — Natural-language, TeX, or single-file Lean input, collaborative or parallel mode, and budget controls (<a href="./assets/workbench-desktop.png">中文截图</a>).</p>
+    </td>
+    <td width="50%" valign="top">
+      <a href="./assets/proof-replay-en.gif"><img src="./assets/proof-replay-en.gif" alt="Four-step preset Lean verification replay: candidate, Lean feedback, repair, and full acceptance" width="100%"></a>
+      <p align="center"><strong>Verification Replay</strong> — Preset four-step loop: candidate → Lean compiler feedback → repair → independent kernel acceptance (<a href="./assets/proof-replay-zh.gif">中文回放</a>).</p>
+    </td>
+  </tr>
+</table>
 
-<img src="./assets/workbench-desktop-en.png" alt="TheoremOS workbench showing problem input, model settings and proof budgets" width="1100">
+---
 
-Workbench screenshots: [English](./assets/workbench-desktop-en.png) · [简体中文](./assets/workbench-desktop.png). The preset Lean replay ([EN](./assets/proof-replay-en.gif) · [中文](./assets/proof-replay-zh.gif)) shows a candidate being checked, repaired, and accepted on a small example.
+## Collaborative Proof Workflow
 
-## How proof work is organized
+1. **Statement Review** — Submit natural language, TeX, or an incomplete Lean file. Formalization generates a type-checked Lean statement alongside a semantic review comparison; the researcher confirms mathematical intent before proof search begins.
+2. **Route & Lemma Decomposition** — Test whether candidate helper lemmas imply the main theorem before filling in all sub-proofs, then prove lemmas separately and assemble a `sorry`-free final proof.
+3. **Trace Inspection & Lemma Reuse** — Inspect recorded proof attempts and compiler diagnostics, steer the plan interactively, and reuse verified lemmas (always re-checked in the target Lean environment).
+4. **Open-Source CLI & Policy Experiments** — The workbench, CLI, and replaceable M1–M5 modules (construction, feedback, search, context, collaboration) are open source at [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os). For custom Lake toolchains or joint evaluations, see [Capabilities & Collaboration (EN)](./docs/CAPABILITIES.md) ([中文](./docs/CAPABILITIES.zh-CN.md)).
 
-- **Confirm the statement.** Submit natural language, TeX, or a single Lean file. Formalization produces a compilable statement, and a separate review compares it with the original. Compilation checks Lean syntax and types; the researcher still confirms mathematical intent.
-- **Check a route before filling in the lemmas.** Temporarily assume candidate lemmas to check whether they imply the main goal. Prove the lemmas separately, then combine and check the completed proof without the temporary assumptions.
-- **Inspect what was tried.** The workbench exposes available proof attempts and compiler feedback. Researchers can steer the plan and reuse verified lemmas, which are checked again in the target environment.
-- **Inspect the open-source CLI or collaborate on multi-file projects.** The CLI, workbench, and replaceable M1–M5 policy modules are open source under `AGPL-3.0-only` at [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os). Reach out if you want to collaborate on custom toolchains or joint evaluations ([EN](./docs/CAPABILITIES.md) / [中文](./docs/CAPABILITIES.zh-CN.md)).
+<details>
+<summary><b>View architecture diagram and end-to-end illustrated workflow</b></summary>
+<br>
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./assets/theoremos-readme-cover-workbench.webp" alt="Illustrated TheoremOS workflow from problem formalization and Mathlib lookup to independent Lean 4 verification" width="100%">
+      <p align="center"><sub>End-to-end collaborative proving &amp; local reproduction</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="./assets/workbench-modules-desktop-en.png" alt="Five replaceable research modules and independent final acceptance loop" width="100%">
+      <p align="center"><sub>M1–M5 research loop separated from fixed S3 acceptance (<a href="./assets/workbench-modules-desktop.png">中文图</a>)</sub></p>
+    </td>
+  </tr>
+</table>
+</details>
 
-## Proof evidence
+---
 
-The [catalog](./data/catalog.json) lists 10 proofs with official Lean-Eval pass records, 18 OpenAI Math records checked with local Lean and problem comparators, and one in-progress record. The OpenAI Math records have no official OpenAI confirmation. Some records check a helper result or a conditional statement. The [evaluation notes (EN)](./docs/EVALUATION.md) ([中文](./docs/EVALUATION.zh-CN.md)) describe an earlier snapshot of selected runs; the archive does not establish a system-wide success rate or cost.
+## Proof Evidence
 
-The source-by-source records below link to the criteria appropriate to each collection.
+| Collection | Records | Verification Standard | Browse Files |
+| --- | :---: | --- | --- |
+| **Lean-Eval** | **10** | Official Lean-Eval pass records on frozen submission targets | [`accepted/`](./accepted/) · [`submitted/`](./submitted/) |
+| **OpenAI Math** | **18** | Checked locally with Lean 4 and problem comparators *(no official OpenAI confirmation)* | [`data/proofs/`](./data/proofs/) |
+| **In Progress** | **1** | Recorded intermediate draft snapshot | [`in-progress/`](./in-progress/) |
+
+> [!NOTE]
+> The [archive catalog](./data/catalog.json) contains 29 records in total. Some OpenAI Math entries check a supporting result or conditional statement, and the [evaluation notes (EN)](./docs/EVALUATION.md) ([中文](./docs/EVALUATION.zh-CN.md)) describe an earlier snapshot of selected runs rather than a system-wide pass rate or cost.
 
 ### Lean-Eval: 10 Officially Accepted Proofs
 
@@ -71,18 +120,16 @@ The source-by-source records below link to the criteria appropriate to each coll
 | [The optimal paper Möbius band](submitted/annals_optimal_moebius/) | Geometry | [#2144 · pass](https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100) |
 | [Algebraic integers: an upper bound for λ_SSS](submitted/annals_algebraic_integers/) | Algebraic number theory | [#2144 · pass](https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100) |
 
-Model and provenance metadata are recorded in [accepted.json](accepted/accepted.json) and [submitted.json](submitted/submitted.json). The final four proofs were accepted together in [submission #2144](https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100), with source files stored under `submitted/`.
+Model and provenance metadata are recorded in [`accepted.json`](accepted/accepted.json) and [`submitted.json`](submitted/submitted.json). The final four proofs were accepted together in [submission #2144](https://github.com/leanprover/lean-eval-submissions/issues/2144#issuecomment-6222767100), with source files stored under [`submitted/`](submitted/).
 
 </details>
 
-### OpenAI Math: 18 locally verified records
-
-These records link to the saved local Lean and problem-comparator checks. The all-seams entry covers a support result for the stated surface presentation.
+### OpenAI Math: 18 Locally Verified Records
 
 <details>
-<summary><b>View statements, Lean proofs, verification reports, and full research trajectories for all 18 records</b></summary>
+<summary><b>View statements, Lean proofs, verification reports, and research trajectories for all 18 records</b></summary>
 
-| Problem Record | Area | Statement and Proof | Verification and Process |
+| Problem Record | Area | Statement &amp; Proof | Verification &amp; Process |
 | --- | --- | --- | --- |
 | Supercritical three-state reconstruction on regular and Poisson trees | Probability | [Statement](data/proofs/openai_three_state_supercritical/Challenge.lean) · [Proof](data/proofs/openai_three_state_supercritical/Submission.lean) | [Local pass](data/proofs/openai_three_state_supercritical/verification.json) · [Process](data/proofs/openai_three_state_supercritical/process.json) |
 | Face correspondence under triangle expansion | Combinatorial optimization | [Statement](data/proofs/openai_triangle_face/Challenge.lean) · [Proof](data/proofs/openai_triangle_face/Submission.lean) | [Local pass](data/proofs/openai_triangle_face/verification.json) · [Process](data/proofs/openai_triangle_face/process.json) |
@@ -105,23 +152,35 @@ These records link to the saved local Lean and problem-comparator checks. The al
 
 </details>
 
+---
+
+## Repository Structure
+
+| Path | Contents |
+| --- | --- |
+| [`accepted/`](./accepted/) · [`submitted/`](./submitted/) | Lean-Eval proof packages and official submission provenance |
+| [`data/proofs/`](./data/proofs/) | OpenAI Math problem statements, proof files, local checks, and saved trajectories |
+| [`in-progress/`](./in-progress/) | Earlier drafts, some with unclosed `sorry` placeholders |
+| [`proof-kits/`](./proof-kits/) · [`examples/`](./examples/) | Standalone Dimitrov benchmark verification kit and short Lean reuse examples |
+| [`docs/`](./docs/) · [`CHANGELOG.md`](./CHANGELOG.md) | Access, verification, reuse, capability, evaluation, and release documentation |
+
+---
+
 ## About WestlakeNLP
 
-TheoremOS is developed at [**WestlakeNLP**](https://westlakenlp.com/), the Natural Language Processing Lab at [Westlake University](https://en.westlake.edu.cn/) (founded in 2018 and led by [Prof. Yue Zhang](https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html)). The lab pursues fundamental and applied work in natural language processing, language-model reasoning, and AI for Science to advance discovery across the natural and human sciences.
+TheoremOS is developed at [**WestlakeNLP**](https://westlakenlp.com/), the Natural Language Processing Lab at [Westlake University](https://en.westlake.edu.cn/) (founded in 2018 and led by [Prof. Yue Zhang](https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html)). The lab pursues fundamental and applied research in natural language processing, language-model reasoning, and AI for Science.
 
-- **Lab Website:** [westlakenlp.com](https://westlakenlp.com/)
-- **X (Twitter):** [@NlpWestlake](https://x.com/NlpWestlake)
+- **Lab Website:** [westlakenlp.com](https://westlakenlp.com/) · **X (Twitter):** [@NlpWestlake](https://x.com/NlpWestlake) · **Contact:** [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)
 
-## Repository and reuse
+## License & Citation
 
-| Path | What you can inspect |
-| --- | --- |
-| [accepted/](./accepted/) and [submitted/](./submitted/) | Lean-Eval proof packages and official result provenance |
-| [data/proofs/](./data/proofs/) | OpenAI Math statements, proof files, local checks and saved process records |
-| [in-progress/](./in-progress/) | Earlier drafts, some with unclosed `sorry` placeholders |
-| [proof-kits/](./proof-kits/) and [examples/](./examples/) | A standalone benchmark kit and a short Lean example |
-| [docs/](./docs/) and [CHANGELOG.md](./CHANGELOG.md) | Access, verification, evaluation and release information |
+[`LICENSE`](./LICENSE) reserves rights to project-authored public site and documentation materials in this repository, while [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) is licensed under `AGPL-3.0-only`. Archived proofs and third-party materials retain their original terms — see [Public materials, reuse, and citation](./docs/PUBLIC-MATERIALS.md). Please cite TheoremOS via [`CITATION.cff`](./CITATION.cff) alongside the original problem/proof authors.
 
-[LICENSE](./LICENSE) reserves rights to project-authored public materials. Archived proofs and third-party materials retain their own terms; see [Public materials, reuse, and citation](./docs/PUBLIC-MATERIALS.md). Cite the project through [CITATION.cff](./CITATION.cff) and cite the original sources of any proof you discuss.
+---
 
-For the open-source workbench and CLI source (`AGPL-3.0-only`), visit [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os); for custom toolchains, cloud preview whitelisting, or joint [WestlakeNLP](https://westlakenlp.com/) research collaboration, see the [access guide](./docs/ACCESS.md). [Open an issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose) for archive corrections or feedback, and [star the repository](https://github.com/HuggingMath/TheoremOS) to follow updates from WestlakeNLP and keep the verification resources handy.
+<p align="center">
+  <a href="https://github.com/HuggingMath/TheoremOS"><b>Star on GitHub</b></a> ·
+  <a href="https://github.com/HuggingMath/TheoremOS/issues/new/choose"><b>Open an Issue</b></a> ·
+  <a href="./docs/ACCESS.md"><b>Request Access / Collaborate</b></a> ·
+  <a href="https://github.com/HuggingMath/theorem-os"><b>Explore Workbench &amp; CLI Source</b></a>
+</p>
