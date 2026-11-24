@@ -8,7 +8,11 @@
   </picture>
   <h1>TheoremOS</h1>
   <p><strong>Collaborative Lean 4 mathematical research — formalize statements, explore lemmas, and verify independently.</strong></p>
-  <p>Developed at <a href="https://westlakenlp.com/"><strong>WestlakeNLP</strong></a> (Natural Language Processing Lab, <a href="https://en.westlake.edu.cn/">Westlake University</a>)</p>
+  <p>
+    Developed at
+    <a href="https://westlakenlp.com/"><img src="./assets/westlakenlp-logo.png" alt="WestlakeNLP" width="18" height="18"> <strong>WestlakeNLP</strong></a>
+    (Natural Language Processing Lab, <a href="https://en.westlake.edu.cn/">Westlake University</a>)
+  </p>
   <p>
     <a href="https://theoremos.top/en/">Website</a> ·
     <a href="https://theoremos.top/en/archive.html">Proof Archive</a> ·
@@ -35,8 +39,8 @@ TheoremOS pairs mathematicians with AI research agents for formal proof construc
 
 | Repository | Scope | License |
 | --- | --- | --- |
-| [**`HuggingMath/TheoremOS`**](https://github.com/HuggingMath/TheoremOS) *(this repo)* | Product site ([`theoremos.top`](https://theoremos.top/en/)), archived proof records (10 Lean-Eval, 18 OpenAI Math, 1 in-progress), Dimitrov Proof Kit & documentation | [Rights reserved](./LICENSE) |
-| [**`HuggingMath/theorem-os`**](https://github.com/HuggingMath/theorem-os) | Open-source web workbench, CLI runner (`bun run math`), and replaceable M1–M5 strategy modules | [`AGPL-3.0-only`](https://github.com/HuggingMath/theorem-os/blob/main/LICENSE) |
+| [HuggingMath/TheoremOS](https://github.com/HuggingMath/TheoremOS) | Product site ([theoremos.top](https://theoremos.top/en/)), 29 archived proof records, Dimitrov proof kit &amp; docs | [Rights reserved](./LICENSE) |
+| [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) | Open-source web workbench, CLI runner (`bun run math`), and M1–M5 modules | [AGPL-3.0-only](https://github.com/HuggingMath/theorem-os/blob/main/LICENSE) |
 
 ---
 
@@ -46,9 +50,20 @@ TheoremOS pairs mathematicians with AI research agents for formal proof construc
 | --- | --- | --- |
 | **Browse verified proofs & trajectories** | [Proof Archive (EN)](https://theoremos.top/en/archive.html) · [中文档案](https://theoremos.top/archive.html) · [Case Study](./docs/CASE-STUDY.md) | Browser only (no account required) |
 | **Verify a proof locally** | [Verification Guide](./docs/VERIFY.md) · [Dimitrov Proof Kit](./proof-kits/dimitrov/README.md) | Local Lean / Python / Git (no API key) |
-| **Start an online research task** | [Request Access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Workbench](https://app.theoremos.top/) · [First-Task Guide](./docs/GETTING-STARTED.md) | Allowlisted email & BYOK Responses API key |
-| **Run locally or replace M1–M5 policies** | [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) · [Capabilities](./docs/CAPABILITIES.md) | Local TypeScript / Lean runtime (`AGPL-3.0-only`) |
+| **Start an online research task** | [Request Access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Workbench](https://app.theoremos.top/) · [First-Task Guide](./docs/GETTING-STARTED.md) | Allowlisted email &amp; BYOK Responses API key |
+| **Run locally or replace M1–M5 policies** | [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) · [Capabilities](./docs/CAPABILITIES.md) | Local TypeScript / Lean runtime (`AGPL-3.0-only`) |
 | **Reuse an archived lemma** | [Proof Reuse Guide](./docs/PROOF-REUSE.md) | Local Lean 4 workspace |
+
+<details>
+<summary><b>Verify the preset Lean example locally in 3 commands (no Mathlib or API key needed)</b></summary>
+
+```bash
+git clone https://github.com/HuggingMath/TheoremOS.git && cd TheoremOS
+elan toolchain install leanprover/lean4:v4.33.0
+lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
+```
+
+</details>
 
 ---
 
@@ -175,9 +190,22 @@ Model and provenance metadata are recorded in [`accepted.json`](accepted/accepte
 
 ## About WestlakeNLP
 
-TheoremOS is developed at [**WestlakeNLP**](https://westlakenlp.com/), the Natural Language Processing Lab at [Westlake University](https://en.westlake.edu.cn/) (founded in 2018 and led by [Prof. Yue Zhang](https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html)). The lab pursues fundamental and applied research in natural language processing, language-model reasoning, and AI for Science.
-
-- **Lab Website:** [westlakenlp.com](https://westlakenlp.com/) · **X (Twitter):** [@NlpWestlake](https://x.com/NlpWestlake) · **Contact:** [liuzhenhao@westlake.edu.cn](mailto:liuzhenhao@westlake.edu.cn)
+<table width="100%">
+  <tr>
+    <td width="124" align="center" valign="middle">
+      <a href="https://westlakenlp.com/">
+        <img src="./assets/westlakenlp-logo.png" alt="WestlakeNLP · Westlake University" width="88" height="88">
+      </a>
+    </td>
+    <td valign="middle">
+      TheoremOS is developed at <a href="https://westlakenlp.com/"><strong>WestlakeNLP</strong></a>, the Natural Language Processing Lab at <a href="https://en.westlake.edu.cn/">Westlake University</a> (founded in 2018 and led by <a href="https://en.westlake.edu.cn/faculty/nlp/yue-zhang.html">Prof. Yue Zhang</a>). The lab pursues fundamental and applied research in natural language processing, language-model reasoning, and AI for Science.
+      <br><br>
+      <strong>Website:</strong> <a href="https://westlakenlp.com/">westlakenlp.com</a> ·
+      <strong>X (Twitter):</strong> <a href="https://x.com/NlpWestlake">@NlpWestlake</a> ·
+      <strong>Contact:</strong> <a href="mailto:liuzhenhao@westlake.edu.cn">liuzhenhao@westlake.edu.cn</a>
+    </td>
+  </tr>
+</table>
 
 ## License & Citation
 
