@@ -9,7 +9,7 @@ The public proof packages can be checked with Lean and the original benchmark to
 Install Git, Python 3, and [Elan / Lean](https://lean-lang.org/install/). The [short example](../examples/lean-check/Submission.lean) proves the two statements shown in the [website's preset replay](https://theoremos.top/en/#demo), `Tutorial.add_zero` and `Tutorial.zero_add`, using only Lean's standard library:
 
 ```bash
-git clone https://github.com/LikC1606/TheoremOS.git
+git clone https://github.com/HuggingMath/TheoremOS.git
 cd TheoremOS
 elan toolchain install leanprover/lean4:v4.33.0
 lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean

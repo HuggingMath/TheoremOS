@@ -9,7 +9,7 @@
 先安装 Git、Python 3 和 [Elan / Lean](https://lean-lang.org/install/)。这个[简短示例](../examples/lean-check/Submission.lean)仅使用 Lean 标准库，证明[官网预设回放](https://theoremos.top/#demo)中的两个陈述：`Tutorial.add_zero` 和 `Tutorial.zero_add`。
 
 ```bash
-git clone https://github.com/LikC1606/TheoremOS.git
+git clone https://github.com/HuggingMath/TheoremOS.git
 cd TheoremOS
 elan toolchain install leanprover/lean4:v4.33.0
 lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean

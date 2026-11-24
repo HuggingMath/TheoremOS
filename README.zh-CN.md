@@ -23,11 +23,11 @@
 
 **证明档案：** [简体中文](https://theoremos.top/archive.html) · [English](https://theoremos.top/en/archive.html)
 
-**云端工作台：** [申请研究内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录](https://app.theoremos.top/) · [访问说明](./docs/ACCESS.md)
+**云端工作台：** [申请研究内测](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [登录](https://app.theoremos.top/) · [访问说明](./docs/ACCESS.md) · [工作台与 CLI 源码（`AGPL-3.0-only`）](https://github.com/HuggingMath/theorem-os)
 
 <img src="./assets/theoremos-readme-cover-workbench.webp" alt="TheoremOS 科研工作台插图。动漫数学家在电脑前核对原题和 Lean 陈述。Mathlib 检索为引理提供参考，候选证明交给 Lean 4 独立检查。下方展示诊断反馈、证明修订、检查报告与本地复核材料。" width="1280">
 
-本仓库公开[官网](https://theoremos.top/)（[English](https://theoremos.top/en/)）、证明档案和本地复核材料。工作台在线使用，运行时源码和 CLI 安装包未公开。
+本仓库公开[官网](https://theoremos.top/)（[English](https://theoremos.top/en/)）、证明档案和本地复核材料（见 [`LICENSE`](./LICENSE)）。工作台、CLI 与可替换求解组件源码已在 [**HuggingMath/theorem-os**](https://github.com/HuggingMath/theorem-os) 开源（采用 `AGPL-3.0-only`）。
 
 ## 开始使用
 

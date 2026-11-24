@@ -8,7 +8,7 @@ This tutorial walks through the current workbench interface using a simple natur
 
 ## 1. Requesting Access and Signing In
 
-The cloud beta currently operates on an email allowlist. To request access, submit a brief public description of your intended research use via the [GitHub Early Access form](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml). Do not include any API keys or private credentials in the public issue; your login email will be confirmed privately following review (see [`ACCESS.md`](ACCESS.md) for details).
+The cloud beta currently operates on an email allowlist. To request access, submit a brief public description of your intended research use via the [GitHub Early Access form](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml). Do not include any API keys or private credentials in the public issue; your login email will be confirmed privately following review (see [`ACCESS.md`](ACCESS.md) for details).
 
 Once your email is allowlisted, open [https://app.theoremos.top/](https://app.theoremos.top/). In the first step, enter your allowlisted email address, complete the 5-digit graphic captcha, and request a verification code. In the second step, enter the 6-digit verification code sent to your inbox to sign in (accepting the terms of service when prompted).
 
@@ -98,7 +98,7 @@ TheoremOS provides three download options depending on what you need to archive 
 
 ## 5. Common Blockers and Troubleshooting
 
-* **Email not authorized**: Submit an application via the [Early Access form](https://github.com/LikC1606/TheoremOS/issues/new?template=early-access.yml) and wait for private email confirmation before signing in.
+* **Email not authorized**: Submit an application via the [Early Access form](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) and wait for private email confirmation before signing in.
 * **Key or model check/call fails**: Verify that your API key matches the exact **"Model provider"** selected in the dropdown and that the specified model supports the Responses API.
 * **Budget limit reached**: Inspect the current progress and intermediate lemmas before deciding whether to continue research with a higher budget or adjust your mathematical direction.
 * **The formal statement changes the intended meaning**: Edit assumptions or types at the statement confirmation step in "Work together", then generate and review the statement again. The standalone [`formalize.html`](https://app.theoremos.top/formalize.html) page is also available.

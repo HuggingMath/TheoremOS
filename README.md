@@ -23,11 +23,11 @@ Bring a mathematical problem to the TheoremOS workbench: review its Lean 4 forma
 
 **Proof archive:** [English](https://theoremos.top/en/archive.html) · [简体中文](https://theoremos.top/archive.html)
 
-**Workbench:** [Request research preview access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Sign in](https://app.theoremos.top/) · [Access guide](./docs/ACCESS.md)
+**Workbench:** [Request research preview access](https://github.com/HuggingMath/TheoremOS/issues/new?template=early-access.yml) · [Sign in](https://app.theoremos.top/) · [Access guide](./docs/ACCESS.md) · [Workbench & CLI source (`AGPL-3.0-only`)](https://github.com/HuggingMath/theorem-os)
 
 <img src="./assets/theoremos-readme-cover-workbench.webp" alt="An illustrated TheoremOS workbench. An anime mathematician compares the problem with its Lean statement. Mathlib results inform the lemma work, and a candidate proof enters an independent Lean 4 check. Below are feedback, a proof revision, the check report, and materials for local verification." width="1280">
 
-This public repository contains the [website](https://theoremos.top/en/) ([中文](https://theoremos.top/)), proof records, and local verification materials. The workbench runs online. Runtime source and a public CLI installer are not included.
+This public repository contains the [website](https://theoremos.top/en/) ([中文](https://theoremos.top/)), proof records, and local verification materials ([`LICENSE`](./LICENSE)). The open-source workbench, CLI, and replaceable solver components live at [**HuggingMath/theorem-os**](https://github.com/HuggingMath/theorem-os) (`AGPL-3.0-only`).
 
 ## Try TheoremOS
 
