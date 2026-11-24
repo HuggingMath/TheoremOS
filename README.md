@@ -50,15 +50,18 @@ TheoremOS pairs mathematicians with AI research agents for formal proof construc
 
 ## Workbench & Verification Replay
 
+<a href="./assets/workbench-desktop-en.png"><img src="./assets/workbench-desktop-en.png" alt="TheoremOS workbench showing problem input, research mode, and budget controls" width="100%"></a>
+<p align="center"><sub><strong>Step 1 · Problem Input &amp; Mode</strong> — Natural language, TeX, or single-file Lean input, collaborative or parallel mode, and budget controls (<a href="./assets/workbench-desktop.png">中文截图</a>).</sub></p>
+
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <a href="./assets/workbench-desktop-en.png"><img src="./assets/workbench-desktop-en.png" alt="TheoremOS workbench showing problem input, research mode, and budget controls" width="100%"></a>
-      <p align="center"><strong>Online Workbench</strong> — Natural-language, TeX, or single-file Lean input, collaborative or parallel mode, and budget controls (<a href="./assets/workbench-desktop.png">中文截图</a>).</p>
+      <a href="./assets/guide/statement-review-en.png"><img src="./assets/guide/statement-review-en.png" alt="TheoremOS formalization review showing Lean statement, blind back-translation, and reviewer check" width="100%"></a>
+      <p align="center"><sub><strong>Step 2 · Statement Review</strong> — Compare the Lean 4 statement against blind back-translation before approving search (<a href="./assets/guide/statement-review-zh.png">中文截图</a>).</sub></p>
     </td>
     <td width="50%" valign="top">
       <a href="./assets/proof-replay-en.gif"><img src="./assets/proof-replay-en.gif" alt="Four-step preset Lean verification replay: candidate, Lean feedback, repair, and full acceptance" width="100%"></a>
-      <p align="center"><strong>Verification Replay</strong> — Preset four-step loop: candidate → Lean compiler feedback → repair → independent kernel acceptance (<a href="./assets/proof-replay-zh.gif">中文回放</a>).</p>
+      <p align="center"><sub><strong>Step 3 · Verification Replay</strong> — Four-step loop: candidate → Lean feedback → repair → independent kernel acceptance (<a href="./assets/proof-replay-zh.gif">中文回放</a>).</sub></p>
     </td>
   </tr>
 </table>

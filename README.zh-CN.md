@@ -50,15 +50,18 @@ TheoremOS 致力于与数学研究者协同构造严谨的形式化证明：由�
 
 ## 工作台界面与验收回放
 
+<a href="./assets/workbench-desktop.png"><img src="./assets/workbench-desktop.png" alt="TheoremOS 工作台界面：题目输入、协同模式与预算设置" width="100%"></a>
+<p align="center"><sub><strong>第 1 步 · 题目输入与协同模式</strong> — 支持自然语言、TeX 与单文件 Lean 输入、共同推进/自动推进模式及预算控制（<a href="./assets/workbench-desktop-en.png">EN Screenshot</a>）。</sub></p>
+
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <a href="./assets/workbench-desktop.png"><img src="./assets/workbench-desktop.png" alt="TheoremOS 工作台界面：题目输入、协同模式与预算设置" width="100%"></a>
-      <p align="center"><strong>在线工作台</strong> — 支持自然语言、TeX 与单文件 Lean 输入、共同推进/并行模式及预算上限控制（<a href="./assets/workbench-desktop-en.png">EN Screenshot</a>）。</p>
+      <a href="./assets/guide/statement-review-zh.png"><img src="./assets/guide/statement-review-zh.png" alt="TheoremOS 形式化审查界面：Lean 陈述、盲回译与模型审核" width="100%"></a>
+      <p align="center"><sub><strong>第 2 步 · 题意与陈述审核</strong> — 对照原题、Lean 4 陈述与独立盲回译结果，确认语义一致后再启动证明（<a href="./assets/guide/statement-review-en.png">EN Screenshot</a>）。</sub></p>
     </td>
     <td width="50%" valign="top">
       <a href="./assets/proof-replay-zh.gif"><img src="./assets/proof-replay-zh.gif" alt="Lean 4 四步验收回放：候选证明、编译反馈、修复与最终通过" width="100%"></a>
-      <p align="center"><strong>四步验收回放</strong> — 完整展示“候选证明 → Lean 编译诊断 → 修正候选 → 独立内核验收”闭环（<a href="./assets/proof-replay-en.gif">EN Replay</a>）。</p>
+      <p align="center"><sub><strong>第 3 步 · 四步验收回放</strong> — 展示“候选证明 → Lean 诊断 → 修正候选 → 独立内核验收”闭环（<a href="./assets/proof-replay-en.gif">EN Replay</a>）。</sub></p>
     </td>
   </tr>
 </table>
