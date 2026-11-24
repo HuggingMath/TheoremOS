@@ -45,7 +45,7 @@ Workbench screenshots: [English](./assets/workbench-desktop-en.png) · [简体�
 - **Confirm the statement.** Submit natural language, TeX, or a single Lean file. Formalization produces a compilable statement, and a separate review compares it with the original. Compilation checks Lean syntax and types; the researcher still confirms mathematical intent.
 - **Check a route before filling in the lemmas.** Temporarily assume candidate lemmas to check whether they imply the main goal. Prove the lemmas separately, then combine and check the completed proof without the temporary assumptions.
 - **Inspect what was tried.** The workbench exposes available proof attempts and compiler feedback. Researchers can steer the plan and reuse verified lemmas, which are checked again in the target environment.
-- **Run custom experiments through research collaboration.** The CLI is available by arrangement for multi-file projects and comparisons of execution, verification, scheduling, context, and role policies. See [capabilities and availability (EN)](./docs/CAPABILITIES.md) ([中文](./docs/CAPABILITIES.zh-CN.md)).
+- **Inspect the open-source CLI or collaborate on multi-file projects.** The CLI, workbench, and replaceable M1–M5 policy modules are open source under `AGPL-3.0-only` at [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os). Reach out if you want to collaborate on custom toolchains or joint evaluations ([EN](./docs/CAPABILITIES.md) / [中文](./docs/CAPABILITIES.zh-CN.md)).
 
 ## Proof evidence
 
@@ -124,4 +124,4 @@ TheoremOS is developed at [**WestlakeNLP**](https://westlakenlp.com/), the Natur
 
 [LICENSE](./LICENSE) reserves rights to project-authored public materials. Archived proofs and third-party materials retain their own terms; see [Public materials, reuse, and citation](./docs/PUBLIC-MATERIALS.md). Cite the project through [CITATION.cff](./CITATION.cff) and cite the original sources of any proof you discuss.
 
-For a multi-file Lean project, a custom toolchain, or a controlled CLI experiment, use the collaboration route in the [access guide](./docs/ACCESS.md). [Open an issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose) for archive corrections or feedback, and [star the repository](https://github.com/HuggingMath/TheoremOS) to follow updates from WestlakeNLP and keep the verification resources handy.
+For the open-source workbench and CLI source (`AGPL-3.0-only`), visit [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os); for custom toolchains, cloud preview whitelisting, or joint [WestlakeNLP](https://westlakenlp.com/) research collaboration, see the [access guide](./docs/ACCESS.md). [Open an issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose) for archive corrections or feedback, and [star the repository](https://github.com/HuggingMath/TheoremOS) to follow updates from WestlakeNLP and keep the verification resources handy.

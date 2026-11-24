@@ -45,7 +45,7 @@
 - **先核对题意。** 提交自然语言、TeX 或单个 Lean 文件，得到可编译的陈述；独立审查会将陈述与原题比较。编译检查语法和类型，题意是否一致仍需研究者确认。
 - **先验证路线，再补齐引理。** 暂时假设候选引理成立，检查它们能否推出主目标。分别证明引理后合并，去掉临时假设并核查完整证明。
 - **查看尝试并复用结论。** 工作台显示已保存的尝试和编译反馈，研究者可以调整计划。已验证的引理可以复用，并在新题目的 Lean 环境里再次检查。
-- **通过研究合作做定制实验。** 多文件项目及执行、核验、调度、上下文和职责策略的对照实验，可联系团队商议 CLI 研究使用方式。见[能力与开放范围（中文）](./docs/CAPABILITIES.zh-CN.md)（[EN](./docs/CAPABILITIES.md)）。
+- **直接使用开源 CLI 或开展联合研究。** 工作台、CLI 工具与可替换的 M1–M5 策略模块已在 [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) 以 `AGPL-3.0-only` 开源；如需自定义工具链适配或开展联合评测，欢迎与团队联系。见[能力与开放范围（中文）](./docs/CAPABILITIES.zh-CN.md)（[EN](./docs/CAPABILITIES.md)）。
 
 ## 证明证据
 
@@ -124,4 +124,4 @@ TheoremOS 由[西湖大学](https://www.westlake.edu.cn/) [**WestlakeNLP 实验�
 
 [LICENSE](./LICENSE) 保留项目自有公开材料的权利。归档证明和第三方材料沿用各自的许可，见[公开材料、复用与引用](./docs/PUBLIC-MATERIALS.md)。引用项目请用 [CITATION.cff](./CITATION.cff)，引用具体证明时也请注明该证明的原始来源。
 
-需要多文件 Lean 项目、自定义工具链或 CLI 对照实验，可以通过[访问说明](./docs/ACCESS.md)中的方式联系团队。欢迎[提交 Issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose)纠正档案或反馈问题，也可以[点 Star](https://github.com/HuggingMath/TheoremOS)关注 WestlakeNLP 的后续更新并收藏复核资料。
+工作台与 CLI 开源代码（`AGPL-3.0-only`）托管于 [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os)；如需自定义工具链适配、申请云端内测白名单或与 [WestlakeNLP](https://westlakenlp.com/) 开展联合研究，请参考[访问说明](./docs/ACCESS.md)。欢迎[提交 Issue](https://github.com/HuggingMath/TheoremOS/issues/new/choose)纠正档案或反馈问题，也可以[点 Star](https://github.com/HuggingMath/TheoremOS)关注 WestlakeNLP 的后续更新并收藏复核资料。
