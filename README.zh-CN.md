@@ -21,12 +21,12 @@
     <a href="./CITATION.cff">引用本项目</a>
   </p>
   <p>
-    <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS?style=flat"></a>
-    <a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f"></a>
-    <a href="./CHANGELOG.md"><img alt="Research preview v0.1.0-preview.1" src="https://img.shields.io/badge/preview-v0.1.0--preview.1-blue"></a>
-    <a href="./docs/VERIFY.zh-CN.md"><img alt="Lean 4.33.0" src="https://img.shields.io/badge/Lean-4.33.0-2f855a"></a>
-    <a href="https://github.com/HuggingMath/theorem-os"><img alt="工作台与 CLI：AGPL-3.0-only" src="https://img.shields.io/badge/workbench%20%26%20CLI-AGPL--3.0--only-orange"></a>
-    <a href="./LICENSE"><img alt="官网与档案许可" src="https://img.shields.io/badge/site%20%26%20archive-rights%20reserved-lightgrey"></a>
+    <a href="https://github.com/HuggingMath/TheoremOS"><img alt="GitHub stars" src="https://img.shields.io/github/stars/HuggingMath/TheoremOS?style=flat&amp;labelColor=292524&amp;color=1e3a5f"></a>
+    <a href="https://westlakenlp.com/"><img alt="WestlakeNLP Lab" src="https://img.shields.io/badge/Lab-WestlakeNLP-1e3a5f?style=flat&amp;labelColor=292524"></a>
+    <a href="./CHANGELOG.md"><img alt="Research preview v0.1.0-preview.1" src="https://img.shields.io/badge/preview-v0.1.0--preview.1-57534e?style=flat&amp;labelColor=292524"></a>
+    <a href="./docs/VERIFY.zh-CN.md"><img alt="Lean 4.33.0" src="https://img.shields.io/badge/Lean-4.33.0-2f6f56?style=flat&amp;labelColor=292524"></a>
+    <a href="https://github.com/HuggingMath/theorem-os"><img alt="工作台与 CLI：AGPL-3.0-only" src="https://img.shields.io/badge/workbench%20%26%20CLI-AGPL--3.0--only-c95633?style=flat&amp;labelColor=292524"></a>
+    <a href="./LICENSE"><img alt="官网与档案许可" src="https://img.shields.io/badge/site%20%26%20archive-rights%20reserved-44403c?style=flat&amp;labelColor=292524"></a>
   </p>
   <br>
   <a href="https://theoremos.top/">
@@ -73,13 +73,19 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 <table width="100%">
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <a href="./assets/guide/statement-review-zh.png"><img src="./assets/guide/statement-review-zh.png" alt="TheoremOS 形式化审查界面：Lean 陈述、盲回译与模型审核" width="100%"></a>
-      <p align="center"><sub><strong>第 2 步 · 题意与陈述审核</strong> — 对照原题、Lean 4 陈述与独立盲回译结果，确认语义一致后再启动证明（<a href="./assets/guide/statement-review-en.png">EN Screenshot</a>）。</sub></p>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <a href="./assets/proof-replay-zh.gif"><img src="./assets/proof-replay-zh.gif" alt="Lean 4 四步验收回放：候选证明、编译反馈、修复与最终通过" width="100%"></a>
-      <p align="center"><sub><strong>第 3 步 · 四步验收回放</strong> — 展示“候选证明 → Lean 诊断 → 修正候选 → 独立内核验收”闭环（<a href="./assets/proof-replay-en.gif">EN Replay</a>）。</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <sub><strong>第 2 步 · 题意与陈述审核</strong> — 对照原题、Lean 4 陈述与独立盲回译结果，确认语义一致后再启动证明（<a href="./assets/guide/statement-review-en.png">EN Screenshot</a>）。</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <sub><strong>第 3 步 · 四步验收回放</strong> — 展示“候选证明 → Lean 诊断 → 修正候选 → 独立内核验收”闭环（<a href="./assets/proof-replay-en.gif">EN Replay</a>）。</sub>
     </td>
   </tr>
 </table>
@@ -91,20 +97,26 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 1. **题意核对与形式化** — 提交自然语言、TeX 或单个未完成 Lean 文件，系统生成可编译的 Lean 陈述并提供对照回译审查，确保语义准确后再启动探索。
 2. **路线检验与引理拆解** — 先暂时假设候选引理验证其能否推出主定理，再分头补全引理证明并汇总检查，去掉所有临时 `sorry` 假设。
 3. **尝试追溯与引理复用** — 完整记录每次证明尝试与 Lean 诊断信息，方便研究者随时介入调整；已验证引理可在新题目的 Lean 环境中重新核验后复用。
-4. **开源 CLI 与研究策略消融** — 工作台、CLI 与可替换的 M1–M5 研究组件（构造、反馈、搜索、上下文、协作）已在 [`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os) 以 `AGPL-3.0-only` 开源。自定义 Lake 工程或联合评测详见[能力与开放范围（中文）](./docs/CAPABILITIES.zh-CN.md)（[EN](./docs/CAPABILITIES.md)）。
+4. **开源 CLI 与研究策略消融** — 工作台、CLI 与可替换的 M1–M5 研究组件（构造、反馈、搜索、上下文、协作）已在 [HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os) 以 `AGPL-3.0-only` 开源。自定义 Lake 工程或联合评测详见[能力与开放范围（中文）](./docs/CAPABILITIES.zh-CN.md)（[EN](./docs/CAPABILITIES.md)）。
 
 <details>
 <summary><b>查看完整协同流程图与五模块研究架构图</b></summary>
 <br>
 <table width="100%">
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <img src="./assets/theoremos-readme-cover-workbench.webp" alt="TheoremOS 协同科研全流程：从原题形式化、Mathlib 检索到独立 Lean 4 核验" width="100%">
-      <p align="center"><sub>从形式化、引理探索到独立核验与本地复现</sub></p>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%" align="center" valign="middle">
       <img src="./assets/workbench-modules-desktop.png" alt="五个可替换研究模块与独立最终验收闭环" width="100%">
-      <p align="center"><sub>M1–M5 可替换策略循环与固定 S3 独立验收分离（<a href="./assets/workbench-modules-desktop-en.png">EN Diagram</a>）</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <sub>从形式化、引理探索到独立核验与本地复现</sub>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <sub>M1–M5 可替换策略循环与固定 S3 独立验收分离（<a href="./assets/workbench-modules-desktop-en.png">EN Diagram</a>）</sub>
     </td>
   </tr>
 </table>
@@ -116,9 +128,9 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 | 来源合集 | 条目数 | 核验依据 | 查看目录 |
 | --- | :---: | --- | --- |
-| **Lean-Eval** | **10** | 拥有 Lean-Eval 官方评测通过记录（对应冻结提交版本） | [`accepted/`](./accepted/) · [`submitted/`](./submitted/) |
-| **OpenAI Math** | **18** | 经本地 Lean 4 与原题比较器核验通过 *（无 OpenAI 官方确认）* | [`data/proofs/`](./data/proofs/) |
-| **进行中记录** | **1** | 已归档研究草稿快照 | [`in-progress/`](./in-progress/) |
+| **Lean-Eval** | **10** | 拥有 Lean-Eval 官方评测通过记录（对应冻结提交版本） | [accepted/](./accepted/) · [submitted/](./submitted/) |
+| **OpenAI Math** | **18** | 经本地 Lean 4 与原题比较器核验通过 *（无 OpenAI 官方确认）* | [data/proofs/](./data/proofs/) |
+| **进行中记录** | **1** | 已归档研究草稿快照 | [in-progress/](./in-progress/) |
 
 > [!NOTE]
 > [档案目录](./data/catalog.json)共收录 29 条记录。其中 OpenAI Math 部分个别条目验证的是辅助结论或条件命题，[评测数据与口径（中文）](./docs/EVALUATION.zh-CN.md)（[EN](./docs/EVALUATION.md)）仅介绍早期归档快照的选定运行记录，不能据此推算全系统的成功率或成本。
@@ -179,11 +191,11 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 | 路径 | 内容说明 |
 | --- | --- |
-| [`accepted/`](./accepted/) · [`submitted/`](./submitted/) | Lean-Eval 证明包及官方结果来源记录 |
-| [`data/proofs/`](./data/proofs/) | OpenAI Math 题面、证明源码、本地核验报告与完整研究轨迹 |
-| [`in-progress/`](./in-progress/) | 早期研究草稿，部分含未闭合的 `sorry` |
-| [`proof-kits/`](./proof-kits/) · [`examples/`](./examples/) | Dimitrov 独立复核包与简短的 Lean 引理复用示例 |
-| [`docs/`](./docs/) · [`CHANGELOG.md`](./CHANGELOG.md) | 访问、复核、复用、能力边界、评测口径与版本说明 |
+| [accepted/](./accepted/) · [submitted/](./submitted/) | Lean-Eval 证明包及官方结果来源记录 |
+| [data/proofs/](./data/proofs/) | OpenAI Math 题面、证明源码、本地核验报告与完整研究轨迹 |
+| [in-progress/](./in-progress/) | 早期研究草稿，部分含未闭合的 `sorry` |
+| [proof-kits/](./proof-kits/) · [examples/](./examples/) | Dimitrov 独立复核包与简短的 Lean 引理复用示例 |
+| [docs/](./docs/) · [CHANGELOG.md](./CHANGELOG.md) | 访问、复核、复用、能力边界、评测口径与版本说明 |
 
 ---
 
@@ -208,7 +220,24 @@ lean +leanprover/lean4:v4.33.0 examples/lean-check/Submission.lean
 
 ## 许可与引用
 
-本仓库自有公开网站与文档材料按 [`LICENSE`](./LICENSE) 保留权利；开源工作台与 CLI（[`HuggingMath/theorem-os`](https://github.com/HuggingMath/theorem-os)）采用 `AGPL-3.0-only`；归档证明与第三方材料沿用原许可，详见[公开材料、复用与引用](./docs/PUBLIC-MATERIALS.md)。学术或演示引用请参照 [`CITATION.cff`](./CITATION.cff)，并同时署名相应题面与证明原作者。
+本仓库自有公开网站与文档材料按 [LICENSE](./LICENSE) 保留权利；开源工作台与 CLI（[HuggingMath/theorem-os](https://github.com/HuggingMath/theorem-os)）采用 `AGPL-3.0-only`；归档证明与第三方材料沿用原许可，详见[公开材料、复用与引用](./docs/PUBLIC-MATERIALS.md)。学术或演示引用请参照 [CITATION.cff](./CITATION.cff)，并同时署名相应题面与证明原作者。
+
+<details>
+<summary><b>引用 TheoremOS（BibTeX）</b></summary>
+
+```bibtex
+@software{liu2026theoremos,
+  author  = {Liu, Zhenhao},
+  title   = {TheoremOS},
+  version = {0.1.0-preview.1},
+  year    = {2026},
+  month   = nov,
+  note    = {WestlakeNLP, Westlake University},
+  url     = {https://theoremos.top/}
+}
+```
+
+</details>
 
 ---
 
