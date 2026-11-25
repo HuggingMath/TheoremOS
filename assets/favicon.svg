@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 58 58" fill="none">
+  <style>
+    .ink{fill:#18181b}
+    .seal{fill:#c95633}
+    @media(prefers-color-scheme:dark){.ink{fill:#f3efe6}.seal{fill:#e0714d}}
+  </style>
+  <path class="ink" d="M32 6.5L57.5 32L48.1 41.4L44.7 38L50.7 32L32 13.3L13.3 32L32 50.7L38 44.7L41.4 48.1L32 57.5L6.5 32L32 6.5Z"/>
+  <path class="ink" d="M24.2 21.5H28.8V42.5H24.2V21.5Z"/>
+  <path class="ink" d="M28.8 29.7H40.5V34.3H28.8V29.7Z"/>
+  <path class="seal" d="M43 38.4L47.6 43L43 47.6L38.4 43L43 38.4Z"/>
+</svg>
