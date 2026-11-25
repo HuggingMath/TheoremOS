@@ -55,7 +55,11 @@
   --orange-border: #4a3c20;
   --shadow: #0000004d;
 }
+:root[data-theme="dark"] :is(.brand-mark, .brand img) {
+  filter: invert(.94) hue-rotate(180deg) saturate(1.18) brightness(1.06);
+}
 @media print {
+  :root[data-theme="dark"] :is(.brand-mark, .brand img) { filter: none; }
   :root, :root[data-theme="dark"] {
     color-scheme: light;
     --paper: #faf9f5;
